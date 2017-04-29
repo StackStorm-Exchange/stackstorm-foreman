@@ -20,7 +20,8 @@ class RequestsMethod(object):
             json = dict()
 
         requests_method = methods.get(method)
-        response = requests_method(url, auth=auth, headers=headers, params=params, json=json, verify=verify_ssl)
+        response = requests_method(url, auth=auth, headers=headers,
+                                   params=params, json=json, verify=verify_ssl)
         if response.status_code:
             return response.json()
         else:
@@ -50,7 +51,8 @@ class ForemanAPI(Action):
                 yield host
 
     def _get(self, endpoint, params=None, *args, **kwargs):
-        api_url = "{url}/{api_ext}/{endpoint}".format(url=self.url, api_ext='api', endpoint=endpoint)
+        api_url = "{url}/{api_ext}/{endpoint}".format(url=self.url,
+                                                      api_ext='api', endpoint=endpoint)
         return RequestsMethod.method('get',
                                      url=api_url,
                                      auth=(self.username, self.password),
@@ -59,7 +61,8 @@ class ForemanAPI(Action):
                                      params=params)
 
     def _post(self, endpoint, params=None, payload=None, *args, **kwargs):
-        api_url = "{url}/{api_ext}/{endpoint}".format(url=self.url, api_ext='api', endpoint=endpoint)
+        api_url = "{url}/{api_ext}/{endpoint}".format(url=self.url,
+                                                      api_ext='api', endpoint=endpoint)
         return RequestsMethod.method('post',
                                      url=api_url,
                                      auth=(self.username, self.password),
@@ -69,7 +72,8 @@ class ForemanAPI(Action):
                                      json=payload)
 
     def _put(self, endpoint, params=None, payload=None, *args, **kwargs):
-        api_url = "{url}/{api_ext}/{endpoint}".format(url=self.url, api_ext='api', endpoint=endpoint)
+        api_url = "{url}/{api_ext}/{endpoint}".format(url=self.url,
+                                                      api_ext='api', endpoint=endpoint)
         return RequestsMethod.method('put',
                                      url=api_url,
                                      auth=(self.username, self.password),

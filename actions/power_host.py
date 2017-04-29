@@ -8,4 +8,5 @@ class ForemanPowerHost(ForemanAPI):
         super(ForemanPowerHost, self).__init__(config=config)
 
     def run(self, host, action):
-        return self.put(endpoint="{}/{}/power".format('hosts', host), params={"power_action": action})
+        return self.put(endpoint="{}/{}/power".format('hosts', host),
+                        params={"power_action": action})
