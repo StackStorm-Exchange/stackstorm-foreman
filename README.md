@@ -25,7 +25,7 @@ verify_ssl: False
 
 ### `foreman.create_host`
 
-`st2 run foreman.create_host name=host-1.domain.tld provision_method=image hostconfig=<see below>
+`st2 run foreman.create_host name=host-1.domain.tld provision_method=image hostconfig=<see below>`
 
 #### hostconfig
 
