@@ -1,0 +1,56 @@
+---
+description: "List all interfaces for domain (resource: GET /api/domains/:domain_id/interfaces)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: domains_interfaces_index
+parameters:
+  operation:
+    type: string
+    default: domains.interfaces_index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  host_id:
+    type: string
+    required: true
+    description: ID or name of host-
+  domain_id:
+    type: string
+    required: true
+    description: ID or name of domain-
+  subnet_id:
+    type: string
+    required: false
+    description: ID or name of subnet-
+  page:
+    type: string
+    required: false
+    description: paginate results-
+  per_page:
+    type: string
+    required: false
+    description: number of entries per request-

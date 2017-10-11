@@ -1,0 +1,63 @@
+---
+description: "Attach a subscription (resource: PUT /katello/api/activation_keys/:id/add_subscriptions)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: activation_keys_add_subscriptions
+parameters:
+  operation:
+    type: string
+    default: activation_keys.add_subscriptions
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  id:
+    type: string
+    required: true
+    description: ID of the activation key-
+  subscription_id:
+    type: string
+    required: false
+    description: Subscription identifier-
+  quantity:
+    type: string
+    required: false
+    description: Quantity of this subscription to add-
+  subscriptions:
+    type: array
+    required: false
+    description: >
+       'description: Array of subscriptions to add-
+        parameters:
+            id:
+              required: false
+              type: string
+              description: Subscription Pool uuid-
+            quantity:
+              required: false
+              type: string
+              description: Quantity of this subscriptions to add-
+            '

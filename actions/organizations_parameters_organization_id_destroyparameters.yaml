@@ -1,0 +1,64 @@
+---
+description: "Delete a nested parameter for an organization (resource: DELETE /api/organizations/:organization_id/parameters/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: organizations_parameters_organization_id_destroyparameters
+parameters:
+  operation:
+    type: string
+    default: organizations.parameters_organization_id_destroyparameters
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  host_id:
+    type: string
+    required: false
+    description: ID of host-
+  hostgroup_id:
+    type: string
+    required: false
+    description: ID of host group-
+  domain_id:
+    type: string
+    required: false
+    description: ID of domain-
+  operatingsystem_id:
+    type: string
+    required: false
+    description: ID of operating system-
+  location_id:
+    type: string
+    required: false
+    description: ID of location-
+  organization_id:
+    type: string
+    required: true
+    description: ID of organization-
+  id:
+    type: string
+    required: true
+    description: ID of parameter-

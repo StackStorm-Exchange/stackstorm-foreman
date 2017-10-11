@@ -1,0 +1,69 @@
+---
+description: "Update a foreign input set (resource: PUT /api/templates/:template_id/foreign_input_sets/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: templates_foreign_input_sets_template_id_foreign_input_updatesets
+parameters:
+  operation:
+    type: string
+    default: templates.foreign_input_sets_template_id_foreign_input_updatesets
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  template_id:
+    type: string
+    required: true
+  id:
+    type: string
+    required: true
+  foreign_input_set:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            include:
+              required: false
+              type: string
+              description: A comma separated list of input names to be included from the foreigntemplate.-
+            include_all:
+              required: false
+              type: string
+              description: Include all inputs from the foreign template-
+            description:
+              required: false
+              type: string
+              description: Input set description-
+            target_template_id:
+              required: false
+              type: string
+              description: Target template ID-
+            exclude:
+              required: false
+              type: string
+              description: A comma separated list of input names to be included from the foreigntemplate.-
+            '

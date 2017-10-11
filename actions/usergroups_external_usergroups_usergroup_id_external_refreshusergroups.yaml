@@ -1,0 +1,44 @@
+---
+description: "Refresh external user group (resource: PUT /api/usergroups/:usergroup_id/external_usergroups/:id/refresh)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: usergroups_external_usergroups_usergroup_id_external_refreshusergroups
+parameters:
+  operation:
+    type: string
+    default: usergroups.external_usergroups_usergroup_id_external_refreshusergroups
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  usergroup_id:
+    type: string
+    required: true
+    description: ID or name of user group-
+  id:
+    type: string
+    required: true
+    description: ID or name of external user group-

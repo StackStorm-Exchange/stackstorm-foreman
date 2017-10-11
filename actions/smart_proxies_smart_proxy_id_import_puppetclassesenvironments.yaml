@@ -1,0 +1,52 @@
+---
+description: "Import puppet classes from puppet Capsule for an environment (resource: POST /api/smart_proxies/:smart_proxy_id/environments/:id/import_puppetclasses)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: smart_proxies_smart_proxy_id_import_puppetclassesenvironments
+parameters:
+  operation:
+    type: string
+    default: smart_proxies.smart_proxy_id_import_puppetclassesenvironments
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  id:
+    type: string
+    required: true
+  smart_proxy_id:
+    type: string
+    required: true
+  environment_id:
+    type: string
+    required: false
+  dryrun:
+    type: string
+    required: false
+  except:
+    type: string
+    required: false
+    description: Optional comma-delimited string containing either 'new','updated', or 'obsolete' that is used to limit the importedPuppet classes-

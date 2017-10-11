@@ -1,1 +1,1 @@
-requests
+python-foreman>=0.4.19

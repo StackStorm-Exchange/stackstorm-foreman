@@ -1,0 +1,44 @@
+---
+description: " (resource: PUT /katello/api/activation_keys/:id/host_collections)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: activation_keys_remove_host_collections
+parameters:
+  operation:
+    type: string
+    default: activation_keys.remove_host_collections
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  id:
+    type: string
+    required: true
+    description: ID of the activation key-
+  host_collection_ids:
+    type: array
+    required: true
+    description: List of host collection IDs to disassociate from the activation key-

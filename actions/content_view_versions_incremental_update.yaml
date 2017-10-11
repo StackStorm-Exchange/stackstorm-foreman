@@ -1,0 +1,113 @@
+---
+description: "Perform an Incremental Update on one or more Content View Versions (resource: POST /katello/api/content_view_versions/incremental_update)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: content_view_versions_incremental_update
+parameters:
+  operation:
+    type: string
+    default: content_view_versions.incremental_update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  content_view_version_environments:
+    type: array
+    required: false
+    description: >
+       'description: None
+        parameters:
+            content_view_version_id:
+              required: false
+              type: string
+              description: Content View Version Ids to perform an incremental update on.  May
+                containcomposites as well as one or more components to update.-
+            environment_ids:
+              required: false
+              type: array
+              description: The list of environments to promote the specified Content View Version
+                to(replacing the older version).-
+            '
+  description:
+    type: string
+    required: false
+    description: The description for the new generated Content View Versions-
+  resolve_dependencies:
+    type: string
+    required: false
+    description: If true, when adding the specified errata or packages, any neededdependencies will be copied as well.-
+  propagate_all_composites:
+    type: string
+    required: false
+    description: If true, will publish a new composite version using any specifiedcontent_view_version_id that has been promoted to a lifecycle environment.-
+  add_content:
+    type: object
+    required: false
+    description: >
+       'description: None
+        parameters:
+            package_ids:
+              required: false
+              type: array
+              description: Package ids or uuids to copy into the new versions.-
+            errata_ids:
+              required: false
+              type: array
+              description: Errata ids or uuids to copy into the new versions.-
+            puppet_module_ids:
+              required: false
+              type: array
+              description: Puppet Module ids or uuids to copy into the new versions.-
+            '
+  update_hosts:
+    type: object
+    required: false
+    description: >
+       'description: After generating the incremental update, apply the changes to the specifiedhosts.  Only Errata are supported currently.-
+        parameters:
+            included:
+              required: true
+              type: object
+              description:
+              parameters:
+                search:
+                  required: false
+                  type: string
+                  description: Search string for host to perform an action on-
+                ids:
+                  required: false
+                  type: array
+                  description: List of host ids to perform an action on-
+            excluded:
+              required: false
+              type: object
+              description:
+              parameters:
+                ids:
+                  required: false
+                  type: array
+                  description: List of host ids to exclude and not run an action on-
+            '

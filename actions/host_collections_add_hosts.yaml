@@ -1,0 +1,44 @@
+---
+description: "Add host to the host collection (resource: PUT /katello/api/host_collections/:id/add_hosts)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: host_collections_add_hosts
+parameters:
+  operation:
+    type: string
+    default: host_collections.add_hosts
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  id:
+    type: string
+    required: true
+    description: Id of the host collection-
+  host_ids:
+    type: array
+    required: false
+    description: Array of host ids-

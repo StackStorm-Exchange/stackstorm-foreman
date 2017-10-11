@@ -1,0 +1,40 @@
+---
+description: "Trigger an auto-attach of subscriptions (resource: PUT /api/hosts/:host_id/subscriptions/auto_attach)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: hosts_host_subscriptions_auto_attach
+parameters:
+  operation:
+    type: string
+    default: hosts.host_subscriptions_auto_attach
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  host_id:
+    type: numeric
+    required: true
+    description: Id of the host-

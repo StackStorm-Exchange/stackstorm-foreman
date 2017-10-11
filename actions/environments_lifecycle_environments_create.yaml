@@ -1,0 +1,56 @@
+---
+description: "Create an environment (resource: POST /katello/api/environments)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: environments_lifecycle_environments_create
+parameters:
+  operation:
+    type: string
+    default: environments.lifecycle_environments_create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  organization_id:
+    type: string
+    required: true
+    description: name of organization-
+  name:
+    type: string
+    required: true
+    description: name of the environment-
+  label:
+    type: string
+    required: false
+    description: label of the environment-
+  description:
+    type: string
+    required: false
+    description: description of the environment-
+  prior_id:
+    type: numeric
+    required: true
+    description: ID of an environment that is prior to the new environment in the chain. Ithas to be either the ID of Library or the ID of an environment at the endof a chain.-

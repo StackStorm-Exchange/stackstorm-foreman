@@ -1,0 +1,76 @@
+---
+description: "Update a rule (resource: PUT /api/v2/discovery_rules/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: discovery_rules_update
+parameters:
+  operation:
+    type: string
+    default: discovery_rules.update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  id:
+    type: string
+    required: true
+  discovery_rule:
+    type: object
+    required: false
+    description: >
+       'description: None
+        parameters:
+            search:
+              required: false
+              type: string
+              description: query to match discovered hosts for the particular rule-
+            name:
+              required: false
+              type: string
+              description: represents rule name shown to the users-
+            hostname:
+              required: false
+              type: string
+              description: defines a pattern to assign human-readable hostnames to the matching
+                hosts-
+            enabled:
+              required: false
+              type: string
+              description: flag is used for temporary shutdown of rules-
+            hostgroup_id:
+              required: false
+              type: numeric
+              description: the hostgroup that is used to auto provision a host-
+            max_count:
+              required: false
+              type: numeric
+              description: enables to limit maximum amount of provisioned hosts per rule-
+            priority:
+              required: false
+              type: numeric
+              description: puts the rules in order, low numbers go first. Must be greater then
+                zero-
+            '

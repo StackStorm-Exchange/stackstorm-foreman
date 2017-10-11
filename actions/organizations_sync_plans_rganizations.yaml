@@ -1,0 +1,44 @@
+---
+description: "Show a sync plan (resource: GET /katello/api/organizations/:organization_id/sync_plans/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: 
+name: organizations_sync_plans_rganizations
+parameters:
+  operation:
+    type: string
+    default: organizations.sync_plans_rganizations
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  port:
+    type: integer
+    description: "Optional override of the port in <connection>."
+    required: false
+  transport:
+    type: string
+    description: "Optional override of the transport in <connection>."
+    required: false
+  organization_id:
+    type: string
+    required: true
+    description: Filter sync plans by organization name or label-
+  id:
+    type: string
+    required: true
+    description: sync plan numeric identifier-
