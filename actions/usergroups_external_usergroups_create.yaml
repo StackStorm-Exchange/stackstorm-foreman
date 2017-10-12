@@ -38,7 +38,7 @@ parameters:
         parameters:
             auth_source_id:
               required: true
-              type: numeric
+              type: number
               description: ID of linked authentication source
             name:
               required: true

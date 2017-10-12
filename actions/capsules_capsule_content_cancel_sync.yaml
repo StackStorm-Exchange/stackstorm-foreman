@@ -27,6 +27,6 @@ parameters:
     required: false
     secret: true
   id:
-    type: numeric
+    type: number
     required: true
     description: "Id of the capsule"

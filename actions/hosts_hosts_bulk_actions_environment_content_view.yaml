@@ -57,8 +57,8 @@ parameters:
               description: List of system ids to exclude and not run an action on
             '
   environment_id:
-    type: numeric
+    type: number
     required: false
   content_view_id:
-    type: numeric
+    type: number
     required: false

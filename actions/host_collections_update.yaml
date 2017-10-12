@@ -42,7 +42,7 @@ parameters:
     required: false
     description: "List of host ids to replace the hosts in host collection"
   max_hosts:
-    type: numeric
+    type: number
     required: false
     description: "Maximum number of hosts in the host collection"
   unlimited_hosts:

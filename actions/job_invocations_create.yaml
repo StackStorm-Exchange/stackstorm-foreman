@@ -38,7 +38,7 @@ parameters:
               description: Inputs to use
             search_query:
               required: false
-              type: numeric
+              type: number
               description:
             description_format:
               required: false
@@ -51,11 +51,11 @@ parameters:
               parameters:
                 concurrency_level:
                   required: false
-                  type: numeric
+                  type: number
                   description: Run at most N tasks at a time
                 time_span:
                   required: false
-                  type: numeric
+                  type: number
                   description: Distribute tasks over N seconds
             targeting_type:
               required: true
@@ -80,7 +80,7 @@ parameters:
                   description: Perform no more executions after this time
             bookmark_id:
               required: false
-              type: numeric
+              type: number
               description:
             job_template_id:
               required: true

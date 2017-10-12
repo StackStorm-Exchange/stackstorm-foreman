@@ -38,7 +38,7 @@ parameters:
               description: Policy name
             scap_content_id:
               required: true
-              type: numeric
+              type: number
               description: Policy scap content id
             period:
               required: true
@@ -54,7 +54,7 @@ parameters:
               description: REPLACE locations with given ids
             scap_content_profile_id:
               required: true
-              type: numeric
+              type: number
               description: Policy scap content profile id
             hostgroup_ids:
               required: false

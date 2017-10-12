@@ -42,7 +42,7 @@ parameters:
         parameters:
             auth_source_id:
               required: false
-              type: numeric
+              type: number
               description: ID of linked authentication source
             name:
               required: false

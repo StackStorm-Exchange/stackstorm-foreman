@@ -27,10 +27,10 @@ parameters:
     required: false
     secret: true
   id:
-    type: numeric
+    type: number
     required: true
     description: "Id of the capsule"
   organization_id:
-    type: numeric
+    type: number
     required: false
     description: "Id of the organization to limit environments on"

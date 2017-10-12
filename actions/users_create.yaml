@@ -34,7 +34,7 @@ parameters:
         parameters:
             default_organization_id:
               required: false
-              type: numeric
+              type: number
               description:
             firstname:
               required: false
@@ -50,7 +50,7 @@ parameters:
               description:
             default_location_id:
               required: false
-              type: numeric
+              type: number
               description:
             locale:
               required: false
@@ -74,7 +74,7 @@ parameters:
               description:
             auth_source_id:
               required: true
-              type: numeric
+              type: number
               description:
             location_ids:
               required: false

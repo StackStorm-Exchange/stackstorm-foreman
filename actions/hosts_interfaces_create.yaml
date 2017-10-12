@@ -58,7 +58,7 @@ parameters:
               description: Interface's DNS name
             subnet_id:
               required: false
-              type: numeric
+              type: number
               description: Satellite subnet ID of interface
             ip:
               required: false
@@ -114,6 +114,6 @@ parameters:
               description: Interface type, e.g. bmc. Default is interface
             domain_id:
               required: false
-              type: numeric
+              type: number
               description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
             '

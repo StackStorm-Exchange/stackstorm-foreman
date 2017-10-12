@@ -43,6 +43,6 @@ parameters:
     required: false
     description: "description of the environment"
   prior_id:
-    type: numeric
+    type: number
     required: true
     description: "ID of an environment that is prior to the new environment in the chain. Ithas to be either the ID of Library or the ID of an environment at the endof a chain."

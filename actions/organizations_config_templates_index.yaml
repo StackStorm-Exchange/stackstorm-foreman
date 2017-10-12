@@ -31,11 +31,11 @@ parameters:
     required: false
     description: "ID of operating system"
   location_id:
-    type: numeric
+    type: number
     required: false
     description: "Scope by locations"
   organization_id:
-    type: numeric
+    type: number
     required: true
     description: "Scope by organizations"
   search:

@@ -27,11 +27,11 @@ parameters:
     required: false
     secret: true
   location_id:
-    type: numeric
+    type: number
     required: false
     description: "Scope by locations"
   organization_id:
-    type: numeric
+    type: number
     required: false
     description: "Scope by organizations"
   search:

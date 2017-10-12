@@ -51,15 +51,15 @@ parameters:
               parameters:
                 content_view_id:
                   required: false
-                  type: numeric
+                  type: number
                   description:
                 kickstart_repository_id:
                   required: false
-                  type: numeric
+                  type: number
                   description: Repository Id associated with the kickstart repo used for provisioning
                 lifecycle_environment_id:
                   required: false
-                  type: numeric
+                  type: number
                   description:
             model_id:
               required: false
@@ -100,7 +100,7 @@ parameters:
                   description: Interface's DNS name
                 subnet_id:
                   required: false
-                  type: numeric
+                  type: number
                   description: Satellite subnet ID of interface
                 ip:
                   required: false
@@ -156,7 +156,7 @@ parameters:
                   description: Interface type, e.g. bmc. Default is interface
                 domain_id:
                   required: false
-                  type: numeric
+                  type: number
                   description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
             location_id:
               required: true
@@ -282,7 +282,7 @@ parameters:
                   description: Release version for this Host to use (7Server, 7.1, etc)
                 service_level:
                   required: false
-                  type: numeric
+                  type: number
                   description: Service level to be used for autoheal.
                 hypervisor_guest_uuids:
                   required: false

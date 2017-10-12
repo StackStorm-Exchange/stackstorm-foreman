@@ -220,6 +220,8 @@ class ActionGenerator(object):
         t = param_type
         if t == 'hash':
             t = 'object'
+        elif t == 'numeric':
+            t = 'number'
         return t
 
     def dict_to_yaml(self, d):

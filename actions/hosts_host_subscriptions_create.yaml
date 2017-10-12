@@ -66,10 +66,10 @@ parameters:
     required: false
     description: "A service level for auto-healing process, e.g. SELF-SUPPORT"
   lifecycle_environment_id:
-    type: numeric
+    type: number
     required: true
     description: "Lifecycle Environment ID"
   content_view_id:
-    type: numeric
+    type: number
     required: true
     description: "Content View ID"

@@ -68,6 +68,6 @@ parameters:
               description: Subscription Pool id
             quantity:
               required: false
-              type: numeric
+              type: number
               description: Quantity of specified subscription to remove
             '
