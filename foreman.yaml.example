@@ -1,7 +1,14 @@
 ---
-
-url: https://example.com
-username: foo
-password: bar
-verify_ssl: False
-
+foreman:
+  dev:
+    server: "ipa1.dev.domain.tld"
+    username: "devusername"
+    password: "devpassword"
+  qa:
+    server: "ipa1.qa.domain.tld"
+    username: "qausername"
+    password: "qapassword"
+  prod:
+    server: "ipa1.prod.domain.tld"
+    username: "produsername"
+    password: "prodpassword"

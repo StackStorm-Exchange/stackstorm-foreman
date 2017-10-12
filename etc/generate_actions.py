@@ -25,6 +25,9 @@ API_DEFINITION_GLOB_PATH = "./api_definitions*"
 ACTION_TEMPLATE_PATH = "./action.yaml.j2"
 ACTION_DIRECTORY = "../actions"
 
+TABLE_TEMPLATE_PATH = "./action_table.md.j2"
+TABLE_FILE_PATH = "./action_table.md"
+
 
 class Cli:
     def parse(self):
@@ -185,6 +188,7 @@ class ActionGenerator(object):
 
         # convert the methods into actions
         self.render_method_defs_into_actions(method_defs)
+        self.render_method_defs_into_table(method_defs)
 
     def gather_method_defs(self, resource_list):
         method_defs = []
@@ -198,7 +202,7 @@ class ActionGenerator(object):
     def render_method_defs_into_actions(self, method_defs):
         for method_def in method_defs:
             action_name = "{}_{}".format(method_def.resource, method_def.name)
-            action = {'name': '{}'.format(action_name),
+            action = {'name': action_name,
                       'operation': '{}.{}'.format(method_def.resource,
                                                   method_def.name),
                       'description': '{} (resource: {} {})'.format(method_def.short_desc,
@@ -215,6 +219,41 @@ class ActionGenerator(object):
                                                                            action_name))
 
             self.render_action(action)
+
+    def delete_table_file(self):
+        try:
+            os.remove(TABLE_FILE_PATH)
+        except OSError:
+            pass
+
+    def create_table_file(self):
+        with open(TABLE_FILE_PATH, "a+") as f:
+            f.write(("| Action | Foreman API | Description |\n"
+                     "|--------|-------------|-------------|\n"))
+
+    def render_method_defs_into_table(self, method_defs):
+        self.delete_table_file()
+        self.create_table_file()
+
+        foreman_url = 'https://theforeman.org/api/1.16/'
+        katello_url = 'https://theforeman.org/plugins/katello/3.4/api/'
+
+        for method_def in method_defs:
+            action_name = "{}_{}".format(method_def.resource, method_def.name)
+            method_doc_url = method_def._method['doc_url']
+            method_doc_url = method_doc_url.replace('../', '')
+            base_url = None
+            if method_def.url.startswith('/katello/'):
+                base_url = katello_url
+            else:
+                base_url = foreman_url
+            method_doc_url = base_url + method_doc_url + '.html'
+            context = {'name': action_name,
+                       'url': method_def.url,
+                       'http_method': method_def.http_method,
+                       'description': method_def.short_desc,
+                       'reference_url': method_doc_url}
+            self.render_table_entry(context)
 
     def parse_param_type(self, param_type):
         t = param_type
@@ -310,6 +349,11 @@ class ActionGenerator(object):
                                               context['name'])
         with open(action_filename, "w") as f:
             f.write(action_data)
+
+    def render_table_entry(self, context):
+        table_data = self.jinja_render_file(TABLE_TEMPLATE_PATH, context)
+        with open(TABLE_FILE_PATH, "a+") as f:
+            f.write(table_data + "\n")
 
     def run(self):
         if self.cli_args.command == "fetch-api":

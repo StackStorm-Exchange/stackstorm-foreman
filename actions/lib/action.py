@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-from foreman.client import Foreman
 from st2actions.runners.pythonrunner import Action
+import foreman.client
+import logging
 import operator
 import requests
 import urllib3
@@ -18,6 +19,11 @@ CONFIG_CONNECTION_KEYS = [('server', True, ""),
 class BaseAction(Action):
     def __init__(self, config):
         super(BaseAction, self).__init__(config=config)
+        # give our logger to foreman.client
+        foreman.client.logger = self.logger
+        # foreman.client spits out lots of noisy warnings that are harmless.
+        # disable these by setting the level to ERROR
+        self.logger.setLevel(logging.ERROR)
 
     def _get_del_arg(self, key, kwargs_dict):
         """Attempts to retrieve an argument from kwargs with key.
@@ -106,9 +112,9 @@ class BaseAction(Action):
         self._validate_connection(connection)
 
         # connect to the server
-        client = Foreman('https://{}/'.format(connection['server']),
-                         auth=(connection['username'], connection['password']),
-                         api_version=2)
+        client = foreman.client.Foreman('https://{}/'.format(connection['server']),
+                                        auth=(connection['username'], connection['password']),
+                                        api_version=2)
 
         # Performs a "deep" getattr() lookup so we can pass a string like
         # 'method1.method2.method3' without having to chain getattr()
