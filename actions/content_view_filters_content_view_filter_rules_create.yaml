@@ -2,7 +2,7 @@
 description: "Create a filter rule. The parameters included should be based upon the filter type. (resource: POST /katello/api/content_view_filters/:content_view_filter_id/rules)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: content_view_filters_content_view_filter_rules_create
 parameters:
   operation:
@@ -26,55 +26,47 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   content_view_filter_id:
     type: string
     required: true
-    description: filter identifier-
+    description: "filter identifier"
   name:
     type: string
     required: false
-    description: package or package group: name-
+    description: "package or package group: name"
   version:
     type: string
     required: false
-    description: package: version-
+    description: "package: version"
   min_version:
     type: string
     required: false
-    description: package: minimum version-
+    description: "package: minimum version"
   max_version:
     type: string
     required: false
-    description: package: maximum version-
+    description: "package: maximum version"
   errata_id:
     type: string
     required: false
-    description: erratum: id-
+    description: "erratum: id"
   errata_ids:
     type: array
     required: false
-    description: erratum: IDs or a select all object-
+    description: "erratum: IDs or a select all object"
   start_date:
     type: string
     required: false
-    description: erratum: start date (YYYY-MM-DD)-
+    description: "erratum: start date (YYYY-MM-DD)"
   end_date:
     type: string
     required: false
-    description: erratum: end date (YYYY-MM-DD)-
+    description: "erratum: end date (YYYY-MM-DD)"
   types:
     type: array
     required: false
-    description: erratum: types (enhancement, bugfix, security)-
+    description: "erratum: types (enhancement, bugfix, security)"
   date_type:
     type: string
     required: false
-    description: erratum: search using the 'Issued On' or 'Updated On'column of the errata. Values are 'issued'/'updated'-
+    description: "erratum: search using the 'Issued On' or 'Updated On'column of the errata. Values are 'issued'/'updated'"

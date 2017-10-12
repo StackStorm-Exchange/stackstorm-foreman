@@ -2,7 +2,7 @@
 description: "Show foreign input set details (resource: GET /api/templates/:template_id/foreign_input_sets/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: templates_foreign_input_sets_template_id_foreign_input_showsets
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   template_id:
     type: string
     required: true

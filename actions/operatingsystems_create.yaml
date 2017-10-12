@@ -2,7 +2,7 @@
 description: "Create an operating system (resource: POST /api/operatingsystems)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: operatingsystems_create
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   operatingsystem:
     type: object
     required: true
@@ -55,36 +47,36 @@ parameters:
             config_template_ids:
               required: false
               type: array
-              description: IDs of associated provisioning templates-
+              description: IDs of associated provisioning templates
             architecture_ids:
               required: false
               type: array
-              description: IDs of associated architectures-
+              description: IDs of associated architectures
             os_parameters_attributes:
               required: false
               type: array
-              description: OS' parameters (array or indexed hash)-
+              description: OS' parameters (array or indexed hash)
               parameters:
                 name:
                   required: true
                   type: string
-                  description: Name of the parameter-
+                  description: Name of the parameter
                 value:
                   required: true
                   type: string
-                  description: Parameter value-
+                  description: Parameter value
             medium_ids:
               required: false
               type: array
-              description: IDs of associated media-
+              description: IDs of associated media
             provisioning_template_ids:
               required: false
               type: array
-              description: IDs of associated provisioning templates-
+              description: IDs of associated provisioning templates
             password_hash:
               required: false
               type: string
-              description: Root password hash function to use, one of MD5, SHA256, SHA512, Base64-
+              description: Root password hash function to use, one of MD5, SHA256, SHA512, Base64
             release_name:
               required: false
               type: string
@@ -92,7 +84,7 @@ parameters:
             ptable_ids:
               required: false
               type: array
-              description: IDs of associated partition tables-
+              description: IDs of associated partition tables
             minor:
               required: false
               type: string

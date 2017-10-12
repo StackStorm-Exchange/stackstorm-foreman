@@ -2,7 +2,7 @@
 description: "Upload facts for a host, creating the host if required (resource: POST /api/hosts/facts)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_facts
 parameters:
   operation:
@@ -26,27 +26,19 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   name:
     type: string
     required: true
-    description: hostname of the host-
+    description: "hostname of the host"
   facts:
     type: object
     required: true
-    description: hash containing the facts for the host-
+    description: "hash containing the facts for the host"
   certname:
     type: string
     required: false
-    description: optional: certname of the host-
+    description: "optional: certname of the host"
   type:
     type: string
     required: false
-    description: optional: the STI type of host to create-
+    description: "optional: the STI type of host to create"

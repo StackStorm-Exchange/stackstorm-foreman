@@ -2,7 +2,7 @@
 description: "Add a template combination (resource: POST /api/environments/:environment_id/template_combinations)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: environments_template_combinations_create
 parameters:
   operation:
@@ -26,30 +26,22 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   config_template_id:
     type: string
     required: false
-    description: ID of config template-
+    description: "ID of config template"
   provisioning_template_id:
     type: string
     required: false
-    description: ID of config template-
+    description: "ID of config template"
   hostgroup_id:
     type: string
     required: false
-    description: ID of host group-
+    description: "ID of host group"
   environment_id:
     type: string
     required: true
-    description: ID of environment-
+    description: "ID of environment"
   template_combination:
     type: object
     required: true
@@ -59,9 +51,9 @@ parameters:
             environment_id:
               required: false
               type: string
-              description: environment id-
+              description: environment id
             hostgroup_id:
               required: false
               type: string
-              description: host group id-
+              description: host group id
             '

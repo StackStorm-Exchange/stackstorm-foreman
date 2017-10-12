@@ -2,7 +2,7 @@
 description: "Create a job invocation (resource: POST /api/job_invocations)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: job_invocations_create
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   job_invocation:
     type: object
     required: true
@@ -43,7 +35,7 @@ parameters:
             inputs:
               required: false
               type: object
-              description: Inputs to use-
+              description: Inputs to use
             search_query:
               required: false
               type: numeric
@@ -51,43 +43,41 @@ parameters:
             description_format:
               required: false
               type: string
-              description: Override the description format from the template for this invocation
-                only-
+              description: Override the description format from the template for this invocation only
             concurrency_control:
               required: false
               type: object
-              description: Control concurrency level and distribution over time-
+              description: Control concurrency level and distribution over time
               parameters:
                 concurrency_level:
                   required: false
                   type: numeric
-                  description: Run at most N tasks at a time-
+                  description: Run at most N tasks at a time
                 time_span:
                   required: false
                   type: numeric
-                  description: Distribute tasks over N seconds-
+                  description: Distribute tasks over N seconds
             targeting_type:
               required: true
               type: string
-              description: Invocation type, one of {static_query=>Static Query,dynamic_query=>Dynamic
-                Query}-pn16draos6dsqt
+              description: Invocation type, one of {"static_query"=>"Static Query","dynamic_query"=>"Dynamic Query"}
             recurrence:
               required: false
               type: object
-              description: Create a recurring job-
+              description: Create a recurring job
               parameters:
                 cron_line:
                   required: false
                   type: string
-                  description: How often the job should occur, in the cron format-
+                  description: How often the job should occur, in the cron format
                 max_iteration:
                   required: false
                   type: string
-                  description: Repeat a maximum of N times-
+                  description: Repeat a maximum of N times
                 end_time:
                   required: false
                   type: string
-                  description: Perform no more executions after this time-
+                  description: Perform no more executions after this time
             bookmark_id:
               required: false
               type: numeric
@@ -95,29 +85,27 @@ parameters:
             job_template_id:
               required: true
               type: string
-              description: The job template to use-
+              description: The job template to use
             scheduling:
               required: false
               type: object
-              description: Schedule the job to start at a later time-
+              description: Schedule the job to start at a later time
               parameters:
                 start_before:
                   required: false
                   type: string
-                  description: Indicates that the action should be cancelled if it cannot be startedbefore
-                    this time.-
+                  description: Indicates that the action should be cancelled if it cannot be startedbefore this time.
                 start_at:
                   required: false
                   type: string
-                  description: Schedule the job for a future time-
+                  description: Schedule the job for a future time
             ssh:
               required: false
               type: object
-              description: SSH provider specific options-
+              description: SSH provider specific options
               parameters:
                 effective_user:
                   required: false
                   type: string
-                  description: What user should be used to run the script (using sudo-like mechanisms).Defaults
-                    to a template parameter or global setting.-
+                  description: What user should be used to run the script (using sudo-like mechanisms).Defaults to a template parameter or global setting.
             '

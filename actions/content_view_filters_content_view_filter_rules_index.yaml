@@ -2,7 +2,7 @@
 description: "List filter rules (resource: GET /katello/api/content_view_filters/:content_view_filter_id/rules)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: content_view_filters_content_view_filter_rules_index
 parameters:
   operation:
@@ -26,15 +26,7 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   content_view_filter_id:
     type: string
     required: true
-    description: filter identifier-
+    description: "filter identifier"

@@ -2,7 +2,7 @@
 description: "Show an image (resource: GET /api/architectures/:architecture_id/images/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: architectures_images_architecture_id_showimages
 parameters:
   operation:
@@ -26,26 +26,18 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
   compute_resource_id:
     type: string
     required: false
-    description: ID of compute resource-
+    description: "ID of compute resource"
   architecture_id:
     type: string
     required: true
-    description: ID of architecture-
+    description: "ID of architecture"
   operatingsystem_id:
     type: string
     required: false
-    description: ID of operating system-
+    description: "ID of operating system"

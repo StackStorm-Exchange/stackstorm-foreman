@@ -2,7 +2,7 @@
 description: "Create an LDAP authentication source (resource: POST /api/auth_source_ldaps)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: auth_source_ldaps_create
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   auth_source_ldap:
     type: object
     required: true
@@ -43,7 +35,7 @@ parameters:
             attr_mail:
               required: false
               type: string
-              description: required if onthefly_register is true-
+              description: required if onthefly_register is true
             tls:
               required: false
               type: string
@@ -59,11 +51,11 @@ parameters:
             server_type:
               required: false
               type: string
-              description: type of the LDAP server-
+              description: type of the LDAP server
             groups_base:
               required: false
               type: string
-              description: groups base DN-
+              description: groups base DN
             attr_photo:
               required: false
               type: string
@@ -79,15 +71,15 @@ parameters:
             account_password:
               required: false
               type: string
-              description: required if onthefly_register is true-
+              description: required if onthefly_register is true
             attr_firstname:
               required: false
               type: string
-              description: required if onthefly_register is true-
+              description: required if onthefly_register is true
             usergroup_sync:
               required: false
               type: string
-              description: sync external user groups on login-
+              description: sync external user groups on login
             base_dn:
               required: false
               type: string
@@ -95,25 +87,25 @@ parameters:
             attr_lastname:
               required: false
               type: string
-              description: required if onthefly_register is true-
+              description: required if onthefly_register is true
             attr_login:
               required: false
               type: string
-              description: required if onthefly_register is true-
+              description: required if onthefly_register is true
             location_ids:
               required: false
               type: array
-              description: REPLACE locations with given ids-
+              description: REPLACE locations with given ids
             port:
               required: false
               type: string
-              description: defaults to 389-
+              description: defaults to 389
             organization_ids:
               required: false
               type: array
-              description: REPLACE organizations with given ids.-
+              description: REPLACE organizations with given ids.
             ldap_filter:
               required: false
               type: string
-              description: LDAP filter-
+              description: LDAP filter
             '

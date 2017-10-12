@@ -2,7 +2,7 @@
 description: "Update a provisioning template (resource: PUT /api/provisioning_templates/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: provisioning_templates_update
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
@@ -46,19 +38,19 @@ parameters:
             operatingsystem_ids:
               required: false
               type: array
-              description: Array of operating system IDs to associate with the template-
+              description: Array of operating system IDs to associate with the template
             template_combinations_attributes:
               required: false
               type: array
-              description: Array of template combinations (hostgroup_id, environment_id)-
+              description: Array of template combinations (hostgroup_id, environment_id)
             locked:
               required: false
               type: string
-              description: Whether or not the template is locked for editing-
+              description: Whether or not the template is locked for editing
             name:
               required: false
               type: string
-              description: template name-
+              description: template name
             snippet:
               required: false
               type: string
@@ -66,7 +58,7 @@ parameters:
             template_kind_id:
               required: false
               type: string
-              description: not relevant for snippet-
+              description: not relevant for snippet
             template:
               required: false
               type: string
@@ -78,9 +70,9 @@ parameters:
             location_ids:
               required: false
               type: array
-              description: REPLACE locations with given ids-
+              description: REPLACE locations with given ids
             organization_ids:
               required: false
               type: array
-              description: REPLACE organizations with given ids.-
+              description: REPLACE organizations with given ids.
             '

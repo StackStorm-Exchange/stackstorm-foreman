@@ -2,7 +2,7 @@
 description: "List all parameters for a location (resource: GET /api/locations/:location_id/parameters)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: locations_parameters_index
 parameters:
   operation:
@@ -26,51 +26,43 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: false
-    description: ID of host-
+    description: "ID of host"
   hostgroup_id:
     type: string
     required: false
-    description: ID of host group-
+    description: "ID of host group"
   domain_id:
     type: string
     required: false
-    description: ID of domain-
+    description: "ID of domain"
   operatingsystem_id:
     type: string
     required: false
-    description: ID of operating system-
+    description: "ID of operating system"
   location_id:
     type: string
     required: true
-    description: ID of location-
+    description: "ID of location"
   organization_id:
     type: string
     required: false
-    description: ID of organization-
+    description: "ID of organization"
   search:
     type: string
     required: false
-    description: filter results-
+    description: "filter results"
   order:
     type: string
     required: false
-    description: sort results-
+    description: "sort results"
   page:
     type: string
     required: false
-    description: paginate results-
+    description: "paginate results"
   per_page:
     type: string
     required: false
-    description: number of entries per request-
+    description: "number of entries per request"

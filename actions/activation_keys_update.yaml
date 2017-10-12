@@ -2,7 +2,7 @@
 description: "Update an activation key (resource: PUT /katello/api/activation_keys/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: activation_keys_update
 parameters:
   operation:
@@ -26,55 +26,47 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
-    description: ID of the activation key-
+    description: "ID of the activation key"
   organization_id:
     type: string
     required: true
-    description: organization identifier-
+    description: "organization identifier"
   name:
     type: string
     required: false
-    description: name-
+    description: "name"
   description:
     type: string
     required: false
-    description: description-
+    description: "description"
   environment_id:
     type: string
     required: false
-    description: environment id-
+    description: "environment id"
   content_view_id:
     type: string
     required: false
-    description: content view id-
+    description: "content view id"
   max_hosts:
     type: string
     required: false
-    description: maximum number of registered content hosts-
+    description: "maximum number of registered content hosts"
   unlimited_hosts:
     type: string
     required: false
-    description: can the activation key have unlimited hosts-
+    description: "can the activation key have unlimited hosts"
   release_version:
     type: string
     required: false
-    description: content release version-
+    description: "content release version"
   service_level:
     type: string
     required: false
-    description: service level-
+    description: "service level"
   auto_attach:
     type: string
     required: false
-    description: auto attach subscriptions upon registration-
+    description: "auto attach subscriptions upon registration"

@@ -2,7 +2,7 @@
 description: "Show an ueber certificate for an organization (resource: GET /katello/api/organizations/:organization_id/uebercert)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: organizations_uebercerts_show
 parameters:
   operation:
@@ -26,15 +26,7 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   regenerate:
     type: string
     required: false
-    description: When set to 'True' certificate will be re-issued-
+    description: "When set to 'True' certificate will be re-issued"

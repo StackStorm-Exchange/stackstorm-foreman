@@ -2,7 +2,7 @@
 description: "List of subnets (resource: GET /api/subnets)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: subnets_index
 parameters:
   operation:
@@ -26,39 +26,31 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   domain_id:
     type: string
     required: false
-    description: ID of domain-
+    description: "ID of domain"
   location_id:
     type: numeric
     required: false
-    description: Scope by locations-
+    description: "Scope by locations"
   organization_id:
     type: numeric
     required: false
-    description: Scope by organizations-
+    description: "Scope by organizations"
   search:
     type: string
     required: false
-    description: filter results-
+    description: "filter results"
   order:
     type: string
     required: false
-    description: sort results-
+    description: "sort results"
   page:
     type: string
     required: false
-    description: paginate results-
+    description: "paginate results"
   per_page:
     type: string
     required: false
-    description: number of entries per request-
+    description: "number of entries per request"

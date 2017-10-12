@@ -2,7 +2,7 @@
 description: "Add a subscription to a host (resource: PUT /api/hosts/:host_id/subscriptions/add_subscriptions)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_host_subscriptions_add_subscriptions
 parameters:
   operation:
@@ -26,30 +26,22 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: numeric
     required: true
-    description: Id of the host-
+    description: "Id of the host"
   subscriptions:
     type: array
     required: true
     description: >
-       'description: Array of subscriptions to add-
+       'description: Array of subscriptions to add
         parameters:
             id:
               required: true
               type: string
-              description: Subscription Pool id-
+              description: Subscription Pool id
             quantity:
               required: true
               type: string
-              description: Quantity of this subscriptions to add-
+              description: Quantity of this subscriptions to add
             '

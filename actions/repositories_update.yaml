@@ -2,7 +2,7 @@
 description: "Update a repository (resource: PUT /katello/api/repositories/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: repositories_update
 parameters:
   operation:
@@ -26,47 +26,39 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   name:
     type: string
     required: false
-    description: New name for the repository-
+    description: "New name for the repository"
   id:
     type: string
     required: true
-    description: repository ID-
+    description: "repository ID"
   gpg_key_id:
     type: string
     required: false
-    description: ID of a gpg key that will be assigned to this repository-
+    description: "ID of a gpg key that will be assigned to this repository"
   unprotected:
     type: string
     required: false
-    description: true if this repository can be published via HTTP-
+    description: "true if this repository can be published via HTTP"
   checksum_type:
     type: string
     required: false
-    description: checksum of the repository, currently 'sha1' & 'sha256'are supported.'-
+    description: "checksum of the repository, currently 'sha1' & 'sha256'are supported.'"
   url:
     type: string
     required: false
-    description: the feed url of the original repository-
+    description: "the feed url of the original repository"
   docker_upstream_name:
     type: string
     required: false
-    description: name of the upstream docker repository-
+    description: "name of the upstream docker repository"
   download_policy:
     type: string
     required: false
-    description: download policy for yum repos (either 'immediate','on_demand', or 'background')-
+    description: "download policy for yum repos (either 'immediate','on_demand', or 'background')"
   mirror_on_sync:
     type: string
     required: false
-    description: true if this repository when synced has to be mirrored from the source andstale rpms removed.-
+    description: "true if this repository when synced has to be mirrored from the source andstale rpms removed."

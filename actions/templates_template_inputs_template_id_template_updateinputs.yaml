@@ -2,7 +2,7 @@
 description: "Update a template input (resource: PUT /api/templates/:template_id/template_inputs/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: templates_template_inputs_template_id_template_updateinputs
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   template_id:
     type: string
     required: true
@@ -49,41 +41,41 @@ parameters:
             fact_name:
               required: false
               type: string
-              description: Fact name, used when input type is fact-
+              description: Fact name, used when input type is fact
             name:
               required: false
               type: string
-              description: Input name-
+              description: Input name
             input_type:
               required: false
               type: string
-              description: Input type-
+              description: Input type
             required:
               required: false
               type: string
-              description: Input is required-
+              description: Input is required
             puppet_parameter_class:
               required: false
               type: string
-              description: Puppet class name, used when input type is puppet_parameter-
+              description: Puppet class name, used when input type is puppet_parameter
             puppet_parameter_name:
               required: false
               type: string
-              description: Puppet parameter name, used when input type is puppet_parameter-
+              description: Puppet parameter name, used when input type is puppet_parameter
             variable_name:
               required: false
               type: string
-              description: Variable name, used when input type is variable-
+              description: Variable name, used when input type is variable
             options:
               required: false
               type: array
-              description: Selectable values for user inputs-
+              description: Selectable values for user inputs
             advanced:
               required: false
               type: string
-              description: Input is advanced-
+              description: Input is advanced
             description:
               required: false
               type: string
-              description: Input description-
+              description: Input description
             '

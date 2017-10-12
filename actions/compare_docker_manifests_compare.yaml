@@ -2,7 +2,7 @@
 description: "List docker_manifests (resource: GET /katello/api/compare)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: compare_docker_manifests_compare
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   content_view_version_ids:
     type: array
     required: false
-    description: content view versions to compare-
+    description: "content view versions to compare"
   repository_id:
     type: string
     required: false
-    description: Library repository id to restrict comparisons to-
+    description: "Library repository id to restrict comparisons to"

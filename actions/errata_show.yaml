@@ -2,7 +2,7 @@
 description: "Show an erratum (resource: GET /katello/api/errata/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: errata_show
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   repository_id:
     type: string
     required: false
-    description: repository identifier-
+    description: "repository identifier"
   id:
     type: string
     required: true
-    description: an erratum identifier-
+    description: "an erratum identifier"

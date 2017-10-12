@@ -2,7 +2,7 @@
 description: "List docker_manifests (resource: GET /katello/api/docker_manifests)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: docker_manifests_index
 parameters:
   operation:
@@ -26,70 +26,62 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   organization_id:
     type: string
     required: false
-    description: organization identifier-
+    description: "organization identifier"
   content_view_version_id:
     type: string
     required: false
-    description: content view version identifier-
+    description: "content view version identifier"
   content_view_filter_id:
     type: string
     required: false
-    description: content view filter identifier-
+    description: "content view filter identifier"
   repository_id:
     type: string
     required: false
-    description: repository identifier-
+    description: "repository identifier"
   environment_id:
     type: string
     required: false
-    description: environment identifier-
+    description: "environment identifier"
   ids:
     type: array
     required: false
-    description: ids to filter content by-
+    description: "ids to filter content by"
   search:
     type: string
     required: false
-    description: Search string-
+    description: "Search string"
   page:
     type: string
     required: false
-    description: Page number, starting at 1-
+    description: "Page number, starting at 1"
   per_page:
     type: string
     required: false
-    description: Number of results per page to return-
+    description: "Number of results per page to return"
   order:
     type: string
     required: false
-    description: Sort field and order, eg. 'name DESC'-
+    description: "Sort field and order, eg. 'name DESC'"
   full_results:
     type: string
     required: false
-    description: Whether or not to show all results-
+    description: "Whether or not to show all results"
   sort:
     type: object
     required: false
     description: >
-       'description: Hash version of 'order' param-
+       'description: Hash version of 'order' param
         parameters:
             by:
               required: false
               type: string
-              description: Field to sort the results on-
+              description: Field to sort the results on
             order:
               required: false
               type: string
-              description: How to order the sorted results (e.g. ASC for ascending)-
+              description: How to order the sorted results (e.g. ASC for ascending)
             '

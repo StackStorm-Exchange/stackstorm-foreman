@@ -2,7 +2,7 @@
 description: "List errata available for the content host (resource: GET /api/hosts/:host_id/errata)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_host_errata_index
 parameters:
   operation:
@@ -26,58 +26,50 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: true
-    description: UUID of the content host-
+    description: "UUID of the content host"
   content_view_id:
     type: string
     required: false
-    description: Calculate Applicable Errata based on a particular Content View-
+    description: "Calculate Applicable Errata based on a particular Content View"
   environment_id:
     type: string
     required: false
-    description: Calculate Applicable Errata based on a particular Environment-
+    description: "Calculate Applicable Errata based on a particular Environment"
   search:
     type: string
     required: false
-    description: Search string-
+    description: "Search string"
   page:
     type: string
     required: false
-    description: Page number, starting at 1-
+    description: "Page number, starting at 1"
   per_page:
     type: string
     required: false
-    description: Number of results per page to return-
+    description: "Number of results per page to return"
   order:
     type: string
     required: false
-    description: Sort field and order, eg. 'name DESC'-
+    description: "Sort field and order, eg. 'name DESC'"
   full_results:
     type: string
     required: false
-    description: Whether or not to show all results-
+    description: "Whether or not to show all results"
   sort:
     type: object
     required: false
     description: >
-       'description: Hash version of 'order' param-
+       'description: Hash version of 'order' param
         parameters:
             by:
               required: false
               type: string
-              description: Field to sort the results on-
+              description: Field to sort the results on
             order:
               required: false
               type: string
-              description: How to order the sorted results (e.g. ASC for ascending)-
+              description: How to order the sorted results (e.g. ASC for ascending)
             '

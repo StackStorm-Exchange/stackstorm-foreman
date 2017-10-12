@@ -2,7 +2,7 @@
 description: "List all interfaces for domain (resource: GET /api/domains/:domain_id/interfaces)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: domains_interfaces_index
 parameters:
   operation:
@@ -26,31 +26,23 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: true
-    description: ID or name of host-
+    description: "ID or name of host"
   domain_id:
     type: string
     required: true
-    description: ID or name of domain-
+    description: "ID or name of domain"
   subnet_id:
     type: string
     required: false
-    description: ID or name of subnet-
+    description: "ID or name of subnet"
   page:
     type: string
     required: false
-    description: paginate results-
+    description: "paginate results"
   per_page:
     type: string
     required: false
-    description: number of entries per request-
+    description: "number of entries per request"

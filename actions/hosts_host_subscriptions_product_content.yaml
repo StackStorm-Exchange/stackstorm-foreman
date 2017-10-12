@@ -2,7 +2,7 @@
 description: "Get content and overrides for the host (resource: GET /api/hosts/:host_id/subscriptions/product_content)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_host_subscriptions_product_content
 parameters:
   operation:
@@ -26,15 +26,7 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: true
-    description: Id of the host-
+    description: "Id of the host"

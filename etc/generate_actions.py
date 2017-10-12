@@ -1,28 +1,28 @@
 #!/usr/bin/env python
 import argparse
-import collections
 import datetime
 import glob
 import inspect
 import jinja2
-import json
 import os
 import re
 import urllib3
+
+from foreman.client import Foreman
+from foreman.client import Resource
+from HTMLParser import HTMLParser
 from ruamel.yaml import YAML
 from ruamel.yaml.compat import StringIO
 
 urllib3.disable_warnings()
 
-from foreman.client import Foreman
-from foreman.client import Resource
 
-FOREMAN_SERVER   = os.environ.get('FOREMAN_SERVER')
+FOREMAN_SERVER = os.environ.get('FOREMAN_SERVER')
 FOREMAN_USERNAME = os.environ.get('FOREMAN_USERNAME')
 FOREMAN_PASSWORD = os.environ.get('FOREMAN_PASSWORD')
 
 API_DEFINITION_GLOB_PATH = "./api_definitions*"
-ACTION_TEMPLATE_PATH = "./action.j2.yaml"
+ACTION_TEMPLATE_PATH = "./action.yaml.j2"
 ACTION_DIRECTORY = "../actions"
 
 
@@ -36,7 +36,8 @@ class Cli:
 
         # fetch-api
         fetch_parser = subparsers.add_parser('fetch-api',
-                                             help="Retrieves the API definitions from a running server")
+                                             help=("Retrieves the API definitions"
+                                                   " from a running server"))
         fetch_parser.add_argument('-s', '--server', default=FOREMAN_SERVER,
                                   help="Hostname/ip of the Foreman server",
                                   required=True)
@@ -46,24 +47,22 @@ class Cli:
         fetch_parser.add_argument('-p', '--password', default=FOREMAN_PASSWORD,
                                   help="Password to login to the Foreman server")
 
-
         # generate
         generate_parser = subparsers.add_parser('generate',
                                              help="Generates actions for the Foreman API")
         action_dir = os.path.join(os.path.dirname(__file__), '..', 'actions')
         generate_parser.add_argument('-s', '--server', default=FOREMAN_SERVER,
-                                     help="Hostname/ip of the Foreman server",
-                                     required=True)
+                                     help="Hostname/ip of the Foreman server")
         generate_parser.add_argument('-u', '--username', default=FOREMAN_USERNAME,
-                                     help="Username to login to the Foreman server",
-                                     required=True)
+                                     help="Username to login to the Foreman server")
         generate_parser.add_argument('-p', '--password', default=FOREMAN_PASSWORD,
                                      help="Password to login to the Foreman server")
         generate_parser.add_argument('-d', '--directory', default=action_dir,
                                      help="Directory where actions should be written to")
         generate_parser.add_argument('-a', '--api-definition',
-                                     help=("Path to the API defitions directory retrieved from 'fetch-api'."
-                                           " If unspecified, we'll lookup the newest one based on file name."))
+                                     help=("Path to the API defitions directory"
+                                           " retrieved from 'fetch-api'. If unspecified,"
+                                           " we'll lookup the newest one based on file name."))
 
         # examples
         subparsers.add_parser('examples',
@@ -77,15 +76,18 @@ class Cli:
 
     def examples(self):
         print "examples:\n"\
-            "  # gerenate actions from the server/\n"\
-            "  ./generate_actions.py generate\n"\
+            "  # fetch api definitions from the server/\n"\
+            "  ./generate_actions.py fetch-api -s foreman.domain.tld -u admin -p xxx\n"\
             "\n"\
-            "  # gerenate actions into an alternate directory from a specific WSDL/\n"\
-            "  ./generate_actions.py generate -d ../actions_new -w menandmice_wsdl_new.xml\n"\
-
+            "  # gerenate actions from the fetched (cached) api/\n"\
+            "  ./generate_actions.py generate -a ./api_definitions_2017_09_15/\n"\
+            "\n"\
+            "  # gerenate actions directly from the server/\n"\
+            "  ./generate_actions.py generate -s foreman.domain.tld -u admin -p xxx\n"
 
 
 class MyYAML(YAML):
+
     def dump(self, data, stream=None, **kw):
         inefficient = False
         if stream is None:
@@ -95,10 +97,21 @@ class MyYAML(YAML):
         if inefficient:
             return stream.getvalue()
 
+
 class ActionGenerator(object):
 
     def __init__(self, cli_args, **kwargs):
         self.cli_args = cli_args
+        self.action_template_params = self.load_template_params()
+        self.api_version = 2
+
+    def load_template_params(self):
+        params_yaml_str = self.jinja_render_file(ACTION_TEMPLATE_PATH,
+                                                 {'name': ''})
+        yaml = MyYAML()
+        params_dict = yaml.load(params_yaml_str)  # pylint: disable=no-member
+        params = params_dict['parameters'].keys()
+        return params
 
     def fetch_api(self):
         now = datetime.datetime.now()
@@ -106,7 +119,7 @@ class ActionGenerator(object):
         print "Using cache dir {}".format(api_definition)
         self.client = Foreman('https://{}/'.format(self.cli_args.server),
                               auth=(self.cli_args.username, self.cli_args.password),
-                              api_version=2,
+                              api_version=self.api_version,
                               use_cache=False,
                               cache_dir=api_definition)
 
@@ -114,14 +127,39 @@ class ActionGenerator(object):
         api_definition = self.cli_args.api_definition
         if not api_definition:
             api_definition_list = glob.glob(API_DEFINITION_GLOB_PATH)
-            # find newest wsdl (by name)
+            # find newest api def (by name)
             api_definition = max(api_definition_list)
+            self.client = Foreman('https://{}/'.format(self.cli_args.server),
+                                  auth=(self.cli_args.username, self.cli_args.password),
+                                  api_version=2,
+                                  use_cache=True,
+                                  cache_dir=api_definition)
+        else:
+            defs_path = os.path.join(api_definition, 'definitions')
+            api_def_paths = glob.glob('{}/*-v{}.json'.format(defs_path, self.api_version))
+            for p in api_def_paths:
+                # Filename fetched from fetch_api() has the following pattern:
+                # <version>-<api_version>.json
+                #
+                # Example:
+                #  Satellite-v2.json
+                #  1.15.1-v2.json
+                #
+                # We need to pass in <version> and <api_version> into the Foreman()
+                # constructure, so the following code pulls those variables from
+                # the filename.
+                api_def = os.path.basename(p)
+                api_def = api_def.replace('.json', '')
+                api_def_parts = api_def.split('-')
+                self.version = api_def_parts[0]
+                self.api_version = api_def_parts[1].replace('v', '')
+                break
 
-        self.client = Foreman('https://{}/'.format(self.cli_args.server),
-                              auth=(self.cli_args.username, self.cli_args.password),
-                              api_version=2,
-                              use_cache=True,
-                              cache_dir=api_definition)
+            self.client = Foreman('https://usingcache/',
+                                  version=self.version,
+                                  api_version=2,
+                                  use_cache=True,
+                                  cache_dir=api_definition)
 
         # all methods of the client
         unused = {'methods': [],
@@ -129,6 +167,7 @@ class ActionGenerator(object):
         results = {'resources': [],
                    'special_attributes': []}
         special_attributes = ['api_version', 'version']
+
         for attr in inspect.getmembers(self.client):
             if inspect.ismethod(attr[1]):
                 unused['methods'].append(attr)
@@ -141,28 +180,41 @@ class ActionGenerator(object):
             else:
                 unused['unknown_extras'].append(attr)
 
-        # resources
-        self.generate_resources(results['resources'])
+        # get all of the methods
+        method_defs = self.gather_method_defs(results['resources'])
 
+        # convert the methods into actions
+        self.render_method_defs_into_actions(method_defs)
 
-    def generate_resources(self, resource_list):
-        methods = []
+    def gather_method_defs(self, resource_list):
+        method_defs = []
         for resource_name, resource in resource_list:
             for member_name, member in inspect.getmembers(resource):
-                if ((member_name in resource._own_methods) or
-                    (not member_name.startswith('_'))):
-                    method_def = member.defs
-                    method = {'name': '{}_{}'.format(method_def.resource,
-                                                     method_def.name),
-                              'operation': '{}.{}'.format(method_def.resource,
-                                                          method_def.name),
-                              'description': '{} (resource: {} {})'.format(method_def.short_desc,
-                                                                           method_def.http_method,
-                                                                           method_def.url)}
+                if (((member_name in resource._own_methods) or
+                     (not member_name.startswith('_')))):
+                    method_defs.append(member.defs)
+        return method_defs
 
-                    method['parameters'] = self.parse_params(method_def.params)
-                    self.render_action(method)
-                    methods.append(method)
+    def render_method_defs_into_actions(self, method_defs):
+        for method_def in method_defs:
+            action_name = "{}_{}".format(method_def.resource, method_def.name)
+            action = {'name': '{}'.format(action_name),
+                      'operation': '{}.{}'.format(method_def.resource,
+                                                  method_def.name),
+                      'description': '{} (resource: {} {})'.format(method_def.short_desc,
+                                                                   method_def.http_method,
+                                                                   method_def.url),
+                      'entry_point': 'lib/action.py'}
+            action['parameters'] = self.parse_params(method_def.params)
+            print action['operation']
+
+            for param in action['parameters']:
+                if param['name'] in self.action_template_params:
+                    raise RuntimeError("Parameter '{}' conflicts with the builtin"
+                                       " parameter in action '{}'.".format(param['name'],
+                                                                           action_name))
+
+            self.render_action(action)
 
     def parse_param_type(self, param_type):
         t = param_type
@@ -172,17 +224,26 @@ class ActionGenerator(object):
 
     def dict_to_yaml(self, d):
         yaml = MyYAML()
-        yaml.indent(sequence=4, offset=2)
+        # have it indent arrays with an extra couple of spaces
+        yaml.indent(sequence=4, offset=2)  # pylint: disable=no-member
+        # prevent line wrapping
+        yaml.width = 99999
         return yaml.dump(d)
 
     def clean_desc(self, desc):
-        from HTMLParser import HTMLParser
-        htmlparser = HTMLParser()
-        desc = desc.encode('punycode')
-        desc = htmlparser.unescape(desc)
+        # there were a few description strings with unicode characters (quotes)
+        # this removes them
+        desc = desc.replace(u"\u201c", '"').replace(u"\u201d", '"')
         desc = desc.replace('\n', '')
+
+        # convert HTML escaped sequences into ascii
+        htmlparser = HTMLParser()
+        desc = htmlparser.unescape(desc)
+
+        # remove HTML tags
         regex = re.compile('<.*?>')
         desc = re.sub(regex, '', desc)
+
         if not desc:
             return None
         return desc
@@ -198,9 +259,10 @@ class ActionGenerator(object):
                                         "        parameters:\n"
                                         "            {1}'".format(param['description'],
                                                                   sub_params_str))
+            elif param['description']:
+                param['description'] = '"' + param['description'] + '"'
 
         return parameters
-
 
     def gather_params(self, params):
         parameters = []
@@ -209,7 +271,7 @@ class ActionGenerator(object):
             p['name'] = param['name']
             p['description'] = self.clean_desc(param['description'])
             p['required'] = param['required']
-            p['type']= self.parse_param_type(param['expected_type'])
+            p['type'] = self.parse_param_type(param['expected_type'])
 
             if 'params' in param:
                 p['parameters'] = self.gather_sub_params(param['params'])
@@ -223,7 +285,7 @@ class ActionGenerator(object):
             p = dict()
             p['description'] = self.clean_desc(param['description'])
             p['required'] = param['required']
-            p['type']= self.parse_param_type(param['expected_type'])
+            p['type'] = self.parse_param_type(param['expected_type'])
 
             if 'params' in param:
                 p['parameters'] = self.gather_sub_params(param['params'])
@@ -241,13 +303,11 @@ class ActionGenerator(object):
         return jinja2.Environment().from_string(jinja_template_str).render(context)
 
     def render_action(self, context):
-        # print self.jinja_render_file(ACTION_TEMPLATE_PATH, context)
         action_data = self.jinja_render_file(ACTION_TEMPLATE_PATH, context)
         action_filename = "{}/{}.yaml".format(ACTION_DIRECTORY,
                                               context['name'])
         with open(action_filename, "w") as f:
             f.write(action_data)
-
 
     def run(self):
         if self.cli_args.command == "fetch-api":

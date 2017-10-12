@@ -2,7 +2,7 @@
 description: "List operating systems where this template is set as a default (resource: GET /api/config_templates/:config_template_id/os_default_templates)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: config_templates_os_default_templates_index
 parameters:
   operation:
@@ -26,31 +26,23 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   operatingsystem_id:
     type: string
     required: false
-    description: ID of operating system-
+    description: "ID of operating system"
   config_template_id:
     type: string
     required: true
-    description: ID of provisioning template-
+    description: "ID of provisioning template"
   provisioning_template_id:
     type: string
     required: false
-    description: ID of provisioning template-
+    description: "ID of provisioning template"
   page:
     type: string
     required: false
-    description: paginate results-
+    description: "paginate results"
   per_page:
     type: string
     required: false
-    description: number of entries per request-
+    description: "number of entries per request"

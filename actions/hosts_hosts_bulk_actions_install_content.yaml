@@ -2,7 +2,7 @@
 description: "Install content on one or more hosts (resource: PUT /api/hosts/bulk/install_content)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_hosts_bulk_actions_install_content
 parameters:
   operation:
@@ -26,18 +26,10 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   organization_id:
     type: string
     required: true
-    description: ID of the organization-
+    description: "ID of the organization"
   included:
     type: object
     required: true
@@ -47,11 +39,11 @@ parameters:
             search:
               required: false
               type: string
-              description: Search string for systems to perform an action on-
+              description: Search string for systems to perform an action on
             ids:
               required: false
               type: array
-              description: List of system ids to perform an action on-
+              description: List of system ids to perform an action on
             '
   excluded:
     type: object
@@ -62,13 +54,13 @@ parameters:
             ids:
               required: false
               type: array
-              description: List of system ids to exclude and not run an action on-
+              description: List of system ids to exclude and not run an action on
             '
   content_type:
     type: string
     required: true
-    description: The type of content.  The following types are supported: 'package','package_group' and 'errata'.-
+    description: "The type of content.  The following types are supported: 'package','package_group' and 'errata'."
   content:
     type: array
     required: true
-    description: List of content (e.g. package names, package group names or errata ids)-
+    description: "List of content (e.g. package names, package group names or errata ids)"

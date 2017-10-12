@@ -2,7 +2,7 @@
 description: "Update a host's interface (resource: PUT /api/hosts/:host_id/interfaces/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_interfaces_host_id_updateinterfaces
 parameters:
   operation:
@@ -26,113 +26,98 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: true
-    description: ID or name of host-
+    description: "ID or name of host"
   id:
     type: string
     required: true
-    description: ID of interface-
+    description: "ID of interface"
   interface:
     type: object
     required: true
     description: >
-       'description: interface information-
+       'description: interface information
         parameters:
             provision:
               required: false
               type: string
-              description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)?
-                Each managed hosts needs to have one provision interface.-
+              description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
             username:
               required: false
               type: string
-              description: Only for BMC interfaces.-
+              description: Only for BMC interfaces.
             password:
               required: false
               type: string
-              description: Only for BMC interfaces.-
+              description: Only for BMC interfaces.
             managed:
               required: false
               type: string
-              description: Should this interface be managed via DHCP and DNS capsule and should
-                it beconfigured during provisioning?-
+              description: Should this interface be managed via DHCP and DNS capsule and should it beconfigured during provisioning?
             name:
               required: false
               type: string
-              description: Interface's DNS name-
+              description: Interface's DNS name
             subnet_id:
               required: false
               type: numeric
-              description: Satellite subnet ID of interface-
+              description: Satellite subnet ID of interface
             ip:
               required: false
               type: string
-              description: IP address of interface-
+              description: IP address of interface
             primary:
               required: false
               type: string
-              description: Should this interface be used for constructing the FQDN of the host?
-                Eachmanaged hosts needs to have one primary interface.-
+              description: Should this interface be used for constructing the FQDN of the host? Eachmanaged hosts needs to have one primary interface.
             virtual:
               required: false
               type: string
-              description: Alias or VLAN device-
+              description: Alias or VLAN device
             attached_to:
               required: false
               type: string
-              description: Identifier of the interface to which this interface belongs, e.g. eth1.Only
-                for virtual interfaces.-
+              description: Identifier of the interface to which this interface belongs, e.g. eth1.Only for virtual interfaces.
             bond_options:
               required: false
               type: string
-              description: Space separated options, e.g. miimon=100. Only for bond interfaces.-
+              description: Space separated options, e.g. miimon=100. Only for bond interfaces.
             mac:
               required: false
               type: string
-              description: MAC address of interface. Required for managed interfaces on bare metal.-
+              description: MAC address of interface. Required for managed interfaces on bare metal.
             tag:
               required: false
               type: string
-              description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only
-                forvirtual interfaces.-
+              description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only forvirtual interfaces.
             mode:
               required: false
               type: string
-              description: Bond mode of the interface, e.g. balance-rr. Only for bond interfaces.-
+              description: Bond mode of the interface, e.g. balance-rr. Only for bond interfaces.
             provider:
               required: false
               type: string
-              description: Interface provider, e.g. IPMI. Only for BMC interfaces.-
+              description: Interface provider, e.g. IPMI. Only for BMC interfaces.
             compute_attributes:
               required: false
               type: object
-              description: Additional compute resource specific attributes for the interface.-
+              description: Additional compute resource specific attributes for the interface.
             attached_devices:
               required: false
               type: array
-              description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond
-                interfaces those are the slaves. Only for bondand bridges interfaces.-
+              description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond interfaces those are the slaves. Only for bondand bridges interfaces.
             identifier:
               required: false
               type: string
-              description: Device identifier, e.g. eth0 or eth1.1-
+              description: Device identifier, e.g. eth0 or eth1.1
             type:
               required: false
               type: string
-              description: Interface type, e.g. bmc. Default is interface-
+              description: Interface type, e.g. bmc. Default is interface
             domain_id:
               required: false
               type: numeric
-              description: Satellite domain ID of interface. Required for primary interfaces onmanaged
-                hosts.-
+              description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
             '

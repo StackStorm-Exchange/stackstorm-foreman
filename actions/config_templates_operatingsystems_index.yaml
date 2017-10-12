@@ -2,7 +2,7 @@
 description: "List all operating systems for nested provisioning template (resource: GET /api/config_templates/:config_template_id/operatingsystems)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: config_templates_operatingsystems_index
 parameters:
   operation:
@@ -26,47 +26,39 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   architecture_id:
     type: string
     required: false
-    description: ID of architecture-
+    description: "ID of architecture"
   medium_id:
     type: string
     required: false
-    description: ID of medium-
+    description: "ID of medium"
   ptable_id:
     type: string
     required: false
-    description: ID of partition table-
+    description: "ID of partition table"
   config_template_id:
     type: string
     required: true
-    description: ID of template-
+    description: "ID of template"
   provisioning_template_id:
     type: string
     required: false
-    description: ID of template-
+    description: "ID of template"
   search:
     type: string
     required: false
-    description: filter results-
+    description: "filter results"
   order:
     type: string
     required: false
-    description: sort results-
+    description: "sort results"
   page:
     type: string
     required: false
-    description: paginate results-
+    description: "paginate results"
   per_page:
     type: string
     required: false
-    description: number of entries per request-
+    description: "number of entries per request"

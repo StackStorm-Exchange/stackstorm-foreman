@@ -2,7 +2,7 @@
 description: "List environment paths (resource: GET /katello/api/organizations/:organization_id/environments/paths)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: organizations_lifecycle_environments_paths
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   organization_id:
     type: string
     required: true
-    description: organization identifier-
+    description: "organization identifier"
   permission_type:
     type: string
     required: false
-    description: The associated permission type. One of (readable | promotable) Default:readable-
+    description: "The associated permission type. One of (readable | promotable) Default:readable"

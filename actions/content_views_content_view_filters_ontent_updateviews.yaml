@@ -2,7 +2,7 @@
 description: "update a filter (resource: put /katello/api/content_views/:content_view_id/filters/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: content_views_content_view_filters_ontent_updateviews
 parameters:
   operation:
@@ -26,35 +26,27 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   content_view_id:
     type: string
     required: true
-    description: content view identifier-
+    description: "content view identifier"
   id:
     type: string
     required: true
-    description: filter identifier-
+    description: "filter identifier"
   name:
     type: string
     required: false
-    description: new name for the filter-
+    description: "new name for the filter"
   original_packages:
     type: string
     required: false
-    description: add all packages without errata to the included/excluded list. (packagefilter only)-
+    description: "add all packages without errata to the included/excluded list. (packagefilter only)"
   inclusion:
     type: string
     required: false
-    description: specifies if content should be included or excluded, default:inclusion=false-
+    description: "specifies if content should be included or excluded, default:inclusion=false"
   repository_ids:
     type: array
     required: false
-    description: list of repository ids-
+    description: "list of repository ids"

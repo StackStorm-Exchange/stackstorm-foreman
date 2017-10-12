@@ -2,7 +2,7 @@
 description: "Set content overrides for the host (resource: PUT /api/hosts/:host_id/subscriptions/content_override)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_host_subscriptions_content_override
 parameters:
   operation:
@@ -26,23 +26,15 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: true
-    description: Id of the content host-
+    description: "Id of the content host"
   content_label:
     type: string
     required: true
-    description: Label of the content-
+    description: "Label of the content"
   value:
     type: string
     required: true
-    description: Override to 0/1, or 'default'-
+    description: "Override to 0/1, or 'default'"

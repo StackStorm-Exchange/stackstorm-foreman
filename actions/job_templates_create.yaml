@@ -2,7 +2,7 @@
 description: "Create a job template (resource: POST /api/job_templates)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: job_templates_create
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   job_template:
     type: object
     required: true
@@ -43,17 +35,15 @@ parameters:
             locked:
               required: false
               type: string
-              description: Whether or not the template is locked for editing-
+              description: Whether or not the template is locked for editing
             name:
               required: true
               type: string
-              description: Template name-
+              description: Template name
             description_format:
               required: false
               type: string
-              description: This template is used to generate the description. Input values can
-                be usedusing the syntax %{package}. You may also include the job category andtemplate
-                name using %{job_category} and %{template_name}.-
+              description: This template is used to generate the description. Input values can be usedusing the syntax %{package}. You may also include the job category andtemplate name using %{job_category} and %{template_name}.
             snippet:
               required: false
               type: string
@@ -61,28 +51,25 @@ parameters:
             ssh:
               required: false
               type: object
-              description: SSH provider specific options-
+              description: SSH provider specific options
               parameters:
                 effective_user:
                   required: false
                   type: object
-                  description: Effective user options-
+                  description: Effective user options
                   parameters:
                     overridable:
                       required: false
                       type: string
-                      description: Whether it should be allowed to override the effective user
-                        from theinvocation form.-
+                      description: Whether it should be allowed to override the effective user from theinvocation form.
                     value:
                       required: false
                       type: string
-                      description: What user should be used to run the script (using sudo-like
-                        mechanisms)-
+                      description: What user should be used to run the script (using sudo-like mechanisms)
                     current_user:
                       required: false
                       type: string
-                      description: Whether the current user login should be used as the effective
-                        user-
+                      description: Whether the current user login should be used as the effective user
             template:
               required: true
               type: string
@@ -90,7 +77,7 @@ parameters:
             job_category:
               required: true
               type: string
-              description: Job category-
+              description: Job category
             audit_comment:
               required: false
               type: string
@@ -98,13 +85,13 @@ parameters:
             location_ids:
               required: false
               type: array
-              description: REPLACE locations with given ids-
+              description: REPLACE locations with given ids
             organization_ids:
               required: false
               type: array
-              description: REPLACE organizations with given ids.-
+              description: REPLACE organizations with given ids.
             provider_type:
               required: true
               type: string
-              description: Provider type-
+              description: Provider type
             '

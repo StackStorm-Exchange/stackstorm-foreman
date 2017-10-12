@@ -2,7 +2,7 @@
 description: "List of Products for sync plan (resource: GET /katello/api/sync_plans/:sync_plan_id/products)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: sync_plans_products_index
 parameters:
   operation:
@@ -26,78 +26,70 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   organization_id:
     type: string
     required: true
-    description: Filter products by organization-
+    description: "Filter products by organization"
   subscription_id:
     type: string
     required: false
-    description: Filter products by subscription-
+    description: "Filter products by subscription"
   name:
     type: string
     required: false
-    description: Filter products by name-
+    description: "Filter products by name"
   enabled:
     type: string
     required: false
-    description: Filter products by enabled or disabled-
+    description: "Filter products by enabled or disabled"
   custom:
     type: string
     required: false
-    description: Filter products by custom-
+    description: "Filter products by custom"
   include_available_content:
     type: string
     required: false
-    description: Whether to include available content attribute in results-
+    description: "Whether to include available content attribute in results"
   sync_plan_id:
     type: string
     required: true
-    description: Filter products by sync plan id-
+    description: "Filter products by sync plan id"
   available_for:
     type: string
     required: false
-    description: Interpret specified object to return only Products that can be associatedwith specified object.  Only 'sync_plan' is supported.-
+    description: "Interpret specified object to return only Products that can be associatedwith specified object.  Only 'sync_plan' is supported."
   search:
     type: string
     required: false
-    description: Search string-
+    description: "Search string"
   page:
     type: string
     required: false
-    description: Page number, starting at 1-
+    description: "Page number, starting at 1"
   per_page:
     type: string
     required: false
-    description: Number of results per page to return-
+    description: "Number of results per page to return"
   order:
     type: string
     required: false
-    description: Sort field and order, eg. 'name DESC'-
+    description: "Sort field and order, eg. 'name DESC'"
   full_results:
     type: string
     required: false
-    description: Whether or not to show all results-
+    description: "Whether or not to show all results"
   sort:
     type: object
     required: false
     description: >
-       'description: Hash version of 'order' param-
+       'description: Hash version of 'order' param
         parameters:
             by:
               required: false
               type: string
-              description: Field to sort the results on-
+              description: Field to sort the results on
             order:
               required: false
               type: string
-              description: How to order the sorted results (e.g. ASC for ascending)-
+              description: How to order the sorted results (e.g. ASC for ascending)
             '

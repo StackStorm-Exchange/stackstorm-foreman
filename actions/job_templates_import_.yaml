@@ -2,7 +2,7 @@
 description: "Import a job template from ERB (resource: POST /api/job_templates/import)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: job_templates_import_
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   template:
     type: string
     required: true
-    description: Template ERB-
+    description: "Template ERB"
   overwrite:
     type: string
     required: false
-    description: Overwrite template if it already exists-
+    description: "Overwrite template if it already exists"

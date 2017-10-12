@@ -2,7 +2,7 @@
 description: "Update a puppet module associated with the content view (resource: PUT /katello/api/content_views/:content_view_id/content_view_puppet_modules/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: content_views_content_view_puppet_modules_ontent_updateviews
 parameters:
   operation:
@@ -26,31 +26,23 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   content_view_id:
     type: string
     required: true
-    description: content view identifier-
+    description: "content view identifier"
   id:
     type: string
     required: true
-    description: puppet module ID-
+    description: "puppet module ID"
   name:
     type: string
     required: false
-    description: name of the puppet module-
+    description: "name of the puppet module"
   author:
     type: string
     required: false
-    description: author of the puppet module-
+    description: "author of the puppet module"
   uuid:
     type: string
     required: false
-    description: the uuid of the puppet module to associate-
+    description: "the uuid of the puppet module to associate"

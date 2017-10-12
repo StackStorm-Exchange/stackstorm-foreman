@@ -2,7 +2,7 @@
 description: "Create a host collection (resource: POST /katello/api/host_collections)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: host_collections_create
 parameters:
   operation:
@@ -26,34 +26,26 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   organization_id:
     type: string
     required: true
-    description: organization identifier-
+    description: "organization identifier"
   name:
     type: string
     required: true
-    description: Host Collection name-
+    description: "Host Collection name"
   description:
     type: string
     required: false
   host_ids:
     type: array
     required: false
-    description: List of host ids to replace the hosts in host collection-
+    description: "List of host ids to replace the hosts in host collection"
   max_hosts:
     type: numeric
     required: false
-    description: Maximum number of hosts in the host collection-
+    description: "Maximum number of hosts in the host collection"
   unlimited_hosts:
     type: string
     required: false
-    description: Whether or not the host collection may have unlimited hosts-
+    description: "Whether or not the host collection may have unlimited hosts"

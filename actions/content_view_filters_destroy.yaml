@@ -2,7 +2,7 @@
 description: "delete a filter (resource: delete /katello/api/content_view_filters/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: content_view_filters_destroy
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   content_view_id:
     type: string
     required: false
-    description: content view identifier-
+    description: "content view identifier"
   id:
     type: string
     required: true
-    description: filter identifier-
+    description: "filter identifier"

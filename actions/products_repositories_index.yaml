@@ -2,7 +2,7 @@
 description: "List of repositories for a product (resource: GET /katello/api/products/:product_id/repositories)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: products_repositories_index
 parameters:
   operation:
@@ -26,90 +26,82 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   organization_id:
     type: string
     required: true
-    description: ID of an organization to show repositories in-
+    description: "ID of an organization to show repositories in"
   product_id:
     type: string
     required: true
-    description: ID of a product to show repositories of-
+    description: "ID of a product to show repositories of"
   environment_id:
     type: string
     required: false
-    description: ID of an environment to show repositories in-
+    description: "ID of an environment to show repositories in"
   content_view_id:
     type: string
     required: false
-    description: ID of a content view to show repositories in-
+    description: "ID of a content view to show repositories in"
   content_view_version_id:
     type: string
     required: false
-    description: ID of a content view version to show repositories in-
+    description: "ID of a content view version to show repositories in"
   erratum_id:
     type: string
     required: false
-    description: Id of an erratum to find repositories that contain the erratum-
+    description: "Id of an erratum to find repositories that contain the erratum"
   rpm_id:
     type: string
     required: false
-    description: Id of a package to find repositories that contain the rpm-
+    description: "Id of a package to find repositories that contain the rpm"
   library:
     type: string
     required: false
-    description: show repositories in Library and the default content view-
+    description: "show repositories in Library and the default content view"
   content_type:
     type: string
     required: false
-    description: limit to only repositories of this type-
+    description: "limit to only repositories of this type"
   name:
     type: string
     required: false
-    description: name of the repository-
+    description: "name of the repository"
   available_for:
     type: string
     required: false
-    description: interpret specified object to return only Repositories that can beassociated with specified object.  Only 'content_view' issupported.-
+    description: "interpret specified object to return only Repositories that can beassociated with specified object.  Only 'content_view' issupported."
   search:
     type: string
     required: false
-    description: Search string-
+    description: "Search string"
   page:
     type: string
     required: false
-    description: Page number, starting at 1-
+    description: "Page number, starting at 1"
   per_page:
     type: string
     required: false
-    description: Number of results per page to return-
+    description: "Number of results per page to return"
   order:
     type: string
     required: false
-    description: Sort field and order, eg. 'name DESC'-
+    description: "Sort field and order, eg. 'name DESC'"
   full_results:
     type: string
     required: false
-    description: Whether or not to show all results-
+    description: "Whether or not to show all results"
   sort:
     type: object
     required: false
     description: >
-       'description: Hash version of 'order' param-
+       'description: Hash version of 'order' param
         parameters:
             by:
               required: false
               type: string
-              description: Field to sort the results on-
+              description: Field to sort the results on
             order:
               required: false
               type: string
-              description: How to order the sorted results (e.g. ASC for ascending)-
+              description: How to order the sorted results (e.g. ASC for ascending)
             '

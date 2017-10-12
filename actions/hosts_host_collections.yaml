@@ -2,7 +2,7 @@
 description: "Alter a hosts host collections (resource: PUT /api/hosts/:host_id/host_collections)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_host_collections
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: true
-    description: The id of the host to alter-
+    description: "The id of the host to alter"
   host_collection_ids:
     type: array
     required: true
-    description: List of host collection ids to update-
+    description: "List of host collection ids to update"

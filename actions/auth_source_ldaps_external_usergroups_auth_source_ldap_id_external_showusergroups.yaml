@@ -2,7 +2,7 @@
 description: "Show an external user group for LDAP authentication source (resource: GET /api/auth_source_ldaps/:auth_source_ldap_id/external_usergroups/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: auth_source_ldaps_external_usergroups_auth_source_ldap_id_external_showusergroups
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   usergroup_id:
     type: string
     required: true
-    description: ID or name of user group-
+    description: "ID or name of user group"
   id:
     type: string
     required: true
-    description: ID or name of external user group-
+    description: "ID or name of external user group"

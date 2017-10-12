@@ -2,7 +2,7 @@
 description: "Show a subscription (resource: GET /katello/api/subscriptions/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: subscriptions_show
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   organization_id:
     type: string
     required: false
-    description: Organization identifier-
+    description: "Organization identifier"
   id:
     type: string
     required: true
-    description: Subscription identifier-
+    description: "Subscription identifier"

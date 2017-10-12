@@ -2,7 +2,7 @@
 description: "Update a subnet (resource: PUT /api/subnets/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: subnets_update
 parameters:
   operation:
@@ -26,18 +26,10 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
-    description: Subnet numeric identifier-
+    description: "Subnet numeric identifier"
   subnet:
     type: object
     required: true
@@ -47,71 +39,69 @@ parameters:
             boot_mode:
               required: false
               type: string
-              description: Default boot mode for interfaces assigned to this subnet, valid values
-                areStatic, DHCP-x245dia0hh
+              description: Default boot mode for interfaces assigned to this subnet, valid values are"Static", "DHCP"
             dns_primary:
               required: false
               type: string
-              description: Primary DNS for this subnet-
+              description: Primary DNS for this subnet
             from:
               required: false
               type: string
-              description: Starting IP Address for IP auto suggestion-
+              description: Starting IP Address for IP auto suggestion
             name:
               required: false
               type: string
-              description: Subnet name-
+              description: Subnet name
             tftp_id:
               required: false
               type: string
-              description: TFTP Capsule to use within this subnet-
+              description: TFTP Capsule to use within this subnet
             ipam:
               required: false
               type: string
-              description: IP Address auto suggestion mode for this subnet, valid values are DHCP,Internal
-                DB, None-2976dgan9foh
+              description: IP Address auto suggestion mode for this subnet, valid values are "DHCP","Internal DB", "None"
             mask:
               required: false
               type: string
-              description: Netmask for this subnet-
+              description: Netmask for this subnet
             vlanid:
               required: false
               type: string
-              description: VLAN ID for this subnet-
+              description: VLAN ID for this subnet
             dhcp_id:
               required: false
               type: string
-              description: DHCP Capsule to use within this subnet-
+              description: DHCP Capsule to use within this subnet
             to:
               required: false
               type: string
-              description: Ending IP Address for IP auto suggestion-
+              description: Ending IP Address for IP auto suggestion
             location_ids:
               required: false
               type: array
-              description: REPLACE locations with given ids-
+              description: REPLACE locations with given ids
             dns_id:
               required: false
               type: string
-              description: DNS Capsule to use within this subnet-
+              description: DNS Capsule to use within this subnet
             domain_ids:
               required: false
               type: array
-              description: Domains in which this subnet is part-
+              description: Domains in which this subnet is part
             dns_secondary:
               required: false
               type: string
-              description: Secondary DNS for this subnet-
+              description: Secondary DNS for this subnet
             gateway:
               required: false
               type: string
-              description: Primary DNS for this subnet-
+              description: Primary DNS for this subnet
             organization_ids:
               required: false
               type: array
-              description: REPLACE organizations with given ids.-
+              description: REPLACE organizations with given ids.
             network:
               required: false
               type: string
-              description: Subnet network-
+              description: Subnet network
             '

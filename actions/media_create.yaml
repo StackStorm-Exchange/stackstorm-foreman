@@ -2,7 +2,7 @@
 description: "Create a medium (resource: POST /api/media)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: media_create
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   medium:
     type: object
     required: true
@@ -43,12 +35,11 @@ parameters:
             name:
               required: true
               type: string
-              description: Name of media-
+              description: Name of media
             os_family:
               required: false
               type: string
-              description: 'Operating system family, available values: AIX, Altlinux, Archlinux,Coreos,
-                Debian, Freebsd, Gentoo, Junos, NXOS, Redhat, Solaris, Suse,Windows-'
+              description: 'Operating system family, available values: AIX, Altlinux, Archlinux,Coreos, Debian, Freebsd, Gentoo, Junos, NXOS, Redhat, Solaris, Suse,Windows'
             operatingsystem_ids:
               required: false
               type: array
@@ -56,17 +47,13 @@ parameters:
             path:
               required: true
               type: string
-              description: The path to the medium, can be a URL or a valid NFS server (exclusive
-                ofthe architecture).for example mirror.centos.org/centos/$version/os/$archwhere
-                $arch will be substituted for the host's actual OS architectureand $version, $major
-                and $minor will be substituted for the version of theoperating system.Solaris
-                and Debian media may also use $release.-
+              description: The path to the medium, can be a URL or a valid NFS server (exclusive ofthe architecture).for example mirror.centos.org/centos/$version/os/$archwhere $arch will be substituted for the host's actual OS architectureand $version, $major and $minor will be substituted for the version of theoperating system.Solaris and Debian media may also use $release.
             location_ids:
               required: false
               type: array
-              description: REPLACE locations with given ids-
+              description: REPLACE locations with given ids
             organization_ids:
               required: false
               type: array
-              description: REPLACE organizations with given ids.-
+              description: REPLACE organizations with given ids.
             '

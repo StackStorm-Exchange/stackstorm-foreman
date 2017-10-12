@@ -2,7 +2,7 @@
 description: "Update a sync plan (resource: PUT /katello/api/sync_plans/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: sync_plans_update
 parameters:
   operation:
@@ -26,39 +26,31 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   organization_id:
     type: string
     required: false
-    description: Filter sync plans by organization name or label-
+    description: "Filter sync plans by organization name or label"
   id:
     type: string
     required: true
-    description: sync plan numeric identifier-
+    description: "sync plan numeric identifier"
   name:
     type: string
     required: false
-    description: sync plan name-
+    description: "sync plan name"
   interval:
     type: string
     required: false
-    description: how often synchronization should run-
+    description: "how often synchronization should run"
   sync_date:
     type: string
     required: false
-    description: start datetime of synchronization-
+    description: "start datetime of synchronization"
   description:
     type: string
     required: false
-    description: sync plan description-
+    description: "sync plan description"
   enabled:
     type: string
     required: false
-    description: enables or disables synchronization-
+    description: "enables or disables synchronization"

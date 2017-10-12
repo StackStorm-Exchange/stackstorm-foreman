@@ -2,7 +2,7 @@
 description: "Show releases available for the content host (resource: GET /katello/api/systems/:id/releases)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: systems_releases
 parameters:
   operation:
@@ -26,15 +26,7 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
-    description: UUID of the content host-
+    description: "UUID of the content host"

@@ -2,7 +2,7 @@
 description: "Update a user group (resource: PUT /api/usergroups/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: usergroups_update
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
@@ -46,7 +38,7 @@ parameters:
             admin:
               required: false
               type: string
-              description: is an admin user group-
+              description: is an admin user group
             user_ids:
               required: false
               type: array

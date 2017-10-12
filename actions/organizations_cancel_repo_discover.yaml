@@ -2,7 +2,7 @@
 description: "Cancel repository discovery (resource: PUT /katello/api/organizations/:label/cancel_repo_discover)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: organizations_cancel_repo_discover
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   label:
     type: string
     required: true
-    description: Organization label-
+    description: "Organization label"
   url:
     type: string
     required: false
-    description: base url to perform repo discovery on-
+    description: "base url to perform repo discovery on"

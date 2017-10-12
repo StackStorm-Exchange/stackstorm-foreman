@@ -2,7 +2,7 @@
 description: "Create a discovery rule (resource: POST /api/v2/discovery_rules)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: discovery_rules_create
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   discovery_rule:
     type: object
     required: false
@@ -43,31 +35,29 @@ parameters:
             search:
               required: true
               type: string
-              description: query to match discovered hosts for the particular rule-
+              description: query to match discovered hosts for the particular rule
             name:
               required: true
               type: string
-              description: represents rule name shown to the users-
+              description: represents rule name shown to the users
             hostname:
               required: false
               type: string
-              description: defines a pattern to assign human-readable hostnames to the matching
-                hosts-
+              description: defines a pattern to assign human-readable hostnames to the matching hosts
             enabled:
               required: false
               type: string
-              description: flag is used for temporary shutdown of rules-
+              description: flag is used for temporary shutdown of rules
             hostgroup_id:
               required: true
               type: numeric
-              description: the hostgroup that is used to auto provision a host-
+              description: the hostgroup that is used to auto provision a host
             max_count:
               required: false
               type: numeric
-              description: enables to limit maximum amount of provisioned hosts per rule-
+              description: enables to limit maximum amount of provisioned hosts per rule
             priority:
               required: false
               type: numeric
-              description: puts the rules in order, low numbers go first. Must be greater then
-                zero-
+              description: puts the rules in order, low numbers go first. Must be greater then zero
             '

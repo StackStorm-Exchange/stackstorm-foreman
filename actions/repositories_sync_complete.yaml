@@ -2,7 +2,7 @@
 description: " (resource: POST /katello/api/repositories/sync_complete)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: repositories_sync_complete
 parameters:
   operation:
@@ -26,18 +26,10 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   token:
     type: string
     required: true
-    description: shared secret token-
+    description: "shared secret token"
   payload:
     type: object
     required: true

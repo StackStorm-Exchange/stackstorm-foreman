@@ -2,7 +2,7 @@
 description: "Upload facts for a host, creating the host if required (resource: POST /api/v2/discovered_hosts/facts)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: discovered_hosts_facts
 parameters:
   operation:
@@ -26,15 +26,7 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   facts:
     type: object
     required: true
-    description: hash containing facts for the host with minimum set of facts:discovery_bootif, macaddress_eth0, ipaddress, ipaddress_eth0, interfaces:eth0 (example in case primary interface is named eth0)-
+    description: "hash containing facts for the host with minimum set of facts:discovery_bootif, macaddress_eth0, ipaddress, ipaddress_eth0, interfaces:eth0 (example in case primary interface is named eth0)"

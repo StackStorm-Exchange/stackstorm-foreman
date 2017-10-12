@@ -2,7 +2,7 @@
 description: "List hosts per environment (resource: GET /api/environments/:environment_id/hosts)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: environments_hosts_index
 parameters:
   operation:
@@ -26,43 +26,35 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   hostgroup_id:
     type: string
     required: false
-    description: ID of host group-
+    description: "ID of host group"
   location_id:
     type: string
     required: false
-    description: ID of location-
+    description: "ID of location"
   organization_id:
     type: string
     required: false
-    description: ID of organization-
+    description: "ID of organization"
   environment_id:
     type: string
     required: true
-    description: ID of environment-
+    description: "ID of environment"
   search:
     type: string
     required: false
-    description: filter results-
+    description: "filter results"
   order:
     type: string
     required: false
-    description: sort results-
+    description: "sort results"
   page:
     type: string
     required: false
-    description: paginate results-
+    description: "paginate results"
   per_page:
     type: string
     required: false
-    description: number of entries per request-
+    description: "number of entries per request"

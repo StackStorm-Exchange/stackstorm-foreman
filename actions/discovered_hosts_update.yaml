@@ -2,7 +2,7 @@
 description: "Provision a discovered host (resource: PUT /api/v2/discovered_hosts/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: discovered_hosts_update
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
@@ -58,7 +50,7 @@ parameters:
             ip:
               required: false
               type: string
-              description: not required if using a subnet with DHCP Capsule-
+              description: not required if using a subnet with DHCP Capsule
             provision_method:
               required: false
               type: string
@@ -106,12 +98,11 @@ parameters:
             root_pass:
               required: false
               type: string
-              description: required if value is not inherited from host group or default password
-                insettings-
+              description: required if value is not inherited from host group or default password insettings
             progress_report_id:
               required: false
               type: string
-              description: UUID to track orchestration tasks status, GET/api/orchestration/:UUID/tasks-
+              description: UUID to track orchestration tasks status, GET/api/orchestration/:UUID/tasks
             image_id:
               required: false
               type: string
@@ -119,7 +110,7 @@ parameters:
             mac:
               required: false
               type: string
-              description: not required if it's a virtual machine-
+              description: not required if it's a virtual machine
             puppet_ca_proxy_id:
               required: false
               type: string

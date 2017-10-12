@@ -2,7 +2,7 @@
 description: "Update a user (resource: PUT /api/users/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: users_update
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
@@ -54,7 +46,7 @@ parameters:
             admin:
               required: false
               type: string
-              description: is an admin account-
+              description: is an admin account
             lastname:
               required: false
               type: string
@@ -66,11 +58,11 @@ parameters:
             locale:
               required: false
               type: string
-              description: User's preferred locale-
+              description: User's preferred locale
             timezone:
               required: false
               type: string
-              description: User's timezone-
+              description: User's timezone
             mail:
               required: false
               type: string
@@ -90,9 +82,9 @@ parameters:
             location_ids:
               required: false
               type: array
-              description: REPLACE locations with given ids-
+              description: REPLACE locations with given ids
             organization_ids:
               required: false
               type: array
-              description: REPLACE organizations with given ids.-
+              description: REPLACE organizations with given ids.
             '

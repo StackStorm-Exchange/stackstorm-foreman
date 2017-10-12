@@ -2,7 +2,7 @@
 description: "Create a foreign input set (resource: POST /api/templates/:template_id/foreign_input_sets)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: templates_foreign_input_sets_create
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   template_id:
     type: string
     required: true
@@ -46,21 +38,21 @@ parameters:
             include:
               required: false
               type: string
-              description: A comma separated list of input names to be included from the foreigntemplate.-
+              description: A comma separated list of input names to be included from the foreigntemplate.
             include_all:
               required: false
               type: string
-              description: Include all inputs from the foreign template-
+              description: Include all inputs from the foreign template
             description:
               required: false
               type: string
-              description: Input set description-
+              description: Input set description
             target_template_id:
               required: true
               type: string
-              description: Target template ID-
+              description: Target template ID
             exclude:
               required: false
               type: string
-              description: A comma separated list of input names to be included from the foreigntemplate.-
+              description: A comma separated list of input names to be included from the foreigntemplate.
             '

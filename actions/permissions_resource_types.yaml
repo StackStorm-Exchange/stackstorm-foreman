@@ -2,7 +2,7 @@
 description: "List available resource types. (resource: GET /api/permissions/resource_types)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: permissions_resource_types
 parameters:
   operation:
@@ -26,11 +26,3 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false

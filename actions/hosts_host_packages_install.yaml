@@ -2,7 +2,7 @@
 description: "Install packages remotely (resource: PUT /api/hosts/:host_id/packages/install)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_host_packages_install
 parameters:
   operation:
@@ -26,23 +26,15 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: true
-    description: ID of the host-
+    description: "ID of the host"
   packages:
     type: array
     required: false
-    description: List of package names-
+    description: "List of package names"
   groups:
     type: array
     required: false
-    description: List of package group names-
+    description: "List of package group names"

@@ -2,7 +2,7 @@
 description: "Create a location (resource: POST /api/locations)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: locations_create
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   location:
     type: object
     required: true
@@ -43,11 +35,11 @@ parameters:
             realm_ids:
               required: false
               type: array
-              description: Realm IDs-
+              description: Realm IDs
             subnet_ids:
               required: false
               type: array
-              description: Subnet IDs-
+              description: Subnet IDs
             name:
               required: true
               type: string
@@ -55,7 +47,7 @@ parameters:
             config_template_ids:
               required: false
               type: array
-              description: Provisioning template IDs-
+              description: Provisioning template IDs
             description:
               required: false
               type: string
@@ -63,41 +55,41 @@ parameters:
             domain_ids:
               required: false
               type: array
-              description: Domain IDs-
+              description: Domain IDs
             hostgroup_ids:
               required: false
               type: array
-              description: Host group IDs-
+              description: Host group IDs
             parent_id:
               required: false
               type: string
-              description: Parent ID-
+              description: Parent ID
             user_ids:
               required: false
               type: array
-              description: User IDs-
+              description: User IDs
             provisioning_template_ids:
               required: false
               type: array
-              description: Provisioning template IDs-
+              description: Provisioning template IDs
             smart_proxy_ids:
               required: false
               type: array
-              description: Capsule IDs-
+              description: Capsule IDs
             environment_ids:
               required: false
               type: array
-              description: Environment IDs-
+              description: Environment IDs
             ptable_ids:
               required: false
               type: array
-              description: Partition template IDs-
+              description: Partition template IDs
             media_ids:
               required: false
               type: array
-              description: Media IDs-
+              description: Media IDs
             compute_resource_ids:
               required: false
               type: array
-              description: Compute resource IDs-
+              description: Compute resource IDs
             '

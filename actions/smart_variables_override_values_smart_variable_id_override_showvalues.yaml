@@ -2,7 +2,7 @@
 description: "Show an override value for a specific smart variable (resource: GET /api/smart_variables/:smart_variable_id/override_values/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: smart_variables_override_values_smart_variable_id_override_showvalues
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   smart_variable_id:
     type: string
     required: true

@@ -2,7 +2,7 @@
 description: "Retrieve a single errata for a host (resource: GET /api/hosts/:host_id/errata/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hosts_host_errata_host_id_showerrata
 parameters:
   operation:
@@ -26,19 +26,11 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: true
-    description: Host ID-
+    description: "Host ID"
   id:
     type: string
     required: true
-    description: Errata id of the erratum (RHSA-2012:108)-
+    description: "Errata id of the erratum (RHSA-2012:108)"

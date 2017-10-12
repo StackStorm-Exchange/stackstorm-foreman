@@ -2,7 +2,7 @@
 description: "List of smart variables for a specific host group (resource: GET /api/hostgroups/:hostgroup_id/smart_variables)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: hostgroups_smart_variables_index
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   host_id:
     type: string
     required: false
@@ -46,16 +38,16 @@ parameters:
   search:
     type: string
     required: false
-    description: filter results-
+    description: "filter results"
   order:
     type: string
     required: false
-    description: sort results-
+    description: "sort results"
   page:
     type: string
     required: false
-    description: paginate results-
+    description: "paginate results"
   per_page:
     type: string
     required: false
-    description: number of entries per request-
+    description: "number of entries per request"

@@ -2,7 +2,7 @@
 description: "Update a partition table (resource: PUT /api/ptables/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: ptables_update
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
@@ -46,11 +38,11 @@ parameters:
             host_ids:
               required: false
               type: array
-              description: Array of host IDs to associate with the partition table-
+              description: Array of host IDs to associate with the partition table
             locked:
               required: false
               type: string
-              description: Whether or not the template is locked for editing-
+              description: Whether or not the template is locked for editing
             name:
               required: false
               type: string
@@ -58,7 +50,7 @@ parameters:
             location_ids:
               required: false
               type: array
-              description: REPLACE locations with given ids-
+              description: REPLACE locations with given ids
             snippet:
               required: false
               type: string
@@ -70,7 +62,7 @@ parameters:
             operatingsystem_ids:
               required: false
               type: array
-              description: Array of operating system IDs to associate with the partition table-
+              description: Array of operating system IDs to associate with the partition table
             layout:
               required: false
               type: string
@@ -82,9 +74,9 @@ parameters:
             hostgroup_ids:
               required: false
               type: array
-              description: Array of host group IDs to associate with the partition table-
+              description: Array of host group IDs to associate with the partition table
             organization_ids:
               required: false
               type: array
-              description: REPLACE organizations with given ids.-
+              description: REPLACE organizations with given ids.
             '

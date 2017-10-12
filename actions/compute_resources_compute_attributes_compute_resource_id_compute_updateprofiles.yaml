@@ -2,7 +2,7 @@
 description: "Update a compute attributes set (resource: PUT /api/compute_resources/:compute_resource_id/compute_profiles/:compute_profile_id/compute_attributes/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: compute_resources_compute_attributes_compute_resource_id_compute_updateprofiles
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   compute_profile_id:
     type: string
     required: true

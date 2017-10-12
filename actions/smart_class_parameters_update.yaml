@@ -2,7 +2,7 @@
 description: "Update a smart class parameter (resource: PUT /api/smart_class_parameters/:id)"
 enabled: true
 runner_type: "python-script"
-entry_point: 
+entry_point: lib/action.py
 name: smart_class_parameters_update
 parameters:
   operation:
@@ -26,14 +26,6 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
-  port:
-    type: integer
-    description: "Optional override of the port in <connection>."
-    required: false
-  transport:
-    type: string
-    description: "Optional override of the transport in <connection>."
-    required: false
   id:
     type: string
     required: true
@@ -46,59 +38,57 @@ parameters:
             default_value:
               required: false
               type: string
-              description: Value to use when there is no match-
+              description: Value to use when there is no match
             validator_rule:
               required: false
               type: string
-              description: Used to enforce certain values for the parameter values-
+              description: Used to enforce certain values for the parameter values
             use_puppet_default:
               required: false
               type: string
-              description: Do not send this parameter via the ENC. Puppet will use the value definedin
-                the Puppet manifest for this parameter-
+              description: Do not send this parameter via the ENC. Puppet will use the value definedin the Puppet manifest for this parameter
             avoid_duplicates:
               required: false
               type: string
-              description: Remove duplicate values (only array type)-
+              description: Remove duplicate values (only array type)
             description:
               required: false
               type: string
-              description: Description of smart class-
+              description: Description of smart class
             override_value_order:
               required: false
               type: string
-              description: The order in which values are resolved-
+              description: The order in which values are resolved
             required:
               required: false
               type: string
-              description: If true, will raise an error if there is no default value and no matcherprovide
-                a value-
+              description: If true, will raise an error if there is no default value and no matcherprovide a value
             parameter_type:
               required: false
               type: string
-              description: Types of variable values-
+              description: Types of variable values
             hidden_value:
               required: false
               type: string
-              description: When enabled the parameter is hidden in the UI-
+              description: When enabled the parameter is hidden in the UI
             validator_type:
               required: false
               type: string
-              description: Types of validation values-
+              description: Types of validation values
             override:
               required: false
               type: string
-              description: Whether the smart class parameter value is managed by Satellite-
+              description: Whether the smart class parameter value is managed by Satellite
             path:
               required: false
               type: string
-              description: The order in which values are resolved-
+              description: The order in which values are resolved
             merge_default:
               required: false
               type: string
-              description: Include default value when merging all matching values-
+              description: Include default value when merging all matching values
             merge_overrides:
               required: false
               type: string
-              description: Merge all matching values (only array/hash type)-
+              description: Merge all matching values (only array/hash type)
             '
