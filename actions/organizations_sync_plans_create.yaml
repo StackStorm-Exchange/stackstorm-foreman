@@ -1,0 +1,52 @@
+---
+description: "Create a sync plan (resource: POST /katello/api/organizations/:organization_id/sync_plans)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: organizations_sync_plans_create
+parameters:
+  operation:
+    type: string
+    default: organizations.sync_plans_create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: string
+    required: true
+    description: "Filter sync plans by organization name or label"
+  name:
+    type: string
+    required: true
+    description: "sync plan name"
+  interval:
+    type: string
+    required: true
+    description: "how often synchronization should run"
+  sync_date:
+    type: string
+    required: true
+    description: "start datetime of synchronization"
+  description:
+    type: string
+    required: false
+    description: "sync plan description"
+  enabled:
+    type: string
+    required: true
+    description: "enables or disables synchronization"

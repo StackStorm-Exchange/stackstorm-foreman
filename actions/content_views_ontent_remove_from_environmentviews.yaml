@@ -1,0 +1,36 @@
+---
+description: "Remove a content view from an environment (resource: DELETE /katello/api/content_views/:id/environments/:environment_id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: content_views_ontent_remove_from_environmentviews
+parameters:
+  operation:
+    type: string
+    default: content_views.ontent_remove_from_environmentviews
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+    description: "content view numeric identifier"
+  environment_id:
+    type: string
+    required: true
+    description: "environment numeric identifier"

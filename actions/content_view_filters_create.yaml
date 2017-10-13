@@ -1,0 +1,56 @@
+---
+description: "create a filter for a content view (resource: post /katello/api/content_view_filters)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: content_view_filters_create
+parameters:
+  operation:
+    type: string
+    default: content_view_filters.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  content_view_id:
+    type: string
+    required: true
+    description: "content view identifier"
+  name:
+    type: string
+    required: true
+    description: "name of the filter"
+  type:
+    type: string
+    required: true
+    description: "type of filter (e.g. rpm, package_group, erratum)"
+  original_packages:
+    type: string
+    required: false
+    description: "add all packages without errata to the included/excluded list. (packagefilter only)"
+  inclusion:
+    type: string
+    required: false
+    description: "specifies if content should be included or excluded, default:inclusion=false"
+  repository_ids:
+    type: array
+    required: false
+    description: "list of repository ids"
+  description:
+    type: string
+    required: false
+    description: "description of the filter"

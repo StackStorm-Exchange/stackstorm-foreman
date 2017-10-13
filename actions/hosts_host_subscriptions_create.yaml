@@ -1,0 +1,75 @@
+---
+description: "Register a host with subscription and information. (resource: POST /api/hosts/subscriptions)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts_host_subscriptions_create
+parameters:
+  operation:
+    type: string
+    default: hosts.host_subscriptions_create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  name:
+    type: string
+    required: true
+    description: "Name of the host"
+  uuid:
+    type: string
+    required: false
+    description: "UUID to use for registered host, random uuid is generated if not provided"
+  facts:
+    type: object
+    required: false
+    description: "Key-value hash of subscription-manager facts, nesting uses a perioddelimiter (.)"
+  hypervisor_guest_uuids:
+    type: array
+    required: false
+    description: "UUIDs of the virtual guests from the host's hypervisor"
+  installed_products:
+    type: array
+    required: false
+    description: >
+       'description: List of products installed on the host
+        parameters:
+            product_id:
+              required: false
+              type: string
+              description: Product id as listed from a host's installed products,         this isnot the same product id as the products api returns
+            product_name:
+              required: false
+              type: string
+              description: Product name as listed from a host's installed products
+            '
+  release_version:
+    type: string
+    required: false
+    description: "Release version of the content host"
+  service_level:
+    type: string
+    required: false
+    description: "A service level for auto-healing process, e.g. SELF-SUPPORT"
+  lifecycle_environment_id:
+    type: number
+    required: true
+    description: "Lifecycle Environment ID"
+  content_view_id:
+    type: number
+    required: true
+    description: "Content View ID"

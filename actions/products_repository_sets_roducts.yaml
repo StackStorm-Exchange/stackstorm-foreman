@@ -1,0 +1,36 @@
+---
+description: "Get info about a repository set (resource: GET /katello/api/products/:product_id/repository_sets/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: products_repository_sets_roducts
+parameters:
+  operation:
+    type: string
+    default: products.repository_sets_roducts
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+    description: "ID of the repository set"
+  product_id:
+    type: string
+    required: true
+    description: "ID of a product to list repository sets from"

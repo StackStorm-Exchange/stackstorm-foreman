@@ -1,0 +1,47 @@
+---
+description: "Show template combination (resource: GET /api/template_combinations/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: template_combinations_show
+parameters:
+  operation:
+    type: string
+    default: template_combinations.show
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  config_template_id:
+    type: string
+    required: false
+    description: "ID of config template"
+  provisioning_template_id:
+    type: string
+    required: false
+    description: "ID of config template"
+  hostgroup_id:
+    type: string
+    required: false
+    description: "ID of host group"
+  environment_id:
+    type: string
+    required: false
+    description: "ID of environment"
+  id:
+    type: string
+    required: true

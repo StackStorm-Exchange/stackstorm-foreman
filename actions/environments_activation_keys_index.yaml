@@ -1,0 +1,79 @@
+---
+description: " (resource: GET /katello/api/environments/:environment_id/activation_keys)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: environments_activation_keys_index
+parameters:
+  operation:
+    type: string
+    default: environments.activation_keys_index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: string
+    required: true
+    description: "organization identifier"
+  environment_id:
+    type: string
+    required: true
+    description: "environment identifier"
+  content_view_id:
+    type: string
+    required: false
+    description: "content view identifier"
+  name:
+    type: string
+    required: false
+    description: "activation key name to filter by"
+  search:
+    type: string
+    required: false
+    description: "Search string"
+  page:
+    type: string
+    required: false
+    description: "Page number, starting at 1"
+  per_page:
+    type: string
+    required: false
+    description: "Number of results per page to return"
+  order:
+    type: string
+    required: false
+    description: "Sort field and order, eg. 'name DESC'"
+  full_results:
+    type: string
+    required: false
+    description: "Whether or not to show all results"
+  sort:
+    type: object
+    required: false
+    description: >
+       'description: Hash version of 'order' param
+        parameters:
+            by:
+              required: false
+              type: string
+              description: Field to sort the results on
+            order:
+              required: false
+              type: string
+              description: How to order the sorted results (e.g. ASC for ascending)
+            '

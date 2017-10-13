@@ -1,0 +1,299 @@
+---
+description: "Create a host (resource: POST /api/hosts)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts_create
+parameters:
+  operation:
+    type: string
+    default: hosts.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  host:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            comment:
+              required: false
+              type: string
+              description: Additional information about this host
+            environment_id:
+              required: false
+              type: string
+              description: required if host is managed and value is not inherited from host group
+            managed:
+              required: false
+              type: string
+              description: 'True/False flag whether a host is managed or unmanaged. Note: this valuealso determines whether several parameters are required or not'
+            content_facet_attributes:
+              required: false
+              type: object
+              description: Parameters for host's content_facet facet
+              parameters:
+                content_view_id:
+                  required: false
+                  type: number
+                  description:
+                kickstart_repository_id:
+                  required: false
+                  type: number
+                  description: Repository Id associated with the kickstart repo used for provisioning
+                lifecycle_environment_id:
+                  required: false
+                  type: number
+                  description:
+            model_id:
+              required: false
+              type: string
+              description:
+            ip:
+              required: false
+              type: string
+              description: not required if using a subnet with DHCP Capsule
+            provision_method:
+              required: false
+              type: string
+              description: The method used to provision the host. Possible provision_methods may bebuild (Network Based), image (Image Based)
+            interfaces_attributes:
+              required: false
+              type: array
+              description: Host's network interfaces.
+              parameters:
+                provision:
+                  required: false
+                  type: string
+                  description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
+                username:
+                  required: false
+                  type: string
+                  description: Only for BMC interfaces.
+                password:
+                  required: false
+                  type: string
+                  description: Only for BMC interfaces.
+                managed:
+                  required: false
+                  type: string
+                  description: Should this interface be managed via DHCP and DNS capsule and should it beconfigured during provisioning?
+                name:
+                  required: false
+                  type: string
+                  description: Interface's DNS name
+                subnet_id:
+                  required: false
+                  type: number
+                  description: Satellite subnet ID of interface
+                ip:
+                  required: false
+                  type: string
+                  description: IP address of interface
+                primary:
+                  required: false
+                  type: string
+                  description: Should this interface be used for constructing the FQDN of the host? Eachmanaged hosts needs to have one primary interface.
+                virtual:
+                  required: false
+                  type: string
+                  description: Alias or VLAN device
+                attached_to:
+                  required: false
+                  type: string
+                  description: Identifier of the interface to which this interface belongs, e.g. eth1.Only for virtual interfaces.
+                bond_options:
+                  required: false
+                  type: string
+                  description: Space separated options, e.g. miimon=100. Only for bond interfaces.
+                mac:
+                  required: false
+                  type: string
+                  description: MAC address of interface. Required for managed interfaces on bare metal.
+                tag:
+                  required: false
+                  type: string
+                  description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only forvirtual interfaces.
+                mode:
+                  required: false
+                  type: string
+                  description: Bond mode of the interface, e.g. balance-rr. Only for bond interfaces.
+                provider:
+                  required: false
+                  type: string
+                  description: Interface provider, e.g. IPMI. Only for BMC interfaces.
+                compute_attributes:
+                  required: false
+                  type: object
+                  description: Additional compute resource specific attributes for the interface.
+                attached_devices:
+                  required: false
+                  type: array
+                  description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond interfaces those are the slaves. Only for bondand bridges interfaces.
+                identifier:
+                  required: false
+                  type: string
+                  description: Device identifier, e.g. eth0 or eth1.1
+                type:
+                  required: false
+                  type: string
+                  description: Interface type, e.g. bmc. Default is interface
+                domain_id:
+                  required: false
+                  type: number
+                  description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
+            location_id:
+              required: true
+              type: string
+              description: required if locations are enabled
+            domain_id:
+              required: false
+              type: string
+              description: required if host is managed and value is not inherited from host group
+            compute_resource_id:
+              required: false
+              type: string
+              description: nil means host is bare metal
+            subnet_id:
+              required: false
+              type: string
+              description: required if host is managed and value is not inherited from host group
+            capabilities:
+              required: false
+              type: string
+              description:
+            architecture_id:
+              required: false
+              type: string
+              description: required if host is managed and value is not inherited from host group
+            build:
+              required: false
+              type: string
+              description:
+            host_parameters_attributes:
+              required: false
+              type: array
+              description: Host's parameters (array or indexed hash)
+              parameters:
+                name:
+                  required: true
+                  type: string
+                  description: Name of the parameter
+                value:
+                  required: true
+                  type: string
+                  description: Parameter value
+            puppetclass_ids:
+              required: false
+              type: array
+              description:
+            owner_id:
+              required: false
+              type: string
+              description:
+            operatingsystem_id:
+              required: false
+              type: string
+              description: required if host is managed and value is not inherited from host group
+            root_pass:
+              required: false
+              type: string
+              description: required if host is managed and value is not inherited from host group ordefault password in settings
+            organization_id:
+              required: true
+              type: string
+              description: required if organizations are enabled
+            image_id:
+              required: false
+              type: string
+              description:
+            mac:
+              required: false
+              type: string
+              description: required for managed host that is bare metal, not required if it's avirtual machine
+            puppet_ca_proxy_id:
+              required: false
+              type: string
+              description:
+            puppet_proxy_id:
+              required: false
+              type: string
+              description:
+            ptable_id:
+              required: false
+              type: string
+              description: required if host is managed and custom partition has not been defined
+            progress_report_id:
+              required: false
+              type: string
+              description: UUID to track orchestration tasks status, GET/api/orchestration/:UUID/tasks
+            name:
+              required: true
+              type: string
+              description:
+            medium_id:
+              required: false
+              type: string
+              description: required if not imaged based provisioning and host is managed and value isnot inherited from host group
+            enabled:
+              required: false
+              type: string
+              description:
+            hostgroup_id:
+              required: false
+              type: string
+              description:
+            compute_attributes:
+              required: false
+              type: object
+              description: Additional compute resource specific attributes.
+            owner_type:
+              required: false
+              type: string
+              description: Host's owner type
+            realm_id:
+              required: false
+              type: string
+              description:
+            subscription_facet_attributes:
+              required: false
+              type: object
+              description: Parameters for host's subscription_facet facet
+              parameters:
+                release_version:
+                  required: false
+                  type: string
+                  description: Release version for this Host to use (7Server, 7.1, etc)
+                service_level:
+                  required: false
+                  type: number
+                  description: Service level to be used for autoheal.
+                hypervisor_guest_uuids:
+                  required: false
+                  type: array
+                  description: List of hypervisor guest uuids
+                autoheal:
+                  required: false
+                  type: string
+                  description: Sets whether the Host will autoheal subscriptions upon checkin
+            compute_profile_id:
+              required: false
+              type: string
+              description:
+            '

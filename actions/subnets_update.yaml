@@ -1,0 +1,107 @@
+---
+description: "Update a subnet (resource: PUT /api/subnets/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: subnets_update
+parameters:
+  operation:
+    type: string
+    default: subnets.update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+    description: "Subnet numeric identifier"
+  subnet:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            boot_mode:
+              required: false
+              type: string
+              description: Default boot mode for interfaces assigned to this subnet, valid values are"Static", "DHCP"
+            dns_primary:
+              required: false
+              type: string
+              description: Primary DNS for this subnet
+            from:
+              required: false
+              type: string
+              description: Starting IP Address for IP auto suggestion
+            name:
+              required: false
+              type: string
+              description: Subnet name
+            tftp_id:
+              required: false
+              type: string
+              description: TFTP Capsule to use within this subnet
+            ipam:
+              required: false
+              type: string
+              description: IP Address auto suggestion mode for this subnet, valid values are "DHCP","Internal DB", "None"
+            mask:
+              required: false
+              type: string
+              description: Netmask for this subnet
+            vlanid:
+              required: false
+              type: string
+              description: VLAN ID for this subnet
+            dhcp_id:
+              required: false
+              type: string
+              description: DHCP Capsule to use within this subnet
+            to:
+              required: false
+              type: string
+              description: Ending IP Address for IP auto suggestion
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            dns_id:
+              required: false
+              type: string
+              description: DNS Capsule to use within this subnet
+            domain_ids:
+              required: false
+              type: array
+              description: Domains in which this subnet is part
+            dns_secondary:
+              required: false
+              type: string
+              description: Secondary DNS for this subnet
+            gateway:
+              required: false
+              type: string
+              description: Primary DNS for this subnet
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            network:
+              required: false
+              type: string
+              description: Subnet network
+            '

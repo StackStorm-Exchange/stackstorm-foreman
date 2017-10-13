@@ -1,0 +1,31 @@
+---
+description: "List available images for a compute resource (resource: GET /api/compute_resources/:id/available_images)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: compute_resources_available_images
+parameters:
+  operation:
+    type: string
+    default: compute_resources.available_images
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true

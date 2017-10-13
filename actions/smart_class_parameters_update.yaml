@@ -1,0 +1,94 @@
+---
+description: "Update a smart class parameter (resource: PUT /api/smart_class_parameters/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: smart_class_parameters_update
+parameters:
+  operation:
+    type: string
+    default: smart_class_parameters.update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+  smart_class_parameter:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            default_value:
+              required: false
+              type: string
+              description: Value to use when there is no match
+            validator_rule:
+              required: false
+              type: string
+              description: Used to enforce certain values for the parameter values
+            use_puppet_default:
+              required: false
+              type: string
+              description: Do not send this parameter via the ENC. Puppet will use the value definedin the Puppet manifest for this parameter
+            avoid_duplicates:
+              required: false
+              type: string
+              description: Remove duplicate values (only array type)
+            description:
+              required: false
+              type: string
+              description: Description of smart class
+            override_value_order:
+              required: false
+              type: string
+              description: The order in which values are resolved
+            required:
+              required: false
+              type: string
+              description: If true, will raise an error if there is no default value and no matcherprovide a value
+            parameter_type:
+              required: false
+              type: string
+              description: Types of variable values
+            hidden_value:
+              required: false
+              type: string
+              description: When enabled the parameter is hidden in the UI
+            validator_type:
+              required: false
+              type: string
+              description: Types of validation values
+            override:
+              required: false
+              type: string
+              description: Whether the smart class parameter value is managed by Satellite
+            path:
+              required: false
+              type: string
+              description: The order in which values are resolved
+            merge_default:
+              required: false
+              type: string
+              description: Include default value when merging all matching values
+            merge_overrides:
+              required: false
+              type: string
+              description: Merge all matching values (only array/hash type)
+            '

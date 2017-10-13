@@ -1,0 +1,54 @@
+---
+description: "Update a hardware model (resource: PUT /api/models/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: models_update
+parameters:
+  operation:
+    type: string
+    default: models.update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+  model:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            info:
+              required: false
+              type: string
+              description:
+            hardware_model:
+              required: false
+              type: string
+              description:
+            vendor_class:
+              required: false
+              type: string
+              description:
+            name:
+              required: false
+              type: string
+              description:
+            '

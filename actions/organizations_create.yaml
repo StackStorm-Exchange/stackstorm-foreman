@@ -1,0 +1,107 @@
+---
+description: "Create organization (resource: POST /katello/api/organizations)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: organizations_create
+parameters:
+  operation:
+    type: string
+    default: organizations.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  name:
+    type: string
+    required: true
+    description: "name"
+  label:
+    type: string
+    required: false
+    description: "unique label"
+  description:
+    type: string
+    required: false
+    description: "description"
+  organization:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            realm_ids:
+              required: false
+              type: array
+              description: Realm IDs
+            subnet_ids:
+              required: false
+              type: array
+              description: Subnet IDs
+            name:
+              required: true
+              type: string
+              description:
+            config_template_ids:
+              required: false
+              type: array
+              description: Provisioning template IDs
+            description:
+              required: false
+              type: string
+              description:
+            domain_ids:
+              required: false
+              type: array
+              description: Domain IDs
+            label:
+              required: false
+              type: string
+              description:
+            hostgroup_ids:
+              required: false
+              type: array
+              description: Host group IDs
+            user_ids:
+              required: false
+              type: array
+              description: User IDs
+            provisioning_template_ids:
+              required: false
+              type: array
+              description: Provisioning template IDs
+            smart_proxy_ids:
+              required: false
+              type: array
+              description: Capsule IDs
+            environment_ids:
+              required: false
+              type: array
+              description: Environment IDs
+            ptable_ids:
+              required: false
+              type: array
+              description: Partition template IDs
+            media_ids:
+              required: false
+              type: array
+              description: Media IDs
+            compute_resource_ids:
+              required: false
+              type: array
+              description: Compute resource IDs
+            '

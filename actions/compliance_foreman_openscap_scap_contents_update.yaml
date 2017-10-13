@@ -1,0 +1,54 @@
+---
+description: "Update an SCAP content (resource: PUT /api/v2/compliance/scap_contents/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: compliance_foreman_openscap_scap_contents_update
+parameters:
+  operation:
+    type: string
+    default: compliance.foreman_openscap_scap_contents_update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+  scap_content:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            scap_file:
+              required: false
+              type: string
+              description:
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            title:
+              required: false
+              type: string
+              description: Scap content name
+            '

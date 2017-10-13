@@ -1,0 +1,70 @@
+---
+description: "Update content on one or more hosts (resource: PUT /api/hosts/bulk/update_content)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts_hosts_bulk_actions_update_content
+parameters:
+  operation:
+    type: string
+    default: hosts.hosts_bulk_actions_update_content
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: string
+    required: true
+    description: "ID of the organization"
+  included:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            search:
+              required: false
+              type: string
+              description: Search string for systems to perform an action on
+            ids:
+              required: false
+              type: array
+              description: List of system ids to perform an action on
+            '
+  excluded:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            ids:
+              required: false
+              type: array
+              description: List of system ids to exclude and not run an action on
+            '
+  content_type:
+    type: string
+    required: true
+    description: "The type of content.  The following types are supported: 'package'and 'package_group."
+  content:
+    type: array
+    required: true
+    description: "List of content (e.g. package or package group names)"
+  update_all:
+    type: string
+    required: false
+    description: "Updates all packages on the host(s)"

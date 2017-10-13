@@ -1,0 +1,62 @@
+---
+description: "Update template combination (resource: PUT /api/environments/:environment_id/template_combinations/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: environments_template_combinations_environment_id_template_updatecombinations
+parameters:
+  operation:
+    type: string
+    default: environments.template_combinations_environment_id_template_updatecombinations
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+  config_template_id:
+    type: string
+    required: false
+    description: "ID of config template"
+  provisioning_template_id:
+    type: string
+    required: false
+    description: "ID of config template"
+  hostgroup_id:
+    type: string
+    required: false
+    description: "ID of host group"
+  environment_id:
+    type: string
+    required: true
+    description: "ID of environment"
+  template_combination:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            environment_id:
+              required: false
+              type: string
+              description: environment id
+            hostgroup_id:
+              required: false
+              type: string
+              description: host group id
+            '

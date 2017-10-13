@@ -1,0 +1,44 @@
+---
+description: "Export a content view version (resource: POST /katello/api/content_view_versions/:id/export)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: content_view_versions_export
+parameters:
+  operation:
+    type: string
+    default: content_view_versions.export
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+    description: "Content view version identifier"
+  export_to_iso:
+    type: string
+    required: false
+    description: "Export to ISO format"
+  iso_mb_size:
+    type: string
+    required: false
+    description: "maximum size of each ISO in MB"
+  since:
+    type: string
+    required: false
+    description: "Optional date of last export (ex: 2010-01-01T12:00:00Z)"

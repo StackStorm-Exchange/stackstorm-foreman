@@ -1,0 +1,91 @@
+---
+description: "List content views (resource: GET /katello/api/organizations/:organization_id/content_views)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: organizations_content_views_index
+parameters:
+  operation:
+    type: string
+    default: organizations.content_views_index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: string
+    required: true
+    description: "organization identifier"
+  environment_id:
+    type: string
+    required: false
+    description: "environment identifier"
+  nondefault:
+    type: string
+    required: false
+    description: "Filter out default content views"
+  noncomposite:
+    type: string
+    required: false
+    description: "Filter out composite content views"
+  composite:
+    type: string
+    required: false
+    description: "Filter only composite content views"
+  without:
+    type: array
+    required: false
+    description: "Do not include this array of content views"
+  name:
+    type: string
+    required: false
+    description: "Name of the content view"
+  search:
+    type: string
+    required: false
+    description: "Search string"
+  page:
+    type: string
+    required: false
+    description: "Page number, starting at 1"
+  per_page:
+    type: string
+    required: false
+    description: "Number of results per page to return"
+  order:
+    type: string
+    required: false
+    description: "Sort field and order, eg. 'name DESC'"
+  full_results:
+    type: string
+    required: false
+    description: "Whether or not to show all results"
+  sort:
+    type: object
+    required: false
+    description: >
+       'description: Hash version of 'order' param
+        parameters:
+            by:
+              required: false
+              type: string
+              description: Field to sort the results on
+            order:
+              required: false
+              type: string
+              description: How to order the sorted results (e.g. ASC for ascending)
+            '

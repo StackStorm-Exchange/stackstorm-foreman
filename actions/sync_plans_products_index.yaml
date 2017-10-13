@@ -1,0 +1,95 @@
+---
+description: "List of Products for sync plan (resource: GET /katello/api/sync_plans/:sync_plan_id/products)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: sync_plans_products_index
+parameters:
+  operation:
+    type: string
+    default: sync_plans.products_index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: string
+    required: true
+    description: "Filter products by organization"
+  subscription_id:
+    type: string
+    required: false
+    description: "Filter products by subscription"
+  name:
+    type: string
+    required: false
+    description: "Filter products by name"
+  enabled:
+    type: string
+    required: false
+    description: "Filter products by enabled or disabled"
+  custom:
+    type: string
+    required: false
+    description: "Filter products by custom"
+  include_available_content:
+    type: string
+    required: false
+    description: "Whether to include available content attribute in results"
+  sync_plan_id:
+    type: string
+    required: true
+    description: "Filter products by sync plan id"
+  available_for:
+    type: string
+    required: false
+    description: "Interpret specified object to return only Products that can be associatedwith specified object.  Only 'sync_plan' is supported."
+  search:
+    type: string
+    required: false
+    description: "Search string"
+  page:
+    type: string
+    required: false
+    description: "Page number, starting at 1"
+  per_page:
+    type: string
+    required: false
+    description: "Number of results per page to return"
+  order:
+    type: string
+    required: false
+    description: "Sort field and order, eg. 'name DESC'"
+  full_results:
+    type: string
+    required: false
+    description: "Whether or not to show all results"
+  sort:
+    type: object
+    required: false
+    description: >
+       'description: Hash version of 'order' param
+        parameters:
+            by:
+              required: false
+              type: string
+              description: Field to sort the results on
+            order:
+              required: false
+              type: string
+              description: How to order the sorted results (e.g. ASC for ascending)
+            '

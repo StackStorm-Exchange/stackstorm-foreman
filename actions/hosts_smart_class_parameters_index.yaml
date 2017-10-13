@@ -1,0 +1,56 @@
+---
+description: "List of smart class parameters for a specific host (resource: GET /api/hosts/:host_id/smart_class_parameters)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts_smart_class_parameters_index
+parameters:
+  operation:
+    type: string
+    default: hosts.smart_class_parameters_index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  host_id:
+    type: string
+    required: true
+  hostgroup_id:
+    type: string
+    required: false
+  puppetclass_id:
+    type: string
+    required: false
+  environment_id:
+    type: string
+    required: false
+  search:
+    type: string
+    required: false
+    description: "filter results"
+  order:
+    type: string
+    required: false
+    description: "sort results"
+  page:
+    type: string
+    required: false
+    description: "paginate results"
+  per_page:
+    type: string
+    required: false
+    description: "number of entries per request"

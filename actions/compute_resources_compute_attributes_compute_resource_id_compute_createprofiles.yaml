@@ -1,0 +1,45 @@
+---
+description: "Create a compute attributes set (resource: POST /api/compute_resources/:compute_resource_id/compute_profiles/:compute_profile_id/compute_attributes)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: compute_resources_compute_attributes_compute_resource_id_compute_createprofiles
+parameters:
+  operation:
+    type: string
+    default: compute_resources.compute_attributes_compute_resource_id_compute_createprofiles
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  compute_profile_id:
+    type: string
+    required: true
+  compute_resource_id:
+    type: string
+    required: true
+  compute_attribute:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            vm_attrs:
+              required: true
+              type: object
+              description:
+            '

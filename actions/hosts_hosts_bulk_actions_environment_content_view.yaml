@@ -1,0 +1,64 @@
+---
+description: "Assign the environment and content view to one or more hosts (resource: PUT /api/hosts/bulk/environment_content_view)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts_hosts_bulk_actions_environment_content_view
+parameters:
+  operation:
+    type: string
+    default: hosts.hosts_bulk_actions_environment_content_view
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: string
+    required: true
+    description: "ID of the organization"
+  included:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            search:
+              required: false
+              type: string
+              description: Search string for systems to perform an action on
+            ids:
+              required: false
+              type: array
+              description: List of system ids to perform an action on
+            '
+  excluded:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            ids:
+              required: false
+              type: array
+              description: List of system ids to exclude and not run an action on
+            '
+  environment_id:
+    type: number
+    required: false
+  content_view_id:
+    type: number
+    required: false

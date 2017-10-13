@@ -1,0 +1,55 @@
+---
+description: "Create a report (resource: POST /api/config_reports)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: config_reports_create
+parameters:
+  operation:
+    type: string
+    default: config_reports.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  config_report:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            reported_at:
+              required: true
+              type: string
+              description: UTC time of report
+            status:
+              required: true
+              type: object
+              description: Hash of status type totals
+            host:
+              required: true
+              type: string
+              description: Hostname or certname
+            metrics:
+              required: true
+              type: object
+              description: Hash of report metrics, can be just {}
+            logs:
+              required: false
+              type: array
+              description: Optional array of log hashes
+            '
