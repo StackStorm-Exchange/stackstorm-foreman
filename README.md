@@ -30,8 +30,8 @@ all Foreman servers you'll be communicating with. The location for the config fi
 is `/opt/stackstorm/config/foreman.yaml`.
 
 
-**Note** : `st2 pack config` doesn't handle schemas refernences very well (known bug)
-    so it's best to create the configuraiton file yourself and copy it into
+**Note** : `st2 pack config` doesn't handle schemas references very well (known bug)
+    so it's best to create the configuration file yourself and copy it into
     `/opt/stackstorm/configs/foreman.yaml` then run `st2ctl reload --register-configs`
     
 ## <a name="Schema"></a> Schema
@@ -71,7 +71,7 @@ foreman:
 ```
 
 **Note** : All actions allow you to specify a `connection` name parameter that will
-           reference the conneciton information in the config. Alternatively
+           reference the connection information in the config. Alternatively
            all actions allow you to override these connection parameters
            so a config isn't required. See the [Actions](#Actions) for more
            information.
@@ -117,7 +117,7 @@ result:
 
 The basic example is great and allows for quick testing from the commandline and/or
 one-off commands in a workflow. However, specifying the same connection information
-over/over can become tedious and repetitive, luckyily there is a better way.
+over/over can become tedious and repetitive, luckily there is a better way.
 
 
 ## <a name="UsageConfig"></a> Usage - Config Connection
