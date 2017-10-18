@@ -1,0 +1,57 @@
+---
+description: "List provisioning templates (resource: GET /api/provisioning_templates)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: provisioning_templates.index
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: provisioning_templates.index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  operatingsystem_id:
+    type: string
+    required: false
+    description: "ID of operating system"
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
+  search:
+    type: string
+    required: false
+    description: "filter results"
+  order:
+    type: string
+    required: false
+    description: "sort results"
+  page:
+    type: string
+    required: false
+    description: "paginate results"
+  per_page:
+    type: string
+    required: false
+    description: "number of entries per request"

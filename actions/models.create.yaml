@@ -1,0 +1,52 @@
+---
+description: "Create a hardware model (resource: POST /api/models)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: models.create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: models.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  model:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            info:
+              required: false
+              type: string
+              description:
+            hardware_model:
+              required: false
+              type: string
+              description:
+            vendor_class:
+              required: false
+              type: string
+              description:
+            name:
+              required: true
+              type: string
+              description:
+            '

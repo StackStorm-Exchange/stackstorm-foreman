@@ -1,0 +1,92 @@
+---
+description: "Create a compute resource (resource: POST /api/compute_resources)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: compute_resources.create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: compute_resources.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  compute_resource:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            description:
+              required: false
+              type: string
+              description:
+            set_console_password:
+              required: false
+              type: string
+              description: for Libvirt and VMware only
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            url:
+              required: false
+              type: string
+              description: URL for Libvirt, RHEV, and RHEL RHEL OpenStack Platform Platform
+            region:
+              required: false
+              type: string
+              description: for EC2 only
+            uuid:
+              required: false
+              type: string
+              description: for RHEV, VMware Datacenter
+            server:
+              required: false
+              type: string
+              description: for VMware
+            user:
+              required: false
+              type: string
+              description: Username for RHEV, EC2, VMware, RHEL RHEL OpenStack Platform Platform.Access Key for EC2.
+            provider:
+              required: false
+              type: string
+              description: Providers include Libvirt, Ovirt, EC2, Vmware, Openstack, Rackspace, GCE
+            display_type:
+              required: false
+              type: string
+              description: for Libvirt only
+            password:
+              required: false
+              type: string
+              description: Password for RHEV, EC2, VMware, RHEL RHEL OpenStack Platform Platform.Secret key for EC2
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            tenant:
+              required: false
+              type: string
+              description: for RHEL RHEL OpenStack Platform Platform only
+            name:
+              required: true
+              type: string
+              description:
+            '
