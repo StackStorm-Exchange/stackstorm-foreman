@@ -1,18 +1,26 @@
 ---
-
-url:
-  description: "Foreman Url"
-  type: string
+foreman:
+  type: "object"
   required: true
+  patternProperties:
+      "^\\w+":
+        "$ref": "#/properties/connections"
+  additionalProperties: false
 
-username:
-  type: string
-  required: true
-
-password:
-  type: string
-  required: true
-
-verify_ssl:
-  type: boolean
-  default: False
+connections:
+  type: "object"
+  properties:
+    server:
+      type: string
+      description: "IP/Hostname of the server"
+      required: true
+    username:
+      type: string
+      description: "Username to login to the server"
+      required: true
+    password:
+      type: string
+      description: "Password to login to the server"
+      required: true
+      secret: true
+  additionalProperties: false

@@ -1,0 +1,10 @@
+---
+foreman:
+  base:
+    server: abc
+    username: Administrator
+    password: PassworD!
+  full:
+    server: server1
+    username: user1
+    password: pwd1

@@ -1,0 +1,11 @@
+---
+foreman:
+  missing-server:
+    username: user1
+    password: pwd1
+  missing-username:
+    server: server1
+    password: pwd1
+  missing-password:
+    server: server1
+    username: user1
