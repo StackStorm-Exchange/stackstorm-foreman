@@ -1,0 +1,59 @@
+---
+description: "Update a user group (resource: PUT /api/usergroups/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: usergroups.update
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: usergroups.update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+  usergroup:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            admin:
+              required: false
+              type: string
+              description: is an admin user group
+            user_ids:
+              required: false
+              type: array
+              description:
+            role_ids:
+              required: false
+              type: array
+              description:
+            usergroup_ids:
+              required: false
+              type: array
+              description:
+            name:
+              required: false
+              type: string
+              description:
+            '

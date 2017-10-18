@@ -1,0 +1,36 @@
+---
+description: "Preview rendered provisioning template content (resource: GET /api/hosts/:id/template/:kind)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts.id_templatetemplate
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: hosts.id_templatetemplate
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+  kind:
+    type: string
+    required: true
+    description: "Template kinds, available values: Bootdisk, PXELinux, PXEGrub, iPXE,provision, finish, script, user_data, ZTP, POAP, kexec"

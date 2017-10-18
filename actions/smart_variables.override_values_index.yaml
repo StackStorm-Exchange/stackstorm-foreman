@@ -1,0 +1,43 @@
+---
+description: "List of override values for a specific smart variable (resource: GET /api/smart_variables/:smart_variable_id/override_values)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: smart_variables.override_values_index
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: smart_variables.override_values_index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  smart_variable_id:
+    type: string
+    required: true
+  smart_class_parameter_id:
+    type: string
+    required: false
+  page:
+    type: string
+    required: false
+    description: "paginate results"
+  per_page:
+    type: string
+    required: false
+    description: "number of entries per request"

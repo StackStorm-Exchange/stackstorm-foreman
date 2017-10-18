@@ -1,0 +1,52 @@
+---
+description: "Create a product (resource: POST /katello/api/products)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: products.create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: products.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: string
+    required: true
+    description: "ID of the organization"
+  description:
+    type: string
+    required: false
+    description: "Product description"
+  gpg_key_id:
+    type: string
+    required: false
+    description: "Identifier of the GPG key"
+  sync_plan_id:
+    type: string
+    required: false
+    description: "Plan numeric identifier"
+  name:
+    type: string
+    required: true
+    description: "Product name"
+  label:
+    type: string
+    required: false

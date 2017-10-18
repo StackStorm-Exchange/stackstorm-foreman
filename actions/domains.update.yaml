@@ -1,0 +1,63 @@
+---
+description: "Update a domain (resource: PUT /api/domains/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: domains.update
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: domains.update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+  domain:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            name:
+              required: false
+              type: string
+              description: The full DNS domain name
+            domain_parameters_attributes:
+              required: false
+              type: array
+              description: Array of parameters (name, value)
+            dns_id:
+              required: false
+              type: string
+              description: DNS Capsule to use within this domain
+            fullname:
+              required: false
+              type: string
+              description: Description of the domain
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            '

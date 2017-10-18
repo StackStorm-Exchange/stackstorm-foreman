@@ -1,0 +1,49 @@
+---
+description: "List operating systems where this template is set as a default (resource: GET /api/config_templates/:config_template_id/os_default_templates)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: config_templates.os_default_templates_index
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: config_templates.os_default_templates_index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  operatingsystem_id:
+    type: string
+    required: false
+    description: "ID of operating system"
+  config_template_id:
+    type: string
+    required: true
+    description: "ID of provisioning template"
+  provisioning_template_id:
+    type: string
+    required: false
+    description: "ID of provisioning template"
+  page:
+    type: string
+    required: false
+    description: "paginate results"
+  per_page:
+    type: string
+    required: false
+    description: "number of entries per request"

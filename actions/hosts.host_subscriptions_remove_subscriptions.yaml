@@ -1,0 +1,48 @@
+---
+description: " (resource: PUT /api/hosts/:host_id/subscriptions/remove_subscriptions)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts.host_subscriptions_remove_subscriptions
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: hosts.host_subscriptions_remove_subscriptions
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  host_id:
+    type: number
+    required: true
+    description: "Id of the host"
+  subscriptions:
+    type: array
+    required: false
+    description: >
+       'description: Array of subscriptions to remove
+        parameters:
+            id:
+              required: true
+              type: string
+              description: Subscription Pool id
+            quantity:
+              required: false
+              type: number
+              description: If specified, remove the first instance of a subscription with matching idand quantity
+            '

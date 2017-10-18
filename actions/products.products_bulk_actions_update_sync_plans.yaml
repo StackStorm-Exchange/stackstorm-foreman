@@ -1,0 +1,37 @@
+---
+description: "Sync one or more products (resource: PUT /katello/api/products/bulk/sync_plan)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: products.products_bulk_actions_update_sync_plans
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: products.products_bulk_actions_update_sync_plans
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  ids:
+    type: array
+    required: true
+    description: "List of product ids"
+  plan_id:
+    type: string
+    required: true
+    description: "Sync plan identifier to attach"

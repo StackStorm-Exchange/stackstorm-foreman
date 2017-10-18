@@ -1,0 +1,104 @@
+---
+description: "Create a host group (resource: POST /api/hostgroups)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hostgroups.create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: hostgroups.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  hostgroup:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            operatingsystem_id:
+              required: false
+              type: string
+              description:
+            content_view_id:
+              required: false
+              type: string
+              description:
+            content_source_id:
+              required: false
+              type: string
+              description:
+            environment_id:
+              required: false
+              type: string
+              description:
+            name:
+              required: true
+              type: string
+              description:
+            medium_id:
+              required: false
+              type: string
+              description:
+            subnet_id:
+              required: false
+              type: string
+              description:
+            parent_id:
+              required: false
+              type: string
+              description:
+            lifecycle_environment_id:
+              required: false
+              type: string
+              description:
+            architecture_id:
+              required: false
+              type: string
+              description:
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            puppet_ca_proxy_id:
+              required: false
+              type: string
+              description:
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            realm_id:
+              required: false
+              type: string
+              description:
+            domain_id:
+              required: false
+              type: string
+              description:
+            puppet_proxy_id:
+              required: false
+              type: string
+              description:
+            ptable_id:
+              required: false
+              type: string
+              description:
+            '

@@ -1,0 +1,98 @@
+---
+description: "Create a job template (resource: POST /api/job_templates)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: job_templates.create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: job_templates.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  job_template:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            locked:
+              required: false
+              type: string
+              description: Whether or not the template is locked for editing
+            name:
+              required: true
+              type: string
+              description: Template name
+            description_format:
+              required: false
+              type: string
+              description: This template is used to generate the description. Input values can be usedusing the syntax %{package}. You may also include the job category andtemplate name using %{job_category} and %{template_name}.
+            snippet:
+              required: false
+              type: string
+              description:
+            ssh:
+              required: false
+              type: object
+              description: SSH provider specific options
+              parameters:
+                effective_user:
+                  required: false
+                  type: object
+                  description: Effective user options
+                  parameters:
+                    overridable:
+                      required: false
+                      type: string
+                      description: Whether it should be allowed to override the effective user from theinvocation form.
+                    value:
+                      required: false
+                      type: string
+                      description: What user should be used to run the script (using sudo-like mechanisms)
+                    current_user:
+                      required: false
+                      type: string
+                      description: Whether the current user login should be used as the effective user
+            template:
+              required: true
+              type: string
+              description:
+            job_category:
+              required: true
+              type: string
+              description: Job category
+            audit_comment:
+              required: false
+              type: string
+              description:
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            provider_type:
+              required: true
+              type: string
+              description: Provider type
+            '

@@ -1,0 +1,91 @@
+---
+description: "Update a user (resource: PUT /api/users/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: users.update
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: users.update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+  user:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            default_organization_id:
+              required: false
+              type: number
+              description:
+            firstname:
+              required: false
+              type: string
+              description:
+            admin:
+              required: false
+              type: string
+              description: is an admin account
+            lastname:
+              required: false
+              type: string
+              description:
+            default_location_id:
+              required: false
+              type: number
+              description:
+            locale:
+              required: false
+              type: string
+              description: User's preferred locale
+            timezone:
+              required: false
+              type: string
+              description: User's timezone
+            mail:
+              required: false
+              type: string
+              description:
+            login:
+              required: false
+              type: string
+              description:
+            password:
+              required: false
+              type: string
+              description:
+            auth_source_id:
+              required: false
+              type: number
+              description:
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            '

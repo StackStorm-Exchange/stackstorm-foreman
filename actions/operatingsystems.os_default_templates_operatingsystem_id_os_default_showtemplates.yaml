@@ -1,0 +1,36 @@
+---
+description: "Show a default template combination for an operating system (resource: GET /api/operatingsystems/:operatingsystem_id/os_default_templates/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: operatingsystems.os_default_templates_operatingsystem_id_os_default_showtemplates
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: operatingsystems.os_default_templates_operatingsystem_id_os_default_showtemplates
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  operatingsystem_id:
+    type: string
+    required: true
+    description: "ID of operating system"
+  id:
+    type: string
+    required: true
