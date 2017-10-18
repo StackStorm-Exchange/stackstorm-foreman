@@ -1,0 +1,97 @@
+---
+description: "Create an operating system (resource: POST /api/operatingsystems)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: operatingsystems.create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: operatingsystems.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  operatingsystem:
+    type: object
+    required: true
+    description: >
+       'description: None
+        parameters:
+            major:
+              required: true
+              type: string
+              description:
+            name:
+              required: true
+              type: string
+              description:
+            family:
+              required: false
+              type: string
+              description:
+            config_template_ids:
+              required: false
+              type: array
+              description: IDs of associated provisioning templates
+            architecture_ids:
+              required: false
+              type: array
+              description: IDs of associated architectures
+            os_parameters_attributes:
+              required: false
+              type: array
+              description: OS' parameters (array or indexed hash)
+              parameters:
+                name:
+                  required: true
+                  type: string
+                  description: Name of the parameter
+                value:
+                  required: true
+                  type: string
+                  description: Parameter value
+            medium_ids:
+              required: false
+              type: array
+              description: IDs of associated media
+            provisioning_template_ids:
+              required: false
+              type: array
+              description: IDs of associated provisioning templates
+            password_hash:
+              required: false
+              type: string
+              description: Root password hash function to use, one of MD5, SHA256, SHA512, Base64
+            release_name:
+              required: false
+              type: string
+              description:
+            ptable_ids:
+              required: false
+              type: array
+              description: IDs of associated partition tables
+            minor:
+              required: false
+              type: string
+              description:
+            description:
+              required: false
+              type: string
+              description:
+            '

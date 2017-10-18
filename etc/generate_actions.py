@@ -199,9 +199,12 @@ class ActionGenerator(object):
                     method_defs.append(member.defs)
         return method_defs
 
+    def generate_action_name(self, method_def):
+        return "{}.{}".format(method_def.resource, method_def.name)
+
     def render_method_defs_into_actions(self, method_defs):
         for method_def in method_defs:
-            action_name = "{}_{}".format(method_def.resource, method_def.name)
+            action_name = self.generate_action_name(method_def)
             action = {'name': action_name,
                       'operation': '{}.{}'.format(method_def.resource,
                                                   method_def.name),
@@ -239,7 +242,7 @@ class ActionGenerator(object):
         katello_url = 'https://theforeman.org/plugins/katello/3.4/api/'
 
         for method_def in method_defs:
-            action_name = "{}_{}".format(method_def.resource, method_def.name)
+            action_name = self.generate_action_name(method_def)
             method_doc_url = method_def._method['doc_url']
             method_doc_url = method_doc_url.replace('../', '')
             base_url = None

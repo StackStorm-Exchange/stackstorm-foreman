@@ -1,0 +1,35 @@
+---
+description: "Delete an image (resource: DELETE /api/compute_resources/:compute_resource_id/images/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: compute_resources.images_compute_resource_id_destroyimages
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: compute_resources.images_compute_resource_id_destroyimages
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  compute_resource_id:
+    type: string
+    required: true
+  id:
+    type: string
+    required: true
