@@ -5,10 +5,14 @@ import foreman.client
 import logging
 import operator
 import requests
-import urllib3
-
-urllib3.disable_warnings()
 requests.packages.urllib3.disable_warnings()   # pylint: disable=no-member
+
+try:
+    import urllib3
+    urllib3.disable_warnings()
+except ImportError:
+    pass
+
 
 #                         (key, required, default)
 CONFIG_CONNECTION_KEYS = [('server', True, ""),
