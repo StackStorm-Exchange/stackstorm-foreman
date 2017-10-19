@@ -26,7 +26,7 @@ defintions from this server.
 # fetch the api definitions
 ./generate_actions.py fetch-api -s foreman.domain.tld -u admin -p xxx
 
-# find your new api defintions (should be ./api_definitions_YY_MM_DD with today's date)
+# find your new api definitions (should be ./api_definitions_YY_MM_DD with today's date)
 ls
 
 # generate the api definitions
