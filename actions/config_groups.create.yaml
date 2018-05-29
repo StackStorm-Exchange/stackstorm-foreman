@@ -31,10 +31,14 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
+            puppetclass_ids:
+              required: false
+              type: array
+              description: ''
             name:
               required: true
               type: string
-              description:
-            '
+              description: ''
+            "

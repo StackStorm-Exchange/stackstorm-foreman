@@ -34,7 +34,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             default_value:
               required: false
@@ -47,7 +47,11 @@ parameters:
             use_puppet_default:
               required: false
               type: string
-              description: Do not send this parameter via the ENC. Puppet will use the value definedin the Puppet manifest for this parameter
+              description: Deprecated, please use omit
+            required:
+              required: false
+              type: string
+              description: If true, will raise an error if there is no default value and no matcherprovide a value
             avoid_duplicates:
               required: false
               type: string
@@ -60,10 +64,10 @@ parameters:
               required: false
               type: string
               description: The order in which values are resolved
-            required:
+            omit:
               required: false
               type: string
-              description: If true, will raise an error if there is no default value and no matcherprovide a value
+              description: Satellite will not send this parameter in classification output. Puppetwill use the value defined in the Puppet manifest for this parameter
             parameter_type:
               required: false
               type: string
@@ -92,4 +96,4 @@ parameters:
               required: false
               type: string
               description: Merge all matching values (only array/hash type)
-            '
+            "

@@ -47,7 +47,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             environment_id:
               required: false
@@ -57,4 +57,4 @@ parameters:
               required: false
               type: string
               description: host group id
-            '
+            "

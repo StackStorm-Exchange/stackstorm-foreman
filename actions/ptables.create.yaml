@@ -31,7 +31,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             host_ids:
               required: false
@@ -44,7 +44,7 @@ parameters:
             name:
               required: true
               type: string
-              description:
+              description: ''
             location_ids:
               required: false
               type: array
@@ -52,11 +52,11 @@ parameters:
             snippet:
               required: false
               type: string
-              description:
+              description: ''
             os_family:
               required: false
               type: string
-              description:
+              description: ''
             operatingsystem_ids:
               required: false
               type: array
@@ -64,11 +64,11 @@ parameters:
             layout:
               required: true
               type: string
-              description:
+              description: ''
             audit_comment:
               required: false
               type: string
-              description:
+              description: ''
             hostgroup_ids:
               required: false
               type: array
@@ -77,4 +77,4 @@ parameters:
               required: false
               type: array
               description: REPLACE organizations with given ids.
-            '
+            "

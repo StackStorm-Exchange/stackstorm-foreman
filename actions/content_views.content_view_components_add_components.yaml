@@ -1,0 +1,52 @@
+---
+description: "Add components to the content view (resource: PUT /katello/api/content_views/:composite_content_view_id/content_view_components/add)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: content_views.content_view_components_add_components
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: content_views.content_view_components_add_components
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  composite_content_view_id:
+    type: string
+    required: true
+    description: "composite content view identifier"
+  components:
+    type: array
+    required: true
+    description: >
+       "description: Array of components to add
+        parameters:
+            content_view_id:
+              required: false
+              type: string
+              description: content view identifier of the component who's latest version isdesired
+            content_view_version_id:
+              required: false
+              type: string
+              description: identifier of the version of the component content view
+            latest:
+              required: false
+              type: string
+              description: true if the latest version of the component's content view is desired
+            "

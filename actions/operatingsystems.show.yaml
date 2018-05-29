@@ -30,3 +30,7 @@ parameters:
   id:
     type: string
     required: true
+  show_hidden_parameters:
+    type: string
+    required: false
+    description: "Display hidden parameter values"

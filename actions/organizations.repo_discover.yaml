@@ -34,4 +34,16 @@ parameters:
   url:
     type: string
     required: false
-    description: "base url to perform repo discovery on"
+    description: "Base URL to perform repo discovery on"
+  content_type:
+    type: string
+    required: false
+    description: "One of yum or docker"
+  upstream_username:
+    type: string
+    required: false
+    description: "Username to access URL"
+  upstream_password:
+    type: string
+    required: false
+    description: "Password to access URL"

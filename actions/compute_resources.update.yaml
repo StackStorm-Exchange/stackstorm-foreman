@@ -34,24 +34,36 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
-            description:
-              required: false
-              type: string
-              description:
-            set_console_password:
-              required: false
-              type: string
-              description: for Libvirt and VMware only
             organization_ids:
               required: false
               type: array
               description: REPLACE organizations with given ids.
+            datacenter:
+              required: false
+              type: string
+              description: for RHEV, VMware Datacenter
+            domain:
+              required: false
+              type: string
+              description: for RHEL OpenStack Platform only
+            description:
+              required: false
+              type: string
+              description: ''
+            set_console_password:
+              required: false
+              type: string
+              description: for Libvirt and VMware only
+            caching_enabled:
+              required: false
+              type: string
+              description: enable caching, for VMware only
             url:
               required: false
               type: string
-              description: URL for Libvirt, RHEV, and RHEL RHEL OpenStack Platform Platform
+              description: URL for Docker, Libvirt, RHEV, OpenStack and Rackspace
             region:
               required: false
               type: string
@@ -59,7 +71,7 @@ parameters:
             uuid:
               required: false
               type: string
-              description: for RHEV, VMware Datacenter
+              description: Deprecated, please use datacenter
             server:
               required: false
               type: string
@@ -67,11 +79,11 @@ parameters:
             user:
               required: false
               type: string
-              description: Username for RHEV, EC2, VMware, RHEL RHEL OpenStack Platform Platform.Access Key for EC2.
+              description: Username for RHEV, EC2, VMware, OpenStack. Access Key for EC2.
             provider:
               required: false
               type: string
-              description: Providers include Libvirt, Ovirt, EC2, Vmware, Openstack, Rackspace, GCE
+              description: Providers include Libvirt, Ovirt, EC2, Vmware, Openstack, Rackspace, GCE,Docker
             display_type:
               required: false
               type: string
@@ -79,7 +91,7 @@ parameters:
             password:
               required: false
               type: string
-              description: Password for RHEV, EC2, VMware, RHEL RHEL OpenStack Platform Platform.Secret key for EC2
+              description: Password for RHEV, EC2, VMware, OpenStack. Secret key for EC2
             location_ids:
               required: false
               type: array
@@ -87,9 +99,9 @@ parameters:
             tenant:
               required: false
               type: string
-              description: for RHEL RHEL OpenStack Platform Platform only
+              description: for RHEL OpenStack Platform only
             name:
               required: false
               type: string
-              description:
-            '
+              description: ''
+            "

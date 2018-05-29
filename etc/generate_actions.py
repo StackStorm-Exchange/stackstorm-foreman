@@ -275,10 +275,14 @@ class ActionGenerator(object):
         return yaml.dump(d)
 
     def clean_desc(self, desc):
+        if not desc:
+            return ''
+
         # there were a few description strings with unicode characters (quotes)
         # this removes them
         desc = desc.replace(u"\u201c", '"').replace(u"\u201d", '"')
         desc = desc.replace('\n', '')
+        desc = desc.replace('"', "'")
 
         # convert HTML escaped sequences into ascii
         htmlparser = HTMLParser()
@@ -298,13 +302,14 @@ class ActionGenerator(object):
             if 'parameters' in param:
                 sub_params_str = self.dict_to_yaml(param['parameters'])
                 sub_params_str = sub_params_str.replace('\n', '\n            ')
+                desc = self.clean_desc(param['description'])
                 param['description'] = (">\n"
-                                        "       'description: {0}\n"
+                                        "       \"description: {0}\n"
                                         "        parameters:\n"
-                                        "            {1}'".format(param['description'],
-                                                                  sub_params_str))
+                                        "            {1}\"".format(desc,
+                                                                   sub_params_str))
             elif param['description']:
-                param['description'] = '"' + param['description'] + '"'
+                param['description'] = '"' + self.clean_desc(param['description']) + '"'
 
         return parameters
 

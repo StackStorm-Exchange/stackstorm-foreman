@@ -35,7 +35,7 @@ parameters:
     type: array
     required: false
     description: >
-       'description: Array of subscriptions to remove
+       "description: Array of subscriptions to remove
         parameters:
             id:
               required: true
@@ -45,4 +45,4 @@ parameters:
               required: false
               type: number
               description: If specified, remove the first instance of a subscription with matching idand quantity
-            '
+            "

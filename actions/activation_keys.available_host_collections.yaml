@@ -1,5 +1,5 @@
 ---
-description: "List host collections the system does not belong to (resource: GET /katello/api/activation_keys/:id/host_collections/available)"
+description: "List host collections the activation key does not belong to (resource: GET /katello/api/activation_keys/:id/host_collections/available)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -43,7 +43,7 @@ parameters:
     type: string
     required: false
     description: "Sort field and order, eg. 'name DESC'"
-  full_results:
+  full_result:
     type: string
     required: false
     description: "Whether or not to show all results"
@@ -51,7 +51,7 @@ parameters:
     type: object
     required: false
     description: >
-       'description: Hash version of 'order' param
+       "description: Hash version of 'order' param
         parameters:
             by:
               required: false
@@ -61,7 +61,7 @@ parameters:
               required: false
               type: string
               description: How to order the sorted results (e.g. ASC for ascending)
-            '
+            "
   name:
     type: string
     required: false

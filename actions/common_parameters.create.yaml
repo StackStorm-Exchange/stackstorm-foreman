@@ -31,18 +31,18 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             hidden_value:
               required: false
               type: string
-              description:
+              description: ''
             name:
               required: true
               type: string
-              description:
+              description: ''
             value:
               required: true
               type: string
-              description:
-            '
+              description: ''
+            "

@@ -31,3 +31,11 @@ parameters:
     type: string
     required: true
     description: "Id of the host"
+  content_access_mode_all:
+    type: string
+    required: false
+    description: "Get all content available, not just that provided by subscriptions"
+  content_access_mode_env:
+    type: string
+    required: false
+    description: "Limit content to just that available in the host's content view version"

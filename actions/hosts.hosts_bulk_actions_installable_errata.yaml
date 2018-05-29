@@ -1,5 +1,5 @@
 ---
-description: "Fetch applicable errata for a system. (resource: POST /api/hosts/bulk/applicable_errata)"
+description: "Fetch applicable errata for a host. (resource: POST /api/hosts/bulk/applicable_errata)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -35,25 +35,25 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             search:
               required: false
               type: string
-              description: Search string for systems to perform an action on
+              description: Search string for hosts to perform an action on
             ids:
               required: false
               type: array
-              description: List of system ids to perform an action on
-            '
+              description: List of host ids to perform an action on
+            "
   excluded:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             ids:
               required: false
               type: array
-              description: List of system ids to exclude and not run an action on
-            '
+              description: List of host ids to exclude and not run an action on
+            "

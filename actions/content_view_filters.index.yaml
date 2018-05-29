@@ -43,7 +43,7 @@ parameters:
     type: string
     required: false
     description: "Sort field and order, eg. 'name DESC'"
-  full_results:
+  full_result:
     type: string
     required: false
     description: "Whether or not to show all results"
@@ -51,7 +51,7 @@ parameters:
     type: object
     required: false
     description: >
-       'description: Hash version of 'order' param
+       "description: Hash version of 'order' param
         parameters:
             by:
               required: false
@@ -61,7 +61,7 @@ parameters:
               required: false
               type: string
               description: How to order the sorted results (e.g. ASC for ascending)
-            '
+            "
   content_view_id:
     type: string
     required: true
@@ -70,3 +70,7 @@ parameters:
     type: string
     required: false
     description: "filter content view filters by name"
+  types:
+    type: array
+    required: false
+    description: "types of filters"

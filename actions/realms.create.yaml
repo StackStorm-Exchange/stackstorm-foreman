@@ -31,7 +31,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             location_ids:
               required: false
@@ -40,7 +40,7 @@ parameters:
             realm_proxy_id:
               required: true
               type: string
-              description: Capsule to use for this realm
+              description: Capsule ID to use within this realm
             name:
               required: true
               type: string
@@ -53,4 +53,4 @@ parameters:
               required: false
               type: array
               description: REPLACE organizations with given ids.
-            '
+            "

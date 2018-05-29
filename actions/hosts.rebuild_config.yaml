@@ -30,3 +30,7 @@ parameters:
   id:
     type: string
     required: true
+  only:
+    type: array
+    required: false
+    description: "Limit rebuild steps, valid steps are DHCP, DNS, TFTP"

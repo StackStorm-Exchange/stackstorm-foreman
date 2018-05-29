@@ -34,7 +34,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             name:
               required: false
@@ -43,11 +43,11 @@ parameters:
             os_family:
               required: false
               type: string
-              description: 'Operating system family, available values: AIX, Altlinux, Archlinux,Coreos, Debian, Freebsd, Gentoo, Junos, NXOS, Redhat, Solaris, Suse,Windows'
+              description: 'Operating system family, available values: AIX, Altlinux, Archlinux,Coreos, Debian, Freebsd, Gentoo, Junos, NXOS, Redhat, Solaris, Suse,Windows, Xenserver'
             operatingsystem_ids:
               required: false
               type: array
-              description:
+              description: ''
             path:
               required: false
               type: string
@@ -60,4 +60,4 @@ parameters:
               required: false
               type: array
               description: REPLACE organizations with given ids.
-            '
+            "

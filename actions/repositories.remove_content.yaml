@@ -35,3 +35,7 @@ parameters:
     type: array
     required: true
     description: "Array of content ids to remove"
+  sync_capsule:
+    type: string
+    required: false
+    description: "Whether or not to sync an external capsule after upload. Default: true"
