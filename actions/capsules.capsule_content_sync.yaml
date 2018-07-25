@@ -35,3 +35,7 @@ parameters:
     type: number
     required: false
     description: "Id of the environment to limit the synchronization on"
+  skip_metadata_check:
+    type: string
+    required: false
+    description: "Skip metadata check on each repository on the capsule"

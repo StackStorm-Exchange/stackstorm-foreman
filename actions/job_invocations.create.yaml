@@ -31,7 +31,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             inputs:
               required: false
@@ -40,7 +40,7 @@ parameters:
             search_query:
               required: false
               type: number
-              description:
+              description: ''
             description_format:
               required: false
               type: string
@@ -61,7 +61,7 @@ parameters:
             targeting_type:
               required: true
               type: string
-              description: Invocation type, one of {"static_query"=>"Static Query","dynamic_query"=>"Dynamic Query"}
+              description: Invocation type, one of {'static_query'=>'Static Query','dynamic_query'=>'Dynamic Query'}
             recurrence:
               required: false
               type: object
@@ -79,10 +79,14 @@ parameters:
                   required: false
                   type: string
                   description: Perform no more executions after this time
+            execution_timeout_interval:
+              required: false
+              type: number
+              description: Override the timeout interval from the template for this invocation only
             bookmark_id:
               required: false
               type: number
-              description:
+              description: ''
             job_template_id:
               required: true
               type: string
@@ -109,4 +113,4 @@ parameters:
                   required: false
                   type: string
                   description: What user should be used to run the script (using sudo-like mechanisms).Defaults to a template parameter or global setting.
-            '
+            "

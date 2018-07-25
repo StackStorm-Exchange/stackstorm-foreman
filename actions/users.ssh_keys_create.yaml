@@ -1,0 +1,48 @@
+---
+description: "Create an SSH key for a user (resource: POST /api/users/:user_id/ssh_keys)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: users.ssh_keys_create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: users.ssh_keys_create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  user_id:
+    type: string
+    required: true
+    description: "ID of the user"
+  ssh_key:
+    type: object
+    required: true
+    description: >
+       "description: 
+        parameters:
+            name:
+              required: true
+              type: string
+              description: ''
+            key:
+              required: true
+              type: string
+              description: Public SSH key
+            "

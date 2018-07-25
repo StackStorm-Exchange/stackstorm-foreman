@@ -34,26 +34,30 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
-            permission_ids:
-              required: false
-              type: array
-              description:
             search:
               required: false
               type: string
-              description:
-            location_ids:
+              description: ''
+            permission_ids:
               required: false
               type: array
-              description:
-            organization_ids:
-              required: false
-              type: array
-              description:
+              description: ''
             role_id:
               required: false
               type: string
-              description:
-            '
+              description: ''
+            override:
+              required: false
+              type: string
+              description: ''
+            location_ids:
+              required: false
+              type: array
+              description: ''
+            organization_ids:
+              required: false
+              type: array
+              description: ''
+            "

@@ -43,7 +43,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             realm_ids:
               required: false
@@ -56,7 +56,7 @@ parameters:
             name:
               required: true
               type: string
-              description:
+              description: ''
             config_template_ids:
               required: false
               type: array
@@ -64,7 +64,7 @@ parameters:
             description:
               required: false
               type: string
-              description:
+              description: ''
             domain_ids:
               required: false
               type: array
@@ -72,7 +72,7 @@ parameters:
             label:
               required: false
               type: string
-              description:
+              description: ''
             hostgroup_ids:
               required: false
               type: array
@@ -81,10 +81,10 @@ parameters:
               required: false
               type: array
               description: User IDs
-            provisioning_template_ids:
+            medium_ids:
               required: false
               type: array
-              description: Provisioning template IDs
+              description: Medium IDs
             smart_proxy_ids:
               required: false
               type: array
@@ -97,12 +97,12 @@ parameters:
               required: false
               type: array
               description: Partition template IDs
-            media_ids:
+            provisioning_template_ids:
               required: false
               type: array
-              description: Media IDs
+              description: Provisioning template IDs
             compute_resource_ids:
               required: false
               type: array
               description: Compute resource IDs
-            '
+            "

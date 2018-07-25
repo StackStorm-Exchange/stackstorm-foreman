@@ -27,6 +27,10 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  thin:
+    type: string
+    required: false
+    description: "Only list ID and name of hosts"
   hostgroup_id:
     type: string
     required: true
@@ -43,6 +47,10 @@ parameters:
     type: string
     required: false
     description: "ID of environment"
+  include:
+    type: array
+    required: false
+    description: "Array of extra information types to include"
   search:
     type: string
     required: false

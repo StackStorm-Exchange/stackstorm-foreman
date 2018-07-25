@@ -27,6 +27,10 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  show_hidden:
+    type: string
+    required: false
+    description: "Display hidden values"
   search:
     type: string
     required: false

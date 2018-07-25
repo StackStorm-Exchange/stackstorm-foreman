@@ -1,0 +1,56 @@
+---
+description: "Create a Tailoring file (resource: POST /api/compliance/tailoring_files)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: compliance.tailoring_files_create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: compliance.tailoring_files_create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  tailoring_file:
+    type: object
+    required: true
+    description: >
+       "description: 
+        parameters:
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            scap_file:
+              required: true
+              type: string
+              description: XML containing tailoring file
+            name:
+              required: true
+              type: string
+              description: Tailoring file name
+            original_filename:
+              required: false
+              type: string
+              description: Original file name of the XML file
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            "

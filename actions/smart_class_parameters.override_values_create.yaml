@@ -37,18 +37,22 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             use_puppet_default:
               required: false
               type: string
-              description:
-            value:
-              required: true
+              description: Deprecated, please use omit
+            omit:
+              required: false
               type: string
-              description: Override value
+              description: Satellite will not send this parameter in classification output, replacesuse_puppet_default
+            value:
+              required: false
+              type: string
+              description: Override value, required if omit is false
             match:
               required: true
               type: string
               description: Override match
-            '
+            "

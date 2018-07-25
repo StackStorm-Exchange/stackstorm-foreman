@@ -31,22 +31,22 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             query:
               required: true
               type: string
-              description:
+              description: ''
             controller:
               required: true
               type: string
-              description:
+              description: ''
             name:
               required: true
               type: string
-              description:
+              description: ''
             public:
               required: false
               type: string
-              description:
-            '
+              description: ''
+            "

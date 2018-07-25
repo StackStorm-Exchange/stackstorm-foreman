@@ -34,12 +34,16 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             comment:
               required: false
               type: string
               description: Additional information about this host
+            config_group_ids:
+              required: false
+              type: array
+              description: IDs of associated config groups
             environment_id:
               required: false
               type: string
@@ -56,7 +60,7 @@ parameters:
                 content_view_id:
                   required: false
                   type: number
-                  description:
+                  description: ''
                 kickstart_repository_id:
                   required: false
                   type: number
@@ -64,11 +68,15 @@ parameters:
                 lifecycle_environment_id:
                   required: false
                   type: number
-                  description:
+                  description: ''
+                content_source_id:
+                  required: false
+                  type: number
+                  description: ''
             model_id:
               required: false
               type: string
-              description:
+              description: ''
             ip:
               required: false
               type: string
@@ -76,92 +84,104 @@ parameters:
             provision_method:
               required: false
               type: string
-              description: The method used to provision the host. Possible provision_methods may bebuild (Network Based), image (Image Based)
+              description: The method used to provision the host. Possible provision_methods may bebuild (Network Based), image (Image Based), bootdisk (Boot disk based)
             interfaces_attributes:
               required: false
               type: array
               description: Host's network interfaces.
               parameters:
-                provision:
-                  required: false
-                  type: string
-                  description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
-                username:
-                  required: false
-                  type: string
-                  description: Only for BMC interfaces.
-                password:
-                  required: false
-                  type: string
-                  description: Only for BMC interfaces.
                 managed:
                   required: false
                   type: string
                   description: Should this interface be managed via DHCP and DNS capsule and should it beconfigured during provisioning?
-                name:
-                  required: false
-                  type: string
-                  description: Interface's DNS name
-                subnet_id:
-                  required: false
-                  type: number
-                  description: Satellite subnet ID of interface
                 ip:
                   required: false
                   type: string
-                  description: IP address of interface
+                  description: IPv4 address of interface
                 primary:
                   required: false
                   type: string
                   description: Should this interface be used for constructing the FQDN of the host? Eachmanaged hosts needs to have one primary interface.
-                virtual:
-                  required: false
-                  type: string
-                  description: Alias or VLAN device
-                attached_to:
-                  required: false
-                  type: string
-                  description: Identifier of the interface to which this interface belongs, e.g. eth1.Only for virtual interfaces.
                 bond_options:
                   required: false
                   type: string
                   description: Space separated options, e.g. miimon=100. Only for bond interfaces.
-                mac:
-                  required: false
-                  type: string
-                  description: MAC address of interface. Required for managed interfaces on bare metal.
                 tag:
                   required: false
                   type: string
                   description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only forvirtual interfaces.
-                mode:
+                domain_id:
                   required: false
                   type: string
-                  description: Bond mode of the interface, e.g. balance-rr. Only for bond interfaces.
-                provider:
-                  required: false
-                  type: string
-                  description: Interface provider, e.g. IPMI. Only for BMC interfaces.
-                compute_attributes:
-                  required: false
-                  type: object
-                  description: Additional compute resource specific attributes for the interface.
+                  description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
                 attached_devices:
                   required: false
                   type: array
                   description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond interfaces those are the slaves. Only for bondand bridges interfaces.
-                identifier:
+                subnet_id:
                   required: false
                   type: string
-                  description: Device identifier, e.g. eth0 or eth1.1
+                  description: Satellite subnet ID of IPv4 interface
+                virtual:
+                  required: false
+                  type: string
+                  description: Alias or VLAN device
+                subnet6_id:
+                  required: false
+                  type: string
+                  description: Satellite subnet ID of IPv6 interface
+                provider:
+                  required: false
+                  type: string
+                  description: Interface provider, e.g. IPMI. Only for BMC interfaces.
                 type:
                   required: false
                   type: string
                   description: Interface type, e.g. bmc. Default is interface
-                domain_id:
+                username:
                   required: false
-                  type: number
-                  description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
+                  type: string
+                  description: Only for BMC interfaces.
+                mac:
+                  required: false
+                  type: string
+                  description: MAC address of interface. Required for managed interfaces on bare metal.
+                ip6:
+                  required: false
+                  type: string
+                  description: IPv6 address of interface
+                password:
+                  required: false
+                  type: string
+                  description: Only for BMC interfaces.
+                provision:
+                  required: false
+                  type: string
+                  description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
+                attached_to:
+                  required: false
+                  type: string
+                  description: Identifier of the interface to which this interface belongs, e.g. eth1.Only for virtual interfaces.
+                name:
+                  required: false
+                  type: string
+                  description: Interface's DNS name
+                compute_attributes:
+                  required: false
+                  type: object
+                  description: Additional compute resource specific attributes for the interface.
+                mode:
+                  required: false
+                  type: string
+                  description: Bond mode of the interface, e.g. balance-rr. Only for bond interfaces.
+                identifier:
+                  required: false
+                  type: string
+                  description: Device identifier, e.g. eth0 or eth1.1
+            openscap_proxy_id:
+              required: false
+              type: string
+              description: ID of OpenSCAP Capsule
             location_id:
               required: false
               type: string
@@ -181,7 +201,7 @@ parameters:
             capabilities:
               required: false
               type: string
-              description:
+              description: ''
             architecture_id:
               required: false
               type: string
@@ -189,7 +209,7 @@ parameters:
             build:
               required: false
               type: string
-              description:
+              description: ''
             host_parameters_attributes:
               required: false
               type: array
@@ -206,11 +226,11 @@ parameters:
             puppetclass_ids:
               required: false
               type: array
-              description:
+              description: ''
             owner_id:
               required: false
               type: string
-              description:
+              description: ''
             operatingsystem_id:
               required: false
               type: string
@@ -226,7 +246,7 @@ parameters:
             image_id:
               required: false
               type: string
-              description:
+              description: ''
             mac:
               required: false
               type: string
@@ -234,11 +254,11 @@ parameters:
             puppet_ca_proxy_id:
               required: false
               type: string
-              description:
+              description: Puppet CA Capsule ID
             puppet_proxy_id:
               required: false
               type: string
-              description:
+              description: Puppet Capsule ID
             ptable_id:
               required: false
               type: string
@@ -247,10 +267,14 @@ parameters:
               required: false
               type: string
               description: UUID to track orchestration tasks status, GET/api/orchestration/:UUID/tasks
+            realm_id:
+              required: false
+              type: string
+              description: ''
             name:
               required: false
               type: string
-              description:
+              description: ''
             medium_id:
               required: false
               type: string
@@ -258,11 +282,11 @@ parameters:
             enabled:
               required: false
               type: string
-              description:
+              description: ''
             hostgroup_id:
               required: false
               type: string
-              description:
+              description: ''
             compute_attributes:
               required: false
               type: object
@@ -271,10 +295,10 @@ parameters:
               required: false
               type: string
               description: Host's owner type
-            realm_id:
+            pxe_loader:
               required: false
               type: string
-              description:
+              description: DHCP filename option (Grub2/PXELinux by default)
             subscription_facet_attributes:
               required: false
               type: object
@@ -292,6 +316,27 @@ parameters:
                   required: false
                   type: array
                   description: List of hypervisor guest uuids
+                installed_products_attributes:
+                  required: false
+                  type: array
+                  description: List of products installed on the host
+                  parameters:
+                    version:
+                      required: false
+                      type: string
+                      description: Product version
+                    arch:
+                      required: false
+                      type: string
+                      description: Product architecture
+                    product_id:
+                      required: false
+                      type: string
+                      description: Product id as listed from a host's installed products,         this isnot the same product id as the products api returns
+                    product_name:
+                      required: false
+                      type: string
+                      description: Product name as listed from a host's installed products
                 autoheal:
                   required: false
                   type: string
@@ -299,5 +344,5 @@ parameters:
             compute_profile_id:
               required: false
               type: string
-              description:
-            '
+              description: ''
+            "

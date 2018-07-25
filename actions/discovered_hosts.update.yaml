@@ -34,20 +34,20 @@ parameters:
     type: object
     required: false
     description: >
-       'description: None
+       "description: 
         parameters:
             environment_id:
               required: false
               type: string
-              description:
+              description: ''
             managed:
               required: false
               type: string
-              description:
+              description: ''
             model_id:
               required: false
               type: string
-              description:
+              description: ''
             ip:
               required: false
               type: string
@@ -55,47 +55,47 @@ parameters:
             provision_method:
               required: false
               type: string
-              description:
+              description: ''
             domain_id:
               required: false
               type: string
-              description:
+              description: ''
             ptable_id:
               required: false
               type: string
-              description:
+              description: ''
             subnet_id:
               required: false
               type: string
-              description:
+              description: ''
             capabilities:
               required: false
               type: string
-              description:
+              description: ''
             architecture_id:
               required: false
               type: string
-              description:
+              description: ''
             build:
               required: false
               type: string
-              description:
+              description: ''
             host_parameters_attributes:
               required: false
               type: array
-              description:
+              description: ''
             owner_id:
               required: false
               type: string
-              description:
+              description: ''
             operatingsystem_id:
               required: false
               type: string
-              description:
+              description: ''
             sp_subnet_id:
               required: false
               type: string
-              description:
+              description: ''
             root_pass:
               required: false
               type: string
@@ -107,7 +107,7 @@ parameters:
             image_id:
               required: false
               type: string
-              description:
+              description: ''
             mac:
               required: false
               type: string
@@ -115,29 +115,33 @@ parameters:
             puppet_ca_proxy_id:
               required: false
               type: string
-              description:
+              description: ''
             puppet_proxy_id:
               required: false
               type: string
-              description:
+              description: ''
             name:
               required: false
               type: string
-              description:
+              description: ''
             medium_id:
               required: false
               type: string
-              description:
+              description: ''
             puppet_class_ids:
               required: false
               type: array
-              description:
+              description: ''
             enabled:
               required: false
               type: string
-              description:
+              description: ''
             hostgroup_id:
               required: false
               type: string
-              description:
-            '
+              description: ''
+            pxe_loader:
+              required: false
+              type: string
+              description: DHCP filename option (Grub2 or PXELinux by default)
+            "

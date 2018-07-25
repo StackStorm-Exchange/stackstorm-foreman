@@ -1,5 +1,5 @@
 ---
-description: "Show a package (resource: GET /katello/api/repositories/:repository_id/packages/:id)"
+description: "List :resource_id (resource: GET /katello/api/repositories/:repository_id/:resource_id)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -27,11 +27,74 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  organization_id:
+    type: string
+    required: false
+    description: "organization identifier"
+  content_view_version_id:
+    type: string
+    required: false
+    description: "content view version identifier"
+  content_view_filter_id:
+    type: string
+    required: false
+    description: "content view filter identifier"
   repository_id:
     type: string
     required: true
     description: "repository identifier"
-  id:
+  environment_id:
     type: string
-    required: true
-    description: "a package identifier"
+    required: false
+    description: "environment identifier"
+  ids:
+    type: array
+    required: false
+    description: "ids to filter content by"
+  host_id:
+    type: string
+    required: false
+    description: "host id to list applicable packages for"
+  packages_restrict_upgradable:
+    type: boolean
+    required: false
+    description: "Only show packages that are upgradable in the host(s) Content View."
+  packages_restrict_applicable:
+    type: boolean
+    required: false
+    description: "Only show packages that are applicable to hosts (defaults to true ifhost_id is specified)"
+  search:
+    type: string
+    required: false
+    description: "Search string"
+  page:
+    type: string
+    required: false
+    description: "Page number, starting at 1"
+  per_page:
+    type: string
+    required: false
+    description: "Number of results per page to return"
+  order:
+    type: string
+    required: false
+    description: "Sort field and order, eg. 'name DESC'"
+  full_result:
+    type: string
+    required: false
+    description: "Whether or not to show all results"
+  sort:
+    type: object
+    required: false
+    description: >
+       "description: Hash version of 'order' param
+        parameters:
+            by:
+              required: false
+              type: string
+              description: Field to sort the results on
+            order:
+              required: false
+              type: string
+              description: How to order the sorted results (e.g. ASC for ascending)
+            "

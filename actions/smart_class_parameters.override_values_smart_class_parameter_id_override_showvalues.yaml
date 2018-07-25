@@ -36,3 +36,7 @@ parameters:
   id:
     type: string
     required: true
+  show_hidden:
+    type: string
+    required: false
+    description: "Display hidden values"

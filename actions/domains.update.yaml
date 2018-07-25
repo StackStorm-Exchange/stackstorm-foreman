@@ -34,7 +34,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             name:
               required: false
@@ -47,7 +47,7 @@ parameters:
             dns_id:
               required: false
               type: string
-              description: DNS Capsule to use within this domain
+              description: DNS Capsule ID to use within this domain
             fullname:
               required: false
               type: string
@@ -60,4 +60,4 @@ parameters:
               required: false
               type: array
               description: REPLACE organizations with given ids.
-            '
+            "

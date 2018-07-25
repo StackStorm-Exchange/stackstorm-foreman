@@ -31,22 +31,26 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             url:
               required: true
               type: string
-              description:
+              description: ''
             location_ids:
               required: false
               type: array
               description: REPLACE locations with given ids
+            download_policy:
+              required: false
+              type: string
+              description: Download Policy of the capsule, must be one of immediate, on_demand,background, inherit
             name:
               required: true
               type: string
-              description:
+              description: ''
             organization_ids:
               required: false
               type: array
               description: REPLACE organizations with given ids.
-            '
+            "

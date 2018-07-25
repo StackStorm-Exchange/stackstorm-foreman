@@ -43,7 +43,7 @@ parameters:
     type: array
     required: false
     description: >
-       'description: Array of subscriptions to add
+       "description: Array of subscriptions to add
         parameters:
             id:
               required: true
@@ -53,4 +53,4 @@ parameters:
               required: true
               type: string
               description: Quantity of this subscriptions to add
-            '
+            "

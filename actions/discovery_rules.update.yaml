@@ -34,7 +34,7 @@ parameters:
     type: object
     required: false
     description: >
-       'description: None
+       "description: 
         parameters:
             search:
               required: false
@@ -64,4 +64,12 @@ parameters:
               required: false
               type: number
               description: puts the rules in order, low numbers go first. Must be greater then zero
-            '
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            "

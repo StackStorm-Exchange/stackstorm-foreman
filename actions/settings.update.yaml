@@ -34,10 +34,10 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             value:
               required: false
               type: string
-              description:
-            '
+              description: ''
+            "

@@ -33,9 +33,32 @@ parameters:
     description: "Id of the content host"
   content_label:
     type: string
-    required: true
+    required: false
     description: "Label of the content"
   value:
     type: string
-    required: true
-    description: "Override to 0/1, or 'default'"
+    required: false
+    description: "Override to a boolean value or 'default'"
+  content_overrides:
+    type: array
+    required: false
+    description: >
+       "description: Array of Content override parameters
+        parameters:
+            content_label:
+              required: true
+              type: string
+              description: Label of the content
+            name:
+              required: false
+              type: string
+              description: Override key or name. Note if name is not provided the default name will be'enabled'
+            value:
+              required: false
+              type: string
+              description: Override value. Provide a boolean value if name is 'enabled'
+            remove:
+              required: false
+              type: string
+              description: Set true to remove an override and reset it to 'default'
+            "

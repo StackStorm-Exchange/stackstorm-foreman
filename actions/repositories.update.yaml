@@ -63,3 +63,23 @@ parameters:
     type: string
     required: false
     description: "true if this repository when synced has to be mirrored from the source andstale rpms removed."
+  verify_ssl_on_sync:
+    type: string
+    required: false
+    description: "if true, Katello will verify the upstream url's SSL certifcates aresigned by a trusted CA."
+  upstream_username:
+    type: string
+    required: false
+    description: "Username of the upstream repository user for authentication"
+  upstream_password:
+    type: string
+    required: false
+    description: "Password of the upstream repository user for authentication"
+  ostree_upstream_sync_policy:
+    type: string
+    required: false
+    description: "policies for syncing upstream ostree repositories."
+  ostree_upstream_sync_depth:
+    type: string
+    required: false
+    description: "if a custom sync policy is chosen for ostree repositories then a'depth' value must be provided."

@@ -39,6 +39,10 @@ parameters:
   environment_id:
     type: string
     required: false
+  show_hidden:
+    type: string
+    required: false
+    description: "Display hidden values"
   search:
     type: string
     required: false
