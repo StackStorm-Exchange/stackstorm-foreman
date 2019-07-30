@@ -1,0 +1,23 @@
+version: 1.0
+
+description: Workflow to list all hosts that haven't reported since yesterday
+
+input:
+  - server
+  - username
+  - password
+  - search
+  - per_page
+
+tasks:
+  task1:
+    action: foreman.hosts.index server=<% ctx(server) %> username=<% ctx(username) %> password=<% ctx(password) %> search=<% ctx(search) %> per_page=<% ctx(per_page) %>
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - stdout: <% result().stdout %>
+          - stderr: <% result().stderr %>
+          - listdetails: <% result().result.results %>
+
+output: 
+ - ans: <% dict(machines=>dict(ctx(listdetails).select([$.certname, $.subscription_facet_attributes.last_checkin]))) %>
