@@ -1,6 +1,6 @@
 version: 1.0
 
-description: Workflow to list all hosts that haven't reported since yesterday
+description: Workflow to list all hosts that haven't reported 
 
 input:
   - server
