@@ -6,6 +6,10 @@ runner_type: orquesta
 entry_point: workflows/hosts.last_checkin.yaml
 enabled: true
 parameters:
+  conection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
   server:
     required: true
     type: string
@@ -15,9 +19,14 @@ parameters:
   password:
     required: true
     type: string
-  search:
+    secret: true
+  time:
     required: true
     type: string
+  search:
+    type: string
+    default: "last_checkin < "
   per_page:
     type: string
+    default: "25"
 
