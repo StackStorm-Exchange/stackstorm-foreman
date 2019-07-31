@@ -26,7 +26,7 @@ parameters:
   time:
     type: string  
     required: true
-    description: "Time since last checkin. Expressed through Day Name, Specific Date, <num> minutes/hours/days ago"
+    description: "Time since last checkin. Examples - 1 hour ago / 30 minutes ago / 2 days ago / Jul 24, 2019 / Yesterday / Friday / 2019-07-31 14:34:40 -0400"
   search:
     type: string
     description: "filter results"
