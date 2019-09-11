@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "repository ID"
   source_url:
@@ -36,14 +36,14 @@ parameters:
     required: false
     description: "temporarily override feed URL for sync"
   incremental:
-    type: string
+    type: boolean
     required: false
     description: "perform an incremental import"
   skip_metadata_check:
-    type: string
+    type: boolean
     required: false
     description: "Force sync even if no upstream changes are detected. Only used with yumrepositories."
   validate_contents:
-    type: string
+    type: boolean
     required: false
     description: "Force a sync and validate the checksums of all content. Only used with yumrepositories."

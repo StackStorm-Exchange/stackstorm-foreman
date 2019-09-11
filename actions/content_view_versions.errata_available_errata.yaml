@@ -1,0 +1,93 @@
+---
+description: "Return errata that can be added to the Content View Version via an Incremental Update (resource: GET /katello/api/content_view_versions/:id/available_errata)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: content_view_versions.errata_available_errata
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: content_view_versions.errata_available_errata
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: number
+    required: true
+    description: "Content View Version identifier"
+  organization_id:
+    type: number
+    required: false
+    description: "Organization identifier"
+  content_view_filter_id:
+    type: number
+    required: false
+    description: "Content View Filter identifier"
+  repository_id:
+    type: number
+    required: false
+    description: "Repository identifier"
+  environment_id:
+    type: number
+    required: false
+    description: "Environment identifier"
+  cve:
+    type: string
+    required: false
+    description: "CVE identifier"
+  host_id:
+    type: number
+    required: false
+    description: "Host id to list applicable errata for"
+  errata_restrict_applicable:
+    type: boolean
+    required: false
+    description: "Return errata that are applicable to one or more hosts (defaults to true ifhost_id is specified)"
+  errata_restrict_installable:
+    type: boolean
+    required: false
+    description: "Return errata that are upgradable on one or more hosts"
+  search:
+    type: string
+    required: false
+    description: "Search string"
+  page:
+    type: number
+    required: false
+    description: "Page number, starting at 1"
+  per_page:
+    type: number
+    required: false
+    description: "Number of results per page to return"
+  order:
+    type: string
+    required: false
+    description: "Sort field and order, eg. 'id DESC'"
+  full_result:
+    type: boolean
+    required: false
+    description: "Whether or not to show all results"
+  sort_by:
+    type: string
+    required: false
+    description: "Field to sort the results on"
+  sort_order:
+    type: string
+    required: false
+    description: "How to order the sorted results (e.g. ASC for ascending)"

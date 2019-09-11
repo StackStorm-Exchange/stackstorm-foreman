@@ -1,5 +1,5 @@
 ---
-description: "Upload gpg key contents (resource: POST /katello/api/gpg_keys/:id/content)"
+description: "Return the content of a gpg key, used directly by yum (resource: GET /katello/api/gpg_keys/:id/content)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -28,10 +28,5 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
-    description: "gpg key numeric identifier"
-  content:
-    type: string
-    required: true
-    description: "file contents"

@@ -28,10 +28,10 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "ID of the environment"
   organization_id:
-    type: string
+    type: number
     required: false
     description: "ID of the organization"

@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   auth_source_ldap:
     type: object
     required: true
@@ -39,7 +47,7 @@ parameters:
               description: required if onthefly_register is true
             tls:
               required: false
-              type: string
+              type: boolean
               description: ''
             account:
               required: false
@@ -55,7 +63,7 @@ parameters:
               description: type of the LDAP server
             use_netgroups:
               required: false
-              type: string
+              type: boolean
               description: use NIS netgroups instead of posix groups, applicable only when server_typeis posix or free_ipa
             groups_base:
               required: false
@@ -67,7 +75,7 @@ parameters:
               description: ''
             onthefly_register:
               required: false
-              type: string
+              type: boolean
               description: ''
             host:
               required: true
@@ -83,7 +91,7 @@ parameters:
               description: required if onthefly_register is true
             usergroup_sync:
               required: false
-              type: string
+              type: boolean
               description: sync external user groups on login
             base_dn:
               required: false
@@ -103,7 +111,7 @@ parameters:
               description: REPLACE locations with given ids
             port:
               required: false
-              type: string
+              type: number
               description: defaults to 389
             organization_ids:
               required: false

@@ -1,0 +1,61 @@
+---
+description: "List available subscriptions from Red Hat Subscription Management (resource: GET /katello/api/organizations/:organization_id/upstream_subscriptions)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: organizations.upstream_subscriptions_index
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: organizations.upstream_subscriptions_index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: number
+    required: true
+    description: "Organization ID"
+  page:
+    type: number
+    required: false
+    description: "Page number, starting at 1"
+  per_page:
+    type: number
+    required: false
+    description: "Number of results per page to return."
+  order:
+    type: string
+    required: false
+    description: "The order to sort the results in. ['asc', 'desc'] Defaultsto 'desc'."
+  sort_by:
+    type: string
+    required: false
+    description: "The field to sort the data by. Defaults to the created date."
+  pool_ids:
+    type: array
+    required: false
+    description: "Return only the upstream pools which map to the given Katello pool IDs"
+  quantities_only:
+    type: boolean
+    required: false
+    description: "Only returns id and quantity fields"
+  attachable:
+    type: boolean
+    required: false
+    description: "Return only subscriptions which can be attached to the upstream allocation"

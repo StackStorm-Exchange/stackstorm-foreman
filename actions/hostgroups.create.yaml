@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   hostgroup:
     type: object
     required: true
@@ -39,15 +47,15 @@ parameters:
               description: IDs of associated config groups
             content_source_id:
               required: false
-              type: string
+              type: number
               description: Content source ID
             environment_id:
               required: false
-              type: string
+              type: number
               description: Environment ID
             kickstart_repository_id:
               required: false
-              type: string
+              type: number
               description: Kickstart repository ID
             group_parameters_attributes:
               required: false
@@ -64,27 +72,27 @@ parameters:
                   description: Parameter value
             openscap_proxy_id:
               required: false
-              type: string
+              type: number
               description: ID of OpenSCAP Capsule
             domain_id:
               required: false
-              type: string
+              type: number
               description: Domain ID
-            ptable_id:
+            compute_resource_id:
               required: false
-              type: string
-              description: Partition table ID
+              type: number
+              description: Compute resource ID
             subnet_id:
               required: false
-              type: string
+              type: number
               description: Subnet ID
             parent_id:
               required: false
-              type: string
+              type: number
               description: Parent ID of the host group
             architecture_id:
               required: false
-              type: string
+              type: number
               description: Architecture ID
             organization_ids:
               required: false
@@ -92,24 +100,36 @@ parameters:
               description: REPLACE organizations with given ids.
             operatingsystem_id:
               required: false
-              type: string
+              type: number
               description: Operating system ID
             root_pass:
               required: false
               type: string
               description: Root password on provisioned hosts
-            content_view_id:
+            ansible_role_ids:
+              required: false
+              type: array
+              description: IDs of associated ansible roles
+            description:
               required: false
               type: string
+              description: Host group description
+            content_view_id:
+              required: false
+              type: number
               description: Content view ID
             puppet_ca_proxy_id:
               required: false
-              type: string
+              type: number
               description: Puppet CA Capsule ID
             puppet_proxy_id:
               required: false
-              type: string
+              type: number
               description: Puppet Capsule ID
+            ptable_id:
+              required: false
+              type: number
+              description: Partition table ID
             pxe_loader:
               required: false
               type: string
@@ -120,11 +140,11 @@ parameters:
               description: Name of the host group
             medium_id:
               required: false
-              type: string
+              type: number
               description: Media ID
             lifecycle_environment_id:
               required: false
-              type: string
+              type: number
               description: Lifecycle environment ID
             location_ids:
               required: false
@@ -132,10 +152,10 @@ parameters:
               description: REPLACE locations with given ids
             realm_id:
               required: false
-              type: string
+              type: number
               description: Realm ID
             compute_profile_id:
               required: false
-              type: string
+              type: number
               description: Compute profile ID
             "

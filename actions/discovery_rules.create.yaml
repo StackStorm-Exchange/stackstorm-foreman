@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   discovery_rule:
     type: object
     required: false
@@ -47,7 +55,7 @@ parameters:
               description: defines a pattern to assign human-readable hostnames to the matching hosts
             enabled:
               required: false
-              type: string
+              type: boolean
               description: flag is used for temporary shutdown of rules
             hostgroup_id:
               required: true
@@ -62,11 +70,11 @@ parameters:
               type: number
               description: puts the rules in order, low numbers go first. Must be greater then zero
             location_ids:
-              required: false
+              required: true
               type: array
-              description: REPLACE locations with given ids
+              description: location ID for provisioned hosts
             organization_ids:
-              required: false
+              required: true
               type: array
-              description: REPLACE organizations with given ids.
+              description: organization ID for provisioned hosts
             "

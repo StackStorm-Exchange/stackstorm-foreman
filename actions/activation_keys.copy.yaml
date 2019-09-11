@@ -32,10 +32,10 @@ parameters:
     required: true
     description: "Name of new activation key"
   id:
-    type: string
+    type: number
     required: true
     description: "ID of the activation key"
   organization_id:
-    type: string
+    type: number
     required: false
     description: "organization identifier"

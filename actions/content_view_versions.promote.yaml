@@ -28,15 +28,15 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "Content view version identifier"
   force:
-    type: string
+    type: boolean
     required: false
     description: "force content view promotion and bypass lifecycle environment restriction"
   environment_id:
-    type: string
+    type: number
     required: false
     description: "LifeCycle Environment identifier"
   environment_ids:
@@ -47,7 +47,3 @@ parameters:
     type: string
     required: false
     description: "The description for the content view version promotion"
-  force_yum_metadata_regeneration:
-    type: string
-    required: false
-    description: "Force metadata regeneration on the repositories in the content view version"

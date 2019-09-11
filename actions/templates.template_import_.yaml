@@ -1,0 +1,85 @@
+---
+description: "Initiate Import (resource: POST /api/templates/import)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: templates.template_import_
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: templates.template_import_
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
+  prefix:
+    type: string
+    required: false
+    description: "The string all imported templates should begin with."
+  associate:
+    type: string
+    required: false
+    description: "Associate to OS's, Locations & Organizations. Options are: always,new or never."
+  force:
+    type: boolean
+    required: false
+    description: "Update templates that are locked"
+  lock:
+    type: boolean
+    required: false
+    description: "Lock imported templates"
+  verbose:
+    type: boolean
+    required: false
+    description: "Show template diff in response"
+  branch:
+    type: string
+    required: false
+    description: "Branch in Git repo."
+  repo:
+    type: string
+    required: false
+    description: "Override the default repo from settings."
+  filter:
+    type: string
+    required: false
+    description: "Export templates with names matching this regex (case-insensitive; snippetsare not filtered)."
+  negate:
+    type: boolean
+    required: false
+    description: "Negate the prefix (for purging)."
+  dirname:
+    type: string
+    required: false
+    description: "The directory within Git repo containing the templates"
+  location_ids:
+    type: array
+    required: false
+    description: "REPLACE locations with given ids"
+  organization_ids:
+    type: array
+    required: false
+    description: "REPLACE organizations with given ids."

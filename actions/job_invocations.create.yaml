@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   job_invocation:
     type: object
     required: true
@@ -39,7 +47,7 @@ parameters:
               description: Inputs to use
             search_query:
               required: false
-              type: number
+              type: string
               description: ''
             description_format:
               required: false
@@ -58,6 +66,10 @@ parameters:
                   required: false
                   type: number
                   description: Distribute tasks over N seconds
+            feature:
+              required: false
+              type: string
+              description: Remote execution feature label that should be triggered, job templateassigned to this feature will be used
             targeting_type:
               required: true
               type: string
@@ -73,7 +85,7 @@ parameters:
                   description: How often the job should occur, in the cron format
                 max_iteration:
                   required: false
-                  type: string
+                  type: number
                   description: Repeat a maximum of N times
                 end_time:
                   required: false
@@ -88,9 +100,9 @@ parameters:
               type: number
               description: ''
             job_template_id:
-              required: true
+              required: false
               type: string
-              description: The job template to use
+              description: The job template to use, parameter is required unless feature was specified
             scheduling:
               required: false
               type: object

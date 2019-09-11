@@ -1,0 +1,44 @@
+---
+description: "Revoke a Personal Access Token for a user (resource: DELETE /api/users/:user_id/personal_access_tokens/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: users.personal_access_tokens_user_id_personal_access_destroytokens
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: users.personal_access_tokens_user_id_personal_access_destroytokens
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
+  id:
+    type: string
+    required: true
+  user_id:
+    type: string
+    required: true
+    description: "ID of the user"

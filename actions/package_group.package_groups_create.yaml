@@ -34,13 +34,13 @@ parameters:
   name:
     type: string
     required: true
-    description: "package group name."
+    description: "package group name"
   description:
     type: string
     required: false
     description: "package group description. Defaults to params"
   user_visible:
-    type: string
+    type: boolean
     required: false
     description: "set 'user_visible' flag on package group. Defaults to true"
   mandatory_package_names:

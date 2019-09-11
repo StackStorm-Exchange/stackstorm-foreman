@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: true
     description: "organization identifier"
   name:
@@ -47,6 +47,6 @@ parameters:
     required: false
     description: "Maximum number of hosts in the host collection"
   unlimited_hosts:
-    type: string
+    type: boolean
     required: false
     description: "Whether or not the host collection may have unlimited hosts"

@@ -28,10 +28,10 @@ parameters:
     required: false
     secret: true
   content_view_id:
-    type: string
+    type: number
     required: true
     description: "content view identifier"
   id:
-    type: string
+    type: number
     required: true
     description: "filter identifier"

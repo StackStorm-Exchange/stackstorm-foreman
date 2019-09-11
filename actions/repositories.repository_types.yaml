@@ -28,6 +28,6 @@ parameters:
     required: false
     secret: true
   creatable:
-    type: string
+    type: boolean
     required: false
     description: "When set to 'True' repository types that are creatable will bereturned"

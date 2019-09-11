@@ -1,5 +1,5 @@
 ---
-description: "Add subscriptions to one or more hosts (resource: PUT /api/hosts/bulk/subscriptions/add_subscriptions)"
+description: "Add subscriptions to one or more hosts (resource: PUT /api/hosts/bulk/add_subscriptions)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: true
     description: "ID of the organization"
   included:
@@ -69,6 +69,6 @@ parameters:
               description: Subscription Pool id
             quantity:
               required: true
-              type: string
+              type: number
               description: Quantity of this subscriptions to add
             "

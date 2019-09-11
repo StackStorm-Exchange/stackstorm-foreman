@@ -28,15 +28,15 @@ parameters:
     required: false
     secret: true
   repository_id:
-    type: string
+    type: number
     required: true
     description: "Repository id"
   id:
-    type: string
+    type: number
     required: true
     description: "Upload request id"
   offset:
-    type: string
+    type: number
     required: true
     description: "The offset in the file where the content starts"
   content:

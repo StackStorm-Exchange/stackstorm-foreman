@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "Content view identifier"
   name:
@@ -47,3 +47,7 @@ parameters:
     type: array
     required: false
     description: "List of component content view version ids for composite views"
+  auto_publish:
+    type: boolean
+    required: false
+    description: "Enable/Disable auto publish of composite view"

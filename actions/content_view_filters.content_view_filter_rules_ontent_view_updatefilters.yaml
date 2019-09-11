@@ -28,11 +28,11 @@ parameters:
     required: false
     secret: true
   content_view_filter_id:
-    type: string
+    type: number
     required: true
     description: "filter identifier"
   id:
-    type: string
+    type: number
     required: true
     description: "rule identifier"
   name:

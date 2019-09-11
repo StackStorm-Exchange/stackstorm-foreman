@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   id:
     type: string
     required: true
@@ -38,7 +46,7 @@ parameters:
         parameters:
             default_value:
               required: false
-              type: string
+              type: any_type
               description: Value to use when there is no match
             validator_rule:
               required: false
@@ -46,15 +54,15 @@ parameters:
               description: Used to enforce certain values for the parameter values
             use_puppet_default:
               required: false
-              type: string
+              type: boolean
               description: Deprecated, please use omit
             required:
               required: false
-              type: string
+              type: boolean
               description: If true, will raise an error if there is no default value and no matcherprovide a value
             avoid_duplicates:
               required: false
-              type: string
+              type: boolean
               description: Remove duplicate values (only array type)
             description:
               required: false
@@ -66,7 +74,7 @@ parameters:
               description: The order in which values are resolved
             omit:
               required: false
-              type: string
+              type: boolean
               description: Satellite will not send this parameter in classification output. Puppetwill use the value defined in the Puppet manifest for this parameter
             parameter_type:
               required: false
@@ -74,7 +82,7 @@ parameters:
               description: Types of variable values
             hidden_value:
               required: false
-              type: string
+              type: boolean
               description: When enabled the parameter is hidden in the UI
             validator_type:
               required: false
@@ -82,7 +90,7 @@ parameters:
               description: Types of validation values
             override:
               required: false
-              type: string
+              type: boolean
               description: Whether the smart class parameter value is managed by Satellite
             path:
               required: false
@@ -90,10 +98,10 @@ parameters:
               description: The order in which values are resolved
             merge_default:
               required: false
-              type: string
+              type: boolean
               description: Include default value when merging all matching values
             merge_overrides:
               required: false
-              type: string
+              type: boolean
               description: Merge all matching values (only array/hash type)
             "

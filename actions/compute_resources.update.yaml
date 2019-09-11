@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   id:
     type: string
     required: true
@@ -54,20 +62,20 @@ parameters:
               description: ''
             set_console_password:
               required: false
-              type: string
+              type: boolean
               description: for Libvirt and VMware only
             caching_enabled:
               required: false
-              type: string
+              type: boolean
               description: enable caching, for VMware only
             url:
               required: false
               type: string
-              description: URL for Docker, Libvirt, RHEV, OpenStack and Rackspace
+              description: URL for Docker, Libvirt, RHEV, RHEL OpenStack Platform and Rackspace
             region:
               required: false
               type: string
-              description: for EC2 only
+              description: for EC2 only, use 'us-gov-west-1' for GovCloud region
             uuid:
               required: false
               type: string
@@ -76,10 +84,18 @@ parameters:
               required: false
               type: string
               description: for VMware
+            ovirt_quota:
+              required: false
+              type: string
+              description: for RHEV only, ID of quota to use
+            use_v4:
+              required: false
+              type: boolean
+              description: for RHEV only
             user:
               required: false
               type: string
-              description: Username for RHEV, EC2, VMware, OpenStack. Access Key for EC2.
+              description: Username for RHEV, EC2, VMware, RHEL OpenStack Platform. Access Key forEC2.
             provider:
               required: false
               type: string
@@ -91,7 +107,7 @@ parameters:
             password:
               required: false
               type: string
-              description: Password for RHEV, EC2, VMware, OpenStack. Secret key for EC2
+              description: Password for RHEV, EC2, VMware, RHEL OpenStack Platform. Secret key for EC2
             location_ids:
               required: false
               type: array

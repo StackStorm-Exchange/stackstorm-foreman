@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: true
     description: "name of organization"
   name:
@@ -43,6 +43,14 @@ parameters:
     type: string
     required: false
     description: "description of the environment"
+  registry_name_pattern:
+    type: string
+    required: false
+    description: "pattern for container image names"
+  registry_unauthenticated_pull:
+    type: boolean
+    required: false
+    description: "allow unauthenticed pull of container images"
   prior_id:
     type: number
     required: true

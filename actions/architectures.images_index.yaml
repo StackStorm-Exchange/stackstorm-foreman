@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   compute_resource_id:
     type: string
     required: false
@@ -46,7 +54,7 @@ parameters:
   order:
     type: string
     required: false
-    description: "sort results"
+    description: "Sort field and order, eg. ‘id DESC’"
   page:
     type: string
     required: false

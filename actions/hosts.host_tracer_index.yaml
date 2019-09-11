@@ -1,5 +1,5 @@
 ---
-description: "List servises that need restarting on the host (resource: GET /api/hosts/:host_id/tracer)"
+description: "List services that need restarting on the host (resource: GET /api/hosts/:host_id/traces)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -28,6 +28,6 @@ parameters:
     required: false
     secret: true
   host_id:
-    type: string
+    type: number
     required: true
     description: "ID of the host"

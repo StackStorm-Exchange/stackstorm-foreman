@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   ptable:
     type: object
     required: true
@@ -39,7 +47,7 @@ parameters:
               description: Array of host IDs to associate with the partition table
             locked:
               required: false
-              type: string
+              type: boolean
               description: Whether or not the template is locked for editing
             name:
               required: true
@@ -51,7 +59,7 @@ parameters:
               description: REPLACE locations with given ids
             snippet:
               required: false
-              type: string
+              type: boolean
               description: ''
             os_family:
               required: false

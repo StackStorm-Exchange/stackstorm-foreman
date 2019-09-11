@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   id:
     type: string
     required: true
@@ -43,7 +51,7 @@ parameters:
             os_family:
               required: false
               type: string
-              description: 'Operating system family, available values: AIX, Altlinux, Archlinux,Coreos, Debian, Freebsd, Gentoo, Junos, NXOS, Redhat, Solaris, Suse,Windows, Xenserver'
+              description: 'Operating system family, available values: AIX, Altlinux, Archlinux,Coreos, Debian, Freebsd, Gentoo, Junos, NXOS, Rancheros, Redhat, Solaris,Suse, Windows, Xenserver'
             operatingsystem_ids:
               required: false
               type: array

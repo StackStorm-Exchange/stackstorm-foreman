@@ -28,18 +28,18 @@ parameters:
     required: false
     secret: true
   composite_content_view_id:
-    type: string
+    type: number
     required: true
     description: "composite content view identifier"
   id:
-    type: string
+    type: number
     required: true
     description: "content view component ID. Identifier of the component association"
   content_view_version_id:
-    type: string
+    type: number
     required: false
     description: "identifier of the version of the component content view"
   latest:
-    type: string
+    type: boolean
     required: false
     description: "true if the latest version of the components content view is desired"

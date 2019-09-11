@@ -1,5 +1,5 @@
 ---
-description: "Remove subscriptions from one or more hosts (resource: PUT /api/hosts/bulk/subscriptions/remove_subscriptions)"
+description: "Remove subscriptions from one or more hosts (resource: PUT /api/hosts/bulk/remove_subscriptions)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: true
     description: "ID of the organization"
   included:

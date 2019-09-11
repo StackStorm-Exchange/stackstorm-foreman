@@ -28,11 +28,11 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "ID of the activation key"
   organization_id:
-    type: string
+    type: number
     required: true
     description: "organization identifier"
   name:
@@ -44,19 +44,19 @@ parameters:
     required: false
     description: "description"
   environment_id:
-    type: string
+    type: number
     required: false
     description: "environment id"
   content_view_id:
-    type: string
+    type: number
     required: false
     description: "content view id"
   max_hosts:
-    type: string
+    type: number
     required: false
     description: "maximum number of registered content hosts"
   unlimited_hosts:
-    type: string
+    type: boolean
     required: false
     description: "can the activation key have unlimited hosts"
   release_version:
@@ -68,6 +68,6 @@ parameters:
     required: false
     description: "service level"
   auto_attach:
-    type: string
+    type: boolean
     required: false
     description: "auto attach subscriptions upon registration"

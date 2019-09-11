@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   host_id:
     type: string
     required: true
@@ -39,7 +47,7 @@ parameters:
         parameters:
             managed:
               required: false
-              type: string
+              type: boolean
               description: Should this interface be managed via DHCP and DNS capsule and should it beconfigured during provisioning?
             ip:
               required: false
@@ -47,7 +55,7 @@ parameters:
               description: IPv4 address of interface
             primary:
               required: false
-              type: string
+              type: boolean
               description: Should this interface be used for constructing the FQDN of the host? Eachmanaged hosts needs to have one primary interface.
             bond_options:
               required: false
@@ -57,9 +65,13 @@ parameters:
               required: false
               type: string
               description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only forvirtual interfaces.
+            compute_attributes:
+              required: false
+              type: object
+              description: Additional compute resource specific attributes for the interface.
             domain_id:
               required: false
-              type: string
+              type: number
               description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
             attached_devices:
               required: false
@@ -67,15 +79,15 @@ parameters:
               description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond interfaces those are the slaves. Only for bondand bridges interfaces.
             subnet_id:
               required: false
-              type: string
+              type: number
               description: Satellite subnet ID of IPv4 interface
             virtual:
               required: false
-              type: string
+              type: boolean
               description: Alias or VLAN device
             subnet6_id:
               required: false
-              type: string
+              type: number
               description: Satellite subnet ID of IPv6 interface
             provider:
               required: false
@@ -103,7 +115,7 @@ parameters:
               description: Only for BMC interfaces.
             provision:
               required: false
-              type: string
+              type: boolean
               description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
             attached_to:
               required: false
@@ -113,10 +125,10 @@ parameters:
               required: false
               type: string
               description: Interface's DNS name
-            compute_attributes:
+            mtu:
               required: false
-              type: object
-              description: Additional compute resource specific attributes for the interface.
+              type: number
+              description: MTU, this attribute has precedence over the subnet MTU.
             mode:
               required: false
               type: string

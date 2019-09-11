@@ -28,15 +28,15 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "ID of the activation key"
   subscription_id:
-    type: string
+    type: number
     required: false
     description: "Subscription identifier"
   quantity:
-    type: string
+    type: number
     required: false
     description: "Quantity of this subscription to add"
   subscriptions:
@@ -51,6 +51,6 @@ parameters:
               description: Subscription Pool uuid
             quantity:
               required: false
-              type: string
+              type: number
               description: Quantity of this subscriptions to add
             "

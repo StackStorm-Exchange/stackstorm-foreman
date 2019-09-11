@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "Id of the host collection"
   name:
@@ -47,6 +47,6 @@ parameters:
     required: false
     description: "Maximum number of hosts in the host collection"
   unlimited_hosts:
-    type: string
+    type: boolean
     required: false
     description: "Whether or not the host collection may have unlimited hosts"
