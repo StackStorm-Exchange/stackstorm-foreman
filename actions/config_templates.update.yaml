@@ -34,7 +34,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             operatingsystem_ids:
               required: false
@@ -55,7 +55,7 @@ parameters:
             snippet:
               required: false
               type: string
-              description:
+              description: ''
             template_kind_id:
               required: false
               type: string
@@ -63,11 +63,11 @@ parameters:
             template:
               required: false
               type: string
-              description:
+              description: ''
             audit_comment:
               required: false
               type: string
-              description:
+              description: ''
             location_ids:
               required: false
               type: array
@@ -76,4 +76,4 @@ parameters:
               required: false
               type: array
               description: REPLACE organizations with given ids.
-            '
+            "

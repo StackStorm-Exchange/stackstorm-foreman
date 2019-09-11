@@ -31,7 +31,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             default_value:
               required: false
@@ -81,4 +81,4 @@ parameters:
               required: false
               type: string
               description: Merge all matching values (only array/hash type)
-            '
+            "

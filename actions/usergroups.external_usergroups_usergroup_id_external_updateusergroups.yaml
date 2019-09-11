@@ -39,14 +39,14 @@ parameters:
     type: object
     required: true
     description: >
-       'description: External user group information
+       "description: External user group information
         parameters:
             auth_source_id:
               required: false
-              type: number
+              type: string
               description: ID of linked authentication source
             name:
               required: false
               type: string
               description: External user group name
-            '
+            "

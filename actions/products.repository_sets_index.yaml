@@ -35,3 +35,38 @@ parameters:
     type: string
     required: false
     description: "Repository set name to search on"
+  search:
+    type: string
+    required: false
+    description: "Search string"
+  page:
+    type: string
+    required: false
+    description: "Page number, starting at 1"
+  per_page:
+    type: string
+    required: false
+    description: "Number of results per page to return"
+  order:
+    type: string
+    required: false
+    description: "Sort field and order, eg. 'name DESC'"
+  full_result:
+    type: string
+    required: false
+    description: "Whether or not to show all results"
+  sort:
+    type: object
+    required: false
+    description: >
+       "description: Hash version of 'order' param
+        parameters:
+            by:
+              required: false
+              type: string
+              description: Field to sort the results on
+            order:
+              required: false
+              type: string
+              description: How to order the sorted results (e.g. ASC for ascending)
+            "

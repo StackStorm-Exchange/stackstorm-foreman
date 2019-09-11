@@ -51,18 +51,22 @@ parameters:
     type: string
     required: true
     description: "ID of organization"
+  subnet_id:
+    type: string
+    required: false
+    description: "ID of subnet"
   parameter:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             name:
               required: true
               type: string
-              description:
+              description: ''
             value:
               required: true
               type: string
-              description:
-            '
+              description: ''
+            "

@@ -40,10 +40,10 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             vm_attrs:
               required: false
               type: object
-              description:
-            '
+              description: ''
+            "

@@ -29,7 +29,7 @@ parameters:
     secret: true
   organization_id:
     type: string
-    required: true
+    required: false
     description: "ID of an organization to show repositories in"
   product_id:
     type: string
@@ -55,6 +55,10 @@ parameters:
     type: string
     required: false
     description: "Id of a package to find repositories that contain the rpm"
+  ostree_branch_id:
+    type: string
+    required: false
+    description: "Id of an ostree branch to find repositories that contain that branch"
   library:
     type: string
     required: false
@@ -87,7 +91,7 @@ parameters:
     type: string
     required: false
     description: "Sort field and order, eg. 'name DESC'"
-  full_results:
+  full_result:
     type: string
     required: false
     description: "Whether or not to show all results"
@@ -95,7 +99,7 @@ parameters:
     type: object
     required: false
     description: >
-       'description: Hash version of 'order' param
+       "description: Hash version of 'order' param
         parameters:
             by:
               required: false
@@ -105,4 +109,4 @@ parameters:
               required: false
               type: string
               description: How to order the sorted results (e.g. ASC for ascending)
-            '
+            "

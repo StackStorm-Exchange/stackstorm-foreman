@@ -1,5 +1,5 @@
 ---
-description: "List all capsules (resource: GET /katello/api/capsules)"
+description: "List all capsules that have content (resource: GET /katello/api/capsules)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -43,7 +43,7 @@ parameters:
     type: string
     required: false
     description: "Sort field and order, eg. 'name DESC'"
-  full_results:
+  full_result:
     type: string
     required: false
     description: "Whether or not to show all results"
@@ -51,7 +51,7 @@ parameters:
     type: object
     required: false
     description: >
-       'description: Hash version of 'order' param
+       "description: Hash version of 'order' param
         parameters:
             by:
               required: false
@@ -61,4 +61,4 @@ parameters:
               required: false
               type: string
               description: How to order the sorted results (e.g. ASC for ascending)
-            '
+            "

@@ -51,6 +51,18 @@ parameters:
     type: array
     required: false
     description: "ids to filter content by"
+  host_id:
+    type: string
+    required: false
+    description: "host id to list applicable packages for"
+  packages_restrict_upgradable:
+    type: boolean
+    required: false
+    description: "Only show packages that are upgradable in the host(s) Content View."
+  packages_restrict_applicable:
+    type: boolean
+    required: false
+    description: "Only show packages that are applicable to hosts (defaults to true ifhost_id is specified)"
   search:
     type: string
     required: false
@@ -67,7 +79,7 @@ parameters:
     type: string
     required: false
     description: "Sort field and order, eg. 'name DESC'"
-  full_results:
+  full_result:
     type: string
     required: false
     description: "Whether or not to show all results"
@@ -75,7 +87,7 @@ parameters:
     type: object
     required: false
     description: >
-       'description: Hash version of 'order' param
+       "description: Hash version of 'order' param
         parameters:
             by:
               required: false
@@ -85,4 +97,4 @@ parameters:
               required: false
               type: string
               description: How to order the sorted results (e.g. ASC for ascending)
-            '
+            "

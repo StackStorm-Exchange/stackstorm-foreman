@@ -31,3 +31,7 @@ parameters:
     type: string
     required: true
     description: "Numerical ID or domain name"
+  show_hidden_parameters:
+    type: string
+    required: false
+    description: "Display hidden parameter values"

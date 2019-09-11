@@ -34,12 +34,12 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             username:
               required: true
               type: string
-              description:
+              description: ''
             operatingsystem_id:
               required: false
               type: string
@@ -51,7 +51,7 @@ parameters:
             uuid:
               required: true
               type: string
-              description:
+              description: ''
             user_data:
               required: false
               type: string
@@ -60,8 +60,12 @@ parameters:
               required: false
               type: string
               description: ID of architecture
+            password:
+              required: false
+              type: string
+              description: ''
             name:
               required: true
               type: string
-              description:
-            '
+              description: ''
+            "

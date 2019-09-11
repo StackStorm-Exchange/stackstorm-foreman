@@ -1,0 +1,91 @@
+---
+description: "Update a Policy (resource: PUT /api/compliance/policies/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: compliance.policies_update
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: compliance.policies_update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: string
+    required: true
+  policy:
+    type: object
+    required: true
+    description: >
+       "description: 
+        parameters:
+            name:
+              required: false
+              type: string
+              description: Policy name
+            scap_content_id:
+              required: false
+              type: number
+              description: Policy SCAP content ID
+            tailoring_file_profile_id:
+              required: false
+              type: number
+              description: Tailoring file profile ID
+            period:
+              required: false
+              type: string
+              description: Policy schedule period (weekly, monthly, custom)
+            tailoring_file_id:
+              required: false
+              type: number
+              description: Tailoring file ID
+            day_of_month:
+              required: false
+              type: number
+              description: Policy schedule day of month (only if period == 'monthly')
+            weekday:
+              required: false
+              type: string
+              description: Policy schedule weekday (only if period == 'weekly')
+            cron_line:
+              required: false
+              type: string
+              description: Policy schedule cron line (only if period == 'custom')
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            scap_content_profile_id:
+              required: false
+              type: number
+              description: Policy SCAP content profile ID
+            hostgroup_ids:
+              required: false
+              type: array
+              description: Apply policy to host groups
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            description:
+              required: false
+              type: string
+              description: Policy description
+            "

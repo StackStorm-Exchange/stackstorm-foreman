@@ -31,7 +31,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             attr_mail:
               required: false
@@ -40,19 +40,23 @@ parameters:
             tls:
               required: false
               type: string
-              description:
+              description: ''
             account:
               required: false
               type: string
-              description:
+              description: ''
             name:
               required: true
               type: string
-              description:
+              description: ''
             server_type:
               required: false
               type: string
               description: type of the LDAP server
+            use_netgroups:
+              required: false
+              type: string
+              description: use NIS netgroups instead of posix groups, applicable only when server_typeis posix or free_ipa
             groups_base:
               required: false
               type: string
@@ -60,15 +64,15 @@ parameters:
             attr_photo:
               required: false
               type: string
-              description:
+              description: ''
             onthefly_register:
               required: false
               type: string
-              description:
+              description: ''
             host:
               required: true
               type: string
-              description:
+              description: ''
             account_password:
               required: false
               type: string
@@ -84,7 +88,7 @@ parameters:
             base_dn:
               required: false
               type: string
-              description:
+              description: ''
             attr_lastname:
               required: false
               type: string
@@ -109,4 +113,4 @@ parameters:
               required: false
               type: string
               description: LDAP filter
-            '
+            "

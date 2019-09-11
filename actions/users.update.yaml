@@ -34,16 +34,28 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             default_organization_id:
               required: false
               type: number
-              description:
+              description: ''
+            role_ids:
+              required: false
+              type: array
+              description: ''
+            description:
+              required: false
+              type: string
+              description: ''
             firstname:
               required: false
               type: string
-              description:
+              description: ''
+            current_password:
+              required: false
+              type: string
+              description: Required when user want to change own password
             admin:
               required: false
               type: string
@@ -51,11 +63,11 @@ parameters:
             lastname:
               required: false
               type: string
-              description:
+              description: ''
             default_location_id:
               required: false
               type: number
-              description:
+              description: ''
             locale:
               required: false
               type: string
@@ -67,19 +79,19 @@ parameters:
             mail:
               required: false
               type: string
-              description:
+              description: ''
             login:
               required: false
               type: string
-              description:
+              description: ''
             password:
               required: false
               type: string
-              description:
+              description: ''
             auth_source_id:
               required: false
               type: number
-              description:
+              description: ''
             location_ids:
               required: false
               type: array
@@ -88,4 +100,4 @@ parameters:
               required: false
               type: array
               description: REPLACE organizations with given ids.
-            '
+            "

@@ -39,10 +39,10 @@ parameters:
     type: array
     required: false
     description: >
-       'description: Array of subscriptions to add
+       "description: Array of subscriptions to add
         parameters:
             id:
               required: false
               type: string
               description: Subscription Pool uuid
-            '
+            "

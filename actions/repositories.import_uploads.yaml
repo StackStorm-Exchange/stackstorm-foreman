@@ -33,9 +33,40 @@ parameters:
     description: "Repository id"
   upload_ids:
     type: array
-    required: true
+    required: false
     description: "Array of upload ids to import"
+  async:
+    type: string
+    required: false
+    description: "Do not wait for the ImportUpload action to finish. Default: false"
   publish_repository:
     type: string
     required: false
     description: "Whether or not to regenerate the repository on disk. Default: true"
+  sync_capsule:
+    type: string
+    required: false
+    description: "Whether or not to sync an external capsule after upload. Default: true"
+  uploads:
+    type: array
+    required: false
+    description: >
+       "description: Array of uploads to import
+        parameters:
+            checksum:
+              required: false
+              type: string
+              description: ''
+            id:
+              required: true
+              type: string
+              description: ''
+            name:
+              required: false
+              type: string
+              description: Needs to only be set for file repositories
+            size:
+              required: false
+              type: string
+              description: ''
+            "
