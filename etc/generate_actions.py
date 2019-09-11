@@ -7,7 +7,6 @@ import jinja2
 import os
 import re
 import urllib3
-import sys
 
 from foreman.client import Foreman
 from foreman.client import Resource
@@ -17,8 +16,6 @@ from ruamel.yaml.compat import StringIO
 
 urllib3.disable_warnings()
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 FOREMAN_SERVER = os.environ.get('FOREMAN_SERVER')
 FOREMAN_USERNAME = os.environ.get('FOREMAN_USERNAME')
@@ -358,7 +355,6 @@ class ActionGenerator(object):
         action_data = self.jinja_render_file(ACTION_TEMPLATE_PATH, context)
         action_filename = "{}/{}.yaml".format(ACTION_DIRECTORY,
                                               context['name'])
-
         with open(action_filename, "w") as f:
             f.write(action_data)
 
