@@ -358,9 +358,6 @@ class ActionGenerator(object):
         action_data = self.jinja_render_file(ACTION_TEMPLATE_PATH, context)
         action_filename = "{}/{}.yaml".format(ACTION_DIRECTORY,
                                               context['name'])
-        import sys
-        reload(sys)
-        sys.setdefaultencoding('utf-8')
 
         with open(action_filename, "w") as f:
             f.write(action_data)
