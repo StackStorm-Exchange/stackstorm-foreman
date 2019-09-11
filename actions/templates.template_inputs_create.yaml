@@ -34,7 +34,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             fact_name:
               required: false
@@ -76,4 +76,4 @@ parameters:
               required: false
               type: string
               description: Input description
-            '
+            "

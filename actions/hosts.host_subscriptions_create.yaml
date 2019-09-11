@@ -47,8 +47,16 @@ parameters:
     type: array
     required: false
     description: >
-       'description: List of products installed on the host
+       "description: List of products installed on the host
         parameters:
+            version:
+              required: false
+              type: string
+              description: Product version
+            arch:
+              required: false
+              type: string
+              description: Product architecture
             product_id:
               required: false
               type: string
@@ -57,7 +65,7 @@ parameters:
               required: false
               type: string
               description: Product name as listed from a host's installed products
-            '
+            "
   release_version:
     type: string
     required: false

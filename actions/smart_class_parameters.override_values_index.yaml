@@ -33,6 +33,10 @@ parameters:
   smart_class_parameter_id:
     type: string
     required: true
+  show_hidden:
+    type: string
+    required: false
+    description: "Display hidden values"
   page:
     type: string
     required: false

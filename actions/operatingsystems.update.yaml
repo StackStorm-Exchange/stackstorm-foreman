@@ -34,20 +34,20 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             major:
               required: false
               type: string
-              description:
+              description: ''
             name:
               required: false
               type: string
-              description:
+              description: ''
             family:
               required: false
               type: string
-              description:
+              description: ''
             config_template_ids:
               required: false
               type: array
@@ -59,7 +59,7 @@ parameters:
             os_parameters_attributes:
               required: false
               type: array
-              description: OS' parameters (array or indexed hash)
+              description: Array of parameters
               parameters:
                 name:
                   required: false
@@ -84,7 +84,7 @@ parameters:
             release_name:
               required: false
               type: string
-              description:
+              description: ''
             ptable_ids:
               required: false
               type: array
@@ -92,9 +92,9 @@ parameters:
             minor:
               required: false
               type: string
-              description:
+              description: ''
             description:
               required: false
               type: string
-              description:
-            '
+              description: ''
+            "

@@ -31,22 +31,22 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             info:
               required: false
               type: string
-              description:
+              description: ''
             hardware_model:
               required: false
               type: string
-              description:
+              description: ''
             vendor_class:
               required: false
               type: string
-              description:
+              description: ''
             name:
               required: true
               type: string
-              description:
-            '
+              description: ''
+            "

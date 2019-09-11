@@ -31,7 +31,7 @@ parameters:
     type: array
     required: false
     description: >
-       'description: None
+       "description: 
         parameters:
             content_view_version_id:
               required: false
@@ -41,7 +41,7 @@ parameters:
               required: false
               type: array
               description: The list of environments to promote the specified Content View Version to(replacing the older version).
-            '
+            "
   description:
     type: string
     required: false
@@ -58,7 +58,7 @@ parameters:
     type: object
     required: false
     description: >
-       'description: None
+       "description: 
         parameters:
             package_ids:
               required: false
@@ -72,17 +72,17 @@ parameters:
               required: false
               type: array
               description: Puppet Module ids or uuids to copy into the new versions.
-            '
+            "
   update_hosts:
     type: object
     required: false
     description: >
-       'description: After generating the incremental update, apply the changes to the specifiedhosts.  Only Errata are supported currently.
+       "description: After generating the incremental update, apply the changes to the specifiedhosts.  Only Errata are supported currently.
         parameters:
             included:
               required: true
               type: object
-              description:
+              description: ''
               parameters:
                 search:
                   required: false
@@ -95,10 +95,10 @@ parameters:
             excluded:
               required: false
               type: object
-              description:
+              description: ''
               parameters:
                 ids:
                   required: false
                   type: array
                   description: List of host ids to exclude and not run an action on
-            '
+            "

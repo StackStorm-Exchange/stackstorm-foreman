@@ -35,21 +35,21 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             repo_id:
               required: true
               type: string
-              description:
-            '
+              description: ''
+            "
   call_report:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             task_id:
               required: true
               type: string
-              description:
-            '
+              description: ''
+            "

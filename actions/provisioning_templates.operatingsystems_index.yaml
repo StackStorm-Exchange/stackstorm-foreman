@@ -47,6 +47,21 @@ parameters:
     type: string
     required: true
     description: "ID of template"
+  os_parameters_attributes:
+    type: array
+    required: false
+    description: >
+       "description: Array of parameters
+        parameters:
+            name:
+              required: true
+              type: string
+              description: Name of the parameter
+            value:
+              required: true
+              type: string
+              description: Parameter value
+            "
   search:
     type: string
     required: false

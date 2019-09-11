@@ -1,0 +1,37 @@
+---
+description: "Remove components from the content view (resource: PUT /katello/api/content_views/:composite_content_view_id/content_view_components/remove)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: content_views.content_view_components_remove_components
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: content_views.content_view_components_remove_components
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  composite_content_view_id:
+    type: string
+    required: true
+    description: "composite content view identifier"
+  component_ids:
+    type: array
+    required: true
+    description: "Array of content view component IDs to remove. Identifier of the componentassociation"

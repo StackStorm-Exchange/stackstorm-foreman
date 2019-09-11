@@ -1,0 +1,61 @@
+---
+description: "Create a package group (resource: POST /katello/api/package_group)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: package_group.package_groups_create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: package_group.package_groups_create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  repository_id:
+    type: string
+    required: true
+    description: "repository_id"
+  name:
+    type: string
+    required: true
+    description: "package group name."
+  description:
+    type: string
+    required: false
+    description: "package group description. Defaults to params"
+  user_visible:
+    type: string
+    required: false
+    description: "set 'user_visible' flag on package group. Defaults to true"
+  mandatory_package_names:
+    type: array
+    required: false
+    description: "mandatory package names to include in the package group"
+  optional_package_names:
+    type: array
+    required: false
+    description: "optional package names to include in the package group"
+  conditional_package_names:
+    type: array
+    required: false
+    description: "conditional package names to include in the package group"
+  default_package_names:
+    type: array
+    required: false
+    description: "default package names to include in the package group"

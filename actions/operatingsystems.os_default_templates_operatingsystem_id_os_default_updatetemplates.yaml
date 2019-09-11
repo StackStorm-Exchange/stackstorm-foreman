@@ -38,12 +38,12 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             template_kind_id:
               required: false
               type: string
-              description:
+              description: ''
             provisioning_template_id:
               required: false
               type: string
@@ -52,4 +52,4 @@ parameters:
               required: false
               type: string
               description: ID of provisioning template
-            '
+            "

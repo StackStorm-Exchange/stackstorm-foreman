@@ -33,4 +33,4 @@ parameters:
   kind:
     type: string
     required: true
-    description: "Template kinds, available values: Bootdisk, PXELinux, PXEGrub, iPXE,provision, finish, script, user_data, ZTP, POAP, kexec"
+    description: "Template kinds, available values: Bootdisk, PXELinux, PXEGrub, PXEGrub2,iPXE, provision, finish, script, user_data, ZTP, POAP, kexec"

@@ -55,3 +55,7 @@ parameters:
     type: string
     required: true
     description: "ID of parameter"
+  subnet_id:
+    type: string
+    required: false
+    description: "ID of subnet"

@@ -31,18 +31,22 @@ parameters:
     type: object
     required: false
     description: >
-       'description: None
+       "description: 
         parameters:
             ip:
               required: true
               type: string
-              description:
+              description: ''
             mac:
               required: true
               type: string
-              description:
+              description: ''
+            pxe_loader:
+              required: false
+              type: string
+              description: DHCP filename option (Grub2 or PXELinux by default)
             name:
               required: true
               type: string
-              description:
-            '
+              description: ''
+            "

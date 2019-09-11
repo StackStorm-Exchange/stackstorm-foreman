@@ -37,7 +37,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             include:
               required: false
@@ -59,4 +59,4 @@ parameters:
               required: false
               type: string
               description: A comma separated list of input names to be included from the foreigntemplate.
-            '
+            "

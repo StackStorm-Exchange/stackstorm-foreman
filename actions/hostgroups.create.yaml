@@ -31,56 +31,101 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
-            operatingsystem_id:
+            config_group_ids:
               required: false
-              type: string
-              description:
-            content_view_id:
-              required: false
-              type: string
-              description:
+              type: array
+              description: IDs of associated config groups
             content_source_id:
               required: false
               type: string
-              description:
+              description: Content source ID
             environment_id:
               required: false
               type: string
-              description:
-            name:
-              required: true
-              type: string
-              description:
-            medium_id:
+              description: Environment ID
+            kickstart_repository_id:
               required: false
               type: string
-              description:
+              description: Kickstart repository ID
+            group_parameters_attributes:
+              required: false
+              type: array
+              description: Array of parameters
+              parameters:
+                name:
+                  required: true
+                  type: string
+                  description: Name of the parameter
+                value:
+                  required: true
+                  type: string
+                  description: Parameter value
+            openscap_proxy_id:
+              required: false
+              type: string
+              description: ID of OpenSCAP Capsule
+            domain_id:
+              required: false
+              type: string
+              description: Domain ID
+            ptable_id:
+              required: false
+              type: string
+              description: Partition table ID
             subnet_id:
               required: false
               type: string
-              description:
+              description: Subnet ID
             parent_id:
               required: false
               type: string
-              description:
-            lifecycle_environment_id:
-              required: false
-              type: string
-              description:
+              description: Parent ID of the host group
             architecture_id:
               required: false
               type: string
-              description:
+              description: Architecture ID
             organization_ids:
               required: false
               type: array
               description: REPLACE organizations with given ids.
+            operatingsystem_id:
+              required: false
+              type: string
+              description: Operating system ID
+            root_pass:
+              required: false
+              type: string
+              description: Root password on provisioned hosts
+            content_view_id:
+              required: false
+              type: string
+              description: Content view ID
             puppet_ca_proxy_id:
               required: false
               type: string
-              description:
+              description: Puppet CA Capsule ID
+            puppet_proxy_id:
+              required: false
+              type: string
+              description: Puppet Capsule ID
+            pxe_loader:
+              required: false
+              type: string
+              description: DHCP filename option (Grub2/PXELinux by default)
+            name:
+              required: true
+              type: string
+              description: Name of the host group
+            medium_id:
+              required: false
+              type: string
+              description: Media ID
+            lifecycle_environment_id:
+              required: false
+              type: string
+              description: Lifecycle environment ID
             location_ids:
               required: false
               type: array
@@ -88,17 +133,9 @@ parameters:
             realm_id:
               required: false
               type: string
-              description:
-            domain_id:
+              description: Realm ID
+            compute_profile_id:
               required: false
               type: string
-              description:
-            puppet_proxy_id:
-              required: false
-              type: string
-              description:
-            ptable_id:
-              required: false
-              type: string
-              description:
-            '
+              description: Compute profile ID
+            "

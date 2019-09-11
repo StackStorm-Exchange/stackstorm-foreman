@@ -34,7 +34,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             locked:
               required: false
@@ -51,7 +51,7 @@ parameters:
             snippet:
               required: false
               type: string
-              description:
+              description: ''
             ssh:
               required: false
               type: object
@@ -77,7 +77,7 @@ parameters:
             template:
               required: false
               type: string
-              description:
+              description: ''
             job_category:
               required: false
               type: string
@@ -85,7 +85,7 @@ parameters:
             audit_comment:
               required: false
               type: string
-              description:
+              description: ''
             location_ids:
               required: false
               type: array
@@ -98,4 +98,4 @@ parameters:
               required: false
               type: string
               description: Provider type
-            '
+            "

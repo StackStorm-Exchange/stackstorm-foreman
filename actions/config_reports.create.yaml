@@ -31,7 +31,7 @@ parameters:
     type: object
     required: true
     description: >
-       'description: None
+       "description: 
         parameters:
             reported_at:
               required: true
@@ -53,4 +53,4 @@ parameters:
               required: false
               type: array
               description: Optional array of log hashes
-            '
+            "

@@ -34,11 +34,19 @@ parameters:
   name:
     type: string
     required: false
-    description: "package or package group: name"
+    description: "package, package group, or docker tag names"
+  uuid:
+    type: string
+    required: false
+    description: "package group: uuid"
   version:
     type: string
     required: false
     description: "package: version"
+  architecture:
+    type: string
+    required: false
+    description: "package: architecture"
   min_version:
     type: string
     required: false
