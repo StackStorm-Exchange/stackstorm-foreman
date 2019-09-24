@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   smart_variable_id:
     type: string
     required: false
@@ -41,15 +49,15 @@ parameters:
         parameters:
             use_puppet_default:
               required: false
-              type: string
+              type: boolean
               description: Deprecated, please use omit
             omit:
               required: false
-              type: string
+              type: boolean
               description: Satellite will not send this parameter in classification output, replacesuse_puppet_default
             value:
               required: false
-              type: string
+              type: any_type
               description: Override value, required if omit is false
             match:
               required: true

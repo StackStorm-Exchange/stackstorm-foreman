@@ -28,11 +28,11 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: false
     description: "Filter sync plans by organization name or label"
   id:
-    type: string
+    type: number
     required: true
     description: "sync plan numeric identifier"
   name:
@@ -52,6 +52,10 @@ parameters:
     required: false
     description: "sync plan description"
   enabled:
-    type: string
+    type: boolean
     required: false
     description: "enables or disables synchronization"
+  cron_expression:
+    type: string
+    required: false
+    description: "Add custom cron logic for sync plan"

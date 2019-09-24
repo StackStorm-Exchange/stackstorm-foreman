@@ -28,11 +28,11 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "ID of the environment"
   organization_id:
-    type: string
+    type: number
     required: false
     description: "name of the organization"
   new_name:
@@ -43,3 +43,15 @@ parameters:
     type: string
     required: false
     description: "description of the environment"
+  registry_name_pattern:
+    type: string
+    required: false
+    description: "pattern for container image names"
+  registry_unauthenticated_pull:
+    type: boolean
+    required: false
+    description: "allow unauthenticed pull of container images"
+  async:
+    type: boolean
+    required: false
+    description: "Do not wait for the update action to finish. Default: true"

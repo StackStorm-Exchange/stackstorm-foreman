@@ -1,0 +1,48 @@
+---
+description: "Update the quantity of one or more subscriptions on an upstream allocation (resource: PUT /katello/api/organizations/:organization_id/upstream_subscriptions)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: organizations.upstream_subscriptions_update
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: organizations.upstream_subscriptions_update
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: number
+    required: true
+    description: "Organization ID"
+  pools:
+    type: array
+    required: true
+    description: >
+       "description: Array of Pools to be updated. Only pools originating upstream are accepted.
+        parameters:
+            id:
+              required: true
+              type: string
+              description: Katello ID of local pool to update
+            quantity:
+              required: true
+              type: number
+              description: Desired quantity of the pool
+            "

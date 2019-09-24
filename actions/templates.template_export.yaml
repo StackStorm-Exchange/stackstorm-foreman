@@ -1,0 +1,69 @@
+---
+description: "Initiate Export (resource: POST /api/templates/export)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: templates.template_export
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: templates.template_export
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
+  metadata_export_mode:
+    type: string
+    required: false
+    description: "Specify how to handle metadata"
+  branch:
+    type: string
+    required: false
+    description: "Branch in Git repo."
+  repo:
+    type: string
+    required: false
+    description: "Override the default repo from settings."
+  filter:
+    type: string
+    required: false
+    description: "Export templates with names matching this regex (case-insensitive; snippetsare not filtered)."
+  negate:
+    type: boolean
+    required: false
+    description: "Negate the prefix (for purging)."
+  dirname:
+    type: string
+    required: false
+    description: "The directory within Git repo containing the templates"
+  location_ids:
+    type: array
+    required: false
+    description: "REPLACE locations with given ids"
+  organization_ids:
+    type: array
+    required: false
+    description: "REPLACE organizations with given ids."

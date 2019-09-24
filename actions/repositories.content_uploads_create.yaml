@@ -28,6 +28,6 @@ parameters:
     required: false
     secret: true
   repository_id:
-    type: string
+    type: number
     required: true
     description: "repository id"

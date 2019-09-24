@@ -28,30 +28,30 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "content view numeric identifier"
   environment_ids:
-    type: string
+    type: number
     required: false
     description: "environment numeric identifiers to be removed"
   content_view_version_ids:
-    type: string
+    type: number
     required: false
     description: "content view version identifiers to be deleted"
   system_content_view_id:
-    type: string
+    type: number
     required: false
     description: "content view to reassign orphaned systems to"
   system_environment_id:
-    type: string
+    type: number
     required: false
     description: "environment to reassign orphaned systems to"
   key_content_view_id:
-    type: string
+    type: number
     required: false
     description: "content view to reassign orphaned activation keys to"
   key_environment_id:
-    type: string
+    type: number
     required: false
     description: "environment to reassign orphaned activation keys to"

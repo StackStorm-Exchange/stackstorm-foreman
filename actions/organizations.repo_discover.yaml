@@ -27,8 +27,16 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   id:
-    type: string
+    type: number
     required: true
     description: "Organization ID"
   url:
@@ -47,3 +55,7 @@ parameters:
     type: string
     required: false
     description: "Password to access URL"
+  search:
+    type: string
+    required: false
+    description: "Search pattern (defaults to '*')"

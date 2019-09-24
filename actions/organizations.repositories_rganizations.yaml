@@ -28,25 +28,29 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: true
     description: "ID of an organization to show repositories in"
   product_id:
-    type: string
+    type: number
     required: false
     description: "ID of a product to show repositories of"
   environment_id:
-    type: string
+    type: number
     required: true
     description: "ID of an environment to show repositories in"
   content_view_id:
-    type: string
+    type: number
     required: false
     description: "ID of a content view to show repositories in"
   content_view_version_id:
-    type: string
+    type: number
     required: false
     description: "ID of a content view version to show repositories in"
+  deb_id:
+    type: string
+    required: false
+    description: "Id of a deb package to find repositories that contain the deb"
   erratum_id:
     type: string
     required: false
@@ -54,13 +58,17 @@ parameters:
   rpm_id:
     type: string
     required: false
-    description: "Id of a package to find repositories that contain the rpm"
+    description: "Id of a rpm package to find repositories that contain the rpm"
+  file_id:
+    type: string
+    required: false
+    description: "Id of a file to find repositories that contain the file"
   ostree_branch_id:
     type: string
     required: false
     description: "Id of an ostree branch to find repositories that contain that branch"
   library:
-    type: string
+    type: boolean
     required: false
     description: "show repositories in Library and the default content view"
   content_type:
@@ -71,42 +79,43 @@ parameters:
     type: string
     required: false
     description: "name of the repository"
+  label:
+    type: string
+    required: false
+    description: "label of the repository"
+  description:
+    type: string
+    required: false
+    description: "description of the repository"
   available_for:
     type: string
     required: false
-    description: "interpret specified object to return only Repositories that can beassociated with specified object.  Only 'content_view' issupported."
+    description: "interpret specified object to return only Repositories that can beassociated with specified object.  Only 'content_view' &'content_view_version' are supported."
   search:
     type: string
     required: false
     description: "Search string"
   page:
-    type: string
+    type: number
     required: false
     description: "Page number, starting at 1"
   per_page:
-    type: string
+    type: number
     required: false
     description: "Number of results per page to return"
   order:
     type: string
     required: false
-    description: "Sort field and order, eg. 'name DESC'"
+    description: "Sort field and order, eg. 'id DESC'"
   full_result:
-    type: string
+    type: boolean
     required: false
     description: "Whether or not to show all results"
-  sort:
-    type: object
+  sort_by:
+    type: string
     required: false
-    description: >
-       "description: Hash version of 'order' param
-        parameters:
-            by:
-              required: false
-              type: string
-              description: Field to sort the results on
-            order:
-              required: false
-              type: string
-              description: How to order the sorted results (e.g. ASC for ascending)
-            "
+    description: "Field to sort the results on"
+  sort_order:
+    type: string
+    required: false
+    description: "How to order the sorted results (e.g. ASC for ascending)"

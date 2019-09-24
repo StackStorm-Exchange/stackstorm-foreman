@@ -1,0 +1,68 @@
+---
+description: "Create an HTTP Proxy (resource: POST /api/http_proxies)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: http_proxies.create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: http_proxies.create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
+  http_proxy:
+    type: object
+    required: true
+    description: >
+       "description: 
+        parameters:
+            username:
+              required: false
+              type: string
+              description: Username used to authenticate with the HTTP Proxy
+            name:
+              required: true
+              type: string
+              description: The HTTP Proxy name
+            url:
+              required: true
+              type: string
+              description: URL of the HTTP Proxy
+            location_ids:
+              required: false
+              type: array
+              description: REPLACE locations with given ids
+            password:
+              required: false
+              type: string
+              description: Password used to authenticate with the HTTP Proxy
+            organization_ids:
+              required: false
+              type: array
+              description: REPLACE organizations with given ids.
+            "

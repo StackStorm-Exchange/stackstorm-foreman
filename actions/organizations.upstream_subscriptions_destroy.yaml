@@ -1,0 +1,37 @@
+---
+description: "Remove one or more subscriptions from an upstream subscription allocation (resource: DELETE /katello/api/organizations/:organization_id/upstream_subscriptions)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: organizations.upstream_subscriptions_destroy
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: organizations.upstream_subscriptions_destroy
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: number
+    required: true
+    description: "Organization ID"
+  pool_ids:
+    type: array
+    required: true
+    description: "Array of local pool IDs. Only pools originating upstream are accepted."

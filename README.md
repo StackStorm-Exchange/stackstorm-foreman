@@ -310,13 +310,12 @@ Actions in this pack are auto-generated from the Foreman API using the
 | activation_keys.remove_subscriptions | [PUT /katello/api/activation_keys/:id/remove_subscriptions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/activation_keys/remove_subscriptions.html)  | Unattach a subscription |
 | activation_keys.show | [GET /katello/api/activation_keys/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/activation_keys/show.html)  | Show an activation key |
 | activation_keys.subscriptions_create | [POST /katello/api/activation_keys/:activation_key_id/subscriptions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/subscriptions/create.html)  | Add a subscription to an activation key |
-| activation_keys.subscriptions_ctivation_destroykeys | [DELETE /katello/api/activation_keys/:activation_key_id/subscriptions/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/subscriptions/destroy.html)  | Unattach a subscription |
 | activation_keys.subscriptions_index | [GET /katello/api/activation_keys/:activation_key_id/subscriptions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/subscriptions/index.html)  | List an activation key's subscriptions |
 | activation_keys.update | [PUT /katello/api/activation_keys/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/activation_keys/update.html)  | Update an activation key |
 | api.home_index | [GET /api](https://theforeman.org/api/1.16/apidoc/v2/home/index.html)  | Show available API links |
 | architectures.create | [POST /api/architectures](https://theforeman.org/api/1.16/apidoc/v2/architectures/create.html)  | Create an architecture |
 | architectures.destroy | [DELETE /api/architectures/:id](https://theforeman.org/api/1.16/apidoc/v2/architectures/destroy.html)  | Delete an architecture |
-| architectures.images_architecture_id_showimages | [GET /api/architectures/:architecture_id/images/:id](https://theforeman.org/api/1.16/apidoc/v2/images/show.html)  | Show an image |
+| architectures.images_l -_id_showimages | [GET /api/architectures/:architecture_id/images/:id](https://theforeman.org/api/1.16/apidoc/v2/images/show.html)  | Show an image |
 | architectures.images_index | [GET /api/architectures/:architecture_id/images](https://theforeman.org/api/1.16/apidoc/v2/images/index.html)  | List all images for architecture |
 | architectures.index | [GET /api/architectures](https://theforeman.org/api/1.16/apidoc/v2/architectures/index.html)  | List all architectures |
 | architectures.operatingsystems_index | [GET /api/architectures/:architecture_id/operatingsystems](https://theforeman.org/api/1.16/apidoc/v2/operatingsystems/index.html)  | List all operating systems for nested architecture |
@@ -324,6 +323,12 @@ Actions in this pack are auto-generated from the Foreman API using the
 | architectures.update | [PUT /api/architectures/:id](https://theforeman.org/api/1.16/apidoc/v2/architectures/update.html)  | Update an architecture |
 | audits.index | [GET /api/audits](https://theforeman.org/api/1.16/apidoc/v2/audits/index.html)  | List all audits |
 | audits.show | [GET /api/audits/:id](https://theforeman.org/api/1.16/apidoc/v2/audits/show.html)  | Show an audit |
+| auth_source_externals.index | [GET /api/auth_source_externals](https://theforeman.org/api/1.16/apidoc/v2/auth_source_externals/index.html)  | List external authentication sources |
+| auth_source_externals.show | [GET /api/auth_source_externals/:id](https://theforeman.org/api/1.16/apidoc/v2/auth_source_externals/show.html)  | Show an external authentication source |
+| auth_source_externals.update | [PUT /api/auth_source_externals/:id](https://theforeman.org/api/1.16/apidoc/v2/auth_source_externals/update.html)  | Update an external authentication source |
+| auth_source_externals.users_index | [GET /api/auth_source_externals/:auth_source_external_id/users](https://theforeman.org/api/1.16/apidoc/v2/users/index.html)  | List all users for external authentication source |
+| auth_source_internals.index | [GET /api/auth_source_internals](https://theforeman.org/api/1.16/apidoc/v2/auth_source_internals/index.html)  | List internal authentication sources |
+| auth_source_internals.show | [GET /api/auth_source_internals/:id](https://theforeman.org/api/1.16/apidoc/v2/auth_source_internals/show.html)  | Show an internal authentication source |
 | auth_source_ldaps.create | [POST /api/auth_source_ldaps](https://theforeman.org/api/1.16/apidoc/v2/auth_source_ldaps/create.html)  | Create an LDAP authentication source |
 | auth_source_ldaps.destroy | [DELETE /api/auth_source_ldaps/:id](https://theforeman.org/api/1.16/apidoc/v2/auth_source_ldaps/destroy.html)  | Delete an LDAP authentication source |
 | auth_source_ldaps.external_usergroups_auth_source_ldap_id_external_showusergroups | [GET /api/auth_source_ldaps/:auth_source_ldap_id/external_usergroups/:id](https://theforeman.org/api/1.16/apidoc/v2/external_usergroups/show.html)  | Show an external user group for LDAP authentication source |
@@ -333,6 +338,7 @@ Actions in this pack are auto-generated from the Foreman API using the
 | auth_source_ldaps.test | [PUT /api/auth_source_ldaps/:id/test](https://theforeman.org/api/1.16/apidoc/v2/auth_source_ldaps/test.html)  | Test LDAP connection |
 | auth_source_ldaps.update | [PUT /api/auth_source_ldaps/:id](https://theforeman.org/api/1.16/apidoc/v2/auth_source_ldaps/update.html)  | Update an LDAP authentication source |
 | auth_source_ldaps.users_index | [GET /api/auth_source_ldaps/:auth_source_ldap_id/users](https://theforeman.org/api/1.16/apidoc/v2/users/index.html)  | List all users for LDAP authentication source |
+| auth_sources.index | [GET /api/auth_sources](https://theforeman.org/api/1.16/apidoc/v2/auth_sources/index.html)  | List all authentication sources |
 | bookmarks.create | [POST /api/bookmarks](https://theforeman.org/api/1.16/apidoc/v2/bookmarks/create.html)  | Create a bookmark |
 | bookmarks.destroy | [DELETE /api/bookmarks/:id](https://theforeman.org/api/1.16/apidoc/v2/bookmarks/destroy.html)  | Delete a bookmark |
 | bookmarks.index | [GET /api/bookmarks](https://theforeman.org/api/1.16/apidoc/v2/bookmarks/index.html)  | List all bookmarks |
@@ -341,7 +347,7 @@ Actions in this pack are auto-generated from the Foreman API using the
 | capsules.capsule_content_add_lifecycle_environment | [POST /katello/api/capsules/:id/content/lifecycle_environments](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/capsule_content/add_lifecycle_environment.html)  | Add lifecycle environments to the capsule |
 | capsules.capsule_content_apsules | [DELETE /katello/api/capsules/:id/content/lifecycle_environments/:environment_id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/capsule_content/remove_lifecycle_environment.html)  | Remove lifecycle environments from the capsule |
 | capsules.capsule_content_available_lifecycle_environments | [GET /katello/api/capsules/:id/content/available_lifecycle_environments](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/capsule_content/available_lifecycle_environments.html)  | List the lifecycle environments not attached to the capsule |
-| capsules.capsule_content_cancel_sync | [DELETE /katello/api/capsules/:id/content/sync](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/capsule_content/cancel_sync.html)  | Cancel running capsule synchronization. |
+| capsules.capsule_content_cancel_sync | [DELETE /katello/api/capsules/:id/content/sync](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/capsule_content/cancel_sync.html)  | Cancel running capsule synchronization |
 | capsules.capsule_content_lifecycle_environments | [GET /katello/api/capsules/:id/content/lifecycle_environments](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/capsule_content/lifecycle_environments.html)  | List the lifecycle environments attached to the capsule |
 | capsules.capsule_content_sync | [POST /katello/api/capsules/:id/content/sync](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/capsule_content/sync.html)  | Synchronize the content to the capsule |
 | capsules.capsule_content_sync_status | [GET /katello/api/capsules/:id/content/sync](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/capsule_content/sync_status.html)  | Get current capsule synchronization status |
@@ -349,17 +355,9 @@ Actions in this pack are auto-generated from the Foreman API using the
 | capsules.show | [GET /katello/api/capsules/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/capsules/show.html)  | Show the capsule details |
 | common_parameters.create | [POST /api/common_parameters](https://theforeman.org/api/1.16/apidoc/v2/common_parameters/create.html)  | Create a global parameter |
 | common_parameters.destroy | [DELETE /api/common_parameters/:id](https://theforeman.org/api/1.16/apidoc/v2/common_parameters/destroy.html)  | Delete a global parameter |
-| common_parameters.index | [GET /api/common_parameters](https://theforeman.org/api/1.16/apidoc/v2/common_parameters/index.html)  | List all global parameters. |
+| common_parameters.index | [GET /api/common_parameters](https://theforeman.org/api/1.16/apidoc/v2/common_parameters/index.html)  | List all global parameters |
 | common_parameters.show | [GET /api/common_parameters/:id](https://theforeman.org/api/1.16/apidoc/v2/common_parameters/show.html)  | Show a global parameter |
 | common_parameters.update | [PUT /api/common_parameters/:id](https://theforeman.org/api/1.16/apidoc/v2/common_parameters/update.html)  | Update a global parameter |
-| compare.docker_manifests_compare | [GET /katello/api/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifests/compare.html)  | List docker_manifests |
-| compare.docker_tags_compare | [GET /katello/api/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_tags/compare.html)  | List docker_tags |
-| compare.errata_compare | [GET /katello/api/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/errata/compare.html)  | List errata |
-| compare.file_units_compare | [GET /katello/api/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/file_units/compare.html)  | List files |
-| compare.ostree_branches_compare | [GET /katello/api/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/ostree_branches/compare.html)  | List ostree_branches |
-| compare.package_groups_compare | [GET /katello/api/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/package_groups/compare.html)  | List package_groups |
-| compare.packages_compare | [GET /katello/api/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/packages/compare.html)  | List packages |
-| compare.puppet_modules_compare | [GET /katello/api/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/puppet_modules/compare.html)  | List puppet_modules |
 | compliance.arf_reports_destroy | [DELETE /api/compliance/arf_reports/:id](https://theforeman.org/api/1.16/apidoc/v2/arf_reports/destroy.html)  | Delete an ARF Report |
 | compliance.arf_reports_download | [GET /api/compliance/arf_reports/:id/download](https://theforeman.org/api/1.16/apidoc/v2/arf_reports/download.html)  | Download bzipped ARF report |
 | compliance.arf_reports_download_html | [GET /api/compliance/arf_reports/:id/download_html](https://theforeman.org/api/1.16/apidoc/v2/arf_reports/download_html.html)  | Download ARF report in HTML |
@@ -378,13 +376,13 @@ Actions in this pack are auto-generated from the Foreman API using the
 | compliance.scap_contents_index | [GET /api/compliance/scap_contents](https://theforeman.org/api/1.16/apidoc/v2/scap_contents/index.html)  | List SCAP contents |
 | compliance.scap_contents_show | [GET /api/compliance/scap_contents/:id](https://theforeman.org/api/1.16/apidoc/v2/scap_contents/show.html)  | Show an SCAP content |
 | compliance.scap_contents_update | [PUT /api/compliance/scap_contents/:id](https://theforeman.org/api/1.16/apidoc/v2/scap_contents/update.html)  | Update an SCAP content |
-| compliance.scap_contents_xml | [GET /api/compliance/scap_contents/:id/xml](https://theforeman.org/api/1.16/apidoc/v2/scap_contents/xml.html)  | Show an SCAP content as XML |
+| compliance.scap_contents_xml | [GET /api/compliance/scap_contents/:id/xml](https://theforeman.org/api/1.16/apidoc/v2/scap_contents/xml.html)  | Download an SCAP content as XML |
 | compliance.tailoring_files_create | [POST /api/compliance/tailoring_files](https://theforeman.org/api/1.16/apidoc/v2/tailoring_files/create.html)  | Create a Tailoring file |
 | compliance.tailoring_files_destroy | [DELETE /api/compliance/tailoring_files/:id](https://theforeman.org/api/1.16/apidoc/v2/tailoring_files/destroy.html)  | Deletes a Tailoring file |
 | compliance.tailoring_files_index | [GET /api/compliance/tailoring_files](https://theforeman.org/api/1.16/apidoc/v2/tailoring_files/index.html)  | List Tailoring files |
 | compliance.tailoring_files_show | [GET /api/compliance/tailoring_files/:id](https://theforeman.org/api/1.16/apidoc/v2/tailoring_files/show.html)  | Show a Tailoring file |
 | compliance.tailoring_files_update | [PUT /api/compliance/tailoring_files/:id](https://theforeman.org/api/1.16/apidoc/v2/tailoring_files/update.html)  | Update a Tailoring file |
-| compliance.tailoring_files_xml | [GET /api/compliance/tailoring_files/:id/xml](https://theforeman.org/api/1.16/apidoc/v2/tailoring_files/xml.html)  | Show a Tailoring file as XML |
+| compliance.tailoring_files_xml | [GET /api/compliance/tailoring_files/:id/xml](https://theforeman.org/api/1.16/apidoc/v2/tailoring_files/xml.html)  | Download a Tailoring file as XML |
 | compute_attributes.create | [POST /api/compute_attributes](https://theforeman.org/api/1.16/apidoc/v2/compute_attributes/create.html)  | Create a compute attributes set |
 | compute_attributes.update | [PUT /api/compute_attributes/:id](https://theforeman.org/api/1.16/apidoc/v2/compute_attributes/update.html)  | Update a compute attributes set |
 | compute_profiles.compute_attributes_compute_profile_id_compute_createresources | [POST /api/compute_profiles/:compute_profile_id/compute_resources/:compute_resource_id/compute_attributes](https://theforeman.org/api/1.16/apidoc/v2/compute_attributes/create.html)  | Create a compute attributes set |
@@ -448,17 +446,27 @@ Actions in this pack are auto-generated from the Foreman API using the
 | config_templates.template_combinations_create | [POST /api/config_templates/:config_template_id/template_combinations](https://theforeman.org/api/1.16/apidoc/v2/template_combinations/create.html)  | Add a template combination |
 | config_templates.template_combinations_index | [GET /api/config_templates/:config_template_id/template_combinations](https://theforeman.org/api/1.16/apidoc/v2/template_combinations/index.html)  | List template combination |
 | config_templates.update | [PUT /api/config_templates/:id](https://theforeman.org/api/1.16/apidoc/v2/config_templates/update.html)  | Update a provisioning template |
+| content_credentials.content | [GET /katello/api/content_credentials/:id/content](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_credentials/content.html)  | Return the content of a content credential, used directly by yum |
+| content_credentials.create | [POST /katello/api/content_credentials](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_credentials/create.html)  | Create a content credential |
+| content_credentials.destroy | [DELETE /katello/api/content_credentials/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_credentials/destroy.html)  | Destroy a content credential |
+| content_credentials.index | [GET /katello/api/content_credentials](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_credentials/index.html)  | List content credentials |
+| content_credentials.set_content | [POST /katello/api/content_credentials/:id/content](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_credentials/set_content.html)  | Upload content credential contents |
+| content_credentials.show | [GET /katello/api/content_credentials/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_credentials/show.html)  | Show a content credential |
+| content_credentials.update | [PUT /katello/api/content_credentials/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_credentials/update.html)  | Update a content credential |
 | content_view_filters.content_view_filter_rules_create | [POST /katello/api/content_view_filters/:content_view_filter_id/rules](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filter_rules/create.html)  | Create a filter rule. The parameters included should be based upon the filter type. |
 | content_view_filters.content_view_filter_rules_index | [GET /katello/api/content_view_filters/:content_view_filter_id/rules](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filter_rules/index.html)  | List filter rules |
 | content_view_filters.content_view_filter_rules_ontent_view_destroyfilters | [DELETE /katello/api/content_view_filters/:content_view_filter_id/rules/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filter_rules/destroy.html)  | Delete a filter rule |
 | content_view_filters.content_view_filter_rules_ontent_view_showfilters | [GET /katello/api/content_view_filters/:content_view_filter_id/rules/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filter_rules/show.html)  | Show filter rule info |
 | content_view_filters.content_view_filter_rules_ontent_view_updatefilters | [PUT /katello/api/content_view_filters/:content_view_filter_id/rules/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filter_rules/update.html)  | Update a filter rule. The parameters included should be based upon the filter type. |
 | content_view_filters.create | [post /katello/api/content_view_filters](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filters/create.html)  | create a filter for a content view |
+| content_view_filters.debs_index | [GET /katello/api/content_view_filters/:content_view_filter_id/debs](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/debs/index.html)  | List debs |
 | content_view_filters.destroy | [delete /katello/api/content_view_filters/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filters/destroy.html)  | delete a filter |
+| content_view_filters.docker_manifest_lists_index | [GET /katello/api/content_view_filters/:content_view_filter_id/docker_manifest_lists](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifest_lists/index.html)  | List docker_manifest_lists |
 | content_view_filters.docker_manifests_index | [GET /katello/api/content_view_filters/:content_view_filter_id/docker_manifests](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifests/index.html)  | List docker_manifests |
 | content_view_filters.docker_tags_index | [GET /katello/api/content_view_filters/:content_view_filter_id/docker_tags](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_tags/index.html)  | List docker_tags |
 | content_view_filters.file_units_index | [GET /katello/api/content_view_filters/:content_view_filter_id/files](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/file_units/index.html)  | List files |
 | content_view_filters.index | [get /katello/api/content_view_filters](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filters/index.html)  | list filters |
+| content_view_filters.module_streams_index | [GET /katello/api/content_view_filters/:content_view_filter_id/module_streams](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/module_streams/index.html)  | List module_streams |
 | content_view_filters.ostree_branches_index | [GET /katello/api/content_view_filters/:content_view_filter_id/ostree_branches](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/ostree_branches/index.html)  | List ostree_branches |
 | content_view_filters.package_groups_index | [GET /katello/api/content_view_filters/:content_view_filter_id/package_groups](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/package_groups/index.html)  | List package_groups |
 | content_view_filters.packages_ontent_view_indexfilters | [GET /katello/api/content_view_filters/:content_view_filter_id/:resource_id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/packages/index.html)  | List :resource_id |
@@ -466,12 +474,14 @@ Actions in this pack are auto-generated from the Foreman API using the
 | content_view_filters.show | [get /katello/api/content_view_filters/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filters/show.html)  | show filter info |
 | content_view_filters.update | [put /katello/api/content_view_filters/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_filters/update.html)  | update a filter |
 | content_view_versions.destroy | [DELETE /katello/api/content_view_versions/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/destroy.html)  | Remove content view version |
+| content_view_versions.errata_available_errata | [GET /katello/api/content_view_versions/:id/available_errata](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/errata/available_errata.html)  | Return errata that can be added to the Content View Version via an Incremental Update |
 | content_view_versions.export | [POST /katello/api/content_view_versions/:id/export](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/export.html)  | Export a content view version |
 | content_view_versions.incremental_update | [POST /katello/api/content_view_versions/incremental_update](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/incremental_update.html)  | Perform an Incremental Update on one or more Content View Versions |
 | content_view_versions.index | [GET /katello/api/content_view_versions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/index.html)  | List content view versions |
 | content_view_versions.promote | [POST /katello/api/content_view_versions/:id/promote](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/promote.html)  | Promote a content view version |
-| content_view_versions.republish_repositories | [PUT /katello/api/content_view_versions/:id/republish_repositories](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/republish_repositories.html)  | Forces a republish of the version's repositories' metadata. |
+| content_view_versions.republish_repositories | [PUT /katello/api/content_view_versions/:id/republish_repositories](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/republish_repositories.html)  | Forces a republish of the version's repositories' metadata |
 | content_view_versions.show | [GET /katello/api/content_view_versions/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/show.html)  | Show content view version |
+| content_view_versions.update | [PUT /katello/api/content_view_versions/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/update.html)  | Update a content view version |
 | content_views.available_puppet_module_names | [GET /katello/api/content_views/:id/available_puppet_module_names](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_views/available_puppet_module_names.html)  | Get puppet modules names that are available to be added to the content view |
 | content_views.available_puppet_modules | [GET /katello/api/content_views/:id/available_puppet_modules](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_views/available_puppet_modules.html)  | Get puppet modules that are available to be added to the content view |
 | content_views.content_view_components_add_components | [PUT /katello/api/content_views/:composite_content_view_id/content_view_components/add](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_components/add_components.html)  | Add components to the content view |
@@ -493,11 +503,14 @@ Actions in this pack are auto-generated from the Foreman API using the
 | content_views.content_view_versions_index | [GET /katello/api/content_views/:content_view_id/content_view_versions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_view_versions/index.html)  | List content view versions |
 | content_views.copy | [POST /katello/api/content_views/:id/copy](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_views/copy.html)  | Make copy of a content view |
 | content_views.create | [POST /katello/api/content_views](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_views/create.html)  | Create a content view |
+| content_views.debs_ontent_indexviews | [GET /katello/api/content_views/:content_view_id/filters/:filter_id/debs](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/debs/index.html)  | List debs |
 | content_views.destroy | [DELETE /katello/api/content_views/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_views/destroy.html)  | Delete a content view |
+| content_views.docker_manifest_lists_ontent_indexviews | [GET /katello/api/content_views/:content_view_id/filters/:filter_id/docker_manifest_lists](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifest_lists/index.html)  | List docker_manifest_lists |
 | content_views.docker_manifests_ontent_indexviews | [GET /katello/api/content_views/:content_view_id/filters/:filter_id/docker_manifests](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifests/index.html)  | List docker_manifests |
 | content_views.docker_tags_ontent_indexviews | [GET /katello/api/content_views/:content_view_id/filters/:filter_id/docker_tags](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_tags/index.html)  | List docker_tags |
 | content_views.file_units_ontent_indexviews | [GET /katello/api/content_views/:content_view_id/filters/:filter_id/files](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/file_units/index.html)  | List files |
 | content_views.index | [GET /katello/api/content_views](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_views/index.html)  | List content views |
+| content_views.module_streams_ontent_indexviews | [GET /katello/api/content_views/:content_view_id/filters/:filter_id/module_streams](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/module_streams/index.html)  | List module_streams |
 | content_views.ontent_remove_from_environmentviews | [DELETE /katello/api/content_views/:id/environments/:environment_id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_views/remove_from_environment.html)  | Remove a content view from an environment |
 | content_views.ostree_branches_ontent_indexviews | [GET /katello/api/content_views/:content_view_id/filters/:filter_id/ostree_branches](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/ostree_branches/index.html)  | List ostree_branches |
 | content_views.package_groups_ontent_indexviews | [GET /katello/api/content_views/:content_view_id/filters/:filter_id/package_groups](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/package_groups/index.html)  | List package_groups |
@@ -509,6 +522,9 @@ Actions in this pack are auto-generated from the Foreman API using the
 | content_views.show | [GET /katello/api/content_views/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_views/show.html)  | Show a content view |
 | content_views.update | [PUT /katello/api/content_views/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_views/update.html)  | Update a content view |
 | dashboard.index | [GET /api/dashboard](https://theforeman.org/api/1.16/apidoc/v2/dashboard/index.html)  | Get dashboard details |
+| debs.compare | [GET /katello/api/debs/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/debs/compare.html)  | List debs |
+| debs.index | [GET /katello/api/debs](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/debs/index.html)  | List debs |
+| debs.show | [GET /katello/api/debs/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/debs/show.html)  | Show a deb |
 | discovered_hosts.auto_provision | [POST /api/v2/discovered_hosts/:id/auto_provision](https://theforeman.org/api/1.16/apidoc/v2/discovered_hosts/auto_provision.html)  | Execute rules against a discovered host |
 | discovered_hosts.auto_provision_all | [POST /api/v2/discovered_hosts/auto_provision_all](https://theforeman.org/api/1.16/apidoc/v2/discovered_hosts/auto_provision_all.html)  | Execute rules against all currently discovered hosts |
 | discovered_hosts.create | [POST /api/v2/discovered_hosts](https://theforeman.org/api/1.16/apidoc/v2/discovered_hosts/create.html)  | Create a discovered host for testing (use /facts to create new hosts) |
@@ -525,8 +541,13 @@ Actions in this pack are auto-generated from the Foreman API using the
 | discovery_rules.index | [GET /api/v2/discovery_rules](https://theforeman.org/api/1.16/apidoc/v2/discovery_rules/index.html)  | List all discovery rules |
 | discovery_rules.show | [GET /api/v2/discovery_rules/:id](https://theforeman.org/api/1.16/apidoc/v2/discovery_rules/show.html)  | Show a discovery rule |
 | discovery_rules.update | [PUT /api/v2/discovery_rules/:id](https://theforeman.org/api/1.16/apidoc/v2/discovery_rules/update.html)  | Update a rule |
+| docker_manifest_lists.compare | [GET /katello/api/docker_manifest_lists/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifest_lists/compare.html)  | List docker_manifest_lists |
+| docker_manifest_lists.index | [GET /katello/api/docker_manifest_lists](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifest_lists/index.html)  | List docker_manifest_lists |
+| docker_manifest_lists.show | [GET /katello/api/docker_manifest_lists/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifest_lists/show.html)  | Show a docker manifest list |
+| docker_manifests.compare | [GET /katello/api/docker_manifests/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifests/compare.html)  | List docker_manifests |
 | docker_manifests.index | [GET /katello/api/docker_manifests](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifests/index.html)  | List docker_manifests |
 | docker_manifests.show | [GET /katello/api/docker_manifests/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifests/show.html)  | Show a docker manifest |
+| docker_tags.compare | [GET /katello/api/docker_tags/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_tags/compare.html)  | List docker_tags |
 | docker_tags.index | [GET /katello/api/docker_tags](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_tags/index.html)  | List docker_tags |
 | docker_tags.show | [GET /katello/api/docker_tags/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_tags/show.html)  | Show a docker tag |
 | domains.create | [POST /api/domains](https://theforeman.org/api/1.16/apidoc/v2/domains/create.html)  | Create a domain |
@@ -565,9 +586,11 @@ Actions in this pack are auto-generated from the Foreman API using the
 | environments.template_combinations_environment_id_template_updatecombinations | [PUT /api/environments/:environment_id/template_combinations/:id](https://theforeman.org/api/1.16/apidoc/v2/template_combinations/update.html)  | Update template combination |
 | environments.template_combinations_index | [GET /api/environments/:environment_id/template_combinations](https://theforeman.org/api/1.16/apidoc/v2/template_combinations/index.html)  | List template combination |
 | environments.update | [PUT /api/environments/:id](https://theforeman.org/api/1.16/apidoc/v2/environments/update.html)  | Update an environment |
+| errata.compare | [GET /katello/api/errata/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/errata/compare.html)  | List errata |
 | errata.index | [GET /katello/api/errata](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/errata/index.html)  | List errata |
 | errata.show | [GET /katello/api/errata/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/errata/show.html)  | Show an erratum |
 | fact_values.index | [GET /api/fact_values](https://theforeman.org/api/1.16/apidoc/v2/fact_values/index.html)  | List all fact values |
+| files.file_units_compare | [GET /katello/api/files/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/file_units/compare.html)  | List files |
 | files.file_units_index | [GET /katello/api/files](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/file_units/index.html)  | List files |
 | files.file_units_show | [GET /katello/api/files/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/file_units/show.html)  | Show a file |
 | filters.create | [POST /api/filters](https://theforeman.org/api/1.16/apidoc/v2/filters/create.html)  | Create a filter |
@@ -575,10 +598,11 @@ Actions in this pack are auto-generated from the Foreman API using the
 | filters.index | [GET /api/filters](https://theforeman.org/api/1.16/apidoc/v2/filters/index.html)  | List all filters |
 | filters.show | [GET /api/filters/:id](https://theforeman.org/api/1.16/apidoc/v2/filters/show.html)  | Show a filter |
 | filters.update | [PUT /api/filters/:id](https://theforeman.org/api/1.16/apidoc/v2/filters/update.html)  | Update a filter |
-| gpg_keys.content | [POST /katello/api/gpg_keys/:id/content](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/gpg_keys/content.html)  | Upload gpg key contents |
+| gpg_keys.content | [GET /katello/api/gpg_keys/:id/content](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/gpg_keys/content.html)  | Return the content of a gpg key, used directly by yum |
 | gpg_keys.create | [POST /katello/api/gpg_keys](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/gpg_keys/create.html)  | Create a gpg key |
 | gpg_keys.destroy | [DELETE /katello/api/gpg_keys/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/gpg_keys/destroy.html)  | Destroy a gpg key |
 | gpg_keys.index | [GET /katello/api/gpg_keys](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/gpg_keys/index.html)  | List gpg keys |
+| gpg_keys.set_content | [POST /katello/api/gpg_keys/:id/content](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/gpg_keys/set_content.html)  | Upload gpg key contents |
 | gpg_keys.show | [GET /katello/api/gpg_keys/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/gpg_keys/show.html)  | Show a gpg key |
 | gpg_keys.update | [PUT /katello/api/gpg_keys/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/gpg_keys/update.html)  | Update a repository |
 | host_collections.add_hosts | [PUT /katello/api/host_collections/:id/add_hosts](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/host_collections/add_hosts.html)  | Add host to the host collection |
@@ -589,6 +613,7 @@ Actions in this pack are auto-generated from the Foreman API using the
 | host_collections.remove_hosts | [PUT /katello/api/host_collections/:id/remove_hosts](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/host_collections/remove_hosts.html)  | Remove hosts from the host collection |
 | host_collections.show | [GET /katello/api/host_collections/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/host_collections/show.html)  | Show a host collection |
 | host_collections.update | [PUT /katello/api/host_collections/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/host_collections/update.html)  | Update a host collection |
+| hostgroups.ansible_roles | [GET /api/hostgroups/:id/ansible_roles](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/ansible_roles.html)  | List all Ansible roles for a hostgroup |
 | hostgroups.clone | [POST /api/hostgroups/:id/clone](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/clone.html)  | Clone a host group |
 | hostgroups.create | [POST /api/hostgroups](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/create.html)  | Create a host group |
 | hostgroups.destroy | [DELETE /api/hostgroups/:id](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/destroy.html)  | Delete a host group |
@@ -597,14 +622,17 @@ Actions in this pack are auto-generated from the Foreman API using the
 | hostgroups.hostgroup_classes_index | [GET /api/hostgroups/:hostgroup_id/puppetclass_ids](https://theforeman.org/api/1.16/apidoc/v2/hostgroup_classes/index.html)  | List all Puppet class IDs for host group |
 | hostgroups.hosts_index | [GET /api/hostgroups/:hostgroup_id/hosts](https://theforeman.org/api/1.16/apidoc/v2/hosts/index.html)  | List all hosts for a host group |
 | hostgroups.index | [GET /api/hostgroups](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/index.html)  | List all host groups |
+| hostgroups.multiple_play_roles | [POST /api/hostgroups/multiple_play_roles](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/multiple_play_roles.html)  | Plays Ansible roles on hostgroups |
 | hostgroups.parameters_create | [POST /api/hostgroups/:hostgroup_id/parameters](https://theforeman.org/api/1.16/apidoc/v2/parameters/create.html)  | Create a nested parameter for a host group |
 | hostgroups.parameters_hostgroup_id_destroyparameters | [DELETE /api/hostgroups/:hostgroup_id/parameters/:id](https://theforeman.org/api/1.16/apidoc/v2/parameters/destroy.html)  | Delete a nested parameter for a host group |
 | hostgroups.parameters_hostgroup_id_showparameters | [GET /api/hostgroups/:hostgroup_id/parameters/:id](https://theforeman.org/api/1.16/apidoc/v2/parameters/show.html)  | Show a nested parameter for a host group |
 | hostgroups.parameters_hostgroup_id_updateparameters | [PUT /api/hostgroups/:hostgroup_id/parameters/:id](https://theforeman.org/api/1.16/apidoc/v2/parameters/update.html)  | Update a nested parameter for a host group |
 | hostgroups.parameters_index | [GET /api/hostgroups/:hostgroup_id/parameters](https://theforeman.org/api/1.16/apidoc/v2/parameters/index.html)  | List all parameters for a host group |
 | hostgroups.parameters_reset | [DELETE /api/hostgroups/:hostgroup_id/parameters](https://theforeman.org/api/1.16/apidoc/v2/parameters/reset.html)  | Delete all nested parameters for a host group |
+| hostgroups.play_roles | [POST /api/hostgroups/:id/play_roles](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/play_roles.html)  | Plays Ansible roles on a hostgroup |
 | hostgroups.puppetclasses_hostgroup_id_showpuppetclasses | [GET /api/hostgroups/:hostgroup_id/puppetclasses/:id](https://theforeman.org/api/1.16/apidoc/v2/puppetclasses/show.html)  | Show a Puppet class for a host group |
 | hostgroups.puppetclasses_index | [GET /api/hostgroups/:hostgroup_id/puppetclasses](https://theforeman.org/api/1.16/apidoc/v2/puppetclasses/index.html)  | List all Puppet classes for a host group |
+| hostgroups.rebuild_config | [PUT /api/hostgroups/:id/rebuild_config](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/rebuild_config.html)  | Rebuild orchestration config |
 | hostgroups.show | [GET /api/hostgroups/:id](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/show.html)  | Show a host group |
 | hostgroups.smart_class_parameters_index | [GET /api/hostgroups/:hostgroup_id/smart_class_parameters](https://theforeman.org/api/1.16/apidoc/v2/smart_class_parameters/index.html)  | List of smart class parameters for a specific host group |
 | hostgroups.smart_variables_index | [GET /api/hostgroups/:hostgroup_id/smart_variables](https://theforeman.org/api/1.16/apidoc/v2/smart_variables/index.html)  | List of smart variables for a specific host group |
@@ -613,6 +641,7 @@ Actions in this pack are auto-generated from the Foreman API using the
 | hostgroups.template_combinations_hostgroup_id_template_updatecombinations | [PUT /api/hostgroups/:hostgroup_id/template_combinations/:id](https://theforeman.org/api/1.16/apidoc/v2/template_combinations/update.html)  | Update template combination |
 | hostgroups.template_combinations_index | [GET /api/hostgroups/:hostgroup_id/template_combinations](https://theforeman.org/api/1.16/apidoc/v2/template_combinations/index.html)  | List template combination |
 | hostgroups.update | [PUT /api/hostgroups/:id](https://theforeman.org/api/1.16/apidoc/v2/hostgroups/update.html)  | Update a host group |
+| hosts.ansible_roles | [GET /api/hosts/:id/ansible_roles](https://theforeman.org/api/1.16/apidoc/v2/hosts/ansible_roles.html)  | List all Ansible roles for a host |
 | hosts.audits_index | [GET /api/hosts/:host_id/audits](https://theforeman.org/api/1.16/apidoc/v2/audits/index.html)  | List all audits for a given host |
 | hosts.boot | [PUT /api/hosts/:id/boot](https://theforeman.org/api/1.16/apidoc/v2/hosts/boot.html)  | Boot host from specified device |
 | hosts.config_reports_last | [GET /api/hosts/:host_id/config_reports/last](https://theforeman.org/api/1.16/apidoc/v2/config_reports/last.html)  | Show the last report for a host |
@@ -630,6 +659,7 @@ Actions in this pack are auto-generated from the Foreman API using the
 | hosts.host_errata_apply | [PUT /api/hosts/:host_id/errata/apply](https://theforeman.org/api/1.16/apidoc/v2/host_errata/apply.html)  | Schedule errata for installation |
 | hosts.host_errata_host_id_showerrata | [GET /api/hosts/:host_id/errata/:id](https://theforeman.org/api/1.16/apidoc/v2/host_errata/show.html)  | Retrieve a single errata for a host |
 | hosts.host_errata_index | [GET /api/hosts/:host_id/errata](https://theforeman.org/api/1.16/apidoc/v2/host_errata/index.html)  | List errata available for the content host |
+| hosts.host_module_streams_index | [GET /api/hosts/:host_id/module_streams](https://theforeman.org/api/1.16/apidoc/v2/host_module_streams/index.html)  | List module streams available to the host |
 | hosts.host_packages_index | [GET /api/hosts/:host_id/packages](https://theforeman.org/api/1.16/apidoc/v2/host_packages/index.html)  | List packages installed on the host |
 | hosts.host_packages_install | [PUT /api/hosts/:host_id/packages/install](https://theforeman.org/api/1.16/apidoc/v2/host_packages/install.html)  | Install packages remotely |
 | hosts.host_packages_remove | [PUT /api/hosts/:host_id/packages/remove](https://theforeman.org/api/1.16/apidoc/v2/host_packages/remove.html)  | Uninstall packages remotely |
@@ -639,15 +669,16 @@ Actions in this pack are auto-generated from the Foreman API using the
 | hosts.host_subscriptions_auto_attach | [PUT /api/hosts/:host_id/subscriptions/auto_attach](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/auto_attach.html)  | Trigger an auto-attach of subscriptions |
 | hosts.host_subscriptions_available_release_versions | [GET /api/hosts/:host_id/subscriptions/available_release_versions](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/available_release_versions.html)  | Show releases available for the content host |
 | hosts.host_subscriptions_content_override | [PUT /api/hosts/:host_id/subscriptions/content_override](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/content_override.html)  | Set content overrides for the host |
-| hosts.host_subscriptions_create | [POST /api/hosts/subscriptions](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/create.html)  | Register a host with subscription and information. |
+| hosts.host_subscriptions_create | [POST /api/hosts/subscriptions](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/create.html)  | Register a host with subscription and information |
 | hosts.host_subscriptions_destroy | [DELETE /api/hosts/:host_id/subscriptions](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/destroy.html)  | Unregister the host as a subscription consumer |
 | hosts.host_subscriptions_events | [GET /api/hosts/:host_id/subscriptions/events](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/events.html)  | List subscription events for the host |
 | hosts.host_subscriptions_index | [GET /api/hosts/:host_id/subscriptions](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/index.html)  | List a host's subscriptions |
 | hosts.host_subscriptions_product_content | [GET /api/hosts/:host_id/subscriptions/product_content](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/product_content.html)  | Get content and overrides for the host |
 | hosts.host_subscriptions_remove_subscriptions | [PUT /api/hosts/:host_id/subscriptions/remove_subscriptions](https://theforeman.org/api/1.16/apidoc/v2/host_subscriptions/remove_subscriptions.html)  |  |
-| hosts.host_tracer_index | [GET /api/hosts/:host_id/tracer](https://theforeman.org/api/1.16/apidoc/v2/host_tracer/index.html)  | List servises that need restarting on the host |
-| hosts.hosts_bulk_actions_add_subscriptions | [PUT /api/hosts/bulk/subscriptions/add_subscriptions](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/add_subscriptions.html)  | Add subscriptions to one or more hosts |
-| hosts.hosts_bulk_actions_auto_attach | [PUT /api/hosts/bulk/subscriptions/auto_attach](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/auto_attach.html)  | Trigger an auto-attach of subscriptions on one or more hosts |
+| hosts.host_tracer_index | [GET /api/hosts/:host_id/traces](https://theforeman.org/api/1.16/apidoc/v2/host_tracer/index.html)  | List services that need restarting on the host |
+| hosts.hosts_bulk_actions_add_subscriptions | [PUT /api/hosts/bulk/add_subscriptions](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/add_subscriptions.html)  | Add subscriptions to one or more hosts |
+| hosts.hosts_bulk_actions_applicable_errata | [POST /api/hosts/bulk/applicable_errata](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/applicable_errata.html)  | Fetch applicable errata for a host. |
+| hosts.hosts_bulk_actions_auto_attach | [PUT /api/hosts/bulk/auto_attach](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/auto_attach.html)  | Trigger an auto-attach of subscriptions on one or more hosts |
 | hosts.hosts_bulk_actions_available_incremental_updates | [POST /api/hosts/bulk/available_incremental_updates](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/available_incremental_updates.html)  | Given a set of hosts and errata, lists the content view versions and environments that need updating. |
 | hosts.hosts_bulk_actions_bulk_add_host_collections | [PUT /api/hosts/bulk/add_host_collections](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/bulk_add_host_collections.html)  | Add one or more host collections to one or more hosts |
 | hosts.hosts_bulk_actions_bulk_remove_host_collections | [PUT /api/hosts/bulk/remove_host_collections](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/bulk_remove_host_collections.html)  | Remove one or more host collections from one or more hosts |
@@ -655,10 +686,11 @@ Actions in this pack are auto-generated from the Foreman API using the
 | hosts.hosts_bulk_actions_destroy_hosts | [PUT /api/hosts/bulk/destroy](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/destroy_hosts.html)  | Destroy one or more hosts |
 | hosts.hosts_bulk_actions_environment_content_view | [PUT /api/hosts/bulk/environment_content_view](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/environment_content_view.html)  | Assign the environment and content view to one or more hosts |
 | hosts.hosts_bulk_actions_install_content | [PUT /api/hosts/bulk/install_content](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/install_content.html)  | Install content on one or more hosts |
-| hosts.hosts_bulk_actions_installable_errata | [POST /api/hosts/bulk/applicable_errata](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/installable_errata.html)  | Fetch applicable errata for a host. |
+| hosts.hosts_bulk_actions_installable_errata | [POST /api/hosts/bulk/installable_errata](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/installable_errata.html)  | Fetch installable errata for a host. |
+| hosts.hosts_bulk_actions_module_streams | [POST /api/hosts/bulk/module_streams](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/module_streams.html)  | Fetch available module streams for hosts. |
 | hosts.hosts_bulk_actions_release_version | [PUT /api/hosts/bulk/release_version](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/release_version.html)  | Assign the release version to one or more hosts |
 | hosts.hosts_bulk_actions_remove_content | [PUT /api/hosts/bulk/remove_content](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/remove_content.html)  | Remove content on one or more hosts |
-| hosts.hosts_bulk_actions_remove_subscriptions | [PUT /api/hosts/bulk/subscriptions/remove_subscriptions](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/remove_subscriptions.html)  | Remove subscriptions from one or more hosts |
+| hosts.hosts_bulk_actions_remove_subscriptions | [PUT /api/hosts/bulk/remove_subscriptions](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/remove_subscriptions.html)  | Remove subscriptions from one or more hosts |
 | hosts.hosts_bulk_actions_update_content | [PUT /api/hosts/bulk/update_content](https://theforeman.org/api/1.16/apidoc/v2/hosts_bulk_actions/update_content.html)  | Update content on one or more hosts |
 | hosts.id_get_statusstatus | [GET /api/hosts/:id/status/:type](https://theforeman.org/api/1.16/apidoc/v2/hosts/get_status.html)  | Get status of host |
 | hosts.id_templatetemplate | [GET /api/hosts/:id/template/:kind](https://theforeman.org/api/1.16/apidoc/v2/hosts/template.html)  | Preview rendered provisioning template content |
@@ -668,16 +700,18 @@ Actions in this pack are auto-generated from the Foreman API using the
 | hosts.interfaces_host_id_showinterfaces | [GET /api/hosts/:host_id/interfaces/:id](https://theforeman.org/api/1.16/apidoc/v2/interfaces/show.html)  | Show an interface for host |
 | hosts.interfaces_host_id_updateinterfaces | [PUT /api/hosts/:host_id/interfaces/:id](https://theforeman.org/api/1.16/apidoc/v2/interfaces/update.html)  | Update a host's interface |
 | hosts.interfaces_index | [GET /api/hosts/:host_id/interfaces](https://theforeman.org/api/1.16/apidoc/v2/interfaces/index.html)  | List all interfaces for host |
+| hosts.multiple_play_roles | [POST /api/hosts/multiple_play_roles](https://theforeman.org/api/1.16/apidoc/v2/hosts/multiple_play_roles.html)  | Plays Ansible roles on hosts |
 | hosts.parameters_create | [POST /api/hosts/:host_id/parameters](https://theforeman.org/api/1.16/apidoc/v2/parameters/create.html)  | Create a nested parameter for a host |
 | hosts.parameters_host_id_destroyparameters | [DELETE /api/hosts/:host_id/parameters/:id](https://theforeman.org/api/1.16/apidoc/v2/parameters/destroy.html)  | Delete a nested parameter for a host |
 | hosts.parameters_host_id_showparameters | [GET /api/hosts/:host_id/parameters/:id](https://theforeman.org/api/1.16/apidoc/v2/parameters/show.html)  | Show a nested parameter for a host |
 | hosts.parameters_host_id_updateparameters | [PUT /api/hosts/:host_id/parameters/:id](https://theforeman.org/api/1.16/apidoc/v2/parameters/update.html)  | Update a nested parameter for a host |
 | hosts.parameters_index | [GET /api/hosts/:host_id/parameters](https://theforeman.org/api/1.16/apidoc/v2/parameters/index.html)  | List all parameters for a host |
 | hosts.parameters_reset | [DELETE /api/hosts/:host_id/parameters](https://theforeman.org/api/1.16/apidoc/v2/parameters/reset.html)  | Delete all nested parameters for a host |
+| hosts.play_roles | [POST /api/hosts/:id/play_roles](https://theforeman.org/api/1.16/apidoc/v2/hosts/play_roles.html)  | Plays Ansible roles on a host |
 | hosts.power | [PUT /api/hosts/:id/power](https://theforeman.org/api/1.16/apidoc/v2/hosts/power.html)  | Run a power operation on host |
+| hosts.puppet_hosts_puppetrun | [PUT /api/hosts/:id/puppetrun](https://theforeman.org/api/1.16/apidoc/v2/puppet_hosts/puppetrun.html)  | Force a Puppet agent run on the host |
 | hosts.puppetclasses_host_id_showpuppetclasses | [GET /api/hosts/:host_id/puppetclasses/:id](https://theforeman.org/api/1.16/apidoc/v2/puppetclasses/show.html)  | Show a Puppet class for host |
 | hosts.puppetclasses_index | [GET /api/hosts/:host_id/puppetclasses](https://theforeman.org/api/1.16/apidoc/v2/puppetclasses/index.html)  | List all Puppet classes for a host |
-| hosts.puppetrun | [PUT /api/hosts/:id/puppetrun](https://theforeman.org/api/1.16/apidoc/v2/hosts/puppetrun.html)  | Force a Puppet agent run on the host |
 | hosts.rebuild_config | [PUT /api/hosts/:id/rebuild_config](https://theforeman.org/api/1.16/apidoc/v2/hosts/rebuild_config.html)  | Rebuild orchestration config |
 | hosts.reports_last | [GET /api/hosts/:host_id/reports/last](https://theforeman.org/api/1.16/apidoc/v2/reports/last.html)  | Show the last report for a host |
 | hosts.show | [GET /api/hosts/:id](https://theforeman.org/api/1.16/apidoc/v2/hosts/show.html)  | Show a host |
@@ -686,10 +720,19 @@ Actions in this pack are auto-generated from the Foreman API using the
 | hosts.status | [GET /api/hosts/:id/status](https://theforeman.org/api/1.16/apidoc/v2/hosts/status.html)  | Get configuration status of host |
 | hosts.update | [PUT /api/hosts/:id](https://theforeman.org/api/1.16/apidoc/v2/hosts/update.html)  | Update a host |
 | hosts.vm_compute_attributes | [GET /api/hosts/:id/vm_compute_attributes](https://theforeman.org/api/1.16/apidoc/v2/hosts/vm_compute_attributes.html)  | Get vm attributes of host |
+| http_proxies.create | [POST /api/http_proxies](https://theforeman.org/api/1.16/apidoc/v2/http_proxies/create.html)  | Create an HTTP Proxy |
+| http_proxies.destroy | [DELETE /api/http_proxies/:id](https://theforeman.org/api/1.16/apidoc/v2/http_proxies/destroy.html)  | Delete an HTTP Proxy |
+| http_proxies.index | [GET /api/http_proxies](https://theforeman.org/api/1.16/apidoc/v2/http_proxies/index.html)  | List of HTTP Proxies |
+| http_proxies.show | [GET /api/http_proxies/:id](https://theforeman.org/api/1.16/apidoc/v2/http_proxies/show.html)  | Show an HTTP Proxy |
+| http_proxies.update | [PUT /api/http_proxies/:id](https://theforeman.org/api/1.16/apidoc/v2/http_proxies/update.html)  | Update an HTTP Proxy |
+| job_invocations.cancel | [POST /api/job_invocations/:id/cancel](https://theforeman.org/api/1.16/apidoc/v2/job_invocations/cancel.html)  | Cancel job invocation |
 | job_invocations.create | [POST /api/job_invocations](https://theforeman.org/api/1.16/apidoc/v2/job_invocations/create.html)  | Create a job invocation |
 | job_invocations.id_outputhosts | [GET /api/job_invocations/:id/hosts/:host_id](https://theforeman.org/api/1.16/apidoc/v2/job_invocations/output.html)  | Get output for a host |
+| job_invocations.id_raw_outputhosts | [GET /api/job_invocations/:id/hosts/:host_id/raw](https://theforeman.org/api/1.16/apidoc/v2/job_invocations/raw_output.html)  | Get raw output for a host |
 | job_invocations.index | [GET /api/job_invocations](https://theforeman.org/api/1.16/apidoc/v2/job_invocations/index.html)  | List job invocations |
+| job_invocations.rerun | [POST /api/job_invocations/:id/rerun](https://theforeman.org/api/1.16/apidoc/v2/job_invocations/rerun.html)  | Rerun job on failed hosts |
 | job_invocations.show | [GET /api/job_invocations/:id](https://theforeman.org/api/1.16/apidoc/v2/job_invocations/show.html)  | Show job invocation |
+| job_invocations.template_invocations_template_invocations | [GET /api/job_invocations/:job_invocation_id/template_invocations](https://theforeman.org/api/1.16/apidoc/v2/template_invocations/template_invocations.html)  | List template invocations belonging to job invocation |
 | job_templates.clone | [POST /api/job_templates/:id/clone](https://theforeman.org/api/1.16/apidoc/v2/job_templates/clone.html)  | Clone a provision template |
 | job_templates.create | [POST /api/job_templates](https://theforeman.org/api/1.16/apidoc/v2/job_templates/create.html)  | Create a job template |
 | job_templates.destroy | [DELETE /api/job_templates/:id](https://theforeman.org/api/1.16/apidoc/v2/job_templates/destroy.html)  | Delete a job template |
@@ -699,7 +742,9 @@ Actions in this pack are auto-generated from the Foreman API using the
 | job_templates.revision | [GET /api/job_templates/revision](https://theforeman.org/api/1.16/apidoc/v2/job_templates/revision.html)  |  |
 | job_templates.show | [GET /api/job_templates/:id](https://theforeman.org/api/1.16/apidoc/v2/job_templates/show.html)  | Show job template details |
 | job_templates.update | [PUT /api/job_templates/:id](https://theforeman.org/api/1.16/apidoc/v2/job_templates/update.html)  | Update a job template |
+| locations.auth_source_externals_index | [GET /api/locations/:location_id/auth_source_externals](https://theforeman.org/api/1.16/apidoc/v2/auth_source_externals/index.html)  | List external authentication sources per location |
 | locations.auth_source_ldaps_index | [GET /api/locations/:location_id/auth_source_ldaps](https://theforeman.org/api/1.16/apidoc/v2/auth_source_ldaps/index.html)  | List LDAP authentication sources per location |
+| locations.auth_sources_index | [GET /api/locations/:location_id/auth_sources](https://theforeman.org/api/1.16/apidoc/v2/auth_sources/index.html)  | List all authentication sources per location |
 | locations.config_templates_index | [GET /api/locations/:location_id/config_templates](https://theforeman.org/api/1.16/apidoc/v2/config_templates/index.html)  | List provisioning templates per location |
 | locations.create | [POST /api/locations](https://theforeman.org/api/1.16/apidoc/v2/locations/create.html)  | Create a location |
 | locations.destroy | [DELETE /api/locations/:id](https://theforeman.org/api/1.16/apidoc/v2/locations/destroy.html)  | Delete a location |
@@ -718,6 +763,7 @@ Actions in this pack are auto-generated from the Foreman API using the
 | locations.parameters_reset | [DELETE /api/locations/:location_id/parameters](https://theforeman.org/api/1.16/apidoc/v2/parameters/reset.html)  | Delete all nested parameter for a location |
 | locations.provisioning_templates_index | [GET /api/locations/:location_id/provisioning_templates](https://theforeman.org/api/1.16/apidoc/v2/provisioning_templates/index.html)  | List provisioning templates per location |
 | locations.ptables_index | [GET /api/locations/:location_id/ptables](https://theforeman.org/api/1.16/apidoc/v2/ptables/index.html)  | List all partition tables per location |
+| locations.report_templates_index | [GET /api/locations/:location_id/report_templates](https://theforeman.org/api/1.16/apidoc/v2/report_templates/index.html)  | List all report templates per location |
 | locations.show | [GET /api/locations/:id](https://theforeman.org/api/1.16/apidoc/v2/locations/show.html)  | Show a location |
 | locations.subnets_index | [GET /api/locations/:location_id/subnets](https://theforeman.org/api/1.16/apidoc/v2/subnets/index.html)  | List of subnets per location |
 | locations.update | [PUT /api/locations/:id](https://theforeman.org/api/1.16/apidoc/v2/locations/update.html)  | Update a location |
@@ -735,6 +781,9 @@ Actions in this pack are auto-generated from the Foreman API using the
 | models.index | [GET /api/models](https://theforeman.org/api/1.16/apidoc/v2/models/index.html)  | List all hardware models |
 | models.show | [GET /api/models/:id](https://theforeman.org/api/1.16/apidoc/v2/models/show.html)  | Show a hardware model |
 | models.update | [PUT /api/models/:id](https://theforeman.org/api/1.16/apidoc/v2/models/update.html)  | Update a hardware model |
+| module_streams.compare | [GET /katello/api/module_streams/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/module_streams/compare.html)  | List module_streams |
+| module_streams.index | [GET /katello/api/module_streams](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/module_streams/index.html)  | List module_streams |
+| module_streams.show | [GET /katello/api/module_streams/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/module_streams/show.html)  | Show a module stream |
 | operatingsystems.architectures_index | [GET /api/operatingsystems/:operatingsystem_id/architectures](https://theforeman.org/api/1.16/apidoc/v2/architectures/index.html)  | List all architectures for operating system |
 | operatingsystems.bootfiles | [GET /api/operatingsystems/:id/bootfiles](https://theforeman.org/api/1.16/apidoc/v2/operatingsystems/bootfiles.html)  | List boot files for an operating system |
 | operatingsystems.config_templates_index | [GET /api/operatingsystems/:operatingsystem_id/config_templates](https://theforeman.org/api/1.16/apidoc/v2/config_templates/index.html)  | List provisioning templates per operating system |
@@ -761,7 +810,9 @@ Actions in this pack are auto-generated from the Foreman API using the
 | operatingsystems.update | [PUT /api/operatingsystems/:id](https://theforeman.org/api/1.16/apidoc/v2/operatingsystems/update.html)  | Update an operating system |
 | orchestration.tasks_index | [GET /api/orchestration/:id/tasks](https://theforeman.org/api/1.16/apidoc/v2/tasks/index.html)  | List all tasks for a given orchestration event |
 | organizations.activation_keys_index | [GET /katello/api/organizations/:organization_id/activation_keys](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/activation_keys/index.html)  |  |
+| organizations.auth_source_externals_index | [GET /api/organizations/:organization_id/auth_source_externals](https://theforeman.org/api/1.16/apidoc/v2/auth_source_externals/index.html)  | List external authentication sources per organization |
 | organizations.auth_source_ldaps_index | [GET /api/organizations/:organization_id/auth_source_ldaps](https://theforeman.org/api/1.16/apidoc/v2/auth_source_ldaps/index.html)  | List LDAP authentication sources per organization |
+| organizations.auth_sources_index | [GET /api/organizations/:organization_id/auth_sources](https://theforeman.org/api/1.16/apidoc/v2/auth_sources/index.html)  | List all authentication sources per organization |
 | organizations.autoattach_subscriptions | [POST /katello/api/organizations/:id/autoattach_subscriptions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/organizations/autoattach_subscriptions.html)  | Auto-attach available subscriptions to all hosts within an organization. Asynchronous operation. |
 | organizations.cancel_repo_discover | [PUT /katello/api/organizations/:label/cancel_repo_discover](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/organizations/cancel_repo_discover.html)  | Cancel repository discovery |
 | organizations.config_templates_index | [GET /api/organizations/:organization_id/config_templates](https://theforeman.org/api/1.16/apidoc/v2/config_templates/index.html)  | List provisioning templates per organization |
@@ -796,6 +847,7 @@ Actions in this pack are auto-generated from the Foreman API using the
 | organizations.redhat_provider | [GET /katello/api/organizations/:id/redhat_provider](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/organizations/redhat_provider.html)  | List all :resource_id |
 | organizations.releases | [GET /katello/api/organizations/:id/releases](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/organizations/releases.html)  | List available releases in the organization |
 | organizations.repo_discover | [PUT /katello/api/organizations/:id/repo_discover](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/organizations/repo_discover.html)  | Discover Repositories |
+| organizations.report_templates_index | [GET /api/organizations/:organization_id/report_templates](https://theforeman.org/api/1.16/apidoc/v2/report_templates/index.html)  | List all report templates per organization |
 | organizations.repositories_index | [GET /katello/api/organizations/:organization_id/repositories](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/index.html)  | List of repositories in an organization |
 | organizations.repositories_rganizations | [GET /katello/api/organizations/:organization_id/environments/:environment_id/repositories](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/index.html)  | List repositories in the environment |
 | organizations.show | [GET /katello/api/organizations/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/organizations/show.html)  | Show organization |
@@ -811,17 +863,24 @@ Actions in this pack are auto-generated from the Foreman API using the
 | organizations.sync_plans_rganizations | [GET /katello/api/organizations/:organization_id/sync_plans/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/sync_plans/show.html)  | Show a sync plan |
 | organizations.sync_rganizations | [GET /katello/api/organizations/:organization_id/products/:product_id/sync](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/sync/index.html)  | Get status of repo synchronisation for given product |
 | organizations.update | [PUT /katello/api/organizations/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/organizations/update.html)  | Update organization |
+| organizations.upstream_subscriptions_create | [POST /katello/api/organizations/:organization_id/upstream_subscriptions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/upstream_subscriptions/create.html)  | Add subscriptions consumed by a manifest from Red Hat Subscription Management |
+| organizations.upstream_subscriptions_destroy | [DELETE /katello/api/organizations/:organization_id/upstream_subscriptions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/upstream_subscriptions/destroy.html)  | Remove one or more subscriptions from an upstream subscription allocation |
+| organizations.upstream_subscriptions_index | [GET /katello/api/organizations/:organization_id/upstream_subscriptions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/upstream_subscriptions/index.html)  | List available subscriptions from Red Hat Subscription Management |
+| organizations.upstream_subscriptions_update | [PUT /katello/api/organizations/:organization_id/upstream_subscriptions](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/upstream_subscriptions/update.html)  | Update the quantity of one or more subscriptions on an upstream allocation |
 | organizations.users_index | [GET /api/organizations/:organization_id/users](https://theforeman.org/api/1.16/apidoc/v2/users/index.html)  | List all users for organization |
+| ostree_branches.compare | [GET /katello/api/ostree_branches/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/ostree_branches/compare.html)  | List ostree_branches |
 | ostree_branches.index | [GET /katello/api/ostree_branches](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/ostree_branches/index.html)  | List ostree_branches |
 | ostree_branches.show | [GET /katello/api/ostree_branches/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/ostree_branches/show.html)  | Show an ostree branch |
 | package_group.package_groups_create | [POST /katello/api/package_group](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/package_groups/create.html)  | Create a package group |
 | package_group.package_groups_destroy | [DELETE /katello/api/package_group](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/package_groups/destroy.html)  | Delete a package group |
+| package_groups.compare | [GET /katello/api/package_groups/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/package_groups/compare.html)  | List package_groups |
 | package_groups.index | [GET /katello/api/package_groups](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/package_groups/index.html)  | List package_groups |
 | package_groups.show | [GET /katello/api/package_groups/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/package_groups/show.html)  | Show a package group |
+| packages.compare | [GET /katello/api/packages/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/packages/compare.html)  | List packages |
 | packages.index | [GET /katello/api/packages](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/packages/index.html)  | List packages |
 | packages.show | [GET /katello/api/packages/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/packages/show.html)  | Show a package |
 | permissions.index | [GET /api/permissions](https://theforeman.org/api/1.16/apidoc/v2/permissions/index.html)  | List all permissions |
-| permissions.resource_types | [GET /api/permissions/resource_types](https://theforeman.org/api/1.16/apidoc/v2/permissions/resource_types.html)  | List available resource types. |
+| permissions.resource_types | [GET /api/permissions/resource_types](https://theforeman.org/api/1.16/apidoc/v2/permissions/resource_types.html)  | List available resource types |
 | permissions.show | [GET /api/permissions/:id](https://theforeman.org/api/1.16/apidoc/v2/permissions/show.html)  | Show a permission |
 | ping.index | [GET /katello/api/ping](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/ping/index.html)  | Shows status of system and it's subcomponents |
 | products.create | [POST /katello/api/products](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/products/create.html)  | Create a product |
@@ -841,6 +900,7 @@ Actions in this pack are auto-generated from the Foreman API using the
 | provisioning_templates.create | [POST /api/provisioning_templates](https://theforeman.org/api/1.16/apidoc/v2/provisioning_templates/create.html)  | Create a provisioning template |
 | provisioning_templates.destroy | [DELETE /api/provisioning_templates/:id](https://theforeman.org/api/1.16/apidoc/v2/provisioning_templates/destroy.html)  | Delete a provisioning template |
 | provisioning_templates.export | [GET /api/provisioning_templates/:id/export](https://theforeman.org/api/1.16/apidoc/v2/provisioning_templates/export.html)  | Export a provisioning template to ERB |
+| provisioning_templates.import_ | [POST /api/provisioning_templates/import](https://theforeman.org/api/1.16/apidoc/v2/provisioning_templates/import.html)  | Import a provisioning template |
 | provisioning_templates.index | [GET /api/provisioning_templates](https://theforeman.org/api/1.16/apidoc/v2/provisioning_templates/index.html)  | List provisioning templates |
 | provisioning_templates.operatingsystems_index | [GET /api/provisioning_templates/:provisioning_template_id/operatingsystems](https://theforeman.org/api/1.16/apidoc/v2/operatingsystems/index.html)  | List all operating systems for nested provisioning template |
 | provisioning_templates.os_default_templates_index | [GET /api/provisioning_templates/:provisioning_template_id/os_default_templates](https://theforeman.org/api/1.16/apidoc/v2/os_default_templates/index.html)  | List operating systems where this template is set as a default |
@@ -855,11 +915,13 @@ Actions in this pack are auto-generated from the Foreman API using the
 | ptables.create | [POST /api/ptables](https://theforeman.org/api/1.16/apidoc/v2/ptables/create.html)  | Create a partition table |
 | ptables.destroy | [DELETE /api/ptables/:id](https://theforeman.org/api/1.16/apidoc/v2/ptables/destroy.html)  | Delete a partition table |
 | ptables.export | [GET /api/ptables/:id/export](https://theforeman.org/api/1.16/apidoc/v2/ptables/export.html)  | Export a partition template to ERB |
+| ptables.import_ | [POST /api/ptables/import](https://theforeman.org/api/1.16/apidoc/v2/ptables/import.html)  | Import a provisioning template |
 | ptables.index | [GET /api/ptables](https://theforeman.org/api/1.16/apidoc/v2/ptables/index.html)  | List all partition tables |
 | ptables.operatingsystems_index | [GET /api/ptables/:ptable_id/operatingsystems](https://theforeman.org/api/1.16/apidoc/v2/operatingsystems/index.html)  | List all operating systems for nested partition table |
 | ptables.revision | [GET /api/ptables/revision](https://theforeman.org/api/1.16/apidoc/v2/ptables/revision.html)  |  |
 | ptables.show | [GET /api/ptables/:id](https://theforeman.org/api/1.16/apidoc/v2/ptables/show.html)  | Show a partition table |
 | ptables.update | [PUT /api/ptables/:id](https://theforeman.org/api/1.16/apidoc/v2/ptables/update.html)  | Update a partition table |
+| puppet_modules.compare | [GET /katello/api/puppet_modules/compare](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/puppet_modules/compare.html)  | List puppet_modules |
 | puppet_modules.index | [GET /katello/api/puppet_modules](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/puppet_modules/index.html)  | List puppet_modules |
 | puppet_modules.show | [GET /katello/api/puppet_modules/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/puppet_modules/show.html)  | Show a puppet module |
 | puppetclasses.create | [POST /api/puppetclasses](https://theforeman.org/api/1.16/apidoc/v2/puppetclasses/create.html)  | Create a Puppet class |
@@ -879,6 +941,16 @@ Actions in this pack are auto-generated from the Foreman API using the
 | remote_execution_features.index | [GET /api/remote_execution_features](https://theforeman.org/api/1.16/apidoc/v2/remote_execution_features/index.html)  | List remote execution features |
 | remote_execution_features.show | [GET /api/remote_execution_features/:id](https://theforeman.org/api/1.16/apidoc/v2/remote_execution_features/show.html)  | Show remote execution feature |
 | remote_execution_features.update | [PUT /api/remote_execution_features/:id](https://theforeman.org/api/1.16/apidoc/v2/remote_execution_features/update.html)  | Update a job template |
+| report_templates.clone | [POST /api/report_templates/:id/clone](https://theforeman.org/api/1.16/apidoc/v2/report_templates/clone.html)  | Clone a template |
+| report_templates.create | [POST /api/report_templates](https://theforeman.org/api/1.16/apidoc/v2/report_templates/create.html)  | Create a report template |
+| report_templates.destroy | [DELETE /api/report_templates/:id](https://theforeman.org/api/1.16/apidoc/v2/report_templates/destroy.html)  | Delete a report template |
+| report_templates.export | [GET /api/report_templates/:id/export](https://theforeman.org/api/1.16/apidoc/v2/report_templates/export.html)  | Export a report template to ERB |
+| report_templates.generate | [POST /api/report_templates/:id/generate](https://theforeman.org/api/1.16/apidoc/v2/report_templates/generate.html)  | Generate a report template |
+| report_templates.import_ | [POST /api/report_templates/import](https://theforeman.org/api/1.16/apidoc/v2/report_templates/import.html)  | Import a report template |
+| report_templates.index | [GET /api/report_templates](https://theforeman.org/api/1.16/apidoc/v2/report_templates/index.html)  | List all report templates |
+| report_templates.revision | [GET /api/report_templates/revision](https://theforeman.org/api/1.16/apidoc/v2/report_templates/revision.html)  |  |
+| report_templates.show | [GET /api/report_templates/:id](https://theforeman.org/api/1.16/apidoc/v2/report_templates/show.html)  | Show a report template |
+| report_templates.update | [PUT /api/report_templates/:id](https://theforeman.org/api/1.16/apidoc/v2/report_templates/update.html)  | Update a report template |
 | reports.create | [POST /api/reports](https://theforeman.org/api/1.16/apidoc/v2/reports/create.html)  | Create a report |
 | reports.destroy | [DELETE /api/reports/:id](https://theforeman.org/api/1.16/apidoc/v2/reports/destroy.html)  | Delete a report |
 | reports.index | [GET /api/reports](https://theforeman.org/api/1.16/apidoc/v2/reports/index.html)  | List all reports |
@@ -886,7 +958,11 @@ Actions in this pack are auto-generated from the Foreman API using the
 | repositories.content_uploads_create | [POST /katello/api/repositories/:repository_id/content_uploads](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_uploads/create.html)  | Create an upload request |
 | repositories.content_uploads_epositories | [PUT /katello/api/repositories/:repository_id/content_uploads/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/content_uploads/update.html)  | Upload a chunk of the file's content |
 | repositories.create | [POST /katello/api/repositories](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/create.html)  | Create a custom repository |
+| repositories.debs_epositories | [GET /katello/api/repositories/:repository_id/debs/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/debs/show.html)  | Show a deb |
+| repositories.debs_index | [GET /katello/api/repositories/:repository_id/debs](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/debs/index.html)  | List debs |
 | repositories.destroy | [DELETE /katello/api/repositories/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/destroy.html)  | Destroy a custom repository |
+| repositories.docker_manifest_lists_epositories | [GET /katello/api/repositories/:repository_id/docker_manifest_lists/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifest_lists/show.html)  | Show a docker manifest list |
+| repositories.docker_manifest_lists_index | [GET /katello/api/repositories/:repository_id/docker_manifest_lists](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifest_lists/index.html)  | List docker_manifest_lists |
 | repositories.docker_manifests_epositories | [GET /katello/api/repositories/:repository_id/docker_manifests/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifests/show.html)  | Show a docker manifest |
 | repositories.docker_manifests_index | [GET /katello/api/repositories/:repository_id/docker_manifests](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_manifests/index.html)  | List docker_manifests |
 | repositories.docker_tags_epositories | [GET /katello/api/repositories/:repository_id/docker_tags/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/docker_tags/show.html)  | Show a docker tag |
@@ -898,6 +974,8 @@ Actions in this pack are auto-generated from the Foreman API using the
 | repositories.gpg_key_content | [GET /katello/api/repositories/:id/gpg_key_content](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/gpg_key_content.html)  | Return the content of a repo gpg key, used directly by yum |
 | repositories.import_uploads | [PUT /katello/api/repositories/:id/import_uploads](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/import_uploads.html)  | Import uploads into a repository |
 | repositories.index | [GET /katello/api/repositories](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/index.html)  | List of enabled repositories |
+| repositories.module_streams_epositories | [GET /katello/api/repositories/:repository_id/module_streams/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/module_streams/show.html)  | Show a module stream |
+| repositories.module_streams_index | [GET /katello/api/repositories/:repository_id/module_streams](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/module_streams/index.html)  | List module_streams |
 | repositories.ostree_branches_epositories | [GET /katello/api/repositories/:repository_id/ostree_branches/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/ostree_branches/show.html)  | Show an ostree branch |
 | repositories.ostree_branches_index | [GET /katello/api/repositories/:repository_id/ostree_branches](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/ostree_branches/index.html)  | List ostree_branches |
 | repositories.package_groups_epositories | [GET /katello/api/repositories/:repository_id/package_groups/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/package_groups/show.html)  | Show a package group |
@@ -912,10 +990,14 @@ Actions in this pack are auto-generated from the Foreman API using the
 | repositories.republish | [PUT /katello/api/repositories/:id/republish](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/republish.html)  | Forces a republish of the specified repository, regenerating metadata and symlinks on the filesystem. |
 | repositories.show | [GET /katello/api/repositories/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/show.html)  | Show a repository |
 | repositories.sync | [POST /katello/api/repositories/:id/sync](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/sync.html)  | Sync a repository |
-| repositories.sync_complete | [POST /katello/api/repositories/sync_complete](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/sync_complete.html)  |  |
 | repositories.sync_index | [GET /katello/api/repositories/:repository_id/sync](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/sync/index.html)  | Get status of synchronisation for given repository |
 | repositories.update | [PUT /katello/api/repositories/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/update.html)  | Update a repository |
 | repositories.upload_content | [POST /katello/api/repositories/:id/upload_content](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repositories/upload_content.html)  | Upload content into the repository |
+| repository_sets.available_repositories | [GET /katello/api/repository_sets/:id/available_repositories](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repository_sets/available_repositories.html)  | Get list of available repositories for the repository set |
+| repository_sets.disable | [PUT /katello/api/repository_sets/:id/disable](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repository_sets/disable.html)  | Disable a repository from the set |
+| repository_sets.enable | [PUT /katello/api/repository_sets/:id/enable](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repository_sets/enable.html)  | Enable a repository from the set |
+| repository_sets.index | [GET /katello/api/repository_sets](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repository_sets/index.html)  | List repository sets. |
+| repository_sets.show | [GET /katello/api/repository_sets/:id](https://theforeman.org/plugins/katello/3.4/api/apidoc/v2/repository_sets/show.html)  | Get info about a repository set |
 | roles.clone | [POST /api/roles/:id/clone](https://theforeman.org/api/1.16/apidoc/v2/roles/clone.html)  | Clone a role |
 | roles.create | [POST /api/roles](https://theforeman.org/api/1.16/apidoc/v2/roles/create.html)  | Create a role |
 | roles.destroy | [DELETE /api/roles/:id](https://theforeman.org/api/1.16/apidoc/v2/roles/destroy.html)  | Delete a role |
@@ -939,9 +1021,9 @@ Actions in this pack are auto-generated from the Foreman API using the
 | smart_proxies.autosign_smart_proxy_id_destroyautosign | [DELETE /api/smart_proxies/:smart_proxy_id/autosign/:id](https://theforeman.org/api/1.16/apidoc/v2/autosign/destroy.html)  | Delete autosign entry |
 | smart_proxies.create | [POST /api/smart_proxies](https://theforeman.org/api/1.16/apidoc/v2/smart_proxies/create.html)  | Create a capsule |
 | smart_proxies.destroy | [DELETE /api/smart_proxies/:id](https://theforeman.org/api/1.16/apidoc/v2/smart_proxies/destroy.html)  | Delete a capsule |
-| smart_proxies.environments_import_puppetclasses | [POST /api/smart_proxies/:id/import_puppetclasses](https://theforeman.org/api/1.16/apidoc/v2/environments/import_puppetclasses.html)  | Import puppet classes from puppet Capsule. |
+| smart_proxies.environments_import_puppetclasses | [POST /api/smart_proxies/:id/import_puppetclasses](https://theforeman.org/api/1.16/apidoc/v2/environments/import_puppetclasses.html)  | Import puppet classes from puppet Capsule |
 | smart_proxies.environments_smart_proxy_id_import_puppetclassesenvironments | [POST /api/smart_proxies/:smart_proxy_id/environments/:id/import_puppetclasses](https://theforeman.org/api/1.16/apidoc/v2/environments/import_puppetclasses.html)  | Import puppet classes from puppet Capsule for an environment |
-| smart_proxies.import_puppetclasses | [POST /api/smart_proxies/:id/import_puppetclasses](https://theforeman.org/api/1.16/apidoc/v2/smart_proxies/import_puppetclasses.html)  | Import puppet classes from puppet Capsule. |
+| smart_proxies.import_puppetclasses | [POST /api/smart_proxies/:id/import_puppetclasses](https://theforeman.org/api/1.16/apidoc/v2/smart_proxies/import_puppetclasses.html)  | Import puppet classes from puppet Capsule |
 | smart_proxies.index | [GET /api/smart_proxies](https://theforeman.org/api/1.16/apidoc/v2/smart_proxies/index.html)  | List all capsules |
 | smart_proxies.refresh | [PUT /api/smart_proxies/:id/refresh](https://theforeman.org/api/1.16/apidoc/v2/smart_proxies/refresh.html)  | Refresh capsule features |
 | smart_proxies.show | [GET /api/smart_proxies/:id](https://theforeman.org/api/1.16/apidoc/v2/smart_proxies/show.html)  | Show a capsule |
@@ -991,11 +1073,17 @@ Actions in this pack are auto-generated from the Foreman API using the
 | templates.foreign_input_sets_template_id_foreign_input_destroysets | [DELETE /api/templates/:template_id/foreign_input_sets/:id](https://theforeman.org/api/1.16/apidoc/v2/foreign_input_sets/destroy.html)  | Delete a foreign input set |
 | templates.foreign_input_sets_template_id_foreign_input_showsets | [GET /api/templates/:template_id/foreign_input_sets/:id](https://theforeman.org/api/1.16/apidoc/v2/foreign_input_sets/show.html)  | Show foreign input set details |
 | templates.foreign_input_sets_template_id_foreign_input_updatesets | [PUT /api/templates/:template_id/foreign_input_sets/:id](https://theforeman.org/api/1.16/apidoc/v2/foreign_input_sets/update.html)  | Update a foreign input set |
+| templates.template_export | [POST /api/templates/export](https://theforeman.org/api/1.16/apidoc/v2/template/export.html)  | Initiate Export |
+| templates.template_import_ | [POST /api/templates/import](https://theforeman.org/api/1.16/apidoc/v2/template/import.html)  | Initiate Import |
 | templates.template_inputs_create | [POST /api/templates/:template_id/template_inputs](https://theforeman.org/api/1.16/apidoc/v2/template_inputs/create.html)  | Create a template input |
 | templates.template_inputs_index | [GET /api/templates/:template_id/template_inputs](https://theforeman.org/api/1.16/apidoc/v2/template_inputs/index.html)  | List template inputs |
 | templates.template_inputs_template_id_template_destroyinputs | [DELETE /api/templates/:template_id/template_inputs/:id](https://theforeman.org/api/1.16/apidoc/v2/template_inputs/destroy.html)  | Delete a template input |
 | templates.template_inputs_template_id_template_showinputs | [GET /api/templates/:template_id/template_inputs/:id](https://theforeman.org/api/1.16/apidoc/v2/template_inputs/show.html)  | Show template input details |
 | templates.template_inputs_template_id_template_updateinputs | [PUT /api/templates/:template_id/template_inputs/:id](https://theforeman.org/api/1.16/apidoc/v2/template_inputs/update.html)  | Update a template input |
+| trends.create | [POST /api/trends](https://theforeman.org/api/1.16/apidoc/v2/trends/create.html)  | Create a trend counter |
+| trends.destroy | [DELETE /api/trends/:id](https://theforeman.org/api/1.16/apidoc/v2/trends/destroy.html)  | Delete a trend counter |
+| trends.index | [GET /api/trends](https://theforeman.org/api/1.16/apidoc/v2/trends/index.html)  | List of trends counters |
+| trends.show | [GET /api/trends/:id](https://theforeman.org/api/1.16/apidoc/v2/trends/show.html)  | Show a trend |
 | usergroups.create | [POST /api/usergroups](https://theforeman.org/api/1.16/apidoc/v2/usergroups/create.html)  | Create a user group |
 | usergroups.destroy | [DELETE /api/usergroups/:id](https://theforeman.org/api/1.16/apidoc/v2/usergroups/destroy.html)  | Delete a user group |
 | usergroups.external_usergroups_create | [POST /api/usergroups/:usergroup_id/external_usergroups](https://theforeman.org/api/1.16/apidoc/v2/external_usergroups/create.html)  | Create an external user group linked to a user group |
@@ -1011,11 +1099,20 @@ Actions in this pack are auto-generated from the Foreman API using the
 | users.create | [POST /api/users](https://theforeman.org/api/1.16/apidoc/v2/users/create.html)  | Create a user |
 | users.destroy | [DELETE /api/users/:id](https://theforeman.org/api/1.16/apidoc/v2/users/destroy.html)  | Delete a user |
 | users.index | [GET /api/users](https://theforeman.org/api/1.16/apidoc/v2/users/index.html)  | List all users |
+| users.personal_access_tokens_create | [POST /api/users/:user_id/personal_access_tokens](https://theforeman.org/api/1.16/apidoc/v2/personal_access_tokens/create.html)  | Create a Personal Access Token for a user |
+| users.personal_access_tokens_index | [GET /api/users/:user_id/personal_access_tokens](https://theforeman.org/api/1.16/apidoc/v2/personal_access_tokens/index.html)  | List all Personal Access Tokens for a user |
+| users.personal_access_tokens_user_id_personal_access_destroytokens | [DELETE /api/users/:user_id/personal_access_tokens/:id](https://theforeman.org/api/1.16/apidoc/v2/personal_access_tokens/destroy.html)  | Revoke a Personal Access Token for a user |
+| users.personal_access_tokens_user_id_personal_access_showtokens | [GET /api/users/:user_id/personal_access_tokens/:id](https://theforeman.org/api/1.16/apidoc/v2/personal_access_tokens/show.html)  | Show a Personal Access Token for a user |
 | users.show | [GET /api/users/:id](https://theforeman.org/api/1.16/apidoc/v2/users/show.html)  | Show a user |
-| users.ssh_keys_create | [POST /api/users/:user_id/ssh_keys](https://theforeman.org/api/1.16/apidoc/v2/ssh_keys/create.html)  | Create an SSH key for a user |
+| users.ssh_keys_create | [POST /api/users/:user_id/ssh_keys](https://theforeman.org/api/1.16/apidoc/v2/ssh_keys/create.html)  | Add an SSH key for a user |
 | users.ssh_keys_index | [GET /api/users/:user_id/ssh_keys](https://theforeman.org/api/1.16/apidoc/v2/ssh_keys/index.html)  | List all SSH keys for a user |
 | users.ssh_keys_user_id_ssh_destroykeys | [DELETE /api/users/:user_id/ssh_keys/:id](https://theforeman.org/api/1.16/apidoc/v2/ssh_keys/destroy.html)  | Delete an SSH key for a user |
 | users.ssh_keys_user_id_ssh_showkeys | [GET /api/users/:user_id/ssh_keys/:id](https://theforeman.org/api/1.16/apidoc/v2/ssh_keys/show.html)  | Show an SSH key from a user |
+| users.table_preferences_create | [POST /api/users/:user_id/table_preferences](https://theforeman.org/api/1.16/apidoc/v2/table_preferences/create.html)  | Creates a table preference for a given table |
+| users.table_preferences_index | [GET /api/users/:user_id/table_preferences](https://theforeman.org/api/1.16/apidoc/v2/table_preferences/index.html)  | List of table preferences for a user |
+| users.table_preferences_user_id_table_destroypreferences | [DELETE /api/users/:user_id/table_preferences/:name](https://theforeman.org/api/1.16/apidoc/v2/table_preferences/destroy.html)  | Delete a table preference for a given table |
+| users.table_preferences_user_id_table_showpreferences | [GET /api/users/:user_id/table_preferences/:name](https://theforeman.org/api/1.16/apidoc/v2/table_preferences/show.html)  | Table preference details of a given table |
+| users.table_preferences_user_id_table_updatepreferences | [PUT /api/users/:user_id/table_preferences/:name](https://theforeman.org/api/1.16/apidoc/v2/table_preferences/update.html)  | Updates a table preference for a given table |
 | users.update | [PUT /api/users/:id](https://theforeman.org/api/1.16/apidoc/v2/users/update.html)  | Update a user |
 
 
@@ -1023,5 +1120,6 @@ Actions in this pack are auto-generated from the Foreman API using the
 
 | Pack Version | Foreman Version | Satellite Version | Katello Version | API Definition |
 |--------------|-----------------|-------------------|-----------------|----------------|
+| 1.2.0        | 1.20.1          | 6.5               | 3.10.0          | `etc/api_definitions_2019_09_10/` |
 | 1.1.0        | 1.15.6          | 6.3               | 3.4.5           | `etc/api_definitions_2018_05_29/` |
 | 0.3.0        | 1.11.0          | 6.2               | 3.0.0           | `etc/api_definitions_2017_09_15/` |

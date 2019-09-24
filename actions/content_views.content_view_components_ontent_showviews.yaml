@@ -28,10 +28,10 @@ parameters:
     required: false
     secret: true
   composite_content_view_id:
-    type: string
+    type: number
     required: true
     description: "composite content view numeric identifier"
   id:
-    type: string
+    type: number
     required: true
     description: "content view component ID. Identifier of the component association"

@@ -28,10 +28,10 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: true
     description: "Filter sync plans by organization name or label"
   id:
-    type: string
+    type: number
     required: true
     description: "sync plan numeric identifier"

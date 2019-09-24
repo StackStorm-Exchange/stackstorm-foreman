@@ -28,11 +28,11 @@ parameters:
     required: false
     secret: true
   content_view_filter_id:
-    type: string
+    type: number
     required: true
     description: "filter identifier"
   name:
-    type: string
+    type: array
     required: false
     description: "package, package group, or docker tag names"
   uuid:

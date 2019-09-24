@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: true
     description: "Organization identifier"
   name:
@@ -40,7 +40,7 @@ parameters:
     required: false
     description: "Content view label"
   composite:
-    type: string
+    type: boolean
     required: false
     description: "Composite content view"
   description:
@@ -55,3 +55,7 @@ parameters:
     type: array
     required: false
     description: "List of component content view version ids for composite views"
+  auto_publish:
+    type: boolean
+    required: false
+    description: "Enable/Disable auto publish of composite view"

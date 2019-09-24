@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   thin:
-    type: string
+    type: boolean
     required: false
     description: "Only list ID and name of hosts"
   hostgroup_id:
@@ -48,7 +48,7 @@ parameters:
     required: false
     description: "ID of environment"
   include:
-    type: array
+    type: string
     required: false
     description: "Array of extra information types to include"
   search:
@@ -58,7 +58,7 @@ parameters:
   order:
     type: string
     required: false
-    description: "sort results"
+    description: "Sort field and order, eg. id DESC"
   page:
     type: string
     required: false

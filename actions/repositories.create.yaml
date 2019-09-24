@@ -34,45 +34,61 @@ parameters:
     type: string
     required: false
   product_id:
-    type: string
+    type: number
     required: true
     description: "Product the repository belongs to"
+  content_type:
+    type: string
+    required: true
+    description: "type of repo (either 'yum', 'deb', 'puppet','docker', or 'ostree')"
   url:
     type: string
     required: false
     description: "repository source url"
   gpg_key_id:
-    type: string
+    type: number
     required: false
     description: "id of the gpg key that will be assigned to the new repository"
+  ssl_ca_cert_id:
+    type: number
+    required: false
+    description: "Idenifier of the SSL CA Cert"
+  ssl_client_cert_id:
+    type: number
+    required: false
+    description: "Identifier of the SSL Client Cert"
+  ssl_client_key_id:
+    type: number
+    required: false
+    description: "Identifier of the SSL Client Key"
   unprotected:
-    type: string
+    type: boolean
     required: false
     description: "true if this repository can be published via HTTP"
-  content_type:
-    type: string
-    required: true
-    description: "type of repo (either 'yum', 'puppet', 'docker', or'ostree')"
   checksum_type:
     type: string
     required: false
-    description: "checksum of the repository, currently 'sha1' & 'sha256'are supported."
+    description: "Checksum of the repository, currently 'sha1' & 'sha256'are supported"
   docker_upstream_name:
     type: string
     required: false
-    description: "name of the upstream docker repository"
+    description: "Name of the upstream docker repository"
+  docker_tags_whitelist:
+    type: array
+    required: false
+    description: "Comma separated list of tags to sync for Container Image repository"
   download_policy:
     type: string
     required: false
     description: "download policy for yum repos (either 'immediate','on_demand', or 'background')"
   mirror_on_sync:
-    type: string
+    type: boolean
     required: false
-    description: "true if this repository when synced has to be mirrored from the source andstale rpms removed."
+    description: "true if this repository when synced has to be mirrored from the source andstale rpms removed"
   verify_ssl_on_sync:
-    type: string
+    type: boolean
     required: false
-    description: "if true, Katello will verify the upstream url's SSL certifcates aresigned by a trusted CA."
+    description: "if true, Katello will verify the upstream url's SSL certifcates aresigned by a trusted CA"
   upstream_username:
     type: string
     required: false
@@ -84,12 +100,28 @@ parameters:
   ostree_upstream_sync_policy:
     type: string
     required: false
-    description: "policies for syncing upstream ostree repositories."
+    description: "policies for syncing upstream ostree repositories"
   ostree_upstream_sync_depth:
+    type: number
+    required: false
+    description: "if a custom sync policy is chosen for ostree repositories then a'depth' value must be provided"
+  deb_releases:
     type: string
     required: false
-    description: "if a custom sync policy is chosen for ostree repositories then a'depth' value must be provided."
+    description: "comma separated list of releases to be synched from deb-archive"
+  deb_components:
+    type: string
+    required: false
+    description: "comma separated list of repo components to be synched from deb-archive"
+  deb_architectures:
+    type: string
+    required: false
+    description: "comma separated list of architectures to be synched from deb-archive"
   ignore_global_proxy:
-    type: string
+    type: boolean
     required: false
-    description: "if true, will ignore the globally configured Capsule when syncing."
+    description: "if true, will ignore the globally configured Capsule when syncing"
+  ignorable_content:
+    type: array
+    required: false
+    description: "List of content units to ignore while syncing a yum repository. Must besubset of rpm,drpm,srpm,distribution,erratum"

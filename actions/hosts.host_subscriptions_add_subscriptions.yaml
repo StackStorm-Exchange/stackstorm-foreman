@@ -43,6 +43,6 @@ parameters:
               description: Subscription Pool id
             quantity:
               required: true
-              type: string
+              type: number
               description: Quantity of this subscriptions to add
             "

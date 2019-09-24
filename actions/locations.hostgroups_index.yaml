@@ -46,7 +46,7 @@ parameters:
   order:
     type: string
     required: false
-    description: "sort results"
+    description: "Sort field and order, eg. id DESC"
   page:
     type: string
     required: false
@@ -55,3 +55,7 @@ parameters:
     type: string
     required: false
     description: "number of entries per request"
+  include:
+    type: array
+    required: false
+    description: "Array of extra information types to include"

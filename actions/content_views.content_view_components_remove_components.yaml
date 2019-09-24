@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   composite_content_view_id:
-    type: string
+    type: number
     required: true
     description: "composite content view identifier"
   component_ids:

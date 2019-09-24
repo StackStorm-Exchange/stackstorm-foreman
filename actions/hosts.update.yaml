@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   id:
     type: string
     required: true
@@ -50,7 +58,7 @@ parameters:
               description: required if host is managed and value is not inherited from host group
             managed:
               required: false
-              type: string
+              type: boolean
               description: 'True/False flag whether a host is managed or unmanaged. Note: this valuealso determines whether several parameters are required or not'
             content_facet_attributes:
               required: false
@@ -75,7 +83,7 @@ parameters:
                   description: ''
             model_id:
               required: false
-              type: string
+              type: number
               description: ''
             ip:
               required: false
@@ -84,7 +92,7 @@ parameters:
             provision_method:
               required: false
               type: string
-              description: The method used to provision the host. Possible provision_methods may bebuild (Network Based), image (Image Based), bootdisk (Boot disk based)
+              description: The method used to provision the host.
             interfaces_attributes:
               required: false
               type: array
@@ -92,7 +100,7 @@ parameters:
               parameters:
                 managed:
                   required: false
-                  type: string
+                  type: boolean
                   description: Should this interface be managed via DHCP and DNS capsule and should it beconfigured during provisioning?
                 ip:
                   required: false
@@ -100,7 +108,7 @@ parameters:
                   description: IPv4 address of interface
                 primary:
                   required: false
-                  type: string
+                  type: boolean
                   description: Should this interface be used for constructing the FQDN of the host? Eachmanaged hosts needs to have one primary interface.
                 bond_options:
                   required: false
@@ -110,9 +118,13 @@ parameters:
                   required: false
                   type: string
                   description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only forvirtual interfaces.
+                compute_attributes:
+                  required: false
+                  type: object
+                  description: Additional compute resource specific attributes for the interface.
                 domain_id:
                   required: false
-                  type: string
+                  type: number
                   description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
                 attached_devices:
                   required: false
@@ -120,15 +132,15 @@ parameters:
                   description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond interfaces those are the slaves. Only for bondand bridges interfaces.
                 subnet_id:
                   required: false
-                  type: string
+                  type: number
                   description: Satellite subnet ID of IPv4 interface
                 virtual:
                   required: false
-                  type: string
+                  type: boolean
                   description: Alias or VLAN device
                 subnet6_id:
                   required: false
-                  type: string
+                  type: number
                   description: Satellite subnet ID of IPv6 interface
                 provider:
                   required: false
@@ -156,7 +168,7 @@ parameters:
                   description: Only for BMC interfaces.
                 provision:
                   required: false
-                  type: string
+                  type: boolean
                   description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
                 attached_to:
                   required: false
@@ -166,10 +178,10 @@ parameters:
                   required: false
                   type: string
                   description: Interface's DNS name
-                compute_attributes:
+                mtu:
                   required: false
-                  type: object
-                  description: Additional compute resource specific attributes for the interface.
+                  type: number
+                  description: MTU, this attribute has precedence over the subnet MTU.
                 mode:
                   required: false
                   type: string
@@ -180,23 +192,23 @@ parameters:
                   description: Device identifier, e.g. eth0 or eth1.1
             openscap_proxy_id:
               required: false
-              type: string
+              type: number
               description: ID of OpenSCAP Capsule
             location_id:
               required: false
-              type: string
+              type: number
               description: required if locations are enabled
             domain_id:
               required: false
-              type: string
+              type: number
               description: required if host is managed and value is not inherited from host group
             compute_resource_id:
               required: false
-              type: string
+              type: number
               description: nil means host is bare metal
             subnet_id:
               required: false
-              type: string
+              type: number
               description: required if host is managed and value is not inherited from host group
             capabilities:
               required: false
@@ -204,11 +216,11 @@ parameters:
               description: ''
             architecture_id:
               required: false
-              type: string
+              type: number
               description: required if host is managed and value is not inherited from host group
             build:
               required: false
-              type: string
+              type: boolean
               description: ''
             host_parameters_attributes:
               required: false
@@ -229,7 +241,7 @@ parameters:
               description: ''
             owner_id:
               required: false
-              type: string
+              type: number
               description: ''
             operatingsystem_id:
               required: false
@@ -239,13 +251,17 @@ parameters:
               required: false
               type: string
               description: required if host is managed and value is not inherited from host group ordefault password in settings
+            ansible_role_ids:
+              required: false
+              type: array
+              description: IDs of associated ansible roles
             organization_id:
               required: false
-              type: string
+              type: number
               description: required if organizations are enabled
             image_id:
               required: false
-              type: string
+              type: number
               description: ''
             mac:
               required: false
@@ -253,15 +269,15 @@ parameters:
               description: required for managed host that is bare metal, not required if it's avirtual machine
             puppet_ca_proxy_id:
               required: false
-              type: string
+              type: number
               description: Puppet CA Capsule ID
             puppet_proxy_id:
               required: false
-              type: string
+              type: number
               description: Puppet Capsule ID
             ptable_id:
               required: false
-              type: string
+              type: number
               description: required if host is managed and custom partition has not been defined
             progress_report_id:
               required: false
@@ -269,7 +285,7 @@ parameters:
               description: UUID to track orchestration tasks status, GET/api/orchestration/:UUID/tasks
             realm_id:
               required: false
-              type: string
+              type: number
               description: ''
             name:
               required: false
@@ -281,11 +297,11 @@ parameters:
               description: required if not imaged based provisioning and host is managed and value isnot inherited from host group
             enabled:
               required: false
-              type: string
-              description: ''
+              type: boolean
+              description: Include this host within Satellite reporting
             hostgroup_id:
               required: false
-              type: string
+              type: number
               description: ''
             compute_attributes:
               required: false
@@ -304,18 +320,10 @@ parameters:
               type: object
               description: Parameters for host's subscription_facet facet
               parameters:
-                release_version:
+                purpose_usage:
                   required: false
                   type: string
-                  description: Release version for this Host to use (7Server, 7.1, etc)
-                service_level:
-                  required: false
-                  type: number
-                  description: Service level to be used for autoheal.
-                hypervisor_guest_uuids:
-                  required: false
-                  type: array
-                  description: List of hypervisor guest uuids
+                  description: Sets the system purpose usage
                 installed_products_attributes:
                   required: false
                   type: array
@@ -339,10 +347,30 @@ parameters:
                       description: Product name as listed from a host's installed products
                 autoheal:
                   required: false
-                  type: string
+                  type: boolean
                   description: Sets whether the Host will autoheal subscriptions upon checkin
+                release_version:
+                  required: false
+                  type: string
+                  description: Release version for this Host to use (7Server, 7.1, etc)
+                service_level:
+                  required: false
+                  type: string
+                  description: Service level to be used for autoheal
+                purpose_role:
+                  required: false
+                  type: string
+                  description: Sets the system purpose usage
+                purpose_addons:
+                  required: false
+                  type: array
+                  description: Sets the system add-ons
+                hypervisor_guest_uuids:
+                  required: false
+                  type: array
+                  description: List of hypervisor guest uuids
             compute_profile_id:
               required: false
-              type: string
+              type: number
               description: ''
             "

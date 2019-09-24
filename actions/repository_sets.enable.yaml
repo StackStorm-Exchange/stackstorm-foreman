@@ -1,0 +1,49 @@
+---
+description: "Enable a repository from the set (resource: PUT /katello/api/repository_sets/:id/enable)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: repository_sets.enable
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: repository_sets.enable
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  id:
+    type: number
+    required: true
+    description: "ID of the repository set to enable"
+  product_id:
+    type: number
+    required: false
+    description: "ID of the product containing the repository set"
+  basearch:
+    type: string
+    required: false
+    description: "Basearch to enable"
+  releasever:
+    type: string
+    required: false
+    description: "Releasever to enable"
+  organization_id:
+    type: number
+    required: false
+    description: "organization identifier"

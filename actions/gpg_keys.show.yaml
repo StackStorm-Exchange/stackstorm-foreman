@@ -28,6 +28,6 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "gpg key numeric identifier"

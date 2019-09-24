@@ -1,5 +1,5 @@
 ---
-description: "Register a host with subscription and information. (resource: POST /api/hosts/subscriptions)"
+description: "Register a host with subscription and information (resource: POST /api/hosts/subscriptions)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py

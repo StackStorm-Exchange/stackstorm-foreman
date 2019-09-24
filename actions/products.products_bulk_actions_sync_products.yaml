@@ -32,10 +32,10 @@ parameters:
     required: true
     description: "List of product ids"
   skip_metadata_check:
-    type: string
+    type: boolean
     required: false
     description: "Force sync even if no upstream changes are detected. Non-yum repositoriesare skipped."
   validate_contents:
-    type: string
+    type: boolean
     required: false
     description: "Force a sync and validate the checksums of all content. Non-yumrepositories (or those with                                                On Demand download policy) are skipped."

@@ -1,5 +1,5 @@
 ---
-description: "Cancel running capsule synchronization. (resource: DELETE /katello/api/capsules/:id/content/sync)"
+description: "Cancel running capsule synchronization (resource: DELETE /katello/api/capsules/:id/content/sync)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py

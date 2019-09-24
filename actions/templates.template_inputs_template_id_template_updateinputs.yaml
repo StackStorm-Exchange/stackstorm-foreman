@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   template_id:
     type: string
     required: true
@@ -53,16 +61,16 @@ parameters:
               description: Input type
             required:
               required: false
-              type: string
+              type: boolean
               description: Input is required
-            puppet_parameter_class:
-              required: false
-              type: string
-              description: Puppet class name, used when input type is puppet_parameter
             puppet_parameter_name:
               required: false
               type: string
               description: Puppet parameter name, used when input type is puppet_parameter
+            puppet_class_name:
+              required: false
+              type: string
+              description: Puppet class name, used when input type is puppet_parameter
             variable_name:
               required: false
               type: string
@@ -73,7 +81,7 @@ parameters:
               description: Selectable values for user inputs
             advanced:
               required: false
-              type: string
+              type: boolean
               description: Input is advanced
             description:
               required: false

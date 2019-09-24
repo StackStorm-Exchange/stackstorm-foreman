@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "ID of the activation key"
   content_override:
@@ -66,6 +66,6 @@ parameters:
               description: Override value. Provide a boolean value if name is 'enabled'
             remove:
               required: false
-              type: string
+              type: boolean
               description: Set true to remove an override and reset it to 'default'
             "

@@ -32,6 +32,6 @@ parameters:
     required: true
     description: "List of product ids"
   plan_id:
-    type: string
+    type: number
     required: true
     description: "Sync plan identifier to attach"

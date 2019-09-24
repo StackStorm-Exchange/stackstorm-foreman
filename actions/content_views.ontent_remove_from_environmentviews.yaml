@@ -28,10 +28,10 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "content view numeric identifier"
   environment_id:
-    type: string
+    type: number
     required: true
     description: "environment numeric identifier"

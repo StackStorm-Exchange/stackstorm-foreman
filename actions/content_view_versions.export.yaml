@@ -28,15 +28,15 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "Content view version identifier"
   export_to_iso:
-    type: string
+    type: boolean
     required: false
     description: "Export to ISO format"
   iso_mb_size:
-    type: string
+    type: number
     required: false
     description: "maximum size of each ISO in MB"
   since:

@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   id:
     type: string
     required: true
@@ -38,7 +46,7 @@ parameters:
         parameters:
             locked:
               required: false
-              type: string
+              type: boolean
               description: Whether or not the template is locked for editing
             name:
               required: false
@@ -50,30 +58,25 @@ parameters:
               description: This template is used to generate the description. Input values can be usedusing the syntax %{package}. You may also include the job category andtemplate name using %{job_category} and %{template_name}.
             snippet:
               required: false
-              type: string
+              type: boolean
               description: ''
-            ssh:
+            effective_user_attributes:
               required: false
               type: object
-              description: SSH provider specific options
+              description: Effective user options
               parameters:
-                effective_user:
+                overridable:
                   required: false
-                  type: object
-                  description: Effective user options
-                  parameters:
-                    overridable:
-                      required: false
-                      type: string
-                      description: Whether it should be allowed to override the effective user from theinvocation form.
-                    value:
-                      required: false
-                      type: string
-                      description: What user should be used to run the script (using sudo-like mechanisms)
-                    current_user:
-                      required: false
-                      type: string
-                      description: Whether the current user login should be used as the effective user
+                  type: boolean
+                  description: Whether it should be allowed to override the effective user from theinvocation form.
+                value:
+                  required: false
+                  type: string
+                  description: What user should be used to run the script (using sudo-like mechanisms)
+                current_user:
+                  required: false
+                  type: boolean
+                  description: Whether the current user login should be used as the effective user
             template:
               required: false
               type: string

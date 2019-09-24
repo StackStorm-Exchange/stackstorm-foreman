@@ -1,0 +1,53 @@
+---
+description: "List all report templates per location (resource: GET /api/locations/:location_id/report_templates)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: locations.report_templates_index
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: locations.report_templates_index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  location_id:
+    type: number
+    required: true
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
+  search:
+    type: string
+    required: false
+    description: "filter results"
+  order:
+    type: string
+    required: false
+    description: "Sort field and order, eg. id DESC"
+  page:
+    type: string
+    required: false
+    description: "paginate results"
+  per_page:
+    type: string
+    required: false
+    description: "number of entries per request"

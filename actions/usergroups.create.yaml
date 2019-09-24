@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   usergroup:
     type: object
     required: true
@@ -35,7 +43,7 @@ parameters:
         parameters:
             admin:
               required: false
-              type: string
+              type: boolean
               description: is an admin user group
             user_ids:
               required: false

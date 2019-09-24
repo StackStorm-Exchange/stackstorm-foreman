@@ -27,6 +27,14 @@ parameters:
     description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
     required: false
     secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Scope by locations"
+  organization_id:
+    type: number
+    required: false
+    description: "Scope by organizations"
   bookmark:
     type: object
     required: true
@@ -47,6 +55,6 @@ parameters:
               description: ''
             public:
               required: false
-              type: string
+              type: boolean
               description: ''
             "

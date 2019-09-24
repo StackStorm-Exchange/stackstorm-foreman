@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   id:
-    type: string
+    type: number
     required: true
     description: "repository ID"
   ids:
@@ -36,6 +36,6 @@ parameters:
     required: true
     description: "Array of content ids to remove"
   sync_capsule:
-    type: string
+    type: boolean
     required: false
     description: "Whether or not to sync an external capsule after upload. Default: true"

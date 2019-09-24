@@ -28,11 +28,11 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: true
     description: "Filter products by organization"
   subscription_id:
-    type: string
+    type: number
     required: false
     description: "Filter products by subscription"
   name:
@@ -40,19 +40,23 @@ parameters:
     required: false
     description: "Filter products by name"
   enabled:
-    type: string
+    type: boolean
     required: false
-    description: "Filter products by enabled or disabled"
+    description: "Return enabled products only"
   custom:
-    type: string
+    type: boolean
     required: false
-    description: "Filter products by custom"
+    description: "Return custom products only"
+  redhat_only:
+    type: boolean
+    required: false
+    description: "Return Red Hat (non-custom) products only"
   include_available_content:
-    type: string
+    type: boolean
     required: false
     description: "Whether to include available content attribute in results"
   sync_plan_id:
-    type: string
+    type: number
     required: true
     description: "Filter products by sync plan id"
   available_for:
@@ -64,33 +68,26 @@ parameters:
     required: false
     description: "Search string"
   page:
-    type: string
+    type: number
     required: false
     description: "Page number, starting at 1"
   per_page:
-    type: string
+    type: number
     required: false
     description: "Number of results per page to return"
   order:
     type: string
     required: false
-    description: "Sort field and order, eg. 'name DESC'"
+    description: "Sort field and order, eg. 'id DESC'"
   full_result:
-    type: string
+    type: boolean
     required: false
     description: "Whether or not to show all results"
-  sort:
-    type: object
+  sort_by:
+    type: string
     required: false
-    description: >
-       "description: Hash version of 'order' param
-        parameters:
-            by:
-              required: false
-              type: string
-              description: Field to sort the results on
-            order:
-              required: false
-              type: string
-              description: How to order the sorted results (e.g. ASC for ascending)
-            "
+    description: "Field to sort the results on"
+  sort_order:
+    type: string
+    required: false
+    description: "How to order the sorted results (e.g. ASC for ascending)"

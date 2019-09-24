@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   organization_id:
-    type: string
+    type: number
     required: true
     description: "ID of the organization"
   description:
@@ -36,11 +36,23 @@ parameters:
     required: false
     description: "Product description"
   gpg_key_id:
-    type: string
+    type: number
     required: false
     description: "Identifier of the GPG key"
+  ssl_ca_cert_id:
+    type: number
+    required: false
+    description: "Idenifier of the SSL CA Cert"
+  ssl_client_cert_id:
+    type: number
+    required: false
+    description: "Identifier of the SSL Client Cert"
+  ssl_client_key_id:
+    type: number
+    required: false
+    description: "Identifier of the SSL Client Key"
   sync_plan_id:
-    type: string
+    type: number
     required: false
     description: "Plan numeric identifier"
   name:

@@ -56,7 +56,7 @@ parameters:
     required: true
     description: "ID of subnet"
   show_hidden:
-    type: string
+    type: boolean
     required: false
     description: "Display hidden values"
   search:
@@ -66,7 +66,7 @@ parameters:
   order:
     type: string
     required: false
-    description: "sort results"
+    description: "Sort field and order, eg. id DESC"
   page:
     type: string
     required: false

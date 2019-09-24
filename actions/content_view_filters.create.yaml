@@ -28,7 +28,7 @@ parameters:
     required: false
     secret: true
   content_view_id:
-    type: string
+    type: number
     required: true
     description: "content view identifier"
   name:
@@ -40,11 +40,11 @@ parameters:
     required: true
     description: "type of filter (e.g. rpm, package_group, erratum, docker)"
   original_packages:
-    type: string
+    type: boolean
     required: false
     description: "add all packages without errata to the included/excluded list. (packagefilter only)"
   inclusion:
-    type: string
+    type: boolean
     required: false
     description: "specifies if content should be included or excluded, default:inclusion=false"
   repository_ids:
