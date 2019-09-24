@@ -55,7 +55,7 @@ parameters:
   order:
     type: string
     required: false
-    description: "Sort field and order, eg. ‘id DESC’"
+    description: "Sort field and order, eg. id DESC"
   page:
     type: string
     required: false

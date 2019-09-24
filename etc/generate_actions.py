@@ -6,6 +6,7 @@ import inspect
 import jinja2
 import os
 import re
+
 import urllib3
 
 from foreman.client import Foreman
@@ -78,15 +79,15 @@ class Cli:
         return args
 
     def examples(self):
-        print "examples:\n"\
-            "  # fetch api definitions from the server/\n"\
-            "  ./generate_actions.py fetch-api -s foreman.domain.tld -u admin -p xxx\n"\
-            "\n"\
-            "  # gerenate actions from the fetched (cached) api/\n"\
-            "  ./generate_actions.py generate -a ./api_definitions_2017_09_15/\n"\
-            "\n"\
-            "  # gerenate actions directly from the server/\n"\
-            "  ./generate_actions.py generate -s foreman.domain.tld -u admin -p xxx\n"
+        print("examples:\n"
+              "  # fetch api definitions from the server/\n"
+              "  ./generate_actions.py fetch-api -s foreman.domain.tld -u admin -p xxx\n"
+              "\n"
+              "  # gerenate actions from the fetched (cached) api/\n"
+              "  ./generate_actions.py generate -a ./api_definitions_2017_09_15/\n"
+              "\n"
+              "  # gerenate actions directly from the server/\n"
+              "  ./generate_actions.py generate -s foreman.domain.tld -u admin -p xxx\n")
 
 
 class MyYAML(YAML):
@@ -119,7 +120,7 @@ class ActionGenerator(object):
     def fetch_api(self):
         now = datetime.datetime.now()
         api_definition = "./api_definitions_{}".format(now.strftime('%Y_%m_%d'))
-        print "Using cache dir {}".format(api_definition)
+        print("Using cache dir {}".format(api_definition))
         self.client = Foreman('https://{}/'.format(self.cli_args.server),
                               auth=(self.cli_args.username, self.cli_args.password),
                               api_version=self.api_version,
@@ -213,7 +214,7 @@ class ActionGenerator(object):
                                                                    method_def.url),
                       'entry_point': 'lib/action.py'}
             action['parameters'] = self.parse_params(method_def.params)
-            print action['operation']
+            print(action['operation'])
 
             for param in action['parameters']:
                 if param['name'] in self.action_template_params:
@@ -356,7 +357,7 @@ class ActionGenerator(object):
         action_filename = "{}/{}.yaml".format(ACTION_DIRECTORY,
                                               context['name'])
         with open(action_filename, "w") as f:
-            f.write(action_data)
+            f.write(action_data.encode('ascii', 'ignore'))
 
     def render_table_entry(self, context):
         table_data = self.jinja_render_file(TABLE_TEMPLATE_PATH, context)
