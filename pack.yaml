@@ -3,11 +3,11 @@ name: foreman
 ref: foreman
 description: Interact with Foreman API v2
 keywords:
-    - foreman
-    - satellite
-    - red
-    - hat
-    - redhat
+  - foreman
+  - satellite
+  - red
+  - hat
+  - redhat
 version: 1.2.0
 author: Daniel Chamot
 email: daniel@nullkarma.com
