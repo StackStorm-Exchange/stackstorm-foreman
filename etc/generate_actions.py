@@ -6,7 +6,7 @@ import inspect
 import jinja2
 import os
 import re
-import six.moves.html_parser
+from six.moves.html_parser import HTMLParser
 
 import urllib3
 
@@ -286,7 +286,7 @@ class ActionGenerator(object):
         desc = desc.replace('"', "'")
 
         # convert HTML escaped sequences into ascii
-        htmlparser = html_parser.HTMLParser()
+        htmlparser = HTMLParser()
         desc = htmlparser.unescape(desc)
 
         # remove HTML tags
