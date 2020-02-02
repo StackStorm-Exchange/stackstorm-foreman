@@ -6,12 +6,12 @@ import inspect
 import jinja2
 import os
 import re
+import six.moves.html_parser
 
 import urllib3
 
 from foreman.client import Foreman
 from foreman.client import Resource
-from HTMLParser import HTMLParser
 from ruamel.yaml import YAML
 from ruamel.yaml.compat import StringIO
 
@@ -286,7 +286,7 @@ class ActionGenerator(object):
         desc = desc.replace('"', "'")
 
         # convert HTML escaped sequences into ascii
-        htmlparser = HTMLParser()
+        htmlparser = html_parser.HTMLParser()
         desc = htmlparser.unescape(desc)
 
         # remove HTML tags
