@@ -8,9 +8,8 @@ keywords:
   - red
   - hat
   - redhat
-version: 1.2.0
+version: 2.0.0
 author: Daniel Chamot
 email: daniel@nullkarma.com
 python_versions:
-  - "2"
   - "3"
