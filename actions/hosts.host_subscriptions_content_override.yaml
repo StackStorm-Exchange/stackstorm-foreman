@@ -46,19 +46,19 @@ parameters:
        "description: Array of Content override parameters
         parameters:
             content_label:
+              description: Label of the content
               required: true
               type: string
-              description: Label of the content
-            name:
-              required: false
-              type: string
-              description: Override key or name. Note if name is not provided the default name will be'enabled'
             value:
+              description: Override value. Provide a boolean value if name is 'enabled'
               required: false
               type: string
-              description: Override value. Provide a boolean value if name is 'enabled'
+            name:
+              description: Override key or name. Note if name is not provided the default name will be'enabled'
+              required: false
+              type: string
             remove:
+              description: Set true to remove an override and reset it to 'default'
               required: false
               type: boolean
-              description: Set true to remove an override and reset it to 'default'
             "

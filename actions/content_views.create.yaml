@@ -59,3 +59,7 @@ parameters:
     type: boolean
     required: false
     description: "Enable/Disable auto publish of composite view"
+  solve_dependencies:
+    type: boolean
+    required: false
+    description: "Solve RPM dependencies by default on Content View publish, defaults tofalse"

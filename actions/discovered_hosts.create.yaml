@@ -30,31 +30,31 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   discovered_host:
     type: object
     required: false
     description: >
        "description: 
         parameters:
+            name:
+              description: ''
+              required: true
+              type: string
             ip:
+              description: ''
               required: true
               type: string
-              description: ''
             mac:
+              description: ''
               required: true
               type: string
-              description: ''
             pxe_loader:
+              description: DHCP filename option (Grub2 or PXELinux by default)
               required: false
               type: string
-              description: DHCP filename option (Grub2 or PXELinux by default)
-            name:
-              required: true
-              type: string
-              description: ''
             "

@@ -46,12 +46,12 @@ parameters:
   order:
     type: string
     required: false
-    description: "Sort field and order, eg. id DESC"
+    description: "Sort field and order, eg. ‘id DESC’"
   page:
-    type: string
+    type: number
     required: false
-    description: "paginate results"
+    description: "Page number, starting at 1"
   per_page:
-    type: string
+    type: number
     required: false
-    description: "number of entries per request"
+    description: "Number of results per page to return"

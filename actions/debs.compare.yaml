@@ -1,5 +1,5 @@
 ---
-description: "List debs (resource: GET /katello/api/debs/compare)"
+description: "List deb packages (resource: GET /katello/api/debs/compare)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py

@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,20 +44,20 @@ parameters:
     description: >
        "description: 
         parameters:
-            query:
-              required: false
-              type: string
-              description: ''
-            controller:
-              required: false
-              type: string
-              description: ''
             name:
+              description: ''
               required: false
               type: string
+            controller:
               description: ''
+              required: false
+              type: string
+            query:
+              description: ''
+              required: false
+              type: string
             public:
+              description: ''
               required: false
               type: boolean
-              description: ''
             "

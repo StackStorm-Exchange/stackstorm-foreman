@@ -1,5 +1,5 @@
 ---
-description: "Cancel running capsule synchronization (resource: DELETE /katello/api/capsules/:id/content/sync)"
+description: "Cancel running smart proxy synchronization (resource: DELETE /katello/api/capsules/:id/content/sync)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,4 +30,4 @@ parameters:
   id:
     type: number
     required: true
-    description: "Id of the capsule"
+    description: "Id of the smart proxy"

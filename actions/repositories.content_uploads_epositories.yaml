@@ -32,9 +32,13 @@ parameters:
     required: true
     description: "Repository id"
   id:
-    type: number
+    type: string
     required: true
     description: "Upload request id"
+  size:
+    type: number
+    required: true
+    description: "Size of file to upload"
   offset:
     type: number
     required: true

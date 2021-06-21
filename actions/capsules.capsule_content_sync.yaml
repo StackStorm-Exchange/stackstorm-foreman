@@ -1,5 +1,5 @@
 ---
-description: "Synchronize the content to the capsule (resource: POST /katello/api/capsules/:id/content/sync)"
+description: "Synchronize the content to the smart proxy (resource: POST /katello/api/capsules/:id/content/sync)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,7 +30,7 @@ parameters:
   id:
     type: number
     required: true
-    description: "Id of the capsule"
+    description: "Id of the smart proxy"
   environment_id:
     type: number
     required: false
@@ -38,4 +38,4 @@ parameters:
   skip_metadata_check:
     type: boolean
     required: false
-    description: "Skip metadata check on each repository on the capsule"
+    description: "Skip metadata check on each repository on the smart proxy"

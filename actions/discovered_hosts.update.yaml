@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,112 +44,112 @@ parameters:
     description: >
        "description: 
         parameters:
-            environment_id:
-              required: false
-              type: string
-              description: ''
-            managed:
-              required: false
-              type: boolean
-              description: ''
-            model_id:
-              required: false
-              type: number
-              description: ''
-            ip:
-              required: false
-              type: string
-              description: not required if using a subnet with DHCP Capsule
-            provision_method:
-              required: false
-              type: string
-              description: ''
-            domain_id:
-              required: false
-              type: number
-              description: ''
-            ptable_id:
-              required: false
-              type: number
-              description: ''
-            subnet_id:
-              required: false
-              type: number
-              description: ''
-            capabilities:
-              required: false
-              type: string
-              description: ''
-            architecture_id:
-              required: false
-              type: number
-              description: ''
-            build:
-              required: false
-              type: boolean
-              description: ''
-            host_parameters_attributes:
-              required: false
-              type: array
-              description: ''
-            owner_id:
-              required: false
-              type: number
-              description: ''
-            operatingsystem_id:
-              required: false
-              type: string
-              description: ''
-            sp_subnet_id:
-              required: false
-              type: number
-              description: ''
-            root_pass:
-              required: false
-              type: string
-              description: required if value is not inherited from host group or default password insettings
-            progress_report_id:
-              required: false
-              type: string
-              description: UUID to track orchestration tasks status, GET/api/orchestration/:UUID/tasks
-            image_id:
-              required: false
-              type: number
-              description: ''
-            mac:
-              required: false
-              type: string
-              description: not required if it's a virtual machine
-            puppet_ca_proxy_id:
-              required: false
-              type: number
-              description: ''
-            puppet_proxy_id:
-              required: false
-              type: number
-              description: ''
             name:
+              description: ''
               required: false
               type: string
+            environment_id:
               description: ''
-            medium_id:
+              required: false
+              type: string
+            ip:
+              description: not required if using a subnet with DHCP proxy
+              required: false
+              type: string
+            mac:
+              description: not required if it's a virtual machine
+              required: false
+              type: string
+            architecture_id:
+              description: ''
               required: false
               type: number
+            domain_id:
               description: ''
+              required: false
+              type: number
+            puppet_proxy_id:
+              description: ''
+              required: false
+              type: number
             puppet_class_ids:
+              description: ''
               required: false
               type: array
+            operatingsystem_id:
               description: ''
-            enabled:
-              required: false
-              type: boolean
-              description: ''
-            hostgroup_id:
-              required: false
-              type: number
-              description: ''
-            pxe_loader:
               required: false
               type: string
+            medium_id:
+              description: ''
+              required: false
+              type: number
+            ptable_id:
+              description: ''
+              required: false
+              type: number
+            subnet_id:
+              description: ''
+              required: false
+              type: number
+            sp_subnet_id:
+              description: ''
+              required: false
+              type: number
+            model_id:
+              description: ''
+              required: false
+              type: number
+            hostgroup_id:
+              description: ''
+              required: false
+              type: number
+            owner_id:
+              description: ''
+              required: false
+              type: number
+            puppet_ca_proxy_id:
+              description: ''
+              required: false
+              type: number
+            image_id:
+              description: ''
+              required: false
+              type: number
+            host_parameters_attributes:
+              description: ''
+              required: false
+              type: array
+            build:
+              description: ''
+              required: false
+              type: boolean
+            enabled:
+              description: ''
+              required: false
+              type: boolean
+            provision_method:
+              description: ''
+              required: false
+              type: string
+            managed:
+              description: ''
+              required: false
+              type: boolean
+            progress_report_id:
+              description: UUID to track orchestration tasks status, GET/api/orchestration/:UUID/tasks
+              required: false
+              type: string
+            capabilities:
+              description: ''
+              required: false
+              type: string
+            root_pass:
+              description: required if value is not inherited from host group or default password insettings
+              required: false
+              type: string
+            pxe_loader:
               description: DHCP filename option (Grub2 or PXELinux by default)
+              required: false
+              type: string
             "

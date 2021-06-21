@@ -40,7 +40,7 @@ parameters:
   content_type:
     type: string
     required: true
-    description: "type of repo (either 'yum', 'deb', 'puppet','docker', or 'ostree')"
+    description: "type of repo"
   url:
     type: string
     required: false
@@ -88,7 +88,7 @@ parameters:
   verify_ssl_on_sync:
     type: boolean
     required: false
-    description: "if true, Katello will verify the upstream url's SSL certifcates aresigned by a trusted CA"
+    description: "if true, orcharhino will verify the upstream url's SSL certifcates aresigned by a trusted CA"
   upstream_username:
     type: string
     required: false
@@ -120,8 +120,24 @@ parameters:
   ignore_global_proxy:
     type: boolean
     required: false
-    description: "if true, will ignore the globally configured Capsule when syncing"
+    description: "if true, will ignore the globally configured proxy when syncing"
+  deb_errata_url:
+    type: string
+    required: false
+    description: "URL to a deb_errata service (use only on the security repositories)"
   ignorable_content:
     type: array
     required: false
     description: "List of content units to ignore while syncing a yum repository. Must besubset of rpm,drpm,srpm,distribution,erratum"
+  ansible_collection_requirements:
+    type: string
+    required: false
+    description: "Contents of requirement yaml file to sync from URL"
+  http_proxy_policy:
+    type: string
+    required: false
+    description: "policies for http proxy for content sync"
+  http_proxy_id:
+    type: number
+    required: false
+    description: "ID of a HTTP Proxy"

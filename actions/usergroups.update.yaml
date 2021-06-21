@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,24 +44,24 @@ parameters:
     description: >
        "description: 
         parameters:
-            admin:
-              required: false
-              type: boolean
-              description: is an admin user group
-            user_ids:
-              required: false
-              type: array
-              description: ''
-            role_ids:
-              required: false
-              type: array
-              description: ''
-            usergroup_ids:
-              required: false
-              type: array
-              description: ''
             name:
+              description: ''
               required: false
               type: string
+            admin:
+              description: is an admin user group
+              required: false
+              type: boolean
+            user_ids:
               description: ''
+              required: false
+              type: array
+            usergroup_ids:
+              description: ''
+              required: false
+              type: array
+            role_ids:
+              description: ''
+              required: false
+              type: array
             "

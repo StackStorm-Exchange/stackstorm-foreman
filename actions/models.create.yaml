@@ -30,31 +30,31 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   model:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            info:
-              required: false
-              type: string
-              description: ''
-            hardware_model:
-              required: false
-              type: string
-              description: ''
-            vendor_class:
-              required: false
-              type: string
-              description: ''
             name:
+              description: ''
               required: true
               type: string
+            info:
               description: ''
+              required: false
+              type: string
+            vendor_class:
+              description: ''
+              required: false
+              type: string
+            hardware_model:
+              description: ''
+              required: false
+              type: string
             "

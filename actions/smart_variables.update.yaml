@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,52 +44,52 @@ parameters:
     description: >
        "description: 
         parameters:
-            default_value:
-              required: false
-              type: any_type
-              description: Default value of variable
-            validator_rule:
+            variable:
+              description: Name of variable
               required: false
               type: string
-              description: Used to enforce certain values for the parameter values
-            avoid_duplicates:
-              required: false
-              type: boolean
-              description: Remove duplicate values (only array type)
-            description:
-              required: false
-              type: string
-              description: Description of variable
-            override_value_order:
-              required: false
-              type: string
-              description: The order in which values are resolved
             puppetclass_id:
+              description: Puppet class ID
               required: false
               type: number
-              description: Puppet class ID
-            merge_default:
+            default_value:
+              description: Default value of variable
               required: false
-              type: boolean
-              description: Include default value when merging all matching values
+              type: any_type
             hidden_value:
-              required: false
-              type: boolean
               description: When enabled the parameter is hidden in the UI
-            validator_type:
-              required: false
-              type: string
-              description: Types of validation values
-            variable:
-              required: false
-              type: string
-              description: Name of variable
-            variable_type:
-              required: false
-              type: string
-              description: Types of variable values
-            merge_overrides:
               required: false
               type: boolean
+            override_value_order:
+              description: The order in which values are resolved
+              required: false
+              type: string
+            description:
+              description: Description of variable
+              required: false
+              type: string
+            validator_type:
+              description: Types of validation values
+              required: false
+              type: string
+            validator_rule:
+              description: Used to enforce certain values for the parameter values
+              required: false
+              type: string
+            variable_type:
+              description: Types of variable values
+              required: false
+              type: string
+            merge_overrides:
               description: Merge all matching values (only array/hash type)
+              required: false
+              type: boolean
+            merge_default:
+              description: Include default value when merging all matching values
+              required: false
+              type: boolean
+            avoid_duplicates:
+              description: Remove duplicate values (only array type)
+              required: false
+              type: boolean
             "

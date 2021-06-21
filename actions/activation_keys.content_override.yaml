@@ -31,41 +31,26 @@ parameters:
     type: number
     required: true
     description: "ID of the activation key"
-  content_override:
-    type: object
-    required: false
-    description: >
-       "description: Content override parameters
-        parameters:
-            content_label:
-              required: true
-              type: string
-              description: Label of the content
-            value:
-              required: true
-              type: string
-              description: Override to a boolean value or 'default'
-            "
   content_overrides:
     type: array
     required: false
     description: >
-       "description: Array of Content override parameters
+       "description: Array of Content override parameters to be added in bulk
         parameters:
             content_label:
+              description: Label of the content
               required: true
               type: string
-              description: Label of the content
-            name:
-              required: false
-              type: string
-              description: Override parameter key or name. Note if name is not provided the defaultname will be 'enabled'
             value:
+              description: Override value. Provide a boolean value if name is 'enabled'
               required: false
               type: string
-              description: Override value. Provide a boolean value if name is 'enabled'
+            name:
+              description: Override parameter key or name. Note if name is not provided the defaultname will be 'enabled'
+              required: false
+              type: string
             remove:
+              description: Set true to remove an override and reset it to 'default'
               required: false
               type: boolean
-              description: Set true to remove an override and reset it to 'default'
             "

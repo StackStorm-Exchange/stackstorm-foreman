@@ -47,30 +47,38 @@ parameters:
     type: boolean
     required: false
     description: "Whether or not to sync an external capsule after upload. Default: true"
+  content_type:
+    type: string
+    required: false
+    description: "content type ('deb', 'docker_manifest', 'file','ostree', 'puppet_module', 'rpm', 'srpm')"
   uploads:
     type: array
     required: false
     description: >
        "description: Array of uploads to import
         parameters:
-            checksum:
-              required: false
-              type: string
-              description: ''
-            digest:
-              required: false
-              type: string
-              description: Needs to only be set for docker tags
             id:
+              description: ''
               required: true
               type: string
+            content_unit_id:
               description: ''
-            name:
               required: false
               type: string
-              description: Needs to only be set for file repositories or docker tags
             size:
+              description: ''
               required: false
               type: string
+            checksum:
               description: ''
+              required: false
+              type: string
+            name:
+              description: Needs to only be set for file repositories or docker tags
+              required: false
+              type: string
+            digest:
+              description: Needs to only be set for docker tags
+              required: false
+              type: string
             "

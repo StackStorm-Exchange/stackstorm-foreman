@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   compute_resource_id:
     type: string
     required: true
@@ -47,36 +47,36 @@ parameters:
     description: >
        "description: 
         parameters:
+            name:
+              description: ''
+              required: false
+              type: string
             username:
-              required: false
-              type: string
               description: ''
-            operatingsystem_id:
               required: false
               type: string
-              description: ID of operating system
-            compute_resource_id:
-              required: false
-              type: string
-              description: ID of compute resource
             uuid:
+              description: Template ID in the compute resource
               required: false
               type: string
+            password:
               description: ''
+              required: false
+              type: string
+            compute_resource_id:
+              description: ID of compute resource
+              required: false
+              type: string
+            architecture_id:
+              description: ID of architecture
+              required: false
+              type: string
+            operatingsystem_id:
+              description: ID of operating system
+              required: false
+              type: string
             user_data:
+              description: Whether or not the image supports user data
               required: false
               type: boolean
-              description: Whether or not the image supports user data
-            architecture_id:
-              required: false
-              type: string
-              description: ID of architecture
-            password:
-              required: false
-              type: string
-              description: ''
-            name:
-              required: false
-              type: string
-              description: ''
             "

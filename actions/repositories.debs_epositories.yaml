@@ -1,5 +1,5 @@
 ---
-description: "Show a deb (resource: GET /katello/api/repositories/:repository_id/debs/:id)"
+description: "Show a deb package (resource: GET /katello/api/repositories/:repository_id/debs/:id)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -34,4 +34,4 @@ parameters:
   id:
     type: string
     required: true
-    description: "a deb identifier"
+    description: "a deb package identifier"

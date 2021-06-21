@@ -42,7 +42,7 @@ parameters:
        "description: Array of subscriptions to add
         parameters:
             id:
+              description: Subscription Pool uuid
               required: false
               type: string
-              description: Subscription Pool uuid
             "

@@ -30,33 +30,33 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   provisioning_template:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            location_ids:
-              required: false
-              type: array
-              description: REPLACE locations with given ids
             name:
-              required: false
-              type: string
               description: template name
-            template:
               required: false
               type: string
+            template:
               description: template contents including metadata
-            organization_ids:
+              required: false
+              type: string
+            location_ids:
+              description: REPLACE locations with given ids
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "
   options:
     type: object
@@ -64,20 +64,20 @@ parameters:
     description: >
        "description: 
         parameters:
-            default:
-              required: false
-              type: boolean
-              description: makes the template default meaning it will be automatically associated withnewly created organizations and locations (false by default)
-            lock:
-              required: false
-              type: boolean
-              description: lock imported templates (false by default)
             force:
+              description: use if you want update locked templates
               required: false
               type: boolean
-              description: use if you want update locked templates
             associate:
+              description: determines when the template should associate objects based on metadata,new means only when new template is being created, always means both fornew and existing template which is only being updated, never ignoresmetadata
               required: false
               type: string
-              description: determines when the template should associate objects based on metadata,new means only when new template is being created, always means both fornew and existing template which is only being updated, never ignoresmetadata
+            lock:
+              description: lock imported templates (false by default)
+              required: false
+              type: boolean
+            default:
+              description: makes the template default meaning it will be automatically associated withnewly created organizations and locations (false by default)
+              required: false
+              type: boolean
             "

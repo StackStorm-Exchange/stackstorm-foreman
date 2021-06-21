@@ -1,0 +1,85 @@
+---
+description: "List ansible_collections (resource: GET /katello/api/ansible_collections)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: ansible_collections.index
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: ansible_collections.index
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  organization_id:
+    type: number
+    required: false
+    description: "organization identifier"
+  content_view_version_id:
+    type: number
+    required: false
+    description: "content view version identifier"
+  content_view_filter_id:
+    type: number
+    required: false
+    description: "content view filter identifier"
+  content_view_filter_rule_id:
+    type: number
+    required: false
+    description: "content view filter rule identifier"
+  repository_id:
+    type: number
+    required: false
+    description: "repository identifier"
+  environment_id:
+    type: number
+    required: false
+    description: "environment identifier"
+  ids:
+    type: array
+    required: false
+    description: "ids to filter content by"
+  search:
+    type: string
+    required: false
+    description: "Search string"
+  page:
+    type: number
+    required: false
+    description: "Page number, starting at 1"
+  per_page:
+    type: number
+    required: false
+    description: "Number of results per page to return"
+  order:
+    type: string
+    required: false
+    description: "Sort field and order, eg. 'id DESC'"
+  full_result:
+    type: boolean
+    required: false
+    description: "Whether or not to show all results"
+  sort_by:
+    type: string
+    required: false
+    description: "Field to sort the results on"
+  sort_order:
+    type: string
+    required: false
+    description: "How to order the sorted results (e.g. ASC for ascending)"

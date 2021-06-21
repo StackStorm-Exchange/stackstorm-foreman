@@ -30,31 +30,31 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   bookmark:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            query:
-              required: true
-              type: string
-              description: ''
-            controller:
-              required: true
-              type: string
-              description: ''
             name:
+              description: ''
               required: true
               type: string
+            controller:
               description: ''
+              required: true
+              type: string
+            query:
+              description: ''
+              required: true
+              type: string
             public:
+              description: ''
               required: false
               type: boolean
-              description: ''
             "

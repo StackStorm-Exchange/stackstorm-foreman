@@ -79,3 +79,7 @@ parameters:
     type: string
     required: false
     description: "erratum: search using the 'Issued On' or 'Updated On'column of the errata. Values are 'issued'/'updated'"
+  module_stream_ids:
+    type: array
+    required: false
+    description: "module stream ids"

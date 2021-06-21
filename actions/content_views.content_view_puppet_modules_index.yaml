@@ -42,7 +42,7 @@ parameters:
   uuid:
     type: string
     required: false
-    description: "the uuid of the puppet module to associate"
+    description: "uuid of the puppet module"
   search:
     type: string
     required: false

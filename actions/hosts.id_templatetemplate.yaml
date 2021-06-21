@@ -30,15 +30,15 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
   kind:
     type: string
     required: true
-    description: "Template kinds, available values: Bootdisk, PXELinux, PXEGrub, PXEGrub2,iPXE, provision, finish, script, user_data, ZTP, POAP, kexec"
+    description: "Template kinds, available values: Bootdisk, PXELinux, PXEGrub, PXEGrub2,iPXE, provision, finish, script, user_data, ZTP, POAP, kexec, cloud-init"

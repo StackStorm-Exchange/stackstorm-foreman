@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,333 +44,337 @@ parameters:
     description: >
        "description: 
         parameters:
-            comment:
+            name:
+              description: ''
               required: false
               type: string
-              description: Additional information about this host
-            config_group_ids:
-              required: false
-              type: array
-              description: IDs of associated config groups
-            environment_id:
-              required: false
-              type: string
-              description: required if host is managed and value is not inherited from host group
-            managed:
-              required: false
-              type: boolean
-              description: 'True/False flag whether a host is managed or unmanaged. Note: this valuealso determines whether several parameters are required or not'
-            content_facet_attributes:
-              required: false
-              type: object
-              description: Parameters for host's content_facet facet
-              parameters:
-                content_view_id:
-                  required: false
-                  type: number
-                  description: ''
-                kickstart_repository_id:
-                  required: false
-                  type: number
-                  description: Repository Id associated with the kickstart repo used for provisioning
-                lifecycle_environment_id:
-                  required: false
-                  type: number
-                  description: ''
-                content_source_id:
-                  required: false
-                  type: number
-                  description: ''
-            model_id:
+            location_id:
+              description: ''
               required: false
               type: number
+            organization_id:
               description: ''
+              required: false
+              type: number
+            environment_id:
+              description: required if host is managed and value is not inherited from host group
+              required: false
+              type: string
             ip:
+              description: not required if using a subnet with DHCP proxy
               required: false
               type: string
-              description: not required if using a subnet with DHCP Capsule
-            provision_method:
+            mac:
+              description: required for managed host that is bare metal, not required if it's avirtual machine
               required: false
               type: string
-              description: The method used to provision the host.
-            interfaces_attributes:
+            architecture_id:
+              description: required if host is managed and value is not inherited from host group
+              required: false
+              type: number
+            domain_id:
+              description: required if host is managed and value is not inherited from host group
+              required: false
+              type: number
+            realm_id:
+              description: ''
+              required: false
+              type: number
+            puppet_proxy_id:
+              description: Puppet proxy ID
+              required: false
+              type: number
+            puppet_ca_proxy_id:
+              description: Puppet CA proxy ID
+              required: false
+              type: number
+            puppetclass_ids:
+              description: ''
               required: false
               type: array
-              description: Host's network interfaces.
+            config_group_ids:
+              description: IDs of associated config groups
+              required: false
+              type: array
+            operatingsystem_id:
+              description: required if host is managed and value is not inherited from host group
+              required: false
+              type: string
+            medium_id:
+              description: required if not imaged based provisioning and host is managed and value isnot inherited from host group
+              required: false
+              type: string
+            pxe_loader:
+              description: DHCP filename option (Grub2/PXELinux by default)
+              required: false
+              type: string
+            ptable_id:
+              description: required if host is managed and custom partition has not been defined
+              required: false
+              type: number
+            subnet_id:
+              description: required if host is managed and value is not inherited from host group
+              required: false
+              type: number
+            compute_resource_id:
+              description: nil means host is bare metal
+              required: false
+              type: number
+            root_pass:
+              description: required if host is managed and value is not inherited from host group ordefault password in settings
+              required: false
+              type: string
+            model_id:
+              description: ''
+              required: false
+              type: number
+            hostgroup_id:
+              description: ''
+              required: false
+              type: number
+            owner_id:
+              description: ''
+              required: false
+              type: number
+            owner_type:
+              description: Host's owner type
+              required: false
+              type: string
+            image_id:
+              description: ''
+              required: false
+              type: number
+            host_parameters_attributes:
+              description: Host's parameters (array or indexed hash)
+              required: false
+              type: array
               parameters:
-                managed:
+                name:
+                  description: Name of the parameter
+                  required: false
+                  type: string
+                value:
+                  description: Parameter value
+                  required: false
+                  type: string
+                parameter_type:
+                  description: Type of value
+                  required: false
+                  type: string
+                hidden_value:
+                  description: ''
                   required: false
                   type: boolean
-                  description: Should this interface be managed via DHCP and DNS capsule and should it beconfigured during provisioning?
+            build:
+              description: ''
+              required: false
+              type: boolean
+            enabled:
+              description: Include this host within orcharhino reporting
+              required: false
+              type: boolean
+            provision_method:
+              description: The method used to provision the host.
+              required: false
+              type: string
+            managed:
+              description: 'True/False flag whether a host is managed or unmanaged. Note: this valuealso determines whether several parameters are required or not'
+              required: false
+              type: boolean
+            progress_report_id:
+              description: UUID to track orchestration tasks status, GET/api/orchestration/:UUID/tasks
+              required: false
+              type: string
+            comment:
+              description: Additional information about this host
+              required: false
+              type: string
+            capabilities:
+              description: ''
+              required: false
+              type: string
+            compute_profile_id:
+              description: ''
+              required: false
+              type: number
+            interfaces_attributes:
+              description: Host's network interfaces.
+              required: false
+              type: array
+              parameters:
+                mac:
+                  description: MAC address of interface. Required for managed interfaces on bare metal.
+                  required: false
+                  type: string
                 ip:
+                  description: IPv4 address of interface
                   required: false
                   type: string
-                  description: IPv4 address of interface
-                primary:
+                ip6:
+                  description: IPv6 address of interface
+                  required: false
+                  type: string
+                type:
+                  description: Interface type, e.g. bmc. Default is interface
+                  required: false
+                  type: string
+                name:
+                  description: Interface's DNS name
+                  required: false
+                  type: string
+                subnet_id:
+                  description: orcharhino subnet ID of IPv4 interface
+                  required: false
+                  type: number
+                subnet6_id:
+                  description: orcharhino subnet ID of IPv6 interface
+                  required: false
+                  type: number
+                domain_id:
+                  description: orcharhino domain ID of interface. Required for primary interfaces onmanaged hosts.
+                  required: false
+                  type: number
+                identifier:
+                  description: Device identifier, e.g. eth0 or eth1.1
+                  required: false
+                  type: string
+                managed:
+                  description: Should this interface be managed via DHCP and DNS smart proxy and should itbe configured during provisioning?
                   required: false
                   type: boolean
+                primary:
                   description: Should this interface be used for constructing the FQDN of the host? Eachmanaged hosts needs to have one primary interface.
-                bond_options:
+                  required: false
+                  type: boolean
+                provision:
+                  description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
+                  required: false
+                  type: boolean
+                username:
+                  description: Only for BMC interfaces.
                   required: false
                   type: string
-                  description: Space separated options, e.g. miimon=100. Only for bond interfaces.
+                password:
+                  description: Only for BMC interfaces.
+                  required: false
+                  type: string
+                provider:
+                  description: Interface provider, e.g. IPMI. Only for BMC interfaces.
+                  required: false
+                  type: string
+                virtual:
+                  description: Alias or VLAN device
+                  required: false
+                  type: boolean
                 tag:
+                  description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only forvirtual interfaces.
                   required: false
                   type: string
-                  description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only forvirtual interfaces.
+                mtu:
+                  description: MTU, this attribute has precedence over the subnet MTU.
+                  required: false
+                  type: number
+                attached_to:
+                  description: Identifier of the interface to which this interface belongs, e.g. eth1.Only for virtual interfaces.
+                  required: false
+                  type: string
+                mode:
+                  description: Bond mode of the interface, e.g. balance-rr. Only for bond interfaces.
+                  required: false
+                  type: string
+                attached_devices:
+                  description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond interfaces those are the slaves. Only for bondand bridges interfaces.
+                  required: false
+                  type: array
+                bond_options:
+                  description: Space separated options, e.g. miimon=100. Only for bond interfaces.
+                  required: false
+                  type: string
                 compute_attributes:
+                  description: Additional compute resource specific attributes for the interface.
                   required: false
                   type: object
-                  description: Additional compute resource specific attributes for the interface.
-                domain_id:
-                  required: false
-                  type: number
-                  description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
-                attached_devices:
-                  required: false
-                  type: array
-                  description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond interfaces those are the slaves. Only for bondand bridges interfaces.
-                subnet_id:
-                  required: false
-                  type: number
-                  description: Satellite subnet ID of IPv4 interface
-                virtual:
-                  required: false
-                  type: boolean
-                  description: Alias or VLAN device
-                subnet6_id:
-                  required: false
-                  type: number
-                  description: Satellite subnet ID of IPv6 interface
-                provider:
-                  required: false
-                  type: string
-                  description: Interface provider, e.g. IPMI. Only for BMC interfaces.
-                type:
-                  required: false
-                  type: string
-                  description: Interface type, e.g. bmc. Default is interface
-                username:
-                  required: false
-                  type: string
-                  description: Only for BMC interfaces.
-                mac:
-                  required: false
-                  type: string
-                  description: MAC address of interface. Required for managed interfaces on bare metal.
-                ip6:
-                  required: false
-                  type: string
-                  description: IPv6 address of interface
-                password:
-                  required: false
-                  type: string
-                  description: Only for BMC interfaces.
-                provision:
-                  required: false
-                  type: boolean
-                  description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
-                attached_to:
-                  required: false
-                  type: string
-                  description: Identifier of the interface to which this interface belongs, e.g. eth1.Only for virtual interfaces.
-                name:
-                  required: false
-                  type: string
-                  description: Interface's DNS name
-                mtu:
-                  required: false
-                  type: number
-                  description: MTU, this attribute has precedence over the subnet MTU.
-                mode:
-                  required: false
-                  type: string
-                  description: Bond mode of the interface, e.g. balance-rr. Only for bond interfaces.
-                identifier:
-                  required: false
-                  type: string
-                  description: Device identifier, e.g. eth0 or eth1.1
-            openscap_proxy_id:
-              required: false
-              type: number
-              description: ID of OpenSCAP Capsule
-            location_id:
-              required: false
-              type: number
-              description: required if locations are enabled
-            domain_id:
-              required: false
-              type: number
-              description: required if host is managed and value is not inherited from host group
-            compute_resource_id:
-              required: false
-              type: number
-              description: nil means host is bare metal
-            subnet_id:
-              required: false
-              type: number
-              description: required if host is managed and value is not inherited from host group
-            capabilities:
-              required: false
-              type: string
-              description: ''
-            architecture_id:
-              required: false
-              type: number
-              description: required if host is managed and value is not inherited from host group
-            build:
-              required: false
-              type: boolean
-              description: ''
-            host_parameters_attributes:
-              required: false
-              type: array
-              description: Host's parameters (array or indexed hash)
-              parameters:
-                name:
-                  required: false
-                  type: string
-                  description: Name of the parameter
-                value:
-                  required: false
-                  type: string
-                  description: Parameter value
-            puppetclass_ids:
-              required: false
-              type: array
-              description: ''
-            owner_id:
-              required: false
-              type: number
-              description: ''
-            operatingsystem_id:
-              required: false
-              type: string
-              description: required if host is managed and value is not inherited from host group
-            root_pass:
-              required: false
-              type: string
-              description: required if host is managed and value is not inherited from host group ordefault password in settings
-            ansible_role_ids:
-              required: false
-              type: array
-              description: IDs of associated ansible roles
-            organization_id:
-              required: false
-              type: number
-              description: required if organizations are enabled
-            image_id:
-              required: false
-              type: number
-              description: ''
-            mac:
-              required: false
-              type: string
-              description: required for managed host that is bare metal, not required if it's avirtual machine
-            puppet_ca_proxy_id:
-              required: false
-              type: number
-              description: Puppet CA Capsule ID
-            puppet_proxy_id:
-              required: false
-              type: number
-              description: Puppet Capsule ID
-            ptable_id:
-              required: false
-              type: number
-              description: required if host is managed and custom partition has not been defined
-            progress_report_id:
-              required: false
-              type: string
-              description: UUID to track orchestration tasks status, GET/api/orchestration/:UUID/tasks
-            realm_id:
-              required: false
-              type: number
-              description: ''
-            name:
-              required: false
-              type: string
-              description: ''
-            medium_id:
-              required: false
-              type: string
-              description: required if not imaged based provisioning and host is managed and value isnot inherited from host group
-            enabled:
-              required: false
-              type: boolean
-              description: Include this host within Satellite reporting
-            hostgroup_id:
-              required: false
-              type: number
-              description: ''
             compute_attributes:
-              required: false
-              type: object
               description: Additional compute resource specific attributes.
-            owner_type:
-              required: false
-              type: string
-              description: Host's owner type
-            pxe_loader:
-              required: false
-              type: string
-              description: DHCP filename option (Grub2/PXELinux by default)
-            subscription_facet_attributes:
               required: false
               type: object
-              description: Parameters for host's subscription_facet facet
+            content_facet_attributes:
+              description: Parameters for host's content_facet facet
+              required: false
+              type: object
               parameters:
-                purpose_usage:
+                content_view_id:
+                  description: ''
+                  required: false
+                  type: number
+                lifecycle_environment_id:
+                  description: ''
+                  required: false
+                  type: number
+                content_source_id:
+                  description: ''
+                  required: false
+                  type: number
+                kickstart_repository_id:
+                  description: Repository Id associated with the kickstart repo used for provisioning
+                  required: false
+                  type: number
+            subscription_facet_attributes:
+              description: Parameters for host's subscription_facet facet
+              required: false
+              type: object
+              parameters:
+                release_version:
+                  description: Release version for this Host to use (7Server, 7.1, etc)
                   required: false
                   type: string
-                  description: Sets the system purpose usage
-                installed_products_attributes:
-                  required: false
-                  type: array
-                  description: List of products installed on the host
-                  parameters:
-                    version:
-                      required: false
-                      type: string
-                      description: Product version
-                    arch:
-                      required: false
-                      type: string
-                      description: Product architecture
-                    product_id:
-                      required: false
-                      type: string
-                      description: Product id as listed from a host's installed products,         this isnot the same product id as the products api returns
-                    product_name:
-                      required: false
-                      type: string
-                      description: Product name as listed from a host's installed products
                 autoheal:
+                  description: Sets whether the Host will autoheal subscriptions upon checkin
                   required: false
                   type: boolean
-                  description: Sets whether the Host will autoheal subscriptions upon checkin
-                release_version:
-                  required: false
-                  type: string
-                  description: Release version for this Host to use (7Server, 7.1, etc)
-                service_level:
-                  required: false
-                  type: string
-                  description: Service level to be used for autoheal
-                purpose_role:
-                  required: false
-                  type: string
+                purpose_usage:
                   description: Sets the system purpose usage
+                  required: false
+                  type: string
+                purpose_role:
+                  description: Sets the system purpose usage
+                  required: false
+                  type: string
                 purpose_addons:
-                  required: false
-                  type: array
                   description: Sets the system add-ons
-                hypervisor_guest_uuids:
                   required: false
                   type: array
+                service_level:
+                  description: Service level to be used for autoheal
+                  required: false
+                  type: string
+                hypervisor_guest_uuids:
                   description: List of hypervisor guest uuids
-            compute_profile_id:
+                  required: false
+                  type: array
+                installed_products_attributes:
+                  description: List of products installed on the host
+                  required: false
+                  type: array
+                  parameters:
+                    product_id:
+                      description: Product id as listed from a host's installed products,         this isnot the same product id as the products api returns
+                      required: false
+                      type: string
+                    product_name:
+                      description: Product name as listed from a host's installed products
+                      required: false
+                      type: string
+                    arch:
+                      description: Product architecture
+                      required: false
+                      type: string
+                    version:
+                      description: Product version
+                      required: false
+                      type: string
+            ansible_role_ids:
+              description: IDs of associated ansible roles
               required: false
-              type: number
-              description: ''
+              type: array
             "

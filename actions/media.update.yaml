@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -45,27 +45,27 @@ parameters:
        "description: 
         parameters:
             name:
-              required: false
-              type: string
               description: Name of media
-            os_family:
               required: false
               type: string
-              description: 'Operating system family, available values: AIX, Altlinux, Archlinux,Coreos, Debian, Freebsd, Gentoo, Junos, NXOS, Rancheros, Redhat, Solaris,Suse, Windows, Xenserver'
-            operatingsystem_ids:
-              required: false
-              type: array
-              description: ''
             path:
+              description: The path to the medium, can be a URL or a valid NFS server (exclusive ofthe architecture).for example mirror.centos.org/centos/$version/os/$archwhere $arch will be substituted for the host's actual OS architectureand $version, $major and $minor will be substituted for the version of theoperating system.Solaris and Debian media may also use $release.
               required: false
               type: string
-              description: The path to the medium, can be a URL or a valid NFS server (exclusive ofthe architecture).for example mirror.centos.org/centos/$version/os/$archwhere $arch will be substituted for the host's actual OS architectureand $version, $major and $minor will be substituted for the version of theoperating system.Solaris and Debian media may also use $release.
+            os_family:
+              description: 'Operating system family, available values: AIX, Altlinux, Archlinux,Coreos, Debian, Freebsd, Gentoo, Junos, NXOS, Rancheros, Redhat, Solaris,Suse, VRP, Windows, Xenserver'
+              required: false
+              type: string
+            operatingsystem_ids:
+              description: ''
+              required: false
+              type: array
             location_ids:
-              required: false
-              type: array
               description: REPLACE locations with given ids
-            organization_ids:
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

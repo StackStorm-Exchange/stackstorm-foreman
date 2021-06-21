@@ -30,23 +30,23 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   config_group:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            puppetclass_ids:
-              required: false
-              type: array
-              description: ''
             name:
+              description: ''
               required: true
               type: string
+            puppetclass_ids:
               description: ''
+              required: false
+              type: array
             "

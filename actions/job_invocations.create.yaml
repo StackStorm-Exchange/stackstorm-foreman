@@ -30,99 +30,103 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   job_invocation:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            inputs:
-              required: false
-              type: object
-              description: Inputs to use
-            search_query:
+            job_template_id:
+              description: The job template to use, parameter is required unless feature was specified
               required: false
               type: string
-              description: ''
-            description_format:
-              required: false
-              type: string
-              description: Override the description format from the template for this invocation only
-            concurrency_control:
-              required: false
-              type: object
-              description: Control concurrency level and distribution over time
-              parameters:
-                concurrency_level:
-                  required: false
-                  type: number
-                  description: Run at most N tasks at a time
-                time_span:
-                  required: false
-                  type: number
-                  description: Distribute tasks over N seconds
-            feature:
-              required: false
-              type: string
-              description: Remote execution feature label that should be triggered, job templateassigned to this feature will be used
             targeting_type:
+              description: Invocation type, one of {'static_query'=>'Static Query','dynamic_query'=>'Dynamic Query'}
               required: true
               type: string
-              description: Invocation type, one of {'static_query'=>'Static Query','dynamic_query'=>'Dynamic Query'}
-            recurrence:
+            randomized_ordering:
+              description: Execute the jobs on hosts in randomized order
+              required: false
+              type: boolean
+            inputs:
+              description: Inputs to use
               required: false
               type: object
-              description: Create a recurring job
-              parameters:
-                cron_line:
-                  required: false
-                  type: string
-                  description: How often the job should occur, in the cron format
-                max_iteration:
-                  required: false
-                  type: number
-                  description: Repeat a maximum of N times
-                end_time:
-                  required: false
-                  type: string
-                  description: Perform no more executions after this time
-            execution_timeout_interval:
-              required: false
-              type: number
-              description: Override the timeout interval from the template for this invocation only
-            bookmark_id:
-              required: false
-              type: number
-              description: ''
-            job_template_id:
-              required: false
-              type: string
-              description: The job template to use, parameter is required unless feature was specified
-            scheduling:
-              required: false
-              type: object
-              description: Schedule the job to start at a later time
-              parameters:
-                start_before:
-                  required: false
-                  type: string
-                  description: Indicates that the action should be cancelled if it cannot be startedbefore this time.
-                start_at:
-                  required: false
-                  type: string
-                  description: Schedule the job for a future time
             ssh:
+              description: SSH provider specific options
               required: false
               type: object
-              description: SSH provider specific options
               parameters:
                 effective_user:
+                  description: What user should be used to run the script (using sudo-like mechanisms).Defaults to a template parameter or global setting.
                   required: false
                   type: string
-                  description: What user should be used to run the script (using sudo-like mechanisms).Defaults to a template parameter or global setting.
+            recurrence:
+              description: Create a recurring job
+              required: false
+              type: object
+              parameters:
+                cron_line:
+                  description: How often the job should occur, in the cron format
+                  required: false
+                  type: string
+                max_iteration:
+                  description: Repeat a maximum of N times
+                  required: false
+                  type: number
+                end_time:
+                  description: Perform no more executions after this time
+                  required: false
+                  type: string
+            scheduling:
+              description: Schedule the job to start at a later time
+              required: false
+              type: object
+              parameters:
+                start_at:
+                  description: Schedule the job for a future time
+                  required: false
+                  type: string
+                start_before:
+                  description: Indicates that the action should be cancelled if it cannot be startedbefore this time.
+                  required: false
+                  type: string
+            concurrency_control:
+              description: Control concurrency level and distribution over time
+              required: false
+              type: object
+              parameters:
+                time_span:
+                  description: Distribute tasks over N seconds
+                  required: false
+                  type: number
+                concurrency_level:
+                  description: Run at most N tasks at a time
+                  required: false
+                  type: number
+            bookmark_id:
+              description: ''
+              required: false
+              type: number
+            search_query:
+              description: ''
+              required: false
+              type: string
+            description_format:
+              description: Override the description format from the template for this invocation only
+              required: false
+              type: string
+            execution_timeout_interval:
+              description: Override the timeout interval from the template for this invocation only
+              required: false
+              type: number
+            feature:
+              description: Remote execution feature label that should be triggered, job templateassigned to this feature will be used
+              required: false
+              type: string
             "

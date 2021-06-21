@@ -1,5 +1,5 @@
 ---
-description: "Generate a report template (resource: POST /api/report_templates/:id/generate)"
+description: "Generate report from a template (resource: POST /api/report_templates/:id/generate)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -42,3 +42,11 @@ parameters:
     type: object
     required: false
     description: "Hash of input values where key is the name of input, value is the value forthis input"
+  gzip:
+    type: boolean
+    required: false
+    description: "Compress the report uzing gzip"
+  report_format:
+    type: string
+    required: false
+    description: "Report format, defaults to 'csv'"

@@ -47,6 +47,10 @@ parameters:
     type: number
     required: false
     description: "organization identifier"
+  with_custom:
+    type: boolean
+    required: false
+    description: "If true, return custom repository sets along with redhat repos"
   search:
     type: string
     required: false

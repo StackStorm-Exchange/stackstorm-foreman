@@ -51,3 +51,7 @@ parameters:
     type: array
     required: false
     description: "list of repository ids"
+  description:
+    type: string
+    required: false
+    description: "description of the filter"

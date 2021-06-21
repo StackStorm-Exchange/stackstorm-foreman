@@ -59,3 +59,27 @@ parameters:
     type: boolean
     required: false
     description: "can the activation key have unlimited hosts"
+  release_version:
+    type: string
+    required: false
+    description: "content release version"
+  service_level:
+    type: string
+    required: false
+    description: "service level"
+  auto_attach:
+    type: boolean
+    required: false
+    description: "auto attach subscriptions upon registration"
+  purpose_usage:
+    type: string
+    required: false
+    description: "Sets the system purpose usage"
+  purpose_role:
+    type: string
+    required: false
+    description: "Sets the system purpose usage"
+  purpose_addons:
+    type: array
+    required: false
+    description: "Sets the system add-ons"

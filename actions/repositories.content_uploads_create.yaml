@@ -31,3 +31,15 @@ parameters:
     type: number
     required: true
     description: "repository id"
+  size:
+    type: number
+    required: true
+    description: "Size of file to upload"
+  checksum:
+    type: string
+    required: false
+    description: "Checksum of file to upload"
+  content_type:
+    type: string
+    required: false
+    description: "content type ('deb', 'docker_manifest', 'file','ostree', 'puppet_module', 'rpm', 'srpm')"

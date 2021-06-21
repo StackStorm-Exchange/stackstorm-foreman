@@ -38,11 +38,11 @@ parameters:
        "description: Array of subscriptions to remove
         parameters:
             id:
+              description: Subscription Pool id
               required: true
               type: string
-              description: Subscription Pool id
             quantity:
+              description: If specified, remove the first instance of a subscription with matching idand quantity
               required: false
               type: number
-              description: If specified, remove the first instance of a subscription with matching idand quantity
             "

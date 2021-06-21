@@ -30,39 +30,39 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   filter:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            search:
-              required: false
-              type: string
-              description: ''
-            permission_ids:
-              required: false
-              type: array
-              description: ''
             role_id:
+              description: ''
               required: true
               type: string
+            search:
               description: ''
+              required: false
+              type: string
             override:
+              description: ''
               required: false
               type: boolean
+            permission_ids:
               description: ''
-            location_ids:
               required: false
               type: array
-              description: ''
             organization_ids:
+              description: ''
               required: false
               type: array
+            location_ids:
               description: ''
+              required: false
+              type: array
             "

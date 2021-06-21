@@ -38,13 +38,13 @@ parameters:
        "description: 
         parameters:
             search:
+              description: Search string for hosts to perform an action on
               required: false
               type: string
-              description: Search string for hosts to perform an action on
             ids:
+              description: List of host ids to perform an action on
               required: false
               type: array
-              description: List of host ids to perform an action on
             "
   excluded:
     type: object
@@ -53,9 +53,9 @@ parameters:
        "description: 
         parameters:
             ids:
+              description: List of host ids to exclude and not run an action on
               required: false
               type: array
-              description: List of host ids to exclude and not run an action on
             "
   subscriptions:
     type: array
@@ -64,11 +64,11 @@ parameters:
        "description: Array of subscriptions to add
         parameters:
             id:
+              description: Subscription Pool id
               required: true
               type: string
-              description: Subscription Pool id
             quantity:
+              description: Quantity of this subscriptions to add
               required: true
               type: number
-              description: Quantity of this subscriptions to add
             "

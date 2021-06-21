@@ -1,5 +1,5 @@
 ---
-description: "Plays Ansible roles on hosts (resource: POST /api/hosts/multiple_play_roles)"
+description: "Runs all Ansible roles on hosts (resource: POST /api/hosts/multiple_play_roles)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   host_ids:
     type: array
     required: true

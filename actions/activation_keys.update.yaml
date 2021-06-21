@@ -71,3 +71,15 @@ parameters:
     type: boolean
     required: false
     description: "auto attach subscriptions upon registration"
+  purpose_usage:
+    type: string
+    required: false
+    description: "Sets the system purpose usage"
+  purpose_role:
+    type: string
+    required: false
+    description: "Sets the system purpose usage"
+  purpose_addons:
+    type: array
+    required: false
+    description: "Sets the system add-ons"

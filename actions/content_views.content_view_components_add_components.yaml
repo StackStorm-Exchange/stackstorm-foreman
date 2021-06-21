@@ -37,16 +37,16 @@ parameters:
     description: >
        "description: Array of components to add
         parameters:
-            content_view_id:
-              required: false
-              type: number
-              description: content view identifier of the component who's latest version isdesired
             content_view_version_id:
+              description: identifier of the version of the component content view
               required: false
               type: number
-              description: identifier of the version of the component content view
+            content_view_id:
+              description: content view identifier of the component who's latest version isdesired
+              required: false
+              type: number
             latest:
+              description: true if the latest version of the component's content view is desired
               required: false
               type: boolean
-              description: true if the latest version of the component's content view is desired
             "

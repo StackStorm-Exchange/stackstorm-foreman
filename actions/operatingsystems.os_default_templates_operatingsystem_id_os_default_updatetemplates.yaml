@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   operatingsystem_id:
     type: string
     required: true
@@ -49,15 +49,15 @@ parameters:
        "description: 
         parameters:
             template_kind_id:
-              required: false
-              type: number
               description: ''
-            provisioning_template_id:
               required: false
               type: number
-              description: ID of provisioning template
             config_template_id:
+              description: ID of provisioning template
               required: false
               type: number
+            provisioning_template_id:
               description: ID of provisioning template
+              required: false
+              type: number
             "

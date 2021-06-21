@@ -57,7 +57,7 @@ parameters:
     description: "How to order the sorted results (e.g. ASC for ascending)"
   organization_id:
     type: number
-    required: true
+    required: false
     description: "Organization ID"
   host_id:
     type: string

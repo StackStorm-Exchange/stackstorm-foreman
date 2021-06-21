@@ -30,132 +30,140 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   hostgroup:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            config_group_ids:
-              required: false
-              type: array
-              description: IDs of associated config groups
-            content_source_id:
-              required: false
-              type: number
-              description: Content source ID
-            environment_id:
-              required: false
-              type: number
-              description: Environment ID
-            kickstart_repository_id:
-              required: false
-              type: number
-              description: Kickstart repository ID
-            group_parameters_attributes:
-              required: false
-              type: array
-              description: Array of parameters
-              parameters:
-                name:
-                  required: true
-                  type: string
-                  description: Name of the parameter
-                value:
-                  required: true
-                  type: string
-                  description: Parameter value
-            openscap_proxy_id:
-              required: false
-              type: number
-              description: ID of OpenSCAP Capsule
-            domain_id:
-              required: false
-              type: number
-              description: Domain ID
-            compute_resource_id:
-              required: false
-              type: number
-              description: Compute resource ID
-            subnet_id:
-              required: false
-              type: number
-              description: Subnet ID
-            parent_id:
-              required: false
-              type: number
-              description: Parent ID of the host group
-            architecture_id:
-              required: false
-              type: number
-              description: Architecture ID
-            organization_ids:
-              required: false
-              type: array
-              description: REPLACE organizations with given ids.
-            operatingsystem_id:
-              required: false
-              type: number
-              description: Operating system ID
-            root_pass:
-              required: false
-              type: string
-              description: Root password on provisioned hosts
-            ansible_role_ids:
-              required: false
-              type: array
-              description: IDs of associated ansible roles
-            description:
-              required: false
-              type: string
-              description: Host group description
-            content_view_id:
-              required: false
-              type: number
-              description: Content view ID
-            puppet_ca_proxy_id:
-              required: false
-              type: number
-              description: Puppet CA Capsule ID
-            puppet_proxy_id:
-              required: false
-              type: number
-              description: Puppet Capsule ID
-            ptable_id:
-              required: false
-              type: number
-              description: Partition table ID
-            pxe_loader:
-              required: false
-              type: string
-              description: DHCP filename option (Grub2/PXELinux by default)
             name:
+              description: Name of the host group
               required: true
               type: string
-              description: Name of the host group
+            description:
+              description: Host group description
+              required: false
+              type: string
+            parent_id:
+              description: Parent ID of the host group
+              required: false
+              type: number
+            environment_id:
+              description: Environment ID
+              required: false
+              type: number
+            compute_profile_id:
+              description: Compute profile ID
+              required: false
+              type: number
+            compute_resource_id:
+              description: Compute resource ID
+              required: false
+              type: number
+            operatingsystem_id:
+              description: Operating system ID
+              required: false
+              type: number
+            architecture_id:
+              description: Architecture ID
+              required: false
+              type: number
+            pxe_loader:
+              description: DHCP filename option (Grub2/PXELinux by default)
+              required: false
+              type: string
             medium_id:
-              required: false
-              type: number
               description: Media ID
-            lifecycle_environment_id:
               required: false
               type: number
-              description: Lifecycle environment ID
-            location_ids:
+            ptable_id:
+              description: Partition table ID
+              required: false
+              type: number
+            subnet_id:
+              description: Subnet ID
+              required: false
+              type: number
+            subnet6_id:
+              description: Subnet IPv6 ID
+              required: false
+              type: number
+            domain_id:
+              description: Domain ID
+              required: false
+              type: number
+            realm_id:
+              description: Realm ID
+              required: false
+              type: number
+            config_group_ids:
+              description: IDs of associated config groups
               required: false
               type: array
+            group_parameters_attributes:
+              description: Array of parameters
+              required: false
+              type: array
+              parameters:
+                name:
+                  description: Name of the parameter
+                  required: true
+                  type: string
+                value:
+                  description: Parameter value
+                  required: true
+                  type: string
+                parameter_type:
+                  description: Type of value
+                  required: false
+                  type: string
+                hidden_value:
+                  description: ''
+                  required: false
+                  type: boolean
+            puppet_proxy_id:
+              description: Puppet proxy ID
+              required: false
+              type: number
+            puppet_ca_proxy_id:
+              description: Puppet CA proxy ID
+              required: false
+              type: number
+            root_pass:
+              description: Root password on provisioned hosts
+              required: false
+              type: string
+            location_ids:
               description: REPLACE locations with given ids
-            realm_id:
+              required: false
+              type: array
+            organization_ids:
+              description: REPLACE organizations with given ids.
+              required: false
+              type: array
+            content_source_id:
+              description: Content source ID
               required: false
               type: number
-              description: Realm ID
-            compute_profile_id:
+            content_view_id:
+              description: Content view ID
               required: false
               type: number
-              description: Compute profile ID
+            lifecycle_environment_id:
+              description: Lifecycle environment ID
+              required: false
+              type: number
+            kickstart_repository_id:
+              description: Kickstart repository ID
+              required: false
+              type: number
+            ansible_role_ids:
+              description: IDs of associated ansible roles
+              required: false
+              type: array
             "

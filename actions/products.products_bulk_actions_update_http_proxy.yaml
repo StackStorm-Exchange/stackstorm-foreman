@@ -1,0 +1,41 @@
+---
+description: "Update the http proxy configuration on the repositories of one or more products. (resource: PUT /katello/api/products/bulk/http_proxy)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: products.products_bulk_actions_update_http_proxy
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: products.products_bulk_actions_update_http_proxy
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  ids:
+    type: array
+    required: true
+    description: "List of product ids"
+  http_proxy_policy:
+    type: string
+    required: false
+    description: "policy for http proxy for content sync"
+  http_proxy_id:
+    type: number
+    required: false
+    description: "Http Proxy identifier to associated"

@@ -30,51 +30,51 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   discovery_rule:
     type: object
     required: false
     description: >
        "description: 
         parameters:
-            search:
-              required: true
-              type: string
-              description: query to match discovered hosts for the particular rule
             name:
+              description: represents rule name shown to the users
               required: true
               type: string
-              description: represents rule name shown to the users
+            search:
+              description: query to match discovered hosts for the particular rule
+              required: true
+              type: string
+            hostgroup_id:
+              description: the hostgroup that is used to auto provision a host
+              required: true
+              type: number
             hostname:
+              description: defines a pattern to assign human-readable hostnames to the matching hosts
               required: false
               type: string
-              description: defines a pattern to assign human-readable hostnames to the matching hosts
+            max_count:
+              description: enables to limit maximum amount of provisioned hosts per rule
+              required: false
+              type: number
+            priority:
+              description: puts the rules in order, low numbers go first. Must be greater then zero
+              required: false
+              type: number
             enabled:
+              description: flag is used for temporary shutdown of rules
               required: false
               type: boolean
-              description: flag is used for temporary shutdown of rules
-            hostgroup_id:
-              required: true
-              type: number
-              description: the hostgroup that is used to auto provision a host
-            max_count:
-              required: false
-              type: number
-              description: enables to limit maximum amount of provisioned hosts per rule
-            priority:
-              required: false
-              type: number
-              description: puts the rules in order, low numbers go first. Must be greater then zero
             location_ids:
-              required: true
-              type: array
               description: location ID for provisioned hosts
-            organization_ids:
               required: true
               type: array
+            organization_ids:
               description: organization ID for provisioned hosts
+              required: true
+              type: array
             "

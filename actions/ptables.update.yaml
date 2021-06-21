@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,48 +44,52 @@ parameters:
     description: >
        "description: 
         parameters:
-            host_ids:
-              required: false
-              type: array
-              description: Array of host IDs to associate with the partition table
-            locked:
-              required: false
-              type: boolean
-              description: Whether or not the template is locked for editing
             name:
+              description: ''
               required: false
               type: string
+            description:
               description: ''
-            location_ids:
               required: false
-              type: array
-              description: REPLACE locations with given ids
+              type: string
+            layout:
+              description: ''
+              required: false
+              type: string
             snippet:
+              description: ''
               required: false
               type: boolean
-              description: ''
-            os_family:
-              required: false
-              type: string
-              description: ''
-            operatingsystem_ids:
-              required: false
-              type: array
-              description: Array of operating system IDs to associate with the partition table
-            layout:
-              required: false
-              type: string
-              description: ''
             audit_comment:
+              description: ''
               required: false
               type: string
+            locked:
+              description: Whether or not the template is locked for editing
+              required: false
+              type: boolean
+            os_family:
               description: ''
+              required: false
+              type: string
+            operatingsystem_ids:
+              description: Array of operating system IDs to associate with the partition table
+              required: false
+              type: array
+            host_ids:
+              description: Array of host IDs to associate with the partition table
+              required: false
+              type: array
             hostgroup_ids:
-              required: false
-              type: array
               description: Array of host group IDs to associate with the partition table
-            organization_ids:
               required: false
               type: array
+            location_ids:
+              description: REPLACE locations with given ids
+              required: false
+              type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

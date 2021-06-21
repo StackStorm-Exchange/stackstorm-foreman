@@ -1,0 +1,37 @@
+---
+description: "Shows status and version information of orcharhino system and it's subcomponents (resource: GET /api/statuses)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: statuses.ping_statuses
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: statuses.ping_statuses
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Set the current location context for the request"
+  organization_id:
+    type: number
+    required: false
+    description: "Set the current organization context for the request"

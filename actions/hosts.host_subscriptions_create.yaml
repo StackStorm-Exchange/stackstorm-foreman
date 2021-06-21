@@ -49,22 +49,22 @@ parameters:
     description: >
        "description: List of products installed on the host
         parameters:
-            version:
-              required: false
-              type: string
-              description: Product version
-            arch:
-              required: false
-              type: string
-              description: Product architecture
             product_id:
-              required: false
-              type: string
               description: Product id as listed from a host's installed products,         this isnot the same product id as the products api returns
-            product_name:
               required: false
               type: string
+            product_name:
               description: Product name as listed from a host's installed products
+              required: false
+              type: string
+            arch:
+              description: Product architecture
+              required: false
+              type: string
+            version:
+              description: Product version
+              required: false
+              type: string
             "
   release_version:
     type: string
