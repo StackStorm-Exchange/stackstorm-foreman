@@ -357,7 +357,7 @@ class ActionGenerator(object):
         action_filename = "{}/{}.yaml".format(ACTION_DIRECTORY,
                                               context['name'])
         with open(action_filename, "w") as f:
-            f.write(action_data.encode('ascii', 'ignore'))
+            f.write(action_data)
 
     def render_table_entry(self, context):
         table_data = self.jinja_render_file(TABLE_TEMPLATE_PATH, context)
