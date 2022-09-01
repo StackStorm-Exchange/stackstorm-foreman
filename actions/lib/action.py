@@ -112,13 +112,14 @@ class BaseAction(Action):
 
         # parse parameters
         operation = self._get_del_arg('operation', kwargs_dict)
+        timeout = self._get_del_arg('timeout', kwargs_dict)
         connection = self._resolve_connection(kwargs_dict)
         self._validate_connection(connection)
 
         # connect to the server
         client = foreman.client.Foreman('https://{}/'.format(connection['server']),
                                         auth=(connection['username'], connection['password']),
-                                        api_version=2)
+                                        api_version=2, timeout=timeout)
 
         # Performs a "deep" getattr() lookup so we can pass a string like
         # 'method1.method2.method3' without having to chain getattr()

@@ -1,5 +1,9 @@
 # Change Log
 
+## v2.1.0
+
+* Timeouts defined in the action are now honored properly
+
 ## v2.0.0
 
 * Drop Python 2.7 support
