@@ -157,5 +157,5 @@ class TestActionLibBaseAction(ForemanBaseActionTestCase):
         self.assertEqual(result, op_result)
         mock_foreman.assert_called_with('https://{}/'.format(connection['server']),
                                         auth=(connection['username'], connection['password']),
-                                        api_version=2)
+                                        api_version=2, timeout=None)
         mock_func.assert_called_with(**op_args)
