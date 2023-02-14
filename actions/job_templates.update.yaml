@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,61 +44,65 @@ parameters:
     description: >
        "description: 
         parameters:
-            locked:
-              required: false
-              type: boolean
-              description: Whether or not the template is locked for editing
             name:
-              required: false
-              type: string
               description: Template name
-            description_format:
               required: false
               type: string
+            description:
+              description: ''
+              required: false
+              type: string
+            job_category:
+              description: Job category
+              required: false
+              type: string
+            description_format:
               description: This template is used to generate the description. Input values can be usedusing the syntax %{package}. You may also include the job category andtemplate name using %{job_category} and %{template_name}.
+              required: false
+              type: string
+            template:
+              description: ''
+              required: false
+              type: string
+            provider_type:
+              description: Provider type
+              required: false
+              type: string
             snippet:
+              description: ''
               required: false
               type: boolean
+            audit_comment:
               description: ''
+              required: false
+              type: string
+            locked:
+              description: Whether or not the template is locked for editing
+              required: false
+              type: boolean
             effective_user_attributes:
+              description: Effective user options
               required: false
               type: object
-              description: Effective user options
               parameters:
-                overridable:
-                  required: false
-                  type: boolean
-                  description: Whether it should be allowed to override the effective user from theinvocation form.
                 value:
+                  description: What user should be used to run the script (using sudo-like mechanisms)
                   required: false
                   type: string
-                  description: What user should be used to run the script (using sudo-like mechanisms)
-                current_user:
+                overridable:
+                  description: Whether it should be allowed to override the effective user from theinvocation form.
                   required: false
                   type: boolean
+                current_user:
                   description: Whether the current user login should be used as the effective user
-            template:
-              required: false
-              type: string
-              description: ''
-            job_category:
-              required: false
-              type: string
-              description: Job category
-            audit_comment:
-              required: false
-              type: string
-              description: ''
+                  required: false
+                  type: boolean
             location_ids:
-              required: false
-              type: array
               description: REPLACE locations with given ids
-            organization_ids:
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
-            provider_type:
               required: false
-              type: string
-              description: Provider type
+              type: array
             "

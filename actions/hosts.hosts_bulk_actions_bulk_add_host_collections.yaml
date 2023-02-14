@@ -38,13 +38,13 @@ parameters:
        "description: 
         parameters:
             search:
+              description: Search string for hosts to perform an action on
               required: false
               type: string
-              description: Search string for hosts to perform an action on
             ids:
+              description: List of host ids to perform an action on
               required: false
               type: array
-              description: List of host ids to perform an action on
             "
   excluded:
     type: object
@@ -53,9 +53,9 @@ parameters:
        "description: 
         parameters:
             ids:
+              description: List of host ids to exclude and not run an action on
               required: false
               type: array
-              description: List of host ids to exclude and not run an action on
             "
   host_collection_ids:
     type: array

@@ -30,35 +30,35 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   realm:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            location_ids:
-              required: false
-              type: array
-              description: REPLACE locations with given ids
+            name:
+              description: The realm name, e.g. EXAMPLE.COM
+              required: true
+              type: string
             realm_proxy_id:
+              description: Proxy ID to use within this realm
               required: true
               type: number
-              description: Capsule ID to use within this realm
-            name:
-              required: true
-              type: string
-              description: The realm name, e.g. EXAMPLE.COM
             realm_type:
+              description: Realm type, e.g. FreeIPA or Active Directory
               required: true
               type: string
-              description: Realm type, e.g. Red Hat Identity Management or Active Directory
-            organization_ids:
+            location_ids:
+              description: REPLACE locations with given ids
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

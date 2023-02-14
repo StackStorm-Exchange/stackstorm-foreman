@@ -1,5 +1,5 @@
 ---
-description: "Remove lifecycle environments from the capsule (resource: DELETE /katello/api/capsules/:id/content/lifecycle_environments/:environment_id)"
+description: "Remove lifecycle environments from the smart proxy (resource: DELETE /katello/api/capsules/:id/content/lifecycle_environments/:environment_id)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,7 +30,7 @@ parameters:
   id:
     type: number
     required: true
-    description: "Id of the capsule"
+    description: "Id of the smart proxy"
   environment_id:
     type: number
     required: true

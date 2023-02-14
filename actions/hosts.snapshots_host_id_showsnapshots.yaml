@@ -1,0 +1,43 @@
+---
+description: "Show a snapshot (resource: GET /api/hosts/:host_id/snapshots/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts.snapshots_host_id_showsnapshots
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: hosts.snapshots_host_id_showsnapshots
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Set the current location context for the request"
+  organization_id:
+    type: number
+    required: false
+    description: "Set the current organization context for the request"
+  host_id:
+    type: string
+    required: true
+  id:
+    type: string
+    required: true

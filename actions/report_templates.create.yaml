@@ -30,47 +30,51 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   report_template:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            locked:
-              required: false
-              type: boolean
-              description: Whether or not the template is locked for editing
             name:
+              description: ''
               required: true
               type: string
+            description:
               description: ''
-            default:
               required: false
-              type: boolean
-              description: Whether or not the template is added automatically to new organizations andlocations
-            snippet:
-              required: false
-              type: boolean
-              description: ''
+              type: string
             template:
+              description: ''
               required: true
               type: string
+            snippet:
               description: ''
+              required: false
+              type: boolean
             audit_comment:
+              description: ''
               required: false
               type: string
-              description: ''
+            locked:
+              description: Whether or not the template is locked for editing
+              required: false
+              type: boolean
+            default:
+              description: Whether or not the template is added automatically to new organizations andlocations
+              required: false
+              type: boolean
             location_ids:
-              required: false
-              type: array
               description: REPLACE locations with given ids
-            organization_ids:
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

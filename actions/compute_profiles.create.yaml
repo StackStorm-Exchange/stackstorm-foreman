@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   compute_profile:
     type: object
     required: true
@@ -42,7 +42,7 @@ parameters:
        "description: 
         parameters:
             name:
+              description: ''
               required: true
               type: string
-              description: ''
             "

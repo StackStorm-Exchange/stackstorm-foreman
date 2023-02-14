@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   smart_variable_id:
     type: string
     required: true
@@ -47,20 +47,20 @@ parameters:
     description: >
        "description: 
         parameters:
-            use_puppet_default:
-              required: false
-              type: boolean
-              description: Deprecated, please use omit
-            omit:
-              required: false
-              type: boolean
-              description: Satellite will not send this parameter in classification output, replacesuse_puppet_default
-            value:
-              required: false
-              type: any_type
-              description: Override value, required if omit is false
             match:
+              description: Override match
               required: true
               type: string
-              description: Override match
+            value:
+              description: Override value, required if omit is false
+              required: false
+              type: any_type
+            use_puppet_default:
+              description: Deprecated, please use omit
+              required: false
+              type: boolean
+            omit:
+              description: orcharhino will not send this parameter in classification output, replacesuse_puppet_default
+              required: false
+              type: boolean
             "

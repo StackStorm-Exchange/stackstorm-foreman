@@ -1,5 +1,5 @@
 ---
-description: "Update a capsule (resource: PUT /api/smart_proxies/:id)"
+description: "Update a smart proxy (resource: PUT /api/smart_proxies/:id)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,24 +44,24 @@ parameters:
     description: >
        "description: 
         parameters:
-            url:
-              required: false
-              type: string
-              description: ''
-            location_ids:
-              required: false
-              type: array
-              description: REPLACE locations with given ids
-            download_policy:
-              required: false
-              type: string
-              description: Download Policy of the capsule, must be one of immediate, on_demand,background, inherit
             name:
+              description: ''
               required: false
               type: string
+            url:
               description: ''
-            organization_ids:
+              required: false
+              type: string
+            location_ids:
+              description: REPLACE locations with given ids
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
+            download_policy:
+              description: Download Policy of the capsule, must be one of immediate, on_demand,background, inherit
+              required: false
+              type: string
             "

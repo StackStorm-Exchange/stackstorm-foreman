@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   template_id:
     type: string
     required: true
@@ -44,24 +44,24 @@ parameters:
     description: >
        "description: 
         parameters:
-            include:
-              required: false
-              type: string
-              description: A comma separated list of input names to be included from the foreigntemplate.
-            include_all:
-              required: false
-              type: boolean
-              description: Include all inputs from the foreign template
-            description:
-              required: false
-              type: string
-              description: Input set description
             target_template_id:
+              description: Target template ID
               required: true
               type: string
-              description: Target template ID
-            exclude:
+            include_all:
+              description: Include all inputs from the foreign template
+              required: false
+              type: boolean
+            include:
+              description: A comma separated list of input names to be included from the foreigntemplate.
               required: false
               type: string
+            exclude:
               description: A comma separated list of input names to be included from the foreigntemplate.
+              required: false
+              type: string
+            description:
+              description: Input set description
+              required: false
+              type: string
             "

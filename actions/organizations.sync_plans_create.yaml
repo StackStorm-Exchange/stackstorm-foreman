@@ -30,7 +30,7 @@ parameters:
   organization_id:
     type: number
     required: true
-    description: "Filter sync plans by organization name or label"
+    description: "Organization ID"
   name:
     type: string
     required: true

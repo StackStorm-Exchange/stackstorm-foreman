@@ -63,6 +63,10 @@ parameters:
     type: string
     required: false
     description: "Id of a file to find repositories that contain the file"
+  ansible_collection_id:
+    type: string
+    required: false
+    description: "Id of an ansible collection to find repositories that contain the ansiblecollection"
   ostree_branch_id:
     type: string
     required: false
@@ -71,6 +75,10 @@ parameters:
     type: boolean
     required: false
     description: "show repositories in Library and the default content view"
+  archived:
+    type: boolean
+    required: false
+    description: "show archived repositories"
   content_type:
     type: string
     required: false
@@ -91,6 +99,10 @@ parameters:
     type: string
     required: false
     description: "interpret specified object to return only Repositories that can beassociated with specified object.  Only 'content_view' &'content_view_version' are supported."
+  with_content:
+    type: string
+    required: false
+    description: "only repositories having at least one of the specified content type ex: rpm, erratum"
   search:
     type: string
     required: false

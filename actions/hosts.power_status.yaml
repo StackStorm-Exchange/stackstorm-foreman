@@ -1,0 +1,40 @@
+---
+description: "Fetch the status of whether the host is powered on or not. Supported hosts are VMs and physical hosts with BMCs. (resource: GET /api/hosts/:id/power)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts.power_status
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: hosts.power_status
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Set the current location context for the request"
+  organization_id:
+    type: number
+    required: false
+    description: "Set the current organization context for the request"
+  id:
+    type: string
+    required: true

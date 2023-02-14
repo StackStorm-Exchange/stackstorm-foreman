@@ -35,6 +35,10 @@ parameters:
     type: array
     required: true
     description: "Array of content ids to remove"
+  content_type:
+    type: string
+    required: false
+    description: "content type ('deb', 'docker_manifest', 'file','ostree', 'puppet_module', 'rpm', 'srpm')"
   sync_capsule:
     type: boolean
     required: false

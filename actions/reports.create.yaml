@@ -30,35 +30,35 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   report:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            reported_at:
-              required: true
-              type: string
-              description: UTC time of report
-            status:
-              required: true
-              type: object
-              description: Hash of status type totals
             host:
+              description: Hostname or certname
               required: true
               type: string
-              description: Hostname or certname
-            metrics:
+            reported_at:
+              description: UTC time of report
+              required: true
+              type: string
+            status:
+              description: Hash of status type totals
               required: true
               type: object
+            metrics:
               description: Hash of report metrics, can be just {}
+              required: true
+              type: object
             logs:
+              description: Optional array of log hashes
               required: false
               type: array
-              description: Optional array of log hashes
             "

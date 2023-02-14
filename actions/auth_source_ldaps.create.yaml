@@ -30,95 +30,95 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   auth_source_ldap:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            attr_mail:
-              required: false
-              type: string
-              description: required if onthefly_register is true
-            tls:
-              required: false
-              type: boolean
-              description: ''
-            account:
-              required: false
-              type: string
-              description: ''
             name:
+              description: ''
               required: true
               type: string
-              description: ''
-            server_type:
-              required: false
-              type: string
-              description: type of the LDAP server
-            use_netgroups:
-              required: false
-              type: boolean
-              description: use NIS netgroups instead of posix groups, applicable only when server_typeis posix or free_ipa
-            groups_base:
-              required: false
-              type: string
-              description: groups base DN
-            attr_photo:
-              required: false
-              type: string
-              description: ''
-            onthefly_register:
-              required: false
-              type: boolean
-              description: ''
             host:
+              description: ''
               required: true
               type: string
-              description: ''
-            account_password:
-              required: false
-              type: string
-              description: required if onthefly_register is true
-            attr_firstname:
-              required: false
-              type: string
-              description: required if onthefly_register is true
-            usergroup_sync:
-              required: false
-              type: boolean
-              description: sync external user groups on login
-            base_dn:
-              required: false
-              type: string
-              description: ''
-            attr_lastname:
-              required: false
-              type: string
-              description: required if onthefly_register is true
-            attr_login:
-              required: false
-              type: string
-              description: required if onthefly_register is true
-            location_ids:
-              required: false
-              type: array
-              description: REPLACE locations with given ids
             port:
+              description: defaults to 389
               required: false
               type: number
-              description: defaults to 389
-            organization_ids:
-              required: false
-              type: array
-              description: REPLACE organizations with given ids.
-            ldap_filter:
+            account:
+              description: ''
               required: false
               type: string
+            base_dn:
+              description: ''
+              required: false
+              type: string
+            account_password:
+              description: required if onthefly_register is true
+              required: false
+              type: string
+            attr_login:
+              description: required if onthefly_register is true
+              required: false
+              type: string
+            attr_firstname:
+              description: required if onthefly_register is true
+              required: false
+              type: string
+            attr_lastname:
+              description: required if onthefly_register is true
+              required: false
+              type: string
+            attr_mail:
+              description: required if onthefly_register is true
+              required: false
+              type: string
+            attr_photo:
+              description: ''
+              required: false
+              type: string
+            onthefly_register:
+              description: ''
+              required: false
+              type: boolean
+            usergroup_sync:
+              description: sync external user groups on login
+              required: false
+              type: boolean
+            tls:
+              description: ''
+              required: false
+              type: boolean
+            groups_base:
+              description: groups base DN
+              required: false
+              type: string
+            use_netgroups:
+              description: use NIS netgroups instead of posix groups, applicable only when server_typeis posix or free_ipa
+              required: false
+              type: boolean
+            server_type:
+              description: type of the LDAP server
+              required: false
+              type: string
+            ldap_filter:
               description: LDAP filter
+              required: false
+              type: string
+            location_ids:
+              description: REPLACE locations with given ids
+              required: false
+              type: array
+            organization_ids:
+              description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

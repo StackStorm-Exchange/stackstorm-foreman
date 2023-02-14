@@ -1,5 +1,5 @@
 ---
-description: "List the lifecycle environments not attached to the capsule (resource: GET /katello/api/capsules/:id/content/available_lifecycle_environments)"
+description: "List the lifecycle environments not attached to the smart proxy (resource: GET /katello/api/capsules/:id/content/available_lifecycle_environments)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,7 +30,7 @@ parameters:
   id:
     type: number
     required: true
-    description: "Id of the capsule"
+    description: "Id of the smart proxy"
   organization_id:
     type: number
     required: false

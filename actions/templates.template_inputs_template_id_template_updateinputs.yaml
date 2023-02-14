@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   template_id:
     type: string
     required: true
@@ -47,44 +47,56 @@ parameters:
     description: >
        "description: 
         parameters:
-            fact_name:
-              required: false
-              type: string
-              description: Fact name, used when input type is fact
             name:
-              required: false
-              type: string
               description: Input name
-            input_type:
               required: false
               type: string
-              description: Input type
+            description:
+              description: Input description
+              required: false
+              type: string
             required:
+              description: Input is required
               required: false
               type: boolean
-              description: Input is required
-            puppet_parameter_name:
+            advanced:
+              description: Input is advanced
+              required: false
+              type: boolean
+            input_type:
+              description: Input type
               required: false
               type: string
-              description: Puppet parameter name, used when input type is puppet_parameter
-            puppet_class_name:
+            fact_name:
+              description: Fact name, used when input type is fact
               required: false
               type: string
-              description: Puppet class name, used when input type is puppet_parameter
             variable_name:
+              description: Variable name, used when input type is variable
               required: false
               type: string
-              description: Variable name, used when input type is variable
+            puppet_class_name:
+              description: Puppet class name, used when input type is puppet_parameter
+              required: false
+              type: string
+            puppet_parameter_name:
+              description: Puppet parameter name, used when input type is puppet_parameter
+              required: false
+              type: string
             options:
+              description: Selectable values for user inputs
               required: false
               type: array
-              description: Selectable values for user inputs
-            advanced:
-              required: false
-              type: boolean
-              description: Input is advanced
-            description:
+            default:
+              description: Default value for user input
               required: false
               type: string
-              description: Input description
+            value_type:
+              description: Value type, defaults to plain
+              required: false
+              type: string
+            resource_type:
+              description: For values of type search, this is the resource the value searches in
+              required: false
+              type: string
             "

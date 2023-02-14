@@ -34,13 +34,13 @@ parameters:
        "description: 
         parameters:
             content_view_version_id:
+              description: Content View Version Ids to perform an incremental update on.  May containcomposites as well as one or more components to update.
               required: false
               type: number
-              description: Content View Version Ids to perform an incremental update on.  May containcomposites as well as one or more components to update.
             environment_ids:
+              description: The list of environments to promote the specified Content View Version to(replacing the older version)
               required: false
               type: array
-              description: The list of environments to promote the specified Content View Version to(replacing the older version)
             "
   description:
     type: string
@@ -49,7 +49,7 @@ parameters:
   resolve_dependencies:
     type: boolean
     required: false
-    description: "If true, when adding the specified errata or packages, any neededdependencies will be copied as well"
+    description: "If true, when adding the specified errata or packages, any neededdependencies will be copied as well. Defaults to true"
   propagate_all_composites:
     type: boolean
     required: false
@@ -60,22 +60,22 @@ parameters:
     description: >
        "description: 
         parameters:
-            package_ids:
-              required: false
-              type: array
-              description: Package ids or uuids to copy into the new versions
-            deb_ids:
-              required: false
-              type: array
-              description: Deb Package ids or uuids to copy into the new versions
             errata_ids:
+              description: Errata ids to copy into the new versions
               required: false
               type: array
-              description: Errata ids or uuids to copy into the new versions
+            package_ids:
+              description: Package ids to copy into the new versions
+              required: false
+              type: array
+            deb_ids:
+              description: Deb Package ids to copy into the new versions
+              required: false
+              type: array
             puppet_module_ids:
+              description: Puppet Module ids to copy into the new versions
               required: false
               type: array
-              description: Puppet Module ids or uuids to copy into the new versions
             "
   update_hosts:
     type: object
@@ -84,25 +84,25 @@ parameters:
        "description: After generating the incremental update, apply the changes to the specifiedhosts.  Only Errata are supported currently.
         parameters:
             included:
+              description: ''
               required: true
               type: object
-              description: ''
               parameters:
                 search:
+                  description: Search string for host to perform an action on
                   required: false
                   type: string
-                  description: Search string for host to perform an action on
                 ids:
+                  description: List of host ids to perform an action on
                   required: false
                   type: array
-                  description: List of host ids to perform an action on
             excluded:
+              description: ''
               required: false
               type: object
-              description: ''
               parameters:
                 ids:
+                  description: List of host ids to exclude and not run an action on
                   required: false
                   type: array
-                  description: List of host ids to exclude and not run an action on
             "

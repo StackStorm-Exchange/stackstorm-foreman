@@ -50,7 +50,7 @@ parameters:
   pool_ids:
     type: array
     required: false
-    description: "Return only the upstream pools which map to the given Katello pool IDs"
+    description: "Return only the upstream pools which map to the given orcharhino pool IDs"
   quantities_only:
     type: boolean
     required: false

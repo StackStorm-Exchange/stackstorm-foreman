@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   domain:
     type: object
     required: true
@@ -42,27 +42,27 @@ parameters:
        "description: 
         parameters:
             name:
+              description: The full DNS domain name
               required: true
               type: string
-              description: The full DNS domain name
-            domain_parameters_attributes:
-              required: false
-              type: array
-              description: Array of parameters (name, value)
-            dns_id:
-              required: false
-              type: number
-              description: DNS Capsule ID to use within this domain
             fullname:
+              description: Description of the domain
               required: false
               type: string
-              description: Description of the domain
+            dns_id:
+              description: DNS proxy ID to use within this domain
+              required: false
+              type: number
+            domain_parameters_attributes:
+              description: Array of parameters (name, value)
+              required: false
+              type: array
             location_ids:
-              required: false
-              type: array
               description: REPLACE locations with given ids
-            organization_ids:
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

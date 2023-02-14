@@ -30,27 +30,31 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   common_parameter:
     type: object
     required: true
     description: >
        "description: 
         parameters:
+            name:
+              description: ''
+              required: true
+              type: string
+            value:
+              description: ''
+              required: true
+              type: string
+            parameter_type:
+              description: Type of value
+              required: true
+              type: string
             hidden_value:
+              description: ''
               required: false
               type: string
-              description: ''
-            name:
-              required: true
-              type: string
-              description: ''
-            value:
-              required: true
-              type: string
-              description: ''
             "

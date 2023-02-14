@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,80 +44,112 @@ parameters:
     description: >
        "description: 
         parameters:
-            organization_ids:
-              required: false
-              type: array
-              description: REPLACE organizations with given ids.
-            datacenter:
-              required: false
-              type: string
-              description: for RHEV, VMware Datacenter
-            domain:
-              required: false
-              type: string
-              description: for RHEL OpenStack Platform only
-            description:
-              required: false
-              type: string
-              description: ''
-            set_console_password:
-              required: false
-              type: boolean
-              description: for Libvirt and VMware only
-            caching_enabled:
-              required: false
-              type: boolean
-              description: enable caching, for VMware only
-            url:
-              required: false
-              type: string
-              description: URL for Docker, Libvirt, RHEV, RHEL OpenStack Platform and Rackspace
-            region:
-              required: false
-              type: string
-              description: for EC2 only, use 'us-gov-west-1' for GovCloud region
-            uuid:
-              required: false
-              type: string
-              description: Deprecated, please use datacenter
-            server:
-              required: false
-              type: string
-              description: for VMware
-            ovirt_quota:
-              required: false
-              type: string
-              description: for RHEV only, ID of quota to use
-            use_v4:
-              required: false
-              type: boolean
-              description: for RHEV only
-            user:
-              required: false
-              type: string
-              description: Username for RHEV, EC2, VMware, RHEL OpenStack Platform. Access Key forEC2.
-            provider:
-              required: false
-              type: string
-              description: Providers include Libvirt, Ovirt, EC2, Vmware, Openstack, Rackspace, GCE,Docker
-            display_type:
-              required: false
-              type: string
-              description: for Libvirt only
-            password:
-              required: false
-              type: string
-              description: Password for RHEV, EC2, VMware, RHEL OpenStack Platform. Secret key for EC2
-            location_ids:
-              required: false
-              type: array
-              description: REPLACE locations with given ids
-            tenant:
-              required: false
-              type: string
-              description: for RHEL OpenStack Platform only
             name:
+              description: ''
               required: false
               type: string
+            provider:
+              description: Providers include EC2, Vmware, Docker
+              required: false
+              type: string
+            url:
+              description: URL for Docker, Libvirt, oVirt, OpenStack and Rackspace
+              required: false
+              type: string
+            description:
               description: ''
+              required: false
+              type: string
+            user:
+              description: Username for oVirt, EC2, VMware, OpenStack. Access Key for EC2.
+              required: false
+              type: string
+            password:
+              description: Password for oVirt, EC2, VMware, OpenStack. Secret key for EC2
+              required: false
+              type: string
+            uuid:
+              description: Deprecated, please use datacenter
+              required: false
+              type: string
+            datacenter:
+              description: for oVirt, VMware Datacenter
+              required: false
+              type: string
+            use_v4:
+              description: for oVirt only
+              required: false
+              type: boolean
+            ovirt_quota:
+              description: for oVirt only, ID of quota to use
+              required: false
+              type: string
+            public_key:
+              description: for oVirt only
+              required: false
+              type: string
+            region:
+              description: for AzureRm eg. 'eastus' and for EC2 only. Use'us-gov-west-1' for EC2 GovCloud region
+              required: false
+              type: string
+            tenant:
+              description: for OpenStack and AzureRm only
+              required: false
+              type: string
+            domain:
+              description: for OpenStack (v3) only
+              required: false
+              type: string
+            project_domain_name:
+              description: for OpenStack (v3) only
+              required: false
+              type: string
+            project_domain_id:
+              description: for OpenStack (v3) only
+              required: false
+              type: string
+            server:
+              description: for VMware
+              required: false
+              type: string
+            set_console_password:
+              description: for Libvirt and VMware only
+              required: false
+              type: boolean
+            display_type:
+              description: for Libvirt and oVirt only
+              required: false
+              type: string
+            keyboard:
+              description: for oVirt only
+              required: false
+              type: string
+            caching_enabled:
+              description: enable caching, for VMware only
+              required: false
+              type: boolean
+            project:
+              description: Project id for GCE only
+              required: false
+              type: string
+            email:
+              description: Email for GCE only
+              required: false
+              type: string
+            key_path:
+              description: Certificate path for GCE only
+              required: false
+              type: string
+            zone:
+              description: for GCE only
+              required: false
+              type: string
+            location_ids:
+              description: REPLACE locations with given ids
+              required: false
+              type: array
+            organization_ids:
+              description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

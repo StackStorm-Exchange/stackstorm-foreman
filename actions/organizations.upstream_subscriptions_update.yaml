@@ -38,11 +38,11 @@ parameters:
        "description: Array of Pools to be updated. Only pools originating upstream are accepted.
         parameters:
             id:
+              description: orcharhino ID of local pool to update
               required: true
               type: string
-              description: Katello ID of local pool to update
             quantity:
+              description: Desired quantity of the pool
               required: true
               type: number
-              description: Desired quantity of the pool
             "

@@ -1,5 +1,5 @@
 ---
-description: "Show the capsule details (resource: GET /katello/api/capsules/:id)"
+description: "Show the smart proxy details (resource: GET /katello/api/capsules/:id)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,4 +30,4 @@ parameters:
   id:
     type: number
     required: true
-    description: "Id of the capsule"
+    description: "Id of the smart proxy"

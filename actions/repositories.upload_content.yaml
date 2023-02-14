@@ -35,3 +35,7 @@ parameters:
     type: string
     required: true
     description: "Content files to upload. Can be a single file or array of files."
+  content_type:
+    type: string
+    required: false
+    description: "content type ('deb', 'docker_manifest', 'file','ostree', 'puppet_module', 'rpm', 'srpm')"

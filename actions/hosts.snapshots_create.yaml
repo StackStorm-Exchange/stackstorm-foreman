@@ -1,0 +1,59 @@
+---
+description: "Create a snapshot (resource: POST /api/hosts/:host_id/snapshots)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: hosts.snapshots_create
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: hosts.snapshots_create
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  location_id:
+    type: number
+    required: false
+    description: "Set the current location context for the request"
+  organization_id:
+    type: number
+    required: false
+    description: "Set the current organization context for the request"
+  host_id:
+    type: string
+    required: true
+  include_ram:
+    type: boolean
+    required: false
+    description: "Whether to include the RAM state in the snapshot"
+  snapshot:
+    type: object
+    required: true
+    description: >
+       "description: 
+        parameters:
+            name:
+              description: Name of this snapshot
+              required: true
+              type: string
+            description:
+              description: Description of this snapshot
+              required: false
+              type: string
+            "

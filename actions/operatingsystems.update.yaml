@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,65 +44,65 @@ parameters:
     description: >
        "description: 
         parameters:
-            major:
-              required: false
-              type: string
-              description: ''
             name:
+              description: ''
               required: false
               type: string
+            major:
               description: ''
+              required: false
+              type: string
+            minor:
+              description: ''
+              required: false
+              type: string
+            description:
+              description: ''
+              required: false
+              type: string
             family:
+              description: ''
               required: false
               type: string
+            release_name:
               description: ''
-            config_template_ids:
               required: false
-              type: array
-              description: IDs of associated provisioning templates
-            architecture_ids:
-              required: false
-              type: array
-              description: IDs of associated architectures
+              type: string
             os_parameters_attributes:
+              description: Array of parameters
               required: false
               type: array
-              description: Array of parameters
               parameters:
                 name:
-                  required: false
-                  type: string
                   description: Name of the parameter
-                value:
                   required: false
                   type: string
+                value:
                   description: Parameter value
-            medium_ids:
-              required: false
-              type: array
-              description: IDs of associated media
-            provisioning_template_ids:
-              required: false
-              type: array
-              description: IDs of associated provisioning templates
+                  required: false
+                  type: string
             password_hash:
+              description: Root password hash function to use
               required: false
               type: string
-              description: Root password hash function to use, one of MD5, SHA256, SHA512, Base64
-            release_name:
-              required: false
-              type: string
-              description: ''
-            ptable_ids:
+            architecture_ids:
+              description: IDs of associated architectures
               required: false
               type: array
+            config_template_ids:
+              description: IDs of associated provisioning templates
+              required: false
+              type: array
+            provisioning_template_ids:
+              description: IDs of associated provisioning templates
+              required: false
+              type: array
+            medium_ids:
+              description: IDs of associated media
+              required: false
+              type: array
+            ptable_ids:
               description: IDs of associated partition tables
-            minor:
               required: false
-              type: string
-              description: ''
-            description:
-              required: false
-              type: string
-              description: ''
+              type: array
             "

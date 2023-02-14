@@ -30,87 +30,75 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
-  name:
-    type: string
-    required: true
-    description: "name"
-  label:
-    type: string
-    required: false
-    description: "unique label"
-  description:
-    type: string
-    required: false
-    description: "description"
+    description: "Set the current organization context for the request"
   organization:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            realm_ids:
-              required: false
-              type: array
-              description: Realm IDs
-            subnet_ids:
-              required: false
-              type: array
-              description: Subnet IDs
             name:
+              description: ''
               required: true
               type: string
-              description: ''
-            config_template_ids:
-              required: false
-              type: array
-              description: Provisioning template IDs
             description:
+              description: ''
               required: false
               type: string
-              description: ''
-            domain_ids:
-              required: false
-              type: array
-              description: Domain IDs
-            label:
-              required: false
-              type: string
-              description: ''
-            hostgroup_ids:
-              required: false
-              type: array
-              description: Host group IDs
             user_ids:
-              required: false
-              type: array
               description: User IDs
-            medium_ids:
               required: false
               type: array
-              description: Medium IDs
             smart_proxy_ids:
+              description: Smart proxy IDs
               required: false
               type: array
-              description: Capsule IDs
-            environment_ids:
-              required: false
-              type: array
-              description: Environment IDs
-            ptable_ids:
-              required: false
-              type: array
-              description: Partition template IDs
-            provisioning_template_ids:
-              required: false
-              type: array
-              description: Provisioning template IDs
             compute_resource_ids:
+              description: Compute resource IDs
               required: false
               type: array
-              description: Compute resource IDs
+            medium_ids:
+              description: Medium IDs
+              required: false
+              type: array
+            config_template_ids:
+              description: Provisioning template IDs
+              required: false
+              type: array
+            ptable_ids:
+              description: Partition template IDs
+              required: false
+              type: array
+            provisioning_template_ids:
+              description: Provisioning template IDs
+              required: false
+              type: array
+            domain_ids:
+              description: Domain IDs
+              required: false
+              type: array
+            realm_ids:
+              description: Realm IDs
+              required: false
+              type: array
+            hostgroup_ids:
+              description: Host group IDs
+              required: false
+              type: array
+            environment_ids:
+              description: Environment IDs
+              required: false
+              type: array
+            subnet_ids:
+              description: Subnet IDs
+              required: false
+              type: array
+            label:
+              description: ''
+              required: false
+              type: string
             "

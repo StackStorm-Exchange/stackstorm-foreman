@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   host_id:
     type: string
     required: true
@@ -49,96 +49,96 @@ parameters:
     description: >
        "description: interface information
         parameters:
-            managed:
+            mac:
+              description: MAC address of interface. Required for managed interfaces on bare metal.
               required: false
-              type: boolean
-              description: Should this interface be managed via DHCP and DNS capsule and should it beconfigured during provisioning?
+              type: string
             ip:
-              required: false
-              type: string
               description: IPv4 address of interface
-            primary:
-              required: false
-              type: boolean
-              description: Should this interface be used for constructing the FQDN of the host? Eachmanaged hosts needs to have one primary interface.
-            bond_options:
               required: false
               type: string
-              description: Space separated options, e.g. miimon=100. Only for bond interfaces.
-            tag:
+            ip6:
+              description: IPv6 address of interface
               required: false
               type: string
-              description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only forvirtual interfaces.
-            compute_attributes:
+            type:
+              description: Interface type, e.g. bmc. Default is interface
               required: false
-              type: object
-              description: Additional compute resource specific attributes for the interface.
-            domain_id:
+              type: string
+            name:
+              description: Interface's DNS name
+              required: false
+              type: string
+            subnet_id:
+              description: orcharhino subnet ID of IPv4 interface
               required: false
               type: number
-              description: Satellite domain ID of interface. Required for primary interfaces onmanaged hosts.
+            subnet6_id:
+              description: orcharhino subnet ID of IPv6 interface
+              required: false
+              type: number
+            domain_id:
+              description: orcharhino domain ID of interface. Required for primary interfaces onmanaged hosts.
+              required: false
+              type: number
+            identifier:
+              description: Device identifier, e.g. eth0 or eth1.1
+              required: false
+              type: string
+            managed:
+              description: Should this interface be managed via DHCP and DNS smart proxy and should itbe configured during provisioning?
+              required: false
+              type: boolean
+            primary:
+              description: Should this interface be used for constructing the FQDN of the host? Eachmanaged hosts needs to have one primary interface.
+              required: false
+              type: boolean
+            provision:
+              description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
+              required: false
+              type: boolean
+            username:
+              description: Only for BMC interfaces.
+              required: false
+              type: string
+            password:
+              description: Only for BMC interfaces.
+              required: false
+              type: string
+            provider:
+              description: Interface provider, e.g. IPMI. Only for BMC interfaces.
+              required: false
+              type: string
+            virtual:
+              description: Alias or VLAN device
+              required: false
+              type: boolean
+            tag:
+              description: VLAN tag, this attribute has precedence over the subnet VLAN ID. Only forvirtual interfaces.
+              required: false
+              type: string
+            mtu:
+              description: MTU, this attribute has precedence over the subnet MTU.
+              required: false
+              type: number
+            attached_to:
+              description: Identifier of the interface to which this interface belongs, e.g. eth1.Only for virtual interfaces.
+              required: false
+              type: string
+            mode:
+              description: Bond mode of the interface, e.g. balance-rr. Only for bond interfaces.
+              required: false
+              type: string
             attached_devices:
+              description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond interfaces those are the slaves. Only for bondand bridges interfaces.
               required: false
               type: array
-              description: Identifiers of attached interfaces, e.g. `['eth1','eth2']`. For bond interfaces those are the slaves. Only for bondand bridges interfaces.
-            subnet_id:
-              required: false
-              type: number
-              description: Satellite subnet ID of IPv4 interface
-            virtual:
-              required: false
-              type: boolean
-              description: Alias or VLAN device
-            subnet6_id:
-              required: false
-              type: number
-              description: Satellite subnet ID of IPv6 interface
-            provider:
+            bond_options:
+              description: Space separated options, e.g. miimon=100. Only for bond interfaces.
               required: false
               type: string
-              description: Interface provider, e.g. IPMI. Only for BMC interfaces.
-            type:
+            compute_attributes:
+              description: Additional compute resource specific attributes for the interface.
               required: false
-              type: string
-              description: Interface type, e.g. bmc. Default is interface
-            username:
-              required: false
-              type: string
-              description: Only for BMC interfaces.
-            mac:
-              required: false
-              type: string
-              description: MAC address of interface. Required for managed interfaces on bare metal.
-            ip6:
-              required: false
-              type: string
-              description: IPv6 address of interface
-            password:
-              required: false
-              type: string
-              description: Only for BMC interfaces.
-            provision:
-              required: false
-              type: boolean
-              description: Should this interface be used for TFTP of PXELinux (or SSH for image-basedhosts)? Each managed hosts needs to have one provision interface.
-            attached_to:
-              required: false
-              type: string
-              description: Identifier of the interface to which this interface belongs, e.g. eth1.Only for virtual interfaces.
-            name:
-              required: false
-              type: string
-              description: Interface's DNS name
-            mtu:
-              required: false
-              type: number
-              description: MTU, this attribute has precedence over the subnet MTU.
-            mode:
-              required: false
-              type: string
-              description: Bond mode of the interface, e.g. balance-rr. Only for bond interfaces.
-            identifier:
-              required: false
-              type: string
-              description: Device identifier, e.g. eth0 or eth1.1
+              type: object
             "

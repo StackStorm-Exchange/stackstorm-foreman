@@ -30,27 +30,27 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   environment:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            location_ids:
-              required: false
-              type: array
-              description: REPLACE locations with given ids
             name:
+              description: ''
               required: true
               type: string
-              description: ''
-            organization_ids:
+            location_ids:
+              description: REPLACE locations with given ids
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

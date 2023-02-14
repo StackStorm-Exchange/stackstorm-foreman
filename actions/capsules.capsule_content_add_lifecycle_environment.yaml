@@ -1,5 +1,5 @@
 ---
-description: "Add lifecycle environments to the capsule (resource: POST /katello/api/capsules/:id/content/lifecycle_environments)"
+description: "Add lifecycle environments to the smart proxy (resource: POST /katello/api/capsules/:id/content/lifecycle_environments)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,7 +30,7 @@ parameters:
   id:
     type: number
     required: true
-    description: "Id of the capsule"
+    description: "Id of the smart proxy"
   environment_id:
     type: number
     required: true

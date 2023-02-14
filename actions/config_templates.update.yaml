@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,44 +44,48 @@ parameters:
     description: >
        "description: 
         parameters:
-            operatingsystem_ids:
-              required: false
-              type: array
-              description: Array of operating system IDs to associate with the template
-            template_combinations_attributes:
-              required: false
-              type: array
-              description: Array of template combinations (hostgroup_id, environment_id)
-            locked:
-              required: false
-              type: boolean
-              description: Whether or not the template is locked for editing
             name:
+              description: template name
               required: false
               type: string
-              description: template name
+            description:
+              description: ''
+              required: false
+              type: string
+            template:
+              description: ''
+              required: false
+              type: string
             snippet:
+              description: ''
               required: false
               type: boolean
+            audit_comment:
               description: ''
+              required: false
+              type: string
             template_kind_id:
+              description: not relevant for snippet
               required: false
               type: number
-              description: not relevant for snippet
-            template:
+            template_combinations_attributes:
+              description: Array of template combinations (hostgroup_id, environment_id)
               required: false
-              type: string
-              description: ''
-            audit_comment:
+              type: array
+            operatingsystem_ids:
+              description: Array of operating system IDs to associate with the template
               required: false
-              type: string
-              description: ''
+              type: array
+            locked:
+              description: Whether or not the template is locked for editing
+              required: false
+              type: boolean
             location_ids:
-              required: false
-              type: array
               description: REPLACE locations with given ids
-            organization_ids:
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

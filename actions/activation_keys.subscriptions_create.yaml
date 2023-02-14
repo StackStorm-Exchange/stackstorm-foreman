@@ -46,11 +46,11 @@ parameters:
        "description: Array of subscriptions to add
         parameters:
             id:
+              description: Subscription Pool uuid
               required: true
               type: string
-              description: Subscription Pool uuid
             quantity:
+              description: Quantity of this subscriptions to add
               required: true
               type: number
-              description: Quantity of this subscriptions to add
             "

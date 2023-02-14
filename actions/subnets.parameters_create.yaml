@@ -62,11 +62,15 @@ parameters:
        "description: 
         parameters:
             name:
+              description: ''
               required: true
               type: string
-              description: ''
             value:
+              description: ''
               required: true
               type: string
-              description: ''
+            parameter_type:
+              description: Type of value
+              required: true
+              type: string
             "

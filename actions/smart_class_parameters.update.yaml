@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   id:
     type: string
     required: true
@@ -44,64 +44,64 @@ parameters:
     description: >
        "description: 
         parameters:
+            override:
+              description: Whether the smart class parameter value is managed by orcharhino
+              required: false
+              type: boolean
+            description:
+              description: Description of smart class
+              required: false
+              type: string
             default_value:
+              description: Value to use when there is no match
               required: false
               type: any_type
-              description: Value to use when there is no match
-            validator_rule:
-              required: false
-              type: string
-              description: Used to enforce certain values for the parameter values
-            use_puppet_default:
-              required: false
-              type: boolean
-              description: Deprecated, please use omit
-            required:
-              required: false
-              type: boolean
-              description: If true, will raise an error if there is no default value and no matcherprovide a value
-            avoid_duplicates:
-              required: false
-              type: boolean
-              description: Remove duplicate values (only array type)
-            description:
-              required: false
-              type: string
-              description: Description of smart class
-            override_value_order:
-              required: false
-              type: string
-              description: The order in which values are resolved
-            omit:
-              required: false
-              type: boolean
-              description: Satellite will not send this parameter in classification output. Puppetwill use the value defined in the Puppet manifest for this parameter
-            parameter_type:
-              required: false
-              type: string
-              description: Types of variable values
             hidden_value:
-              required: false
-              type: boolean
               description: When enabled the parameter is hidden in the UI
-            validator_type:
-              required: false
-              type: string
-              description: Types of validation values
-            override:
               required: false
               type: boolean
-              description: Whether the smart class parameter value is managed by Satellite
+            use_puppet_default:
+              description: Deprecated, please use omit
+              required: false
+              type: boolean
+            omit:
+              description: orcharhino will not send this parameter in classification output. Puppetwill use the value defined in the Puppet manifest for this parameter
+              required: false
+              type: boolean
             path:
+              description: The order in which values are resolved
               required: false
               type: string
+            validator_type:
+              description: Types of validation values
+              required: false
+              type: string
+            validator_rule:
+              description: Used to enforce certain values for the parameter values
+              required: false
+              type: string
+            override_value_order:
               description: The order in which values are resolved
-            merge_default:
+              required: false
+              type: string
+            parameter_type:
+              description: Types of variable values
+              required: false
+              type: string
+            required:
+              description: If true, will raise an error if there is no default value and no matcherprovide a value
               required: false
               type: boolean
-              description: Include default value when merging all matching values
             merge_overrides:
+              description: Merge all matching values (only array/hash type)
               required: false
               type: boolean
-              description: Merge all matching values (only array/hash type)
+            merge_default:
+              description: Include default value when merging all matching values
+              required: false
+              type: boolean
+            avoid_duplicates:
+              description: Remove duplicate values (only array type)
+              required: false
+              type: boolean
             "

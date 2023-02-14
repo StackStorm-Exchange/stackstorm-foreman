@@ -1,5 +1,5 @@
 ---
-description: "List all capsules that have content (resource: GET /katello/api/capsules)"
+description: "List all smart proxies that have content (resource: GET /katello/api/capsules)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py

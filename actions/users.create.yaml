@@ -30,75 +30,75 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   user:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            default_organization_id:
-              required: false
-              type: number
+            login:
               description: ''
-            role_ids:
-              required: false
-              type: array
-              description: ''
-            description:
-              required: false
+              required: true
               type: string
-              description: ''
             firstname:
+              description: ''
               required: false
               type: string
+            lastname:
               description: ''
+              required: false
+              type: string
+            mail:
+              description: ''
+              required: true
+              type: string
+            description:
+              description: ''
+              required: false
+              type: string
             admin:
+              description: is an admin account
               required: false
               type: boolean
-              description: is an admin account
-            lastname:
-              required: false
-              type: string
-              description: ''
-            default_location_id:
-              required: false
-              type: number
-              description: ''
-            locale:
-              required: false
-              type: string
-              description: User's preferred locale
-            timezone:
-              required: false
-              type: string
-              description: User's timezone
-            mail:
-              required: true
-              type: string
-              description: ''
-            login:
-              required: true
-              type: string
-              description: ''
             password:
+              description: Required unless user is in an external authentication source
               required: false
               type: string
-              description: Required unless user is in an external authentication source
+            default_location_id:
+              description: ''
+              required: false
+              type: number
+            default_organization_id:
+              description: ''
+              required: false
+              type: number
             auth_source_id:
+              description: ''
               required: true
               type: number
+            timezone:
+              description: User's timezone
+              required: false
+              type: string
+            locale:
+              description: User's preferred locale
+              required: false
+              type: string
+            role_ids:
               description: ''
+              required: false
+              type: array
             location_ids:
-              required: false
-              type: array
               description: REPLACE locations with given ids
-            organization_ids:
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

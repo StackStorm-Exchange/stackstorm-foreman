@@ -1,5 +1,5 @@
 ---
-description: "Get current capsule synchronization status (resource: GET /katello/api/capsules/:id/content/sync)"
+description: "Get current smart proxy synchronization status (resource: GET /katello/api/capsules/:id/content/sync)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,7 +30,7 @@ parameters:
   id:
     type: number
     required: true
-    description: "Id of the capsule"
+    description: "Id of the smart proxy"
   organization_id:
     type: number
     required: false

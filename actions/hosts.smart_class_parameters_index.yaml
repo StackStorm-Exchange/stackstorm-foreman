@@ -30,11 +30,11 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   host_id:
     type: string
     required: true
@@ -58,12 +58,12 @@ parameters:
   order:
     type: string
     required: false
-    description: "Sort field and order, eg. id DESC"
+    description: "Sort field and order, eg. ‘id DESC’"
   page:
-    type: string
+    type: number
     required: false
-    description: "paginate results"
+    description: "Page number, starting at 1"
   per_page:
-    type: string
+    type: number
     required: false
-    description: "number of entries per request"
+    description: "Number of results per page to return"

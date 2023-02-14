@@ -1,0 +1,37 @@
+---
+description: "Show an ansible collection (resource: GET /katello/api/ansible_collections/:id)"
+enabled: true
+runner_type: "python-script"
+entry_point: lib/action.py
+name: ansible_collections.show
+pack: foreman
+parameters:
+  operation:
+    type: string
+    default: ansible_collections.show
+    immutable: true
+  connection:
+    type: string
+    description: "Name of <connection> from this pack's configuration that specifies how to connect to a server."
+    required: false
+  server:
+    type: string
+    description: "Optional override of the server in <connection> (required if <connection> is not specified)."
+    required: false
+  username:
+    type: string
+    description: "Optional override of the username in <connection> (example: username@domain.tld) (required if <connection> is not specified)."
+    required: false
+  password:
+    type: string
+    description: "Optional override of the password in <connection>. (required if <connection> is not specified)"
+    required: false
+    secret: true
+  repository_id:
+    type: number
+    required: false
+    description: "repository identifier"
+  id:
+    type: string
+    required: true
+    description: "an ansible collection identifier"

@@ -34,13 +34,13 @@ parameters:
        "description: Array of pools to add
         parameters:
             id:
+              description: Candlepin ID of pool to add
               required: true
               type: string
-              description: Candlepin ID of pool to add
             quantity:
+              description: Quantity of entitlements to bind
               required: true
               type: number
-              description: Quantity of entitlements to bind
             "
   organization_id:
     type: number

@@ -49,12 +49,12 @@ parameters:
     description: >
        "description: Specify the list of units in each repo
         parameters:
-            rpm_filenames:
-              required: true
-              type: array
-              description: list of rpm filename strings to include in published version
             label:
+              description: repo label
               required: true
               type: string
-              description: repo label
+            rpm_filenames:
+              description: list of rpm filename strings to include in published version
+              required: true
+              type: array
             "

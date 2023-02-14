@@ -33,5 +33,31 @@ parameters:
     description: "Host ID"
   errata_ids:
     type: array
-    required: true
+    required: false
     description: "List of Errata ids to install"
+  included:
+    type: object
+    required: true
+    description: >
+       "description: Errata to exclusively include in the action
+        parameters:
+            search:
+              description: Search string for erratum to perform an action on
+              required: false
+              type: string
+            ids:
+              description: 'List of errata ids to perform an action on, (ex: RHSA-2019:1168)'
+              required: false
+              type: array
+            "
+  excluded:
+    type: object
+    required: true
+    description: >
+       "description: Errata to explicitly exclude in the action. All other applicable erratawill be included in the action, unless an included parameter is passed aswell.
+        parameters:
+            ids:
+              description: List of errata ids to exclude and not run an action on, (ex:RHSA-2019:1168)
+              required: false
+              type: array
+            "

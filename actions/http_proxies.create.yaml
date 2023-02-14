@@ -30,39 +30,39 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   http_proxy:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            username:
-              required: false
-              type: string
-              description: Username used to authenticate with the HTTP Proxy
             name:
-              required: true
-              type: string
               description: The HTTP Proxy name
-            url:
               required: true
               type: string
+            url:
               description: URL of the HTTP Proxy
-            location_ids:
-              required: false
-              type: array
-              description: REPLACE locations with given ids
-            password:
+              required: true
+              type: string
+            username:
+              description: Username used to authenticate with the HTTP Proxy
               required: false
               type: string
+            password:
               description: Password used to authenticate with the HTTP Proxy
-            organization_ids:
+              required: false
+              type: string
+            location_ids:
+              description: REPLACE locations with given ids
               required: false
               type: array
+            organization_ids:
               description: REPLACE organizations with given ids.
+              required: false
+              type: array
             "

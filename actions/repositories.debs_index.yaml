@@ -1,5 +1,5 @@
 ---
-description: "List debs (resource: GET /katello/api/repositories/:repository_id/debs)"
+description: "List deb packages (resource: GET /katello/api/repositories/:repository_id/debs)"
 enabled: true
 runner_type: "python-script"
 entry_point: lib/action.py
@@ -30,27 +30,47 @@ parameters:
   organization_id:
     type: number
     required: false
-    description: "organization identifier"
+    description: "Organization identifier"
   content_view_version_id:
     type: number
     required: false
-    description: "content view version identifier"
+    description: "Content View Version identifier"
   content_view_filter_id:
     type: number
     required: false
-    description: "content view filter identifier"
+    description: "Content View Filter identifier"
   repository_id:
     type: number
     required: true
-    description: "repository identifier"
+    description: "Repository identifier"
   environment_id:
     type: number
     required: false
-    description: "environment identifier"
+    description: "Environment identifier"
   ids:
     type: array
     required: false
-    description: "ids to filter content by"
+    description: "Deb package identifiers to filter content by"
+  host_id:
+    type: number
+    required: false
+    description: "Host id to list applicable deb packages for"
+  packages_restrict_applicable:
+    type: boolean
+    required: false
+    description: "Return deb packages that are applicable to one or more hosts (defaults totrue if host_id is specified)"
+  packages_restrict_upgradable:
+    type: boolean
+    required: false
+    description: "Return deb packages that are upgradable on one or more hosts"
+  packages_restrict_latest:
+    type: boolean
+    required: false
+    description: "Return only the latest version of each package"
+  available_for:
+    type: string
+    required: false
+    description: "Return deb packages that can be added to the specified object.  Only thevalue 'content_view_version' is supported."
   search:
     type: string
     required: false

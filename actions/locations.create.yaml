@@ -30,79 +30,83 @@ parameters:
   location_id:
     type: number
     required: false
-    description: "Scope by locations"
+    description: "Set the current location context for the request"
   organization_id:
     type: number
     required: false
-    description: "Scope by organizations"
+    description: "Set the current organization context for the request"
   location:
     type: object
     required: true
     description: >
        "description: 
         parameters:
-            realm_ids:
-              required: false
-              type: array
-              description: Realm IDs
-            subnet_ids:
-              required: false
-              type: array
-              description: Subnet IDs
             name:
+              description: ''
               required: true
               type: string
-              description: ''
-            config_template_ids:
-              required: false
-              type: array
-              description: Provisioning template IDs
             description:
+              description: ''
               required: false
               type: string
-              description: ''
+            user_ids:
+              description: User IDs
+              required: false
+              type: array
+            smart_proxy_ids:
+              description: Smart proxy IDs
+              required: false
+              type: array
+            compute_resource_ids:
+              description: Compute resource IDs
+              required: false
+              type: array
+            medium_ids:
+              description: Medium IDs
+              required: false
+              type: array
+            config_template_ids:
+              description: Provisioning template IDs
+              required: false
+              type: array
+            ptable_ids:
+              description: Partition template IDs
+              required: false
+              type: array
+            provisioning_template_ids:
+              description: Provisioning template IDs
+              required: false
+              type: array
             domain_ids:
-              required: false
-              type: array
               description: Domain IDs
+              required: false
+              type: array
+            realm_ids:
+              description: Realm IDs
+              required: false
+              type: array
             hostgroup_ids:
-              required: false
-              type: array
               description: Host group IDs
-            ignore_types:
               required: false
               type: array
-              description: List of resources types that will be automatically associated
+            environment_ids:
+              description: Environment IDs
+              required: false
+              type: array
+            subnet_ids:
+              description: Subnet IDs
+              required: false
+              type: array
             parent_id:
+              description: Parent ID
               required: false
               type: number
-              description: Parent ID
-            user_ids:
+            ignore_types:
+              description: List of resources types that will be automatically associated
               required: false
               type: array
-              description: User IDs
-            medium_ids:
+            organization_ids:
+              description: Associated organization IDs
               required: false
               type: array
-              description: Medium IDs
-            smart_proxy_ids:
-              required: false
-              type: array
-              description: Capsule IDs
-            environment_ids:
-              required: false
-              type: array
-              description: Environment IDs
-            ptable_ids:
-              required: false
-              type: array
-              description: Partition template IDs
-            provisioning_template_ids:
-              required: false
-              type: array
-              description: Provisioning template IDs
-            compute_resource_ids:
-              required: false
-              type: array
-              description: Compute resource IDs
             "

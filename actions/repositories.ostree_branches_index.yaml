@@ -39,6 +39,10 @@ parameters:
     type: number
     required: false
     description: "content view filter identifier"
+  content_view_filter_rule_id:
+    type: number
+    required: false
+    description: "content view filter rule identifier"
   repository_id:
     type: number
     required: true
