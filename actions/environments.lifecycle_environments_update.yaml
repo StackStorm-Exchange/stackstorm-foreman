@@ -51,7 +51,7 @@ parameters:
     type: boolean
     required: false
     description: "allow unauthenticed pull of container images"
-  async:
+  _async:
     type: boolean
     required: false
     description: "Do not wait for the update action to finish. Default: true"

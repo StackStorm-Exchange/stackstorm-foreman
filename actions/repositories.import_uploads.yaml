@@ -35,7 +35,7 @@ parameters:
     type: array
     required: false
     description: "Array of upload ids to import"
-  async:
+  _async:
     type: boolean
     required: false
     description: "Do not wait for the ImportUpload action to finish. Default: false"
