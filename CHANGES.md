@@ -1,5 +1,9 @@
 # Change Log
 
+## v2.1.1
+
+* Updated files to work with latest CI updates
+
 ## v2.1.0
 
 * Timeouts defined in the action are now honored properly
